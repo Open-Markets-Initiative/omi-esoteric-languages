@@ -1,0 +1,34 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      market:
+        description: Which market to run
+        default: brainfuck/exchanges/iexequities/IexEquities.Market.bf
+      orders:
+        description: What to do, separated by commas
+        default: "to Continuous , buy 1 7@9995 , sell 2 4@9995"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Check Programs
+        run: python3 check.py
+
+      - name: Run Markets
+        run: python3 run.py --every
+
+      - name: Run Orders
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          MARKET: ${{ inputs.market }}
+          ORDERS: ${{ inputs.orders }}
+        run: python3 run.py "$MARKET" "$ORDERS"
+
