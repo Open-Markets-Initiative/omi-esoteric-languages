@@ -1,24 +1,24 @@
-# Nasdaq Stock Market Day
+# Nasdaq Stock Market Open
 
-The programs generated from what Nasdaq Stock Market Day declares, rather than from one protocol's model. A protocol's decoder is the same program whoever speaks it and sits under `brainfuck/protocols`; what is here is this venue's — the handshake it declares, and the book its own reference price bands.
+The programs generated from what Nasdaq Stock Market Open declares, rather than from one protocol's model. A protocol's decoder is the same program whoever speaks it and sits under `brainfuck/protocols`; what is here is this venue's — the handshake it declares, and the book its own reference price bands.
 
 ## Declared
 
 What the venue says it speaks, read from its own declaration and not kept as a list here:
 
 - Ipc `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026`
-- Engine `Nasdaq.NsmEquities.Equities.Session.Trading`
+- Engine `Nasdaq.NsmEquities.Equities.Open.Trading`
 - OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
 - Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0`
 - Replay `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Trader `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Trader `Nasdaq.NsmEquities.Orders.Ouch.v5.0`
-- Engine `Nasdaq.NsmEquities.Equities.Open.Trading`
+- Engine `Nasdaq.NsmEquities.Equities.Session.Trading`
 
 ## Market
 
-`NsmEquities.Market.bf` reads the internal order stream Nasdaq Stock Market Day declares — `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out.
+`NsmEquities.Market.bf` reads the internal order stream Nasdaq Stock Market Open declares — `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out.
 
 What was settled when the program was written rather than asked while it ran:
 

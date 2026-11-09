@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Brainfuck">
+  <title>Brainfuck</title>
+  <desc>A data pointer over one cell of the tape, inside the brackets that are the language's only control flow.</desc>
+  <g fill="none" stroke="#1965FF" stroke-width="22" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M 84 40 H 44 V 216 H 84" />
+    <path d="M 172 40 H 212 V 216 H 172" />
+  </g>
+  <path d="M 102 67 H 154 L 128 101 Z" fill="#1965FF" />
+  <rect x="96" y="125" width="64" height="64" rx="10" fill="#1965FF" />
+</svg>
