@@ -1,0 +1,151 @@
+💭🔜
+  Protocol: National Association of Securities Dealers Automated Quotations (Nasdaq) TotalView Itch v5.0
+  Generated. A line a field: the field's own address, then the bytes it held. The frame to read is this program's first argument and the file to write is its second, because Emojicode has no standard input.
+🔚💭
+
+📦 files 🏠
+
+🏁 🍇
+  💭 one frame of clientpacket: a line a field, its address then the bytes it held
+
+  🎞 🐇💻❗️ ➡️ arguments
+  🐽 arguments 1❗️ ➡️ framePath
+  🐽 arguments 2❗️ ➡️ wrotePath
+
+  🍺 📇 🐇📄 framePath ❗️ ➡️ frame
+  📇 🔤❌n🔤❗️ ➡️ newline
+
+  💭 written over as the program reads, because a field is not a variable
+  0 ➡️ 🖍🆕 position
+  📇 🔤🔤❗️ ➡️ 🖍🆕 wrote
+  📇 🔤🔤❗️ ➡️ 🖍🆕 named
+  📇 🔤🔤❗️ ➡️ 🖍🆕 held
+  0 ➡️ 🖍🆕 began
+  0 ➡️ 🖍🆕 cursor
+  0 ➡️ 🖍🆕 raw
+  0 ➡️ 🖍🆕 digit
+  0 ➡️ 🖍🆕 wide
+  0 ➡️ 🖍🆕 left
+
+  position ➡️ 🖍 began
+  💭 packetlength, 2 bytes
+  📇 🔤packetlength=🔤❗️ ➡️ 🖍 named
+  wrote ➕ named ➡️ 🖍 wrote
+  🔪 frame position 2❗️ ➡️ 🖍 held
+  wrote ➕ held ➡️ 🖍 wrote
+  wrote ➕ newline ➡️ 🖍 wrote
+  position ➕ 2 ➡️ 🖍 position
+
+  💭 its value, a byte at a time, each masked because a byte here is signed
+  0 ➡️ 🖍🆕 value0
+  began ➕ 0 ➡️ 🖍 cursor
+  🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+  raw ⭕ 255 ➡️ 🖍 digit
+  value0 ✖ 256 ➡️ 🖍 value0
+  value0 ➕ digit ➡️ 🖍 value0
+  began ➕ 1 ➡️ 🖍 cursor
+  🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+  raw ⭕ 255 ➡️ 🖍 digit
+  value0 ✖ 256 ➡️ 🖍 value0
+  value0 ➕ digit ➡️ 🖍 value0
+
+  position ➡️ 🖍 began
+  💭 clientpackettype, 1 byte
+  📇 🔤clientpackettype=🔤❗️ ➡️ 🖍 named
+  wrote ➕ named ➡️ 🖍 wrote
+  🔪 frame position 1❗️ ➡️ 🖍 held
+  wrote ➕ held ➡️ 🖍 wrote
+  wrote ➕ newline ➡️ 🖍 wrote
+  position ➕ 1 ➡️ 🖍 position
+
+  💭 its value, a byte at a time, each masked because a byte here is signed
+  0 ➡️ 🖍🆕 value1
+  began ➕ 0 ➡️ 🖍 cursor
+  🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+  raw ⭕ 255 ➡️ 🖍 digit
+  value1 ✖ 256 ➡️ 🖍 value1
+  value1 ➕ digit ➡️ 🖍 value1
+
+  💭 clientpacket.clientsoupbintcppacket.clientpayload: on clientpacket.clientsoupbintcppacket.clientpacketheader.clientpackettype, one arm of which runs
+  ↪️ value1 🙌 43 🍇
+    💭 debugtext, as many bytes as another field states
+    value0 ➖ 1 ➡️ 🖍 wide
+    📏 frame❓ ➖ position ➡️ 🖍 left
+    ↪️ wide ▶️ left 🍇
+      💭 a stated length longer than the frame is read as the rest of it
+      left ➡️ 🖍 wide
+    🍉
+    📇 🔤debugtext=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position wide❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ wide ➡️ 🖍 position
+
+  🍉
+  🙅↪️ value1 🙌 76 🍇
+    💭 username, 6 bytes
+    📇 🔤username=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 6❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 6 ➡️ 🖍 position
+
+    💭 password, 10 bytes
+    📇 🔤password=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 10❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 10 ➡️ 🖍 position
+
+    💭 requestedsession, 10 bytes
+    📇 🔤requestedsession=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 10❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 10 ➡️ 🖍 position
+
+    💭 requestedsequencenumber, 20 bytes
+    📇 🔤requestedsequencenumber=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 20❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 20 ➡️ 🖍 position
+
+  🍉
+  🙅↪️ value1 🙌 85 🍇
+    💭 unsequencedmessagetype, 1 byte
+    📇 🔤unsequencedmessagetype=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
+    💭 unsequencedmessage, as many bytes as another field states
+    value0 ➖ 2 ➡️ 🖍 wide
+    📏 frame❓ ➖ position ➡️ 🖍 left
+    ↪️ wide ▶️ left 🍇
+      💭 a stated length longer than the frame is read as the rest of it
+      left ➡️ 🖍 wide
+    🍉
+    📇 🔤unsequencedmessage=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position wide❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ wide ➡️ 🖍 position
+
+  🍉
+  🙅↪️ value1 🙌 82 🍇
+  🍉
+  🙅↪️ value1 🙌 79 🍇
+  🍉
+
+  🍺 📻 🐇📄 wrotePath wrote ❗️
+🍉
+

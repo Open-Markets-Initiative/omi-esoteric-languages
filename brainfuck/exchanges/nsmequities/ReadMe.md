@@ -50,7 +50,11 @@ Transitions of the chart no program with one input and one output can run, becau
 - Request.Sequenced answers something that is not bytes, so no program with one input and one output can reach it
 - Request.Heartbeat answers something that is not bytes, so no program with one input and one output can reach it
 - Request.EndOfSession answers something that is not bytes, so no program with one input and one output can reach it
+- Timer.Heartbeat answers something that is not bytes, so no program with one input and one output can reach it
+- Timer.Silence answers something that is not bytes, so no program with one input and one output can reach it
 - entering Authenticating: Send Ask.Login goes somewhere that is not the wire
+- entering LoggedIn: Send Timer.Heartbeat after State:HeartbeatInterval goes somewhere that is not the wire
+- entering LoggedIn: Send Timer.Silence after State:SilenceInterval goes somewhere that is not the wire
 - nothing dispatches to 'Client Soup Bin Tcp Packet', so Receive.Payload.Application arrives as a packet this state has no arm for, and is read and dropped like any other
 
 One run per transition of the chart, named for the state it rests in and the packet that arrives. A run the session answers nothing to is published too, with an empty answer, because half of what a session does is decline to answer:
@@ -60,12 +64,13 @@ One run per transition of the chart, named for the state it rests in and the pac
 | `NsmEquities.SoupBin.NotLoggedIn.LoginRequest` | 1 |
 | `NsmEquities.SoupBin.LoggedIn.SessionLogout` | 1 |
 | `NsmEquities.SoupBin.LoggedIn.SessionHeartbeat` | 1 |
+| `NsmEquities.SoupBin.LoggedIn.LoginRequest` | 1 |
 
 ## Files
 
 | Program | What it is | Runs published |
 | --- | --- | ---: |
-| `NsmEquities.SoupBin.bf` | the venue's handshake | 3 |
+| `NsmEquities.SoupBin.bf` | the venue's handshake | 4 |
 | `NsmEquities.Market.bf` | the venue's book and the matching over it | 2 |
 
 Beside each program is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `check.py` runs. A market also publishes a `.messages.json`, which is what it reads and writes flattened out of its model — that is what lets `run.py` build an order of your own rather than only replay what shipped.

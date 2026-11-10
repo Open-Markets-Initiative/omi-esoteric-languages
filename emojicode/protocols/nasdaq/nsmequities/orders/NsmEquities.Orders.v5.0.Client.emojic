@@ -1,0 +1,1487 @@
+💭🔜
+  Protocol: National Association of Securities Dealers Automated Quotations (Nasdaq) Orders v5.0
+  Generated. A line a field: the field's own address, then the bytes it held. The frame to read is this program's first argument and the file to write is its second, because Emojicode has no standard input.
+🔚💭
+
+📦 files 🏠
+
+🏁 🍇
+  💭 one frame of clientpacket: a line a field, its address then the bytes it held
+
+  🎞 🐇💻❗️ ➡️ arguments
+  🐽 arguments 1❗️ ➡️ framePath
+  🐽 arguments 2❗️ ➡️ wrotePath
+
+  🍺 📇 🐇📄 framePath ❗️ ➡️ frame
+  📇 🔤❌n🔤❗️ ➡️ newline
+
+  💭 written over as the program reads, because a field is not a variable
+  0 ➡️ 🖍🆕 position
+  📇 🔤🔤❗️ ➡️ 🖍🆕 wrote
+  📇 🔤🔤❗️ ➡️ 🖍🆕 named
+  📇 🔤🔤❗️ ➡️ 🖍🆕 held
+  0 ➡️ 🖍🆕 began
+  0 ➡️ 🖍🆕 cursor
+  0 ➡️ 🖍🆕 raw
+  0 ➡️ 🖍🆕 digit
+  0 ➡️ 🖍🆕 wide
+  0 ➡️ 🖍🆕 left
+  0 ➡️ 🖍🆕 room
+
+  position ➡️ 🖍 began
+  💭 packetlength, 2 bytes
+  📇 🔤packetlength=🔤❗️ ➡️ 🖍 named
+  wrote ➕ named ➡️ 🖍 wrote
+  🔪 frame position 2❗️ ➡️ 🖍 held
+  wrote ➕ held ➡️ 🖍 wrote
+  wrote ➕ newline ➡️ 🖍 wrote
+  position ➕ 2 ➡️ 🖍 position
+
+  💭 its value, a byte at a time, each masked because a byte here is signed
+  0 ➡️ 🖍🆕 value0
+  began ➕ 0 ➡️ 🖍 cursor
+  🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+  raw ⭕ 255 ➡️ 🖍 digit
+  value0 ✖ 256 ➡️ 🖍 value0
+  value0 ➕ digit ➡️ 🖍 value0
+  began ➕ 1 ➡️ 🖍 cursor
+  🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+  raw ⭕ 255 ➡️ 🖍 digit
+  value0 ✖ 256 ➡️ 🖍 value0
+  value0 ➕ digit ➡️ 🖍 value0
+
+  position ➡️ 🖍 began
+  💭 clientpackettype, 1 byte
+  📇 🔤clientpackettype=🔤❗️ ➡️ 🖍 named
+  wrote ➕ named ➡️ 🖍 wrote
+  🔪 frame position 1❗️ ➡️ 🖍 held
+  wrote ➕ held ➡️ 🖍 wrote
+  wrote ➕ newline ➡️ 🖍 wrote
+  position ➕ 1 ➡️ 🖍 position
+
+  💭 its value, a byte at a time, each masked because a byte here is signed
+  0 ➡️ 🖍🆕 value1
+  began ➕ 0 ➡️ 🖍 cursor
+  🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+  raw ⭕ 255 ➡️ 🖍 digit
+  value1 ✖ 256 ➡️ 🖍 value1
+  value1 ➕ digit ➡️ 🖍 value1
+
+  💭 clientpacket.clientsoupbintcppacket.clientpayload: on clientpacket.clientsoupbintcppacket.clientpacketheader.clientpackettype, one arm of which runs
+  ↪️ value1 🙌 43 🍇
+    💭 debugtext, as many bytes as another field states
+    value0 ➖ 1 ➡️ 🖍 wide
+    📏 frame❓ ➖ position ➡️ 🖍 left
+    ↪️ wide ▶️ left 🍇
+      💭 a stated length longer than the frame is read as the rest of it
+      left ➡️ 🖍 wide
+    🍉
+    📇 🔤debugtext=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position wide❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ wide ➡️ 🖍 position
+
+  🍉
+  🙅↪️ value1 🙌 76 🍇
+    💭 username, 6 bytes
+    📇 🔤username=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 6❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 6 ➡️ 🖍 position
+
+    💭 password, 10 bytes
+    📇 🔤password=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 10❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 10 ➡️ 🖍 position
+
+    💭 requestedsession, 10 bytes
+    📇 🔤requestedsession=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 10❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 10 ➡️ 🖍 position
+
+    💭 requestedsequencenumber, 20 bytes
+    📇 🔤requestedsequencenumber=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 20❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 20 ➡️ 🖍 position
+
+  🍉
+  🙅↪️ value1 🙌 85 🍇
+    position ➡️ 🖍 began
+    💭 unsequencedmessagetype, 1 byte
+    📇 🔤unsequencedmessagetype=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
+    💭 its value, a byte at a time, each masked because a byte here is signed
+    0 ➡️ 🖍🆕 value2
+    began ➕ 0 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    value2 ✖ 256 ➡️ 🖍 value2
+    value2 ➕ digit ➡️ 🖍 value2
+
+    💭 clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage: on clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessagetype, one arm of which runs
+    ↪️ value2 🙌 79 🍇
+      💭 userrefnum, 4 bytes
+      📇 🔤userrefnum=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 side, 1 byte
+      📇 🔤side=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 quantity, 4 bytes
+      📇 🔤quantity=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 symbol, 8 bytes
+      📇 🔤symbol=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 price, 8 bytes
+      📇 🔤price=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 timeinforce, 1 byte
+      📇 🔤timeinforce=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 display, 1 byte
+      📇 🔤display=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 capacity, 1 byte
+      📇 🔤capacity=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 intermarketsweepeligibility, 1 byte
+      📇 🔤intermarketsweepeligibility=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 crosstype, 1 byte
+      📇 🔤crosstype=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 clordid, 14 bytes
+      📇 🔤clordid=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 14❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 14 ➡️ 🖍 position
+
+      position ➡️ 🖍 began
+      💭 appendagelength, 2 bytes
+      📇 🔤appendagelength=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍🆕 value3
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      value3 ✖ 256 ➡️ 🖍 value3
+      value3 ➕ digit ➡️ 🖍 value3
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      value3 ✖ 256 ➡️ 🖍 value3
+      value3 ➕ digit ➡️ 🖍 value3
+
+      💭 enterorderappendage: entries filling the appendagelength bytes that follow
+      value3 ➡️ 🖍🆕 budget0
+      🔁 budget0 ▶️ 0 🍇
+        position ➡️ before0
+        position ➡️ 🖍 began
+        💭 optionalfieldlength, 1 byte
+        📇 🔤optionalfieldlength=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value4
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value4 ✖ 256 ➡️ 🖍 value4
+        value4 ➕ digit ➡️ 🖍 value4
+
+        position ➡️ 🖍 began
+        💭 enterorderoptionalfield, 1 byte
+        📇 🔤enterorderoptionalfield=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value5
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value5 ✖ 256 ➡️ 🖍 value5
+        value5 ➕ digit ➡️ 🖍 value5
+
+        💭 clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.enterordermessage.enterorderappendage.enterorderoptionalvalue: on clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.enterordermessage.enterorderappendage.enterorderoptionalfield, one arm of which runs
+        ↪️ value5 🙌 2 🍇
+          💭 firm, 4 bytes
+          📇 🔤firm=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 3 🍇
+          💭 minqty, 4 bytes
+          📇 🔤minqty=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 4 🍇
+          💭 customertype, 1 byte
+          📇 🔤customertype=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 5 🍇
+          💭 maxfloor, 4 bytes
+          📇 🔤maxfloor=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 6 🍇
+          💭 pricetype, 1 byte
+          📇 🔤pricetype=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 7 🍇
+          💭 pegoffset, 4 bytes
+          📇 🔤pegoffset=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 9 🍇
+          💭 discretionprice, 8 bytes
+          📇 🔤discretionprice=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 8❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 8 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 10 🍇
+          💭 discretionpricetype, 1 byte
+          📇 🔤discretionpricetype=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 11 🍇
+          💭 discretionpegoffset, 4 bytes
+          📇 🔤discretionpegoffset=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 12 🍇
+          💭 postonly, 1 byte
+          📇 🔤postonly=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 13 🍇
+          💭 randomreserves, 4 bytes
+          📇 🔤randomreserves=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 15 🍇
+          💭 expiretime, 4 bytes
+          📇 🔤expiretime=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 16 🍇
+          💭 tradenow, 1 byte
+          📇 🔤tradenow=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 17 🍇
+          💭 handleinst, 1 byte
+          📇 🔤handleinst=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 24 🍇
+          💭 groupid, 2 bytes
+          📇 🔤groupid=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 2❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 2 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 25 🍇
+          💭 shareslocated, 1 byte
+          📇 🔤shareslocated=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 26 🍇
+          💭 locatebroker, 4 bytes
+          📇 🔤locatebroker=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 28 🍇
+          💭 userrefidx, 1 byte
+          📇 🔤userrefidx=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 29 🍇
+          💭 aiqstrategy, 1 byte
+          📇 🔤aiqstrategy=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value5 🙌 30 🍇
+          💭 aiqgroupid, 2 bytes
+          📇 🔤aiqgroupid=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 2❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 2 ➡️ 🖍 position
+
+        🍉
+
+        position ➖ before0 ➡️ spent0
+        ↪️ spent0 🙌 0 🍇
+          💭 an entry of no bytes would never end the run
+          0 ➡️ 🖍 budget0
+        🍉
+        🙅 🍇
+          budget0 ➖ spent0 ➡️ 🖍 budget0
+        🍉
+      🍉
+
+    🍉
+    🙅↪️ value2 🙌 85 🍇
+      💭 origuserrefnum, 4 bytes
+      📇 🔤origuserrefnum=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 userrefnum, 4 bytes
+      📇 🔤userrefnum=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 quantity, 4 bytes
+      📇 🔤quantity=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 price, 8 bytes
+      📇 🔤price=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 timeinforce, 1 byte
+      📇 🔤timeinforce=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 display, 1 byte
+      📇 🔤display=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 intermarketsweepeligibility, 1 byte
+      📇 🔤intermarketsweepeligibility=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 clordid, 14 bytes
+      📇 🔤clordid=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 14❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 14 ➡️ 🖍 position
+
+      position ➡️ 🖍 began
+      💭 appendagelength, 2 bytes
+      📇 🔤appendagelength=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍🆕 value6
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      value6 ✖ 256 ➡️ 🖍 value6
+      value6 ➕ digit ➡️ 🖍 value6
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      value6 ✖ 256 ➡️ 🖍 value6
+      value6 ➕ digit ➡️ 🖍 value6
+
+      💭 replaceorderappendage: entries filling the appendagelength bytes that follow
+      value6 ➡️ 🖍🆕 budget1
+      🔁 budget1 ▶️ 0 🍇
+        position ➡️ before1
+        position ➡️ 🖍 began
+        💭 optionalfieldlength, 1 byte
+        📇 🔤optionalfieldlength=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value7
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value7 ✖ 256 ➡️ 🖍 value7
+        value7 ➕ digit ➡️ 🖍 value7
+
+        position ➡️ 🖍 began
+        💭 replaceorderoptionalfield, 1 byte
+        📇 🔤replaceorderoptionalfield=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value8
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value8 ✖ 256 ➡️ 🖍 value8
+        value8 ➕ digit ➡️ 🖍 value8
+
+        💭 clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.replaceordermessage.replaceorderappendage.replaceorderoptionalvalue: on clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.replaceordermessage.replaceorderappendage.replaceorderoptionalfield, one arm of which runs
+        ↪️ value8 🙌 3 🍇
+          💭 minqty, 4 bytes
+          📇 🔤minqty=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 5 🍇
+          💭 maxfloor, 4 bytes
+          📇 🔤maxfloor=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 6 🍇
+          💭 pricetype, 1 byte
+          📇 🔤pricetype=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 12 🍇
+          💭 postonly, 1 byte
+          📇 🔤postonly=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 15 🍇
+          💭 expiretime, 4 bytes
+          📇 🔤expiretime=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 16 🍇
+          💭 tradenow, 1 byte
+          📇 🔤tradenow=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 17 🍇
+          💭 handleinst, 1 byte
+          📇 🔤handleinst=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 13 🍇
+          💭 randomreserves, 4 bytes
+          📇 🔤randomreserves=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 7 🍇
+          💭 pegoffset, 4 bytes
+          📇 🔤pegoffset=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 9 🍇
+          💭 discretionprice, 8 bytes
+          📇 🔤discretionprice=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 8❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 8 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 10 🍇
+          💭 discretionpricetype, 1 byte
+          📇 🔤discretionpricetype=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 11 🍇
+          💭 discretionpegoffset, 4 bytes
+          📇 🔤discretionpegoffset=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 25 🍇
+          💭 shareslocated, 1 byte
+          📇 🔤shareslocated=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 26 🍇
+          💭 locatebroker, 4 bytes
+          📇 🔤locatebroker=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 28 🍇
+          💭 userrefidx, 1 byte
+          📇 🔤userrefidx=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 27 🍇
+          💭 side, 1 byte
+          📇 🔤side=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 29 🍇
+          💭 aiqstrategy, 1 byte
+          📇 🔤aiqstrategy=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value8 🙌 30 🍇
+          💭 aiqgroupid, 2 bytes
+          📇 🔤aiqgroupid=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 2❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 2 ➡️ 🖍 position
+
+        🍉
+
+        position ➖ before1 ➡️ spent1
+        ↪️ spent1 🙌 0 🍇
+          💭 an entry of no bytes would never end the run
+          0 ➡️ 🖍 budget1
+        🍉
+        🙅 🍇
+          budget1 ➖ spent1 ➡️ 🖍 budget1
+        🍉
+      🍉
+
+    🍉
+    🙅↪️ value2 🙌 88 🍇
+      💭 userrefnum, 4 bytes
+      📇 🔤userrefnum=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 quantity, 4 bytes
+      📇 🔤quantity=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 appendagelength: read only if the 8 bytes before it are not the whole of what packetlength states
+      0 ➡️ 🖍🆕 value9
+      value0 ➖ 10 ➡️ 🖍 room
+      ↪️ room ▶️ 0 🍇
+        position ➡️ 🖍 began
+        💭 appendagelength, 2 bytes
+        📇 🔤appendagelength=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 2❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 2 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍 value9
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value9 ✖ 256 ➡️ 🖍 value9
+        value9 ➕ digit ➡️ 🖍 value9
+        began ➕ 1 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value9 ✖ 256 ➡️ 🖍 value9
+        value9 ➕ digit ➡️ 🖍 value9
+
+      🍉
+
+      💭 cancelorderappendage: entries filling the appendagelength bytes that follow
+      value9 ➡️ 🖍🆕 budget2
+      🔁 budget2 ▶️ 0 🍇
+        position ➡️ before2
+        position ➡️ 🖍 began
+        💭 optionalfieldlength, 1 byte
+        📇 🔤optionalfieldlength=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value10
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value10 ✖ 256 ➡️ 🖍 value10
+        value10 ➕ digit ➡️ 🖍 value10
+
+        position ➡️ 🖍 began
+        💭 cancelorderoptionalfield, 1 byte
+        📇 🔤cancelorderoptionalfield=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value11
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value11 ✖ 256 ➡️ 🖍 value11
+        value11 ➕ digit ➡️ 🖍 value11
+
+        💭 clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.cancelordermessage.cancelorderappendage.cancelorderoptionalvalue: on clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.cancelordermessage.cancelorderappendage.cancelorderoptionalfield, one arm of which runs
+        ↪️ value11 🙌 28 🍇
+          💭 userrefidx, 1 byte
+          📇 🔤userrefidx=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+
+        position ➖ before2 ➡️ spent2
+        ↪️ spent2 🙌 0 🍇
+          💭 an entry of no bytes would never end the run
+          0 ➡️ 🖍 budget2
+        🍉
+        🙅 🍇
+          budget2 ➖ spent2 ➡️ 🖍 budget2
+        🍉
+      🍉
+
+    🍉
+    🙅↪️ value2 🙌 77 🍇
+      💭 userrefnum, 4 bytes
+      📇 🔤userrefnum=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 side, 1 byte
+      📇 🔤side=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 quantity, 4 bytes
+      📇 🔤quantity=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 appendagelength: read only if the 9 bytes before it are not the whole of what packetlength states
+      0 ➡️ 🖍🆕 value12
+      value0 ➖ 11 ➡️ 🖍 room
+      ↪️ room ▶️ 0 🍇
+        position ➡️ 🖍 began
+        💭 appendagelength, 2 bytes
+        📇 🔤appendagelength=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 2❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 2 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍 value12
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value12 ✖ 256 ➡️ 🖍 value12
+        value12 ➕ digit ➡️ 🖍 value12
+        began ➕ 1 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value12 ✖ 256 ➡️ 🖍 value12
+        value12 ➕ digit ➡️ 🖍 value12
+
+      🍉
+
+      💭 modifyorderappendage: entries filling the appendagelength bytes that follow
+      value12 ➡️ 🖍🆕 budget3
+      🔁 budget3 ▶️ 0 🍇
+        position ➡️ before3
+        position ➡️ 🖍 began
+        💭 optionalfieldlength, 1 byte
+        📇 🔤optionalfieldlength=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value13
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value13 ✖ 256 ➡️ 🖍 value13
+        value13 ➕ digit ➡️ 🖍 value13
+
+        position ➡️ 🖍 began
+        💭 modifyorderoptionalfield, 1 byte
+        📇 🔤modifyorderoptionalfield=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value14
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value14 ✖ 256 ➡️ 🖍 value14
+        value14 ➕ digit ➡️ 🖍 value14
+
+        💭 clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.modifyordermessage.modifyorderappendage.modifyorderoptionalvalue: on clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.modifyordermessage.modifyorderappendage.modifyorderoptionalfield, one arm of which runs
+        ↪️ value14 🙌 28 🍇
+          💭 userrefidx, 1 byte
+          📇 🔤userrefidx=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value14 🙌 25 🍇
+          💭 shareslocated, 1 byte
+          📇 🔤shareslocated=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value14 🙌 26 🍇
+          💭 locatebroker, 4 bytes
+          📇 🔤locatebroker=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 4❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 4 ➡️ 🖍 position
+
+        🍉
+
+        position ➖ before3 ➡️ spent3
+        ↪️ spent3 🙌 0 🍇
+          💭 an entry of no bytes would never end the run
+          0 ➡️ 🖍 budget3
+        🍉
+        🙅 🍇
+          budget3 ➖ spent3 ➡️ 🖍 budget3
+        🍉
+      🍉
+
+    🍉
+    🙅↪️ value2 🙌 81 🍇
+      💭 appendagelength: read only if the 0 bytes before it are not the whole of what packetlength states
+      0 ➡️ 🖍🆕 value15
+      value0 ➖ 2 ➡️ 🖍 room
+      ↪️ room ▶️ 0 🍇
+        position ➡️ 🖍 began
+        💭 appendagelength, 2 bytes
+        📇 🔤appendagelength=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 2❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 2 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍 value15
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value15 ✖ 256 ➡️ 🖍 value15
+        value15 ➕ digit ➡️ 🖍 value15
+        began ➕ 1 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value15 ✖ 256 ➡️ 🖍 value15
+        value15 ➕ digit ➡️ 🖍 value15
+
+      🍉
+
+      💭 accountqueryappendage: entries filling the appendagelength bytes that follow
+      value15 ➡️ 🖍🆕 budget4
+      🔁 budget4 ▶️ 0 🍇
+        position ➡️ before4
+        position ➡️ 🖍 began
+        💭 optionalfieldlength, 1 byte
+        📇 🔤optionalfieldlength=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value16
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value16 ✖ 256 ➡️ 🖍 value16
+        value16 ➕ digit ➡️ 🖍 value16
+
+        position ➡️ 🖍 began
+        💭 accountqueryoptionalfield, 1 byte
+        📇 🔤accountqueryoptionalfield=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value17
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value17 ✖ 256 ➡️ 🖍 value17
+        value17 ➕ digit ➡️ 🖍 value17
+
+        💭 clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.accountquerymessage.accountqueryappendage.accountqueryoptionalvalue: on clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.accountquerymessage.accountqueryappendage.accountqueryoptionalfield, one arm of which runs
+        ↪️ value17 🙌 28 🍇
+          💭 userrefidx, 1 byte
+          📇 🔤userrefidx=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+
+        position ➖ before4 ➡️ spent4
+        ↪️ spent4 🙌 0 🍇
+          💭 an entry of no bytes would never end the run
+          0 ➡️ 🖍 budget4
+        🍉
+        🙅 🍇
+          budget4 ➖ spent4 ➡️ 🖍 budget4
+        🍉
+      🍉
+
+    🍉
+    🙅↪️ value2 🙌 67 🍇
+      💭 userrefnum, 4 bytes
+      📇 🔤userrefnum=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 firm, 4 bytes
+      📇 🔤firm=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 symbol, 8 bytes
+      📇 🔤symbol=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      position ➡️ 🖍 began
+      💭 appendagelength, 2 bytes
+      📇 🔤appendagelength=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍🆕 value18
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      value18 ✖ 256 ➡️ 🖍 value18
+      value18 ➕ digit ➡️ 🖍 value18
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      value18 ✖ 256 ➡️ 🖍 value18
+      value18 ➕ digit ➡️ 🖍 value18
+
+      💭 masscancelrequestappendage: entries filling the appendagelength bytes that follow
+      value18 ➡️ 🖍🆕 budget5
+      🔁 budget5 ▶️ 0 🍇
+        position ➡️ before5
+        position ➡️ 🖍 began
+        💭 optionalfieldlength, 1 byte
+        📇 🔤optionalfieldlength=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value19
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value19 ✖ 256 ➡️ 🖍 value19
+        value19 ➕ digit ➡️ 🖍 value19
+
+        position ➡️ 🖍 began
+        💭 masscancelrequestoptionalfield, 1 byte
+        📇 🔤masscancelrequestoptionalfield=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value20
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value20 ✖ 256 ➡️ 🖍 value20
+        value20 ➕ digit ➡️ 🖍 value20
+
+        💭 clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.masscancelrequestmessage.masscancelrequestappendage.masscancelrequestoptionalvalue: on clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.masscancelrequestmessage.masscancelrequestappendage.masscancelrequestoptionalfield, one arm of which runs
+        ↪️ value20 🙌 27 🍇
+          💭 side, 1 byte
+          📇 🔤side=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value20 🙌 24 🍇
+          💭 groupid, 2 bytes
+          📇 🔤groupid=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 2❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 2 ➡️ 🖍 position
+
+        🍉
+        🙅↪️ value20 🙌 28 🍇
+          💭 userrefidx, 1 byte
+          📇 🔤userrefidx=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+
+        position ➖ before5 ➡️ spent5
+        ↪️ spent5 🙌 0 🍇
+          💭 an entry of no bytes would never end the run
+          0 ➡️ 🖍 budget5
+        🍉
+        🙅 🍇
+          budget5 ➖ spent5 ➡️ 🖍 budget5
+        🍉
+      🍉
+
+    🍉
+    🙅↪️ value2 🙌 68 🍇
+      💭 userrefnum, 4 bytes
+      📇 🔤userrefnum=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 firm, 4 bytes
+      📇 🔤firm=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      position ➡️ 🖍 began
+      💭 appendagelength, 2 bytes
+      📇 🔤appendagelength=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍🆕 value21
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      value21 ✖ 256 ➡️ 🖍 value21
+      value21 ➕ digit ➡️ 🖍 value21
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      value21 ✖ 256 ➡️ 🖍 value21
+      value21 ➕ digit ➡️ 🖍 value21
+
+      💭 disableorderentryrequestappendage: entries filling the appendagelength bytes that follow
+      value21 ➡️ 🖍🆕 budget6
+      🔁 budget6 ▶️ 0 🍇
+        position ➡️ before6
+        position ➡️ 🖍 began
+        💭 optionalfieldlength, 1 byte
+        📇 🔤optionalfieldlength=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value22
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value22 ✖ 256 ➡️ 🖍 value22
+        value22 ➕ digit ➡️ 🖍 value22
+
+        position ➡️ 🖍 began
+        💭 disableorderentryrequestoptionalfield, 1 byte
+        📇 🔤disableorderentryrequestoptionalfield=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value23
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value23 ✖ 256 ➡️ 🖍 value23
+        value23 ➕ digit ➡️ 🖍 value23
+
+        💭 clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.disableorderentryrequestmessage.disableorderentryrequestappendage.disableorderentryrequestoptionalvalue: on clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.disableorderentryrequestmessage.disableorderentryrequestappendage.disableorderentryrequestoptionalfield, one arm of which runs
+        ↪️ value23 🙌 28 🍇
+          💭 userrefidx, 1 byte
+          📇 🔤userrefidx=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+
+        position ➖ before6 ➡️ spent6
+        ↪️ spent6 🙌 0 🍇
+          💭 an entry of no bytes would never end the run
+          0 ➡️ 🖍 budget6
+        🍉
+        🙅 🍇
+          budget6 ➖ spent6 ➡️ 🖍 budget6
+        🍉
+      🍉
+
+    🍉
+    🙅↪️ value2 🙌 69 🍇
+      💭 userrefnum, 4 bytes
+      📇 🔤userrefnum=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 firm, 4 bytes
+      📇 🔤firm=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      position ➡️ 🖍 began
+      💭 appendagelength, 2 bytes
+      📇 🔤appendagelength=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍🆕 value24
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      value24 ✖ 256 ➡️ 🖍 value24
+      value24 ➕ digit ➡️ 🖍 value24
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      value24 ✖ 256 ➡️ 🖍 value24
+      value24 ➕ digit ➡️ 🖍 value24
+
+      💭 enableorderentryrequestappendage: entries filling the appendagelength bytes that follow
+      value24 ➡️ 🖍🆕 budget7
+      🔁 budget7 ▶️ 0 🍇
+        position ➡️ before7
+        position ➡️ 🖍 began
+        💭 optionalfieldlength, 1 byte
+        📇 🔤optionalfieldlength=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value25
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value25 ✖ 256 ➡️ 🖍 value25
+        value25 ➕ digit ➡️ 🖍 value25
+
+        position ➡️ 🖍 began
+        💭 enableorderentryrequestoptionalfield, 1 byte
+        📇 🔤enableorderentryrequestoptionalfield=🔤❗️ ➡️ 🖍 named
+        wrote ➕ named ➡️ 🖍 wrote
+        🔪 frame position 1❗️ ➡️ 🖍 held
+        wrote ➕ held ➡️ 🖍 wrote
+        wrote ➕ newline ➡️ 🖍 wrote
+        position ➕ 1 ➡️ 🖍 position
+
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍🆕 value26
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        value26 ✖ 256 ➡️ 🖍 value26
+        value26 ➕ digit ➡️ 🖍 value26
+
+        💭 clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.enableorderentryrequestmessage.enableorderentryrequestappendage.enableorderentryrequestoptionalvalue: on clientpacket.clientsoupbintcppacket.clientpayload.unsequenceddatapacket.unsequencedmessage.enableorderentryrequestmessage.enableorderentryrequestappendage.enableorderentryrequestoptionalfield, one arm of which runs
+        ↪️ value26 🙌 28 🍇
+          💭 userrefidx, 1 byte
+          📇 🔤userrefidx=🔤❗️ ➡️ 🖍 named
+          wrote ➕ named ➡️ 🖍 wrote
+          🔪 frame position 1❗️ ➡️ 🖍 held
+          wrote ➕ held ➡️ 🖍 wrote
+          wrote ➕ newline ➡️ 🖍 wrote
+          position ➕ 1 ➡️ 🖍 position
+
+        🍉
+
+        position ➖ before7 ➡️ spent7
+        ↪️ spent7 🙌 0 🍇
+          💭 an entry of no bytes would never end the run
+          0 ➡️ 🖍 budget7
+        🍉
+        🙅 🍇
+          budget7 ➖ spent7 ➡️ 🖍 budget7
+        🍉
+      🍉
+
+    🍉
+
+  🍉
+  🙅↪️ value1 🙌 82 🍇
+  🍉
+  🙅↪️ value1 🙌 79 🍇
+  🍉
+
+  🍺 📻 🐇📄 wrotePath wrote ❗️
+🍉
+

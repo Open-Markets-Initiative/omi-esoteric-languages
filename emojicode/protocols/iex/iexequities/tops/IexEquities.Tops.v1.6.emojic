@@ -1,0 +1,951 @@
+💭🔜
+  Protocol: Investors Exchange Tops v1.6
+  Generated. A line a field: the field's own address, then the bytes it held. The frame to read is this program's first argument and the file to write is its second, because Emojicode has no standard input.
+🔚💭
+
+📦 files 🏠
+
+🏁 🍇
+  💭 one frame of packet: a line a field, its address then the bytes it held
+
+  🎞 🐇💻❗️ ➡️ arguments
+  🐽 arguments 1❗️ ➡️ framePath
+  🐽 arguments 2❗️ ➡️ wrotePath
+
+  🍺 📇 🐇📄 framePath ❗️ ➡️ frame
+  📇 🔤❌n🔤❗️ ➡️ newline
+
+  💭 written over as the program reads, because a field is not a variable
+  0 ➡️ 🖍🆕 position
+  📇 🔤🔤❗️ ➡️ 🖍🆕 wrote
+  📇 🔤🔤❗️ ➡️ 🖍🆕 named
+  📇 🔤🔤❗️ ➡️ 🖍🆕 held
+  💭 every byte there is, built once. A field packed into a set of bits holds
+  💭 no bytes of its own, and nothing here makes a byte out of a number
+  📇 🔤🔤❗️ ➡️ 🖍🆕 table
+  0 ➡️ 🖍🆕 filled
+  ☣️ 🍇
+    🆕🧠 256❗️ ➡️ cells
+    🔂 at 🆕⏩ 0 256❗️ 🍇
+      at ➡️ 🖍 filled
+      💭 a byte here is signed, so the upper half goes in as what it is
+      ↪️ at ▶️ 127 🍇
+        at ➖ 256 ➡️ 🖍 filled
+      🍉
+      💧 filled❗️ ➡️ 🐽🐚💧🍆 cells at❗️
+    🍉
+    🆕📇 cells 256❗️ ➡️ 🖍 table
+  🍉
+
+  0 ➡️ 🖍🆕 began
+  0 ➡️ 🖍🆕 cursor
+  0 ➡️ 🖍🆕 raw
+  0 ➡️ 🖍🆕 digit
+  0 ➡️ 🖍🆕 carrier
+  0 ➡️ 🖍🆕 taken
+  0 ➡️ 🖍🆕 code
+
+  position ➡️ 🖍 began
+  💭 messagelength, 2 bytes
+  📇 🔤messagelength=🔤❗️ ➡️ 🖍 named
+  wrote ➕ named ➡️ 🖍 wrote
+  🔪 frame position 2❗️ ➡️ 🖍 held
+  wrote ➕ held ➡️ 🖍 wrote
+  wrote ➕ newline ➡️ 🖍 wrote
+  position ➕ 2 ➡️ 🖍 position
+
+  💭 its value, a byte at a time, each masked because a byte here is signed
+  0 ➡️ 🖍🆕 value0
+  began ➕ 1 ➡️ 🖍 cursor
+  🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+  raw ⭕ 255 ➡️ 🖍 digit
+  value0 ✖ 256 ➡️ 🖍 value0
+  value0 ➕ digit ➡️ 🖍 value0
+  began ➕ 0 ➡️ 🖍 cursor
+  🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+  raw ⭕ 255 ➡️ 🖍 digit
+  value0 ✖ 256 ➡️ 🖍 value0
+  value0 ➕ digit ➡️ 🖍 value0
+
+  position ➡️ 🖍 began
+  💭 messagetype, 1 byte
+  📇 🔤messagetype=🔤❗️ ➡️ 🖍 named
+  wrote ➕ named ➡️ 🖍 wrote
+  🔪 frame position 1❗️ ➡️ 🖍 held
+  wrote ➕ held ➡️ 🖍 wrote
+  wrote ➕ newline ➡️ 🖍 wrote
+  position ➕ 1 ➡️ 🖍 position
+
+  💭 its value, a byte at a time, each masked because a byte here is signed
+  0 ➡️ 🖍🆕 value1
+  began ➕ 0 ➡️ 🖍 cursor
+  🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+  raw ⭕ 255 ➡️ 🖍 digit
+  value1 ✖ 256 ➡️ 🖍 value1
+  value1 ➕ digit ➡️ 🖍 value1
+
+  💭 packet.message.messagedata: on packet.message.messageheader.messagetype, one arm of which runs
+  ↪️ value1 🙌 114 🍇
+    💭 authenticationtoken, 40 bytes
+    📇 🔤authenticationtoken=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 40❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 40 ➡️ 🖍 position
+
+    💭 channelid, 4 bytes
+    📇 🔤channelid=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 4❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 4 ➡️ 🖍 position
+
+    💭 sessionid, 4 bytes
+    📇 🔤sessionid=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 4❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 4 ➡️ 🖍 position
+
+    💭 minimumsequencenumber, 8 bytes
+    📇 🔤minimumsequencenumber=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 8❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 8 ➡️ 🖍 position
+
+  🍉
+  🙅↪️ value1 🙌 101 🍇
+    💭 rejectreasoncode, 1 byte
+    📇 🔤rejectreasoncode=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
+  🍉
+  🙅↪️ value1 🙌 115 🍇
+    💭 snapshotlength, 8 bytes
+    📇 🔤snapshotlength=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 8❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 8 ➡️ 🖍 position
+
+  🍉
+  🙅↪️ value1 🙌 100 🍇
+    💭 version, 1 byte
+    📇 🔤version=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
+    💭 reserved, 1 byte of padding, stepped over and not reported
+    position ➕ 1 ➡️ 🖍 position
+
+    💭 messageprotocolid, 2 bytes
+    📇 🔤messageprotocolid=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 2❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 2 ➡️ 🖍 position
+
+    💭 channelid, 4 bytes
+    📇 🔤channelid=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 4❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 4 ➡️ 🖍 position
+
+    💭 sessionid, 4 bytes
+    📇 🔤sessionid=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 4❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 4 ➡️ 🖍 position
+
+    💭 payloadlength, 2 bytes
+    📇 🔤payloadlength=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 2❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 2 ➡️ 🖍 position
+
+    💭 messagecount, 2 bytes
+    📇 🔤messagecount=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 2❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 2 ➡️ 🖍 position
+
+    💭 streamoffset, 8 bytes
+    📇 🔤streamoffset=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 8❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 8 ➡️ 🖍 position
+
+    💭 firstmessagesequencenumber, 8 bytes
+    📇 🔤firstmessagesequencenumber=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 8❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 8 ➡️ 🖍 position
+
+    💭 sendtime, 8 bytes
+    📇 🔤sendtime=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 8❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 8 ➡️ 🖍 position
+
+    position ➡️ 🖍 began
+    💭 iextpmessageblocklength, 2 bytes
+    📇 🔤iextpmessageblocklength=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 2❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 2 ➡️ 🖍 position
+
+    💭 its value, a byte at a time, each masked because a byte here is signed
+    0 ➡️ 🖍🆕 value2
+    began ➕ 1 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    value2 ✖ 256 ➡️ 🖍 value2
+    value2 ➕ digit ➡️ 🖍 value2
+    began ➕ 0 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    value2 ✖ 256 ➡️ 🖍 value2
+    value2 ➕ digit ➡️ 🖍 value2
+
+    position ➡️ 🖍 began
+    💭 iextpmessagelength, 2 bytes
+    📇 🔤iextpmessagelength=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 2❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 2 ➡️ 🖍 position
+
+    💭 its value, a byte at a time, each masked because a byte here is signed
+    0 ➡️ 🖍🆕 value3
+    began ➕ 1 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    value3 ✖ 256 ➡️ 🖍 value3
+    value3 ➕ digit ➡️ 🖍 value3
+    began ➕ 0 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    value3 ✖ 256 ➡️ 🖍 value3
+    value3 ➕ digit ➡️ 🖍 value3
+
+    position ➡️ 🖍 began
+    💭 iextpmessagetype, 1 byte
+    📇 🔤iextpmessagetype=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
+    💭 its value, a byte at a time, each masked because a byte here is signed
+    0 ➡️ 🖍🆕 value4
+    began ➕ 0 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    value4 ✖ 256 ➡️ 🖍 value4
+    value4 ➕ digit ➡️ 🖍 value4
+
+    💭 packet.message.messagedata.snapshotdatamessage.iextpmessagedata: on packet.message.messagedata.snapshotdatamessage.iextpmessagetype, one arm of which runs
+    ↪️ value4 🙌 83 🍇
+      💭 systemevent, 1 byte
+      📇 🔤systemevent=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 timestamp, 8 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value4 🙌 68 🍇
+      💭 securitydirectoryflags, 1 byte carrying 3 fields of bits
+      position ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 carrier
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      carrier ✖ 256 ➡️ 🖍 carrier
+      carrier ➕ digit ➡️ 🖍 carrier
+
+      position ➕ 1 ➡️ 🖍 position
+      💭 etp, 1 of those bits from bit 5
+      carrier 👉 5 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤etp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 whenissued, 1 of those bits from bit 6
+      carrier 👉 6 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤whenissued=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 testsecurity, 1 of those bits from bit 7
+      carrier 👉 7 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤testsecurity=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 timestamp, 8 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 symbol, 8 bytes
+      📇 🔤symbol=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 roundlotsize, 4 bytes
+      📇 🔤roundlotsize=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 adjustedpocprice, 8 bytes
+      📇 🔤adjustedpocprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 luldtier, 1 byte
+      📇 🔤luldtier=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value4 🙌 72 🍇
+      💭 tradingstatus, 1 byte
+      📇 🔤tradingstatus=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 timestamp, 8 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 symbol, 8 bytes
+      📇 🔤symbol=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 reason, 4 bytes
+      📇 🔤reason=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value4 🙌 73 🍇
+      💭 retailliquidityindicator, 1 byte
+      📇 🔤retailliquidityindicator=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 timestamp, 8 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 symbol, 8 bytes
+      📇 🔤symbol=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value4 🙌 79 🍇
+      💭 operationalhaltstatus, 1 byte
+      📇 🔤operationalhaltstatus=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 timestamp, 8 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 symbol, 8 bytes
+      📇 🔤symbol=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value4 🙌 80 🍇
+      💭 shortsalepriceteststatus, 1 byte
+      📇 🔤shortsalepriceteststatus=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 timestamp, 8 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 symbol, 8 bytes
+      📇 🔤symbol=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 detail, 1 byte
+      📇 🔤detail=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value4 🙌 81 🍇
+      💭 quoteupdateflags, 1 byte carrying 2 fields of bits
+      position ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 carrier
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      carrier ✖ 256 ➡️ 🖍 carrier
+      carrier ➕ digit ➡️ 🖍 carrier
+
+      position ➕ 1 ➡️ 🖍 position
+      💭 marketsession, 1 of those bits from bit 6
+      carrier 👉 6 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤marketsession=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 symbolavailability, 1 of those bits from bit 7
+      carrier 👉 7 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤symbolavailability=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 timestamp, 8 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 symbol, 8 bytes
+      📇 🔤symbol=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 bidsize, 4 bytes
+      📇 🔤bidsize=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 bidprice, 8 bytes
+      📇 🔤bidprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 askprice, 8 bytes
+      📇 🔤askprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 asksize, 4 bytes
+      📇 🔤asksize=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value4 🙌 84 🍇
+      💭 saleconditionflags, 1 byte carrying 5 fields of bits
+      position ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 carrier
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      carrier ✖ 256 ➡️ 🖍 carrier
+      carrier ➕ digit ➡️ 🖍 carrier
+
+      position ➕ 1 ➡️ 🖍 position
+      💭 singlepricecrosstrade, 1 of those bits from bit 3
+      carrier 👉 3 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤singlepricecrosstrade=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 tradethroughexempt, 1 of those bits from bit 4
+      carrier 👉 4 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤tradethroughexempt=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 oddlot, 1 of those bits from bit 5
+      carrier 👉 5 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤oddlot=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 extendedhours, 1 of those bits from bit 6
+      carrier 👉 6 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤extendedhours=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 intermarketsweep, 1 of those bits from bit 7
+      carrier 👉 7 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤intermarketsweep=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 timestamp, 8 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 symbol, 8 bytes
+      📇 🔤symbol=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 size, 4 bytes
+      📇 🔤size=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 price, 8 bytes
+      📇 🔤price=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 tradeid, 8 bytes
+      📇 🔤tradeid=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value4 🙌 88 🍇
+      💭 pricetype, 1 byte
+      📇 🔤pricetype=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 timestamp, 8 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 symbol, 8 bytes
+      📇 🔤symbol=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 officialprice, 8 bytes
+      📇 🔤officialprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value4 🙌 66 🍇
+      💭 saleconditionflags, 1 byte carrying 5 fields of bits
+      position ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 carrier
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      carrier ✖ 256 ➡️ 🖍 carrier
+      carrier ➕ digit ➡️ 🖍 carrier
+
+      position ➕ 1 ➡️ 🖍 position
+      💭 singlepricecrosstrade, 1 of those bits from bit 3
+      carrier 👉 3 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤singlepricecrosstrade=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 tradethroughexempt, 1 of those bits from bit 4
+      carrier 👉 4 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤tradethroughexempt=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 oddlot, 1 of those bits from bit 5
+      carrier 👉 5 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤oddlot=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 extendedhours, 1 of those bits from bit 6
+      carrier 👉 6 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤extendedhours=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 intermarketsweep, 1 of those bits from bit 7
+      carrier 👉 7 ➡️ 🖍 taken
+      taken ⭕ 1 ➡️ 🖍 taken
+      📇 🔤intermarketsweep=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      taken ➡️ 🖍 code
+      code ⭕ 255 ➡️ 🖍 code
+      wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+
+      💭 timestamp, 8 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 symbol, 8 bytes
+      📇 🔤symbol=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 size, 4 bytes
+      📇 🔤size=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 price, 8 bytes
+      📇 🔤price=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 tradeid, 8 bytes
+      📇 🔤tradeid=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value4 🙌 65 🍇
+      💭 auctiontype, 1 byte
+      📇 🔤auctiontype=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 timestamp, 8 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 symbol, 8 bytes
+      📇 🔤symbol=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 pairedshares, 4 bytes
+      📇 🔤pairedshares=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 referenceprice, 8 bytes
+      📇 🔤referenceprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 indicativeclearingprice, 8 bytes
+      📇 🔤indicativeclearingprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 imbalanceshares, 4 bytes
+      📇 🔤imbalanceshares=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 imbalanceside, 1 byte
+      📇 🔤imbalanceside=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 extensionnumber, 1 byte
+      📇 🔤extensionnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 scheduledauctiontime, 4 bytes
+      📇 🔤scheduledauctiontime=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 auctionbookclearingprice, 8 bytes
+      📇 🔤auctionbookclearingprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 collarreferenceprice, 8 bytes
+      📇 🔤collarreferenceprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 lowerauctioncollar, 8 bytes
+      📇 🔤lowerauctioncollar=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 upperauctioncollar, 8 bytes
+      📇 🔤upperauctioncollar=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+    🍉
+
+  🍉
+  🙅↪️ value1 🙌 120 🍇
+    💭 snapshotsequencenumber, 8 bytes
+    📇 🔤snapshotsequencenumber=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 8❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 8 ➡️ 🖍 position
+
+  🍉
+
+  🍺 📻 🐇📄 wrotePath wrote ❗️
+🍉
+

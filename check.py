@@ -3,8 +3,9 @@
 
 Two claims, of different sizes.
 
-The first is that every program is a program: a loop opened is a loop closed. That is claimed
-of every file here.
+The first is that every program is a program. For a Brainfuck program that is a loop opened
+being a loop closed; for an Emojicode program it is a block opened being a block closed. That
+is claimed of every file here, in either language.
 
 The second is that a program still reads what it read when it was generated. Where a frame was
 published beside a program, this runs the program on that frame and compares what it writes
@@ -16,12 +17,26 @@ what this can say is that nothing has changed since.
 A program carries a frame for each message the capture corpus holds of its protocol, recorded
 from the wire, and one laid out from its model besides. A program with no frame at all is one
 that none could be proven for, and only the first claim is made about it.
+
+Running an Emojicode program needs its compiler, which is not here and is not something a
+script can carry the way this one carries an interpreter of eight instructions. So those are
+held to being programs, and to carrying their evidence: every frame beside one has the output
+it should produce beside it too. Whether it produces it is settled where the compiler is, and
+that language's own readme says so.
 """
 
 import pathlib
 import sys
 
 INSTRUCTIONS = set("><+-.,[]")
+
+BRAINFUCK = ".bf"
+EMOJICODE = ".emojic"
+
+# the block markers of the second language, which are its brackets. Written as code points
+# so that this script is plain ascii, and taken from the dialect the generator emits
+OPENS = "\U0001F347"
+CLOSES = "\U0001F349"
 
 FRAME = ".frame"
 WROTE = ".wrote"
@@ -40,6 +55,27 @@ def unbalanced(text):
         if character == "[":
             opened.append(offset)
         elif character == "]":
+            if not opened:
+                return offset
+            opened.pop()
+
+    return opened[0] if opened else None
+
+
+def unclosed(text):
+    """The offset of the first block with no partner, or None when every block has one.
+
+    Counted over the characters themselves, which is sound here because a generated program
+    puts neither marker inside a string or a comment: a string here holds a field's name or
+    a new line, and a comment holds a protocol's name. A hand written program could defeat
+    this, and nothing here is hand written.
+    """
+    opened = []
+
+    for offset, character in enumerate(text):
+        if character == OPENS:
+            opened.append(offset)
+        elif character == CLOSES:
             if not opened:
                 return offset
             opened.pop()
@@ -154,18 +190,50 @@ def reads(program, frame, wrote):
 
 def main():
     root = pathlib.Path(__file__).resolve().parent
-    programs = sorted(root.rglob("*.bf"))
+    programs = sorted(root.rglob("*" + BRAINFUCK)) + sorted(root.rglob("*" + EMOJICODE))
 
     if not programs:
         print("no programs found")
         return 1
 
     instructions = 0
+    characters = 0
+    written = 0
+    carried = 0
     checked = 0
     refused = 0
 
     for program in programs:
         text = program.read_text(encoding="utf-8")
+
+        # the second language is held to being a program and no more, because running one
+        # needs a compiler this script has no way to be
+        if program.suffix == EMOJICODE:
+            written += 1
+            characters += len(text)
+
+            offset = unclosed(text)
+
+            if offset is not None:
+                print(f"{program.relative_to(root)}: "
+                      f"a block at character {offset} has no partner")
+                refused += 1
+                continue
+
+            # the evidence is held to being whole even though it cannot be replayed here: a
+            # frame with no recorded output beside it is a frame nothing can ever check
+            for frame in sorted(program.parent.glob(program.stem + ".*" + FRAME)):
+                wrote = frame.with_suffix(WROTE)
+
+                if not wrote.exists():
+                    print(f"{frame.relative_to(root)}: has no {WROTE} beside it")
+                    refused += 1
+                    continue
+
+                carried += 1
+
+            continue
+
         instructions += sum(1 for character in text if character in INSTRUCTIONS)
 
         offset = unbalanced(text)
@@ -192,8 +260,11 @@ def main():
                 print(f"{frame.relative_to(root)}: {fault}")
                 refused += 1
 
-    print(f"{len(programs)} programs, {instructions:,} instructions, "
-          f"{checked} frames read, {refused} refused")
+    print(f"{len(programs) - written} Brainfuck programs, {instructions:,} instructions, "
+          f"{checked} frames read")
+    print(f"{written} Emojicode programs, {characters:,} characters, "
+          f"{carried} frames carried")
+    print(f"{refused} refused")
 
     return 1 if refused else 0
 

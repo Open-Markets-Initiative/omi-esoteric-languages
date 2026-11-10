@@ -1,0 +1,1532 @@
+💭🔜
+  Protocol: National Association of Securities Dealers Automated Quotations (Nasdaq) TotalView Itch v5.0.2026
+  Generated. A line a field: the field's own address, then the bytes it held. The frame to read is this program's first argument and the file to write is its second, because Emojicode has no standard input.
+🔚💭
+
+📦 files 🏠
+
+🏁 🍇
+  💭 one frame of serverpacket: a line a field, its address then the bytes it held
+
+  🎞 🐇💻❗️ ➡️ arguments
+  🐽 arguments 1❗️ ➡️ framePath
+  🐽 arguments 2❗️ ➡️ wrotePath
+
+  🍺 📇 🐇📄 framePath ❗️ ➡️ frame
+  📇 🔤❌n🔤❗️ ➡️ newline
+
+  💭 written over as the program reads, because a field is not a variable
+  0 ➡️ 🖍🆕 position
+  📇 🔤🔤❗️ ➡️ 🖍🆕 wrote
+  📇 🔤🔤❗️ ➡️ 🖍🆕 named
+  📇 🔤🔤❗️ ➡️ 🖍🆕 held
+  0 ➡️ 🖍🆕 began
+  0 ➡️ 🖍🆕 cursor
+  0 ➡️ 🖍🆕 raw
+  0 ➡️ 🖍🆕 digit
+  0 ➡️ 🖍🆕 wide
+  0 ➡️ 🖍🆕 left
+
+  position ➡️ 🖍 began
+  💭 packetlength, 2 bytes
+  📇 🔤packetlength=🔤❗️ ➡️ 🖍 named
+  wrote ➕ named ➡️ 🖍 wrote
+  🔪 frame position 2❗️ ➡️ 🖍 held
+  wrote ➕ held ➡️ 🖍 wrote
+  wrote ➕ newline ➡️ 🖍 wrote
+  position ➕ 2 ➡️ 🖍 position
+
+  💭 its value, a byte at a time, each masked because a byte here is signed
+  0 ➡️ 🖍🆕 value0
+  began ➕ 0 ➡️ 🖍 cursor
+  🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+  raw ⭕ 255 ➡️ 🖍 digit
+  value0 ✖ 256 ➡️ 🖍 value0
+  value0 ➕ digit ➡️ 🖍 value0
+  began ➕ 1 ➡️ 🖍 cursor
+  🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+  raw ⭕ 255 ➡️ 🖍 digit
+  value0 ✖ 256 ➡️ 🖍 value0
+  value0 ➕ digit ➡️ 🖍 value0
+
+  position ➡️ 🖍 began
+  💭 serverpackettype, 1 byte
+  📇 🔤serverpackettype=🔤❗️ ➡️ 🖍 named
+  wrote ➕ named ➡️ 🖍 wrote
+  🔪 frame position 1❗️ ➡️ 🖍 held
+  wrote ➕ held ➡️ 🖍 wrote
+  wrote ➕ newline ➡️ 🖍 wrote
+  position ➕ 1 ➡️ 🖍 position
+
+  💭 its value, a byte at a time, each masked because a byte here is signed
+  0 ➡️ 🖍🆕 value1
+  began ➕ 0 ➡️ 🖍 cursor
+  🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+  raw ⭕ 255 ➡️ 🖍 digit
+  value1 ✖ 256 ➡️ 🖍 value1
+  value1 ➕ digit ➡️ 🖍 value1
+
+  💭 serverpacket.serversoupbintcppacket.serverpayload: on serverpacket.serversoupbintcppacket.serverpacketheader.serverpackettype, one arm of which runs
+  ↪️ value1 🙌 43 🍇
+    💭 debugtext, as many bytes as another field states
+    value0 ➖ 1 ➡️ 🖍 wide
+    📏 frame❓ ➖ position ➡️ 🖍 left
+    ↪️ wide ▶️ left 🍇
+      💭 a stated length longer than the frame is read as the rest of it
+      left ➡️ 🖍 wide
+    🍉
+    📇 🔤debugtext=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position wide❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ wide ➡️ 🖍 position
+
+  🍉
+  🙅↪️ value1 🙌 65 🍇
+    💭 acceptedsession, 10 bytes
+    📇 🔤acceptedsession=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 10❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 10 ➡️ 🖍 position
+
+    💭 acceptedsequencenumber, 20 bytes
+    📇 🔤acceptedsequencenumber=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 20❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 20 ➡️ 🖍 position
+
+  🍉
+  🙅↪️ value1 🙌 74 🍇
+    💭 rejectreasoncode, 1 byte
+    📇 🔤rejectreasoncode=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
+  🍉
+  🙅↪️ value1 🙌 83 🍇
+    position ➡️ 🖍 began
+    💭 sequencedmessagetype, 1 byte
+    📇 🔤sequencedmessagetype=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
+    💭 its value, a byte at a time, each masked because a byte here is signed
+    0 ➡️ 🖍🆕 value2
+    began ➕ 0 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    value2 ✖ 256 ➡️ 🖍 value2
+    value2 ➕ digit ➡️ 🖍 value2
+
+    💭 serverpacket.serversoupbintcppacket.serverpayload.sequenceddatapacket.sequencedmessage: on serverpacket.serversoupbintcppacket.serverpayload.sequenceddatapacket.sequencedmessagetype, one arm of which runs
+    ↪️ value2 🙌 83 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 eventcode, 1 byte
+      📇 🔤eventcode=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 82 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 stock, 8 bytes
+      📇 🔤stock=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 marketcategory, 1 byte
+      📇 🔤marketcategory=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 financialstatusindicator, 1 byte
+      📇 🔤financialstatusindicator=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 roundlotsize, 4 bytes
+      📇 🔤roundlotsize=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 roundlotsonly, 1 byte
+      📇 🔤roundlotsonly=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 issueclassification, 1 byte
+      📇 🔤issueclassification=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 issuesubtype, 2 bytes
+      📇 🔤issuesubtype=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 authenticity, 1 byte
+      📇 🔤authenticity=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 shortsalethresholdindicator, 1 byte
+      📇 🔤shortsalethresholdindicator=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 ipoflag, 1 byte
+      📇 🔤ipoflag=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 luldreferencepricetier, 1 byte
+      📇 🔤luldreferencepricetier=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 etpflag, 1 byte
+      📇 🔤etpflag=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 etpleveragefactor, 4 bytes
+      📇 🔤etpleveragefactor=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 inverseindicator, 1 byte
+      📇 🔤inverseindicator=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 72 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 stock, 8 bytes
+      📇 🔤stock=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 tradingstate, 1 byte
+      📇 🔤tradingstate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 reserved, 1 byte
+      📇 🔤reserved=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 reasoncode, 4 bytes
+      📇 🔤reasoncode=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 89 🍇
+      💭 locatecode, 2 bytes
+      📇 🔤locatecode=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 stock, 8 bytes
+      📇 🔤stock=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 regshoaction, 1 byte
+      📇 🔤regshoaction=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 76 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 mpid, 4 bytes
+      📇 🔤mpid=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 stock, 8 bytes
+      📇 🔤stock=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 primarymarketmaker, 1 byte
+      📇 🔤primarymarketmaker=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 marketmakermode, 1 byte
+      📇 🔤marketmakermode=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 marketparticipantstate, 1 byte
+      📇 🔤marketparticipantstate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 86 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 level1, 8 bytes
+      📇 🔤level1=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 level2, 8 bytes
+      📇 🔤level2=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 level3, 8 bytes
+      📇 🔤level3=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 87 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 breachedlevel, 1 byte
+      📇 🔤breachedlevel=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 75 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 stock, 8 bytes
+      📇 🔤stock=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 ipoquotationreleasetime, 4 bytes
+      📇 🔤ipoquotationreleasetime=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 ipoquotationreleasequalifier, 1 byte
+      📇 🔤ipoquotationreleasequalifier=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 ipoprice, 4 bytes
+      📇 🔤ipoprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 74 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 stock, 8 bytes
+      📇 🔤stock=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 auctioncollarreferenceprice, 4 bytes
+      📇 🔤auctioncollarreferenceprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 upperauctioncollarprice, 4 bytes
+      📇 🔤upperauctioncollarprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 lowerauctioncollarprice, 4 bytes
+      📇 🔤lowerauctioncollarprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 auctioncollarextension, 4 bytes
+      📇 🔤auctioncollarextension=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 104 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 stock, 8 bytes
+      📇 🔤stock=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 marketcode, 1 byte
+      📇 🔤marketcode=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 operationalhaltaction, 1 byte
+      📇 🔤operationalhaltaction=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 65 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 orderreferencenumber, 8 bytes
+      📇 🔤orderreferencenumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 buysellindicator, 1 byte
+      📇 🔤buysellindicator=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 shares, 4 bytes
+      📇 🔤shares=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 stock, 8 bytes
+      📇 🔤stock=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 price, 4 bytes
+      📇 🔤price=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 70 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 orderreferencenumber, 8 bytes
+      📇 🔤orderreferencenumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 buysellindicator, 1 byte
+      📇 🔤buysellindicator=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 shares, 4 bytes
+      📇 🔤shares=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 stock, 8 bytes
+      📇 🔤stock=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 price, 4 bytes
+      📇 🔤price=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 attribution, 4 bytes
+      📇 🔤attribution=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 69 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 orderreferencenumber, 8 bytes
+      📇 🔤orderreferencenumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 executedshares, 4 bytes
+      📇 🔤executedshares=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 matchnumber, 8 bytes
+      📇 🔤matchnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 67 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 orderreferencenumber, 8 bytes
+      📇 🔤orderreferencenumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 executedshares, 4 bytes
+      📇 🔤executedshares=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 matchnumber, 8 bytes
+      📇 🔤matchnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 printable, 1 byte
+      📇 🔤printable=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 executionprice, 4 bytes
+      📇 🔤executionprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 88 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 orderreferencenumber, 8 bytes
+      📇 🔤orderreferencenumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 canceledshares, 4 bytes
+      📇 🔤canceledshares=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 68 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 orderreferencenumber, 8 bytes
+      📇 🔤orderreferencenumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 85 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 originalorderreferencenumber, 8 bytes
+      📇 🔤originalorderreferencenumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 neworderreferencenumber, 8 bytes
+      📇 🔤neworderreferencenumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 shares, 4 bytes
+      📇 🔤shares=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 price, 4 bytes
+      📇 🔤price=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 80 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 orderreferencenumber, 8 bytes
+      📇 🔤orderreferencenumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 buysellindicator, 1 byte
+      📇 🔤buysellindicator=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 shares, 4 bytes
+      📇 🔤shares=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 stock, 8 bytes
+      📇 🔤stock=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 price, 4 bytes
+      📇 🔤price=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 matchnumber, 8 bytes
+      📇 🔤matchnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 81 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 crossshares, 8 bytes
+      📇 🔤crossshares=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 stock, 8 bytes
+      📇 🔤stock=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 crossprice, 4 bytes
+      📇 🔤crossprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 matchnumber, 8 bytes
+      📇 🔤matchnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 crosstype, 1 byte
+      📇 🔤crosstype=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 66 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 matchnumber, 8 bytes
+      📇 🔤matchnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 73 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 pairedshares, 8 bytes
+      📇 🔤pairedshares=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 imbalanceshares, 8 bytes
+      📇 🔤imbalanceshares=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 imbalancedirection, 1 byte
+      📇 🔤imbalancedirection=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 stock, 8 bytes
+      📇 🔤stock=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 farprice, 4 bytes
+      📇 🔤farprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 nearprice, 4 bytes
+      📇 🔤nearprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 currentreferenceprice, 4 bytes
+      📇 🔤currentreferenceprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 crosstype, 1 byte
+      📇 🔤crosstype=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 pricevariationindicator, 1 byte
+      📇 🔤pricevariationindicator=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 78 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 stock, 8 bytes
+      📇 🔤stock=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 interestflag, 1 byte
+      📇 🔤interestflag=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+    🍉
+    🙅↪️ value2 🙌 79 🍇
+      💭 stocklocate, 2 bytes
+      📇 🔤stocklocate=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 trackingnumber, 2 bytes
+      📇 🔤trackingnumber=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 2❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 2 ➡️ 🖍 position
+
+      💭 timestamp, 6 bytes
+      📇 🔤timestamp=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 6❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 6 ➡️ 🖍 position
+
+      💭 stock, 8 bytes
+      📇 🔤stock=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 openeligibilitystatus, 1 byte
+      📇 🔤openeligibilitystatus=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 1❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 1 ➡️ 🖍 position
+
+      💭 minimumallowableprice, 4 bytes
+      📇 🔤minimumallowableprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 maximumallowableprice, 4 bytes
+      📇 🔤maximumallowableprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 nearexecutionprice, 4 bytes
+      📇 🔤nearexecutionprice=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 nearexecutiontime, 8 bytes
+      📇 🔤nearexecutiontime=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 8❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 8 ➡️ 🖍 position
+
+      💭 lowerpricerangecollar, 4 bytes
+      📇 🔤lowerpricerangecollar=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+      💭 upperpricerangecollar, 4 bytes
+      📇 🔤upperpricerangecollar=🔤❗️ ➡️ 🖍 named
+      wrote ➕ named ➡️ 🖍 wrote
+      🔪 frame position 4❗️ ➡️ 🖍 held
+      wrote ➕ held ➡️ 🖍 wrote
+      wrote ➕ newline ➡️ 🖍 wrote
+      position ➕ 4 ➡️ 🖍 position
+
+    🍉
+
+  🍉
+  🙅↪️ value1 🙌 72 🍇
+  🍉
+  🙅↪️ value1 🙌 90 🍇
+  🍉
+
+  🍺 📻 🐇📄 wrotePath wrote ❗️
+🍉
+

@@ -128,12 +128,12 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 
 - Programs: 16
-- Instructions: 5,633,789
+- Instructions: 5,649,798
 - Reading every field the model states: 16 of 16
 - Published with a frame they are held to: 16 of 16
-- Frames, of which recorded from the wire: 146, 40
+- Frames, of which recorded from the wire: 150, 40
 - Sessions, of which proven on a run: 1, 1
-- Runs, and the packets they were answered with: 3, 3
+- Runs, and the packets they were answered with: 4, 4
 - Markets, of which proven on a run: 2, 2
 - Orders put to them, the trades those made and the orders refused: 14, 4, 4
 

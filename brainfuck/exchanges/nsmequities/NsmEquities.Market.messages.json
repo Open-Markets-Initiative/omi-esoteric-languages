@@ -121,6 +121,34 @@
             "Gtt": 54,
             "After Hours": 69
           }
+        },
+        {
+          "named": "display",
+          "width": 1,
+          "endian": "little",
+          "role": "Display",
+          "text": true,
+          "values": {
+            "Visible": 89,
+            "Hidden": 78
+          }
+        },
+        {
+          "named": "crosstype",
+          "width": 1,
+          "endian": "little",
+          "role": "CrossType",
+          "text": true,
+          "values": {
+            "Continuous": 78,
+            "Opening": 79,
+            "Closing": 67,
+            "Halt": 72,
+            "Supplemental": 83,
+            "Retail": 82,
+            "Extended Life": 69,
+            "After Hours Close": 65
+          }
         }
       ],
       "buys": 66,
@@ -242,6 +270,17 @@
           "width": 4,
           "endian": "little",
           "role": "Quantity"
+        },
+        {
+          "named": "display",
+          "width": 1,
+          "endian": "little",
+          "role": "Display",
+          "text": true,
+          "values": {
+            "Visible": 89,
+            "Hidden": 78
+          }
         }
       ]
     },
@@ -309,6 +348,62 @@
             "Intraday": 73,
             "Closing": 67
           }
+        },
+        {
+          "named": "restingdisplay",
+          "width": 1,
+          "endian": "little",
+          "role": "RestingDisplay",
+          "text": true,
+          "values": {
+            "Visible": 89,
+            "Hidden": 78
+          }
+        },
+        {
+          "named": "aggressordisplay",
+          "width": 1,
+          "endian": "little",
+          "role": "AggressorDisplay",
+          "text": true,
+          "values": {
+            "Visible": 89,
+            "Hidden": 78
+          }
+        }
+      ]
+    },
+    {
+      "does": "refused",
+      "way": "out",
+      "named": "orderrefusedmessage",
+      "codes": [
+        74
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "orderid",
+          "width": 8,
+          "endian": "little",
+          "role": "Order"
+        },
+        {
+          "named": "refusalreason",
+          "width": 1,
+          "endian": "little",
+          "role": "Refusal",
+          "text": true,
+          "values": {
+            "Closed": 69,
+            "Other": 79,
+            "Invalid Cross": 67
+          }
         }
       ]
     },
@@ -331,6 +426,17 @@
           "width": 8,
           "endian": "little",
           "role": "Order"
+        },
+        {
+          "named": "display",
+          "width": 1,
+          "endian": "little",
+          "role": "Display",
+          "text": true,
+          "values": {
+            "Visible": 89,
+            "Hidden": 78
+          }
         }
       ]
     },

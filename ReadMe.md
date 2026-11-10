@@ -9,8 +9,11 @@ One directory per language, and a readme in each saying what that language's pro
 | Language | Directory | What it lends the generator |
 | --- | --- | --- |
 | <a href="brainfuck/ReadMe.md"><img src="images/Brainfuck.png" width="24" align="top" alt="Brainfuck"></a> [Brainfuck](brainfuck/ReadMe.md "Brainfuck ReadMe") | `brainfuck` | Nothing: eight instructions and one tape of bytes |
+| <a href="emojicode/ReadMe.md"><img src="images/Emojicode.png" width="24" align="top" alt="Emojicode"></a> [Emojicode](emojicode/ReadMe.md "Emojicode ReadMe") | `emojicode` | Variables, arithmetic and a loop that takes a condition - over bytes that are signed |
 
-A second language is a sibling directory rather than a second repository, because what differs between them is a directory and not a protocol. The models are the same, the venues are the same, and a program in any of them is held to the same thing before it is published: what it decodes must agree with what the C# parser decodes from the same bytes, and what it encodes must parse back.
+A second language is a sibling directory rather than a second repository, because what differs between them is a directory and not a protocol. The models are the same and the venues are the same, and every language's programs are held to the same claim before they are published: what one decodes must agree with what the C# parser decodes from the same bytes, and what one encodes must parse back.
+
+**Each directory stands on its own.** A language lays its own frames, because a frame is laid for a reader rather than for a protocol and no two of these read quite the same parts of a model; it publishes them beside its own programs, with what each program should write for them; and nothing in one language's directory was checked against another's output. Where two of them happen to read the same bytes into the same fields, what they agree on is the model.
 
 ## Why
 
@@ -28,9 +31,11 @@ What a language's programs read, what they write when they read it, and the exac
 
 [![Build](https://github.com/Open-Markets-Initiative/omi-esoteric-languages/actions/workflows/build.yml/badge.svg)](https://github.com/Open-Markets-Initiative/omi-esoteric-languages/actions/workflows/build.yml)
 
-`python3 check.py` runs over every program in the repository. Each is held to being a program at all — a loop opened is a loop closed. Each with a `.frame` published beside it is also run on that frame and held to writing what its `.wrote` file records, which the script carries an interpreter of the stated dialect in order to do.
+`python3 check.py` runs over every program in the repository, and holds each to being a program at all — for one language a loop opened is a loop closed, for another a block opened is a block closed.
 
-That second claim is a regression gate rather than a proof, and the difference is worth keeping straight. What makes a recorded output worth anything is that it was held against the C# parser reading the same bytes through the same model — field for field, in order, and accounting for every byte — before it was published. That comparison cannot be made here, because neither the models nor the parser are in this repository, so what the script says is that nothing has changed since.
+**How much more than that it can say depends on the language, and the difference is worth keeping straight.** Where the script can carry an interpreter — eight instructions fit in two hundred lines — a program is run on each frame published beside it and held to writing what its `.wrote` file records. Where running one needs a compiler, the script cannot run it at all; what it holds instead is that the evidence is whole, every frame having the output it should produce beside it, and the replay belongs to that language's own build.
+
+Either way it is a regression gate rather than a proof. What makes a recorded output worth anything is that it was held against the C# parser reading the same bytes through the same model — field for field, in order, and accounting for every byte — before it was published. That comparison cannot be made here, because neither the models nor the parser are in this repository, so what the script says is that nothing has changed since. Each language's own readme says exactly what stands behind its programs.
 
 Please report any parsing errors as an [issue](https://github.com/Open-Markets-Initiative/omi-esoteric-languages/issues "Omi Esoteric Issues"). Include the bytes the program was given and what it wrote, beside what the protocol says it should have.
 

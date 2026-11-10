@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Emojicode">
+  <title>Emojicode</title>
+  <desc>A block opened and closed by the two fruit that are the language's braces, with the statements it holds indented between them.</desc>
+  <g fill="#1965FF">
+    <rect x="56" y="8" width="12" height="20" rx="6" />
+    <circle cx="40" cy="36" r="11" />
+    <circle cx="62" cy="36" r="11" />
+    <circle cx="84" cy="36" r="11" />
+    <circle cx="51" cy="58" r="11" />
+    <circle cx="73" cy="58" r="11" />
+    <circle cx="62" cy="80" r="11" />
+    <rect x="86" y="106" width="126" height="20" rx="10" />
+    <rect x="86" y="140" width="94" height="20" rx="10" />
+    <path d="M 160 184 A 32 32 0 0 0 224 184 Z" />
+  </g>
+  <path d="M 148 184 A 44 44 0 0 0 236 184" fill="none" stroke="#1965FF" stroke-width="14" stroke-linecap="butt" />
+</svg>
