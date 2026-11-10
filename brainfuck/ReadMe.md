@@ -1,5 +1,7 @@
 # Brainfuck
 
+![Brainfuck](../images/Brainfuck.png)
+
 Programs in Brainfuck that read common binary exchange protocols, generated from the same compiled data models every other Omi repository is generated from.
 
 ## Why

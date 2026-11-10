@@ -8,7 +8,7 @@ One directory per language, and a readme in each saying what that language's pro
 
 | Language | Directory | What it lends the generator |
 | --- | --- | --- |
-| [Brainfuck](brainfuck/ReadMe.md "Brainfuck ReadMe") | `brainfuck` | Nothing: eight instructions and one tape of bytes |
+| <a href="brainfuck/ReadMe.md"><img src="images/Brainfuck.png" width="24" align="top" alt="Brainfuck"></a> [Brainfuck](brainfuck/ReadMe.md "Brainfuck ReadMe") | `brainfuck` | Nothing: eight instructions and one tape of bytes |
 
 A second language is a sibling directory rather than a second repository, because what differs between them is a directory and not a protocol. The models are the same, the venues are the same, and a program in any of them is held to the same thing before it is published: what it decodes must agree with what the C# parser decodes from the same bytes, and what it encodes must parse back.
 
