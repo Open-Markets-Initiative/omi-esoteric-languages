@@ -64,6 +64,12 @@ A frame is then published only where two independent readings of it agree. The C
 
 `python3 check.py` therefore makes a smaller claim about these than it makes about a language it can interpret. Every file here is held to being a program at all — a block opened is a block closed — and every frame is held to having its recorded output beside it, because a frame nothing can ever check is not evidence. It does not run them: that needs `emojicodec`, and a program needing a 56 megabyte compiler cannot be checked by a script that carries its own interpreter in two hundred lines.
 
+**`python3 replay.py` is where they are actually run**, and it is what this repository's own build does on every push. It finds `emojicodec` on the path or takes it from the environment, compiles each program here, and runs it on every frame published beside it, holding what it writes to what the `.wrote` file records. So the claim above — that the compiled program reproduces these frames — is one this repository makes on itself rather than one a reader has to take on trust:
+
+```
+export EMOJICODEC=/path/to/emojicodec
+python3 replay.py
+```
 Please report any parsing errors as an [issue](https://github.com/Open-Markets-Initiative/omi-esoteric-languages/issues "Omi Esoteric Issues"). Include the bytes the program was given and what it wrote, beside what the protocol says it should have.
 
 ## Development

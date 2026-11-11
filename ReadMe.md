@@ -23,7 +23,7 @@ They are also slow, by some six orders of magnitude against the generated C++. T
 
 ## Running
 
-Both scripts sit here at the root and are run from here, so a path given to either of them starts with the directory of the language it is in. `check.py` is what the build runs. `run.py` puts a stream of a venue's own orders to one of the published markets and reads back what it wrote, field by field.
+The scripts sit here at the root and are run from here, so a path given to any of them starts with the directory of the language it is in. `check.py` and `replay.py` are what the build runs, between them holding every program here to the frames published beside it. `run.py` puts a stream of a venue's own orders to one of the published markets and reads back what it wrote, field by field.
 
 What a language's programs read, what they write when they read it, and the exact commands that run them are in that language's own readme, written from this directory.
 
@@ -33,7 +33,9 @@ What a language's programs read, what they write when they read it, and the exac
 
 `python3 check.py` runs over every program in the repository, and holds each to being a program at all — for one language a loop opened is a loop closed, for another a block opened is a block closed.
 
-**How much more than that it can say depends on the language, and the difference is worth keeping straight.** Where the script can carry an interpreter — eight instructions fit in two hundred lines — a program is run on each frame published beside it and held to writing what its `.wrote` file records. Where running one needs a compiler, the script cannot run it at all; what it holds instead is that the evidence is whole, every frame having the output it should produce beside it, and the replay belongs to that language's own build.
+**How much more than that it can say depends on the language, and the difference is worth keeping straight.** Where the script can carry an interpreter — eight instructions fit in two hundred lines — a program is run on each frame published beside it and held to writing what its `.wrote` file records. Where running one needs a compiler, no script can be the runtime; `check.py` holds only that the evidence is whole, every frame having the output it should produce beside it.
+
+`python3 replay.py` is the other half, and it is where that second kind of program is actually run. It installs nothing: it finds the compiler on the path or takes it from an environment variable, builds each program, and runs it on every frame published beside it. The build installs the compiler and passes `--required`, so a toolchain that failed to install fails the build rather than quietly replaying nothing. Without a compiler it says what it would have run and stops.
 
 Either way it is a regression gate rather than a proof. What makes a recorded output worth anything is that it was held against the C# parser reading the same bytes through the same model — field for field, in order, and accounting for every byte — before it was published. That comparison cannot be made here, because neither the models nor the parser are in this repository, so what the script says is that nothing has changed since. Each language's own readme says exactly what stands behind its programs.
 

@@ -22,6 +22,19 @@ jobs:
       - name: Check Programs
         run: python3 check.py
 
+      - name: Install Emojicode 1.0 beta 2
+        run: |
+          cd "$RUNNER_TEMP"
+          curl -sSL -o emojicode.tar.gz https://github.com/emojicode/emojicode/releases/download/v1.0-beta.2/Emojicode-1.0-beta.2-Linux-x86_64.tar.gz
+          tar xzf emojicode.tar.gz
+          curl -sSL -o libtinfo5.deb http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.3-2ubuntu0.3_amd64.deb
+          dpkg-deb -x libtinfo5.deb shim
+          echo "EMOJICODEC=$RUNNER_TEMP/Emojicode-1.0-beta.2-Linux-x86_64/emojicodec" >> "$GITHUB_ENV"
+          echo "LD_LIBRARY_PATH=$RUNNER_TEMP/shim/lib/x86_64-linux-gnu" >> "$GITHUB_ENV"
+
+      - name: Replay Programs
+        run: python3 replay.py --required
+
       - name: Run Markets
         run: python3 run.py --every
 
