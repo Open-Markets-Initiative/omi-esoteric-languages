@@ -1,0 +1,1115 @@
+💭🔜
+  Market: NsmEquities
+  Day: Simple
+  Generated. It reads the venue's own internal order stream and writes the venue's own messages back out. The orders to read are this program's first argument and the file to write is its second, because Emojicode has no standard input.
+🔚💭
+
+📦 files 🏠
+
+🏁 🍇
+  💭 one order stream of packet: a book over it, and the venue's own messages back out
+
+  🎞 🐇💻❗️ ➡️ arguments
+  🐽 arguments 1❗️ ➡️ framePath
+  🐽 arguments 2❗️ ➡️ wrotePath
+
+  🍺 📇 🐇📄 framePath ❗️ ➡️ frame
+
+  💭 written over as the market runs
+  0 ➡️ 🖍🆕 position
+  📇 🔤🔤❗️ ➡️ 🖍🆕 wrote
+  💭 every byte there is, built once. A field packed into a set of bits holds
+  💭 no bytes of its own, and nothing here makes a byte out of a number
+  📇 🔤🔤❗️ ➡️ 🖍🆕 table
+  0 ➡️ 🖍🆕 filled
+  ☣️ 🍇
+    🆕🧠 256❗️ ➡️ cells
+    🔂 at 🆕⏩ 0 256❗️ 🍇
+      at ➡️ 🖍 filled
+      💭 a byte here is signed, so the upper half goes in as what it is
+      ↪️ at ▶️ 127 🍇
+        at ➖ 256 ➡️ 🖍 filled
+      🍉
+      💧 filled❗️ ➡️ 🐽🐚💧🍆 cells at❗️
+    🍉
+    🆕📇 cells 256❗️ ➡️ 🖍 table
+  🍉
+
+  0 ➡️ 🖍🆕 began
+  0 ➡️ 🖍🆕 cursor
+  0 ➡️ 🖍🆕 raw
+  0 ➡️ 🖍🆕 digit
+  0 ➡️ 🖍🆕 taken
+  0 ➡️ 🖍🆕 code
+  0 ➡️ 🖍🆕 stated
+  0 ➡️ 🖍🆕 kind
+  0 ➡️ 🖍🆕 ending
+  0 ➡️ 🖍🆕 stamp
+  0 ➡️ 🖍🆕 who
+  0 ➡️ 🖍🆕 side
+  0 ➡️ 🖍🆕 price
+  0 ➡️ 🖍🆕 size
+  0 ➡️ 🖍🆕 best
+  0 ➡️ 🖍🆕 found
+  0 ➡️ 🖍🆕 took
+  0 ➡️ 🖍🆕 resting
+  0 ➡️ 🖍🆕 going
+  0 ➡️ 🖍🆕 change
+
+  💭 the book: a price, a quantity and whose order, a level apiece
+  🆕🍨🐚🔢🍆❗️ ➡️ 🖍🆕 bidPrice
+  🆕🍨🐚🔢🍆❗️ ➡️ 🖍🆕 bidSize
+  🆕🍨🐚🔢🍆❗️ ➡️ 🖍🆕 bidWhose
+  🆕🍨🐚🔢🍆❗️ ➡️ 🖍🆕 askPrice
+  🆕🍨🐚🔢🍆❗️ ➡️ 🖍🆕 askSize
+  🆕🍨🐚🔢🍆❗️ ➡️ 🖍🆕 askWhose
+
+  💭 the day starts in Closed
+  0 ➡️ 🖍🆕 phase
+  0 ➡️ 🖍🆕 execution
+  📇 🔤ZVZZT   🔤❗️ ➡️ 🖍🆕 symbol
+
+  💭 one message at a time, as far as the frame reaches
+  🔁 📏 frame❓ ➖ position ▶️🙌 3 🍇
+    position ➡️ 🖍 began
+    💭 its value, a byte at a time, each masked because a byte here is signed
+    0 ➡️ 🖍 stated
+    began ➕ 1 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    stated ✖ 256 ➡️ 🖍 stated
+    stated ➕ digit ➡️ 🖍 stated
+    began ➕ 0 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    stated ✖ 256 ➡️ 🖍 stated
+    stated ➕ digit ➡️ 🖍 stated
+
+    position ➕ 2 ➡️ 🖍 began
+    💭 its value, a byte at a time, each masked because a byte here is signed
+    0 ➡️ 🖍 kind
+    began ➕ 0 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    kind ✖ 256 ➡️ 🖍 kind
+    kind ➕ digit ➡️ 🖍 kind
+
+    💭 where the next one begins, as this one's own length states
+    position ➕ stated ➕ 2 ➡️ 🖍 ending
+
+    ↪️ kind 🙌 78 🍇
+      💭 newordermessage
+      position ➕ 3 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 stamp
+      began ➕ 7 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 6 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 5 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 4 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 3 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 2 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+
+      position ➕ 19 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 who
+      began ➕ 7 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+      began ➕ 6 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+      began ➕ 5 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+      began ➕ 4 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+      began ➕ 3 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+      began ➕ 2 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+
+      position ➕ 35 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 side
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      side ✖ 256 ➡️ 🖍 side
+      side ➕ digit ➡️ 🖍 side
+
+      position ➕ 36 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 price
+      began ➕ 7 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      price ✖ 256 ➡️ 🖍 price
+      price ➕ digit ➡️ 🖍 price
+      began ➕ 6 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      price ✖ 256 ➡️ 🖍 price
+      price ➕ digit ➡️ 🖍 price
+      began ➕ 5 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      price ✖ 256 ➡️ 🖍 price
+      price ➕ digit ➡️ 🖍 price
+      began ➕ 4 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      price ✖ 256 ➡️ 🖍 price
+      price ➕ digit ➡️ 🖍 price
+      began ➕ 3 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      price ✖ 256 ➡️ 🖍 price
+      price ➕ digit ➡️ 🖍 price
+      began ➕ 2 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      price ✖ 256 ➡️ 🖍 price
+      price ➕ digit ➡️ 🖍 price
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      price ✖ 256 ➡️ 🖍 price
+      price ➕ digit ➡️ 🖍 price
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      price ✖ 256 ➡️ 🖍 price
+      price ➕ digit ➡️ 🖍 price
+
+      position ➕ 44 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 size
+      began ➕ 3 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      size ✖ 256 ➡️ 🖍 size
+      size ➕ digit ➡️ 🖍 size
+      began ➕ 2 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      size ✖ 256 ➡️ 🖍 size
+      size ➕ digit ➡️ 🖍 size
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      size ✖ 256 ➡️ 🖍 size
+      size ➕ digit ➡️ 🖍 size
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      size ✖ 256 ➡️ 🖍 size
+      size ➕ digit ➡️ 🖍 size
+
+      🔪 frame position ➕ 27 8❗️ ➡️ 🖍 symbol
+
+      ↪️ phase 🙌 0 🍇
+        💭 Closed: Order.Refused
+        💭 orderrefusedmessage
+        18 ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 8 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        74 ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        stamp ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 8 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 16 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 24 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 32 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 40 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 48 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 56 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        who ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 8 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 16 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 24 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 32 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 40 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 48 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 56 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        69 ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+
+      🍉
+      ↪️ phase 🙌 1 🍇
+        💭 Continuous: Book.Cross
+        1 ➡️ 🖍 going
+        🔁 going ▶️ 0 🍇
+          ↪️ size 🙌 0 🍇
+            0 ➡️ 🖍 going
+          🍉
+          ↪️ going ▶️ 0 🍇
+            ↪️ side 🙌 66 🍇
+              -1 ➡️ 🖍 found
+              0 ➡️ 🖍 best
+              🔂 level 🆕⏩ 0 📏 askPrice❓❗️ 🍇
+                ↪️ 🐽 askSize level❗️ ▶️ 0 🍇
+                  ↪️ 🐽 askPrice level❗️ ◀️🙌 price 🍇
+                    ↪️ found ◀️ 0 🍇
+                      level ➡️ 🖍 found
+                      🐽 askPrice level❗️ ➡️ 🖍 best
+                    🍉
+                    🙅↪️ 🐽 askPrice level❗️ ◀️ best 🍇
+                      level ➡️ 🖍 found
+                      🐽 askPrice level❗️ ➡️ 🖍 best
+                    🍉
+                  🍉
+                🍉
+              🍉
+            🍉
+            🙅 🍇
+              -1 ➡️ 🖍 found
+              0 ➡️ 🖍 best
+              🔂 level 🆕⏩ 0 📏 bidPrice❓❗️ 🍇
+                ↪️ 🐽 bidSize level❗️ ▶️ 0 🍇
+                  ↪️ 🐽 bidPrice level❗️ ▶️🙌 price 🍇
+                    ↪️ found ◀️ 0 🍇
+                      level ➡️ 🖍 found
+                      🐽 bidPrice level❗️ ➡️ 🖍 best
+                    🍉
+                    🙅↪️ 🐽 bidPrice level❗️ ▶️ best 🍇
+                      level ➡️ 🖍 found
+                      🐽 bidPrice level❗️ ➡️ 🖍 best
+                    🍉
+                  🍉
+                🍉
+              🍉
+            🍉
+            ↪️ found ◀️ 0 🍇
+              💭 nothing it reaches, so the rest of it comes to rest
+              0 ➡️ 🖍 going
+            🍉
+            ↪️ found ▶️🙌 0 🍇
+              ↪️ side 🙌 66 🍇
+                🐽 askSize found❗️ ➡️ 🖍 took
+                ↪️ size ◀️ took 🍇
+                  size ➡️ 🖍 took
+                🍉
+                🐽 askWhose found❗️ ➡️ 🖍 resting
+                🐽 askSize found❗️ ➖ took ➡️ 🐽 askSize found❗️
+                size ➖ took ➡️ 🖍 size
+                execution ➕ 1 ➡️ 🖍 execution
+                💭 trademessage
+                56 ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 8 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                84 ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                stamp ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 8 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 16 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 24 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 32 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 40 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 48 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 56 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                who ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 8 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 16 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 24 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 32 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 40 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 48 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 56 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                resting ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 8 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 16 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 24 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 32 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 40 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 48 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 56 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                execution ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 8 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 16 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 24 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 32 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 40 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 48 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 56 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                wrote ➕ symbol ➡️ 🖍 wrote
+                best ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 8 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 16 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 24 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 32 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 40 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 48 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 56 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                took ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 8 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 16 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 24 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                78 ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                89 ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                89 ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+
+              🍉
+              🙅 🍇
+                🐽 bidSize found❗️ ➡️ 🖍 took
+                ↪️ size ◀️ took 🍇
+                  size ➡️ 🖍 took
+                🍉
+                🐽 bidWhose found❗️ ➡️ 🖍 resting
+                🐽 bidSize found❗️ ➖ took ➡️ 🐽 bidSize found❗️
+                size ➖ took ➡️ 🖍 size
+                execution ➕ 1 ➡️ 🖍 execution
+                💭 trademessage
+                56 ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 8 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                84 ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                stamp ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 8 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 16 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 24 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 32 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 40 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 48 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 56 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                who ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 8 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 16 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 24 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 32 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 40 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 48 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 56 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                resting ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 8 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 16 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 24 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 32 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 40 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 48 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 56 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                execution ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 8 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 16 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 24 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 32 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 40 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 48 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 56 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                wrote ➕ symbol ➡️ 🖍 wrote
+                best ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 8 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 16 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 24 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 32 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 40 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 48 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 56 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                took ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 8 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 16 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                taken 👉 24 ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                78 ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                89 ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                89 ➡️ 🖍 taken
+                taken ➡️ 🖍 code
+                code ⭕ 255 ➡️ 🖍 code
+                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+
+              🍉
+            🍉
+          🍉
+        🍉
+
+        ↪️ size ▶️ 0 🍇
+          ↪️ side 🙌 66 🍇
+            🐻 bidPrice price❗️
+            🐻 bidSize size❗️
+            🐻 bidWhose who❗️
+          🍉
+          🙅 🍇
+            🐻 askPrice price❗️
+            🐻 askSize size❗️
+            🐻 askWhose who❗️
+          🍉
+          💭 orderrestedmessage
+          39 ➡️ 🖍 taken
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 8 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          82 ➡️ 🖍 taken
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          stamp ➡️ 🖍 taken
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 8 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 16 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 24 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 32 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 40 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 48 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 56 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          who ➡️ 🖍 taken
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 8 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 16 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 24 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 32 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 40 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 48 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 56 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          wrote ➕ symbol ➡️ 🖍 wrote
+          side ➡️ 🖍 taken
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          price ➡️ 🖍 taken
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 8 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 16 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 24 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 32 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 40 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 48 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 56 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          size ➡️ 🖍 taken
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 8 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 16 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 24 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          89 ➡️ 🖍 taken
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+
+        🍉
+      🍉
+    🍉
+    🙅↪️ kind 🙌 67 🍇
+      💭 cancelordermessage
+      position ➕ 3 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 stamp
+      began ➕ 7 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 6 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 5 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 4 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 3 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 2 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+
+      position ➕ 19 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 who
+      began ➕ 7 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+      began ➕ 6 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+      began ➕ 5 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+      began ➕ 4 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+      began ➕ 3 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+      began ➕ 2 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      who ✖ 256 ➡️ 🖍 who
+      who ➕ digit ➡️ 🖍 who
+
+      -1 ➡️ 🖍 found
+      🔂 level 🆕⏩ 0 📏 bidWhose❓❗️ 🍇
+        ↪️ 🐽 bidWhose level❗️ 🙌 who 🍇
+          ↪️ 🐽 bidSize level❗️ ▶️ 0 🍇
+            1 ➡️ 🖍 found
+            🐽 bidPrice level❗️ ➡️ 🖍 price
+            🐽 bidSize level❗️ ➡️ 🖍 size
+            0 ➡️ 🐽 bidSize level❗️
+          🍉
+        🍉
+      🍉
+      🔂 level 🆕⏩ 0 📏 askWhose❓❗️ 🍇
+        ↪️ 🐽 askWhose level❗️ 🙌 who 🍇
+          ↪️ 🐽 askSize level❗️ ▶️ 0 🍇
+            1 ➡️ 🖍 found
+            🐽 askPrice level❗️ ➡️ 🖍 price
+            🐽 askSize level❗️ ➡️ 🖍 size
+            0 ➡️ 🐽 askSize level❗️
+          🍉
+        🍉
+      🍉
+      ↪️ found ▶️ 0 🍇
+        💭 ordercanceledmessage
+        18 ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 8 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        88 ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        stamp ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 8 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 16 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 24 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 32 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 40 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 48 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 56 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        who ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 8 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 16 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 24 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 32 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 40 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 48 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 56 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        89 ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+
+      🍉
+    🍉
+    🙅↪️ kind 🙌 80 🍇
+      💭 phaserequestmessage
+      position ➕ 3 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 stamp
+      began ➕ 7 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 6 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 5 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 4 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 3 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 2 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      stamp ✖ 256 ➡️ 🖍 stamp
+      stamp ➕ digit ➡️ 🖍 stamp
+
+      position ➕ 19 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 change
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      change ✖ 256 ➡️ 🖍 change
+      change ➕ digit ➡️ 🖍 change
+
+      ↪️ phase 🙌 0 🤝 change 🙌 79 🍇
+        💭 Open: Closed becomes Continuous
+        1 ➡️ 🖍 phase
+      🍉
+      ↪️ phase 🙌 1 🤝 change 🙌 67 🍇
+        💭 Close: Continuous becomes Closed
+        0 ➡️ 🖍 phase
+      🍉
+    🍉
+
+    ending ➡️ 🖍 position
+  🍉
+
+  🍺 📻 🐇📄 wrotePath wrote ❗️
+🍉
+

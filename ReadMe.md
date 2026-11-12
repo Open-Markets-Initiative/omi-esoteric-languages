@@ -1,5 +1,7 @@
 # Omi Esoteric Languages
 
+![Esoteric](images/Esoteric.png)
+
 Programs in esoteric languages that read common binary exchange protocols, generated from the same compiled data models every other Omi repository is generated from.
 
 ## Languages

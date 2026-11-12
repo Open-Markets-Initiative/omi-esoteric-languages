@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Omi Esoteric Languages">
+  <title>Omi Esoteric Languages</title>
+  <desc>One frame of bytes and two readings of it, drawn unalike and ending at the same place: the row itself, a reading that traces its whole extent, and a reading that takes it a byte at a time.</desc>
+  <rect x="32" y="40" width="192" height="40" rx="12" fill="#1965FF" />
+  <rect x="39" y="115" width="178" height="26" rx="8" fill="none" stroke="#1965FF" stroke-width="14" />
+  <g fill="#1965FF">
+    <rect x="32" y="176" width="24" height="40" rx="8" />
+    <rect x="60" y="176" width="24" height="40" rx="8" />
+    <rect x="88" y="176" width="24" height="40" rx="8" />
+    <rect x="116" y="176" width="24" height="40" rx="8" />
+    <rect x="144" y="176" width="24" height="40" rx="8" />
+    <rect x="172" y="176" width="24" height="40" rx="8" />
+    <rect x="200" y="176" width="24" height="40" rx="8" />
+  </g>
+</svg>

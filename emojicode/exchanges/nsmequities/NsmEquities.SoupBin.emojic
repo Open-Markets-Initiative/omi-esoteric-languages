@@ -1,0 +1,186 @@
+💭🔜
+  Exchange: NsmEquities
+  Session: SoupBin
+  Protocol: Nasdaq.NsmEquities.Orders.Ouch.v5.0
+  Generated. It reads the other end's packets and writes the venue's own answers back out. The packets to read are this program's first argument and the file to write is its second, because Emojicode has no standard input. It admits every login: there is nobody for a program like this to ask, so that answer was decided when it was written, which makes it a demonstration of a handshake and never an authenticator.
+🔚💭
+
+📦 files 🏠
+
+🏁 🍇
+  💭 one connection of clientpacket: the handshake over it, and serverpacket back out
+
+  🎞 🐇💻❗️ ➡️ arguments
+  🐽 arguments 1❗️ ➡️ framePath
+  🐽 arguments 2❗️ ➡️ wrotePath
+
+  🍺 📇 🐇📄 framePath ❗️ ➡️ frame
+
+  💭 written over as the connection runs
+  0 ➡️ 🖍🆕 position
+  📇 🔤🔤❗️ ➡️ 🖍🆕 wrote
+  💭 every byte there is, built once. A field packed into a set of bits holds
+  💭 no bytes of its own, and nothing here makes a byte out of a number
+  📇 🔤🔤❗️ ➡️ 🖍🆕 table
+  0 ➡️ 🖍🆕 filled
+  ☣️ 🍇
+    🆕🧠 256❗️ ➡️ cells
+    🔂 at 🆕⏩ 0 256❗️ 🍇
+      at ➡️ 🖍 filled
+      💭 a byte here is signed, so the upper half goes in as what it is
+      ↪️ at ▶️ 127 🍇
+        at ➖ 256 ➡️ 🖍 filled
+      🍉
+      💧 filled❗️ ➡️ 🐽🐚💧🍆 cells at❗️
+    🍉
+    🆕📇 cells 256❗️ ➡️ 🖍 table
+  🍉
+
+  0 ➡️ 🖍🆕 began
+  0 ➡️ 🖍🆕 cursor
+  0 ➡️ 🖍🆕 raw
+  0 ➡️ 🖍🆕 digit
+  0 ➡️ 🖍🆕 taken
+  0 ➡️ 🖍🆕 code
+  0 ➡️ 🖍🆕 room
+  0 ➡️ 🖍🆕 stated
+  0 ➡️ 🖍🆕 kind
+  0 ➡️ 🖍🆕 ending
+  0 ➡️ 🖍🆕 matched
+  0 ➡️ 🖍🆕 holds0
+
+  💭 where the connection rests: 0 is NotLoggedIn, 1 is LoggedIn
+  0 ➡️ 🖍🆕 resting
+
+  💭 what the chart holds, as the bytes of the field that answers each one
+  💭 SessionId, 10 bytes
+  📇 🔤          🔤❗️ ➡️ sessionId
+  💭 NextSequence, 20 bytes
+  📇 🔤00000000000000000001🔤❗️ ➡️ 🖍🆕 nextSequence
+
+  💭 what the chart's own guards hold a field against
+  📇 🔤00000000000000000000🔤❗️ ➡️ against0
+
+  💭 one packet at a time, as far as the frame reaches
+  🔁 📏 frame❓ ➖ position ▶️🙌 3 🍇
+    position ➡️ 🖍 began
+    💭 its value, a byte at a time, each masked because a byte here is signed
+    0 ➡️ 🖍 stated
+    began ➕ 0 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    stated ✖ 256 ➡️ 🖍 stated
+    stated ➕ digit ➡️ 🖍 stated
+    began ➕ 1 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    stated ✖ 256 ➡️ 🖍 stated
+    stated ➕ digit ➡️ 🖍 stated
+
+    position ➕ 2 ➡️ 🖍 began
+    💭 its value, a byte at a time, each masked because a byte here is signed
+    0 ➡️ 🖍 kind
+    began ➕ 0 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    kind ✖ 256 ➡️ 🖍 kind
+    kind ➕ digit ➡️ 🖍 kind
+
+    💭 where the next one begins, as this one's own length states
+    position ➕ stated ➕ 2 ➡️ 🖍 ending
+
+    ↪️ resting 🙌 0 🍇
+      💭 resting in NotLoggedIn
+      ↪️ kind 🙌 76 🍇
+        💭 Login Request Packet
+        1 ➡️ 🖍 holds0
+        💭 Requested Sequence Number is not what the chart holds it against
+        0 ➡️ 🖍 room
+        position ➕ 29 ➡️ 🖍 began
+        🔂 step 🆕⏩ 0 20❗️ 🍇
+          began ➕ step ➡️ 🖍 cursor
+          🔢 🐽 frame cursor❗️❗️ ⭕ 255 ➡️ 🖍 raw
+          🔢 🐽 against0 step❗️❗️ ⭕ 255 ➡️ 🖍 digit
+          ↪️ raw 🙌 digit 🍇
+            room ➕ 1 ➡️ 🖍 room
+          🍉
+        🍉
+        0 ➡️ 🖍 matched
+        ↪️ room 🙌 20 🍇
+          1 ➡️ 🖍 matched
+        🍉
+        ↪️ matched 🙌 1 🍇
+          0 ➡️ 🖍 holds0
+        🍉
+
+        ↪️ holds0 🙌 1 🍇
+          💭 NextSequence becomes what arrived in Requested Sequence Number
+          🔪 frame position ➕ 29 20❗️ ➡️ 🖍 nextSequence
+          💭 it answers with Login Accepted Packet, 31 as its own length states it
+          31 ➡️ 🖍 taken
+          taken 👉 8 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          65 ➡️ 🖍 taken
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          💭 Accepted Session, 10 bytes
+          wrote ➕ sessionId ➡️ 🖍 wrote
+          💭 Accepted Sequence Number, 20 bytes
+          wrote ➕ nextSequence ➡️ 🖍 wrote
+
+          1 ➡️ 🖍 resting
+          💭 and it rests in LoggedIn
+        🍉
+        🙅 🍇
+          💭 what the chart states without a guard, which is what is left
+          💭 it answers with Login Accepted Packet, 31 as its own length states it
+          31 ➡️ 🖍 taken
+          taken 👉 8 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          65 ➡️ 🖍 taken
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          💭 Accepted Session, 10 bytes
+          wrote ➕ sessionId ➡️ 🖍 wrote
+          💭 Accepted Sequence Number, 20 bytes
+          wrote ➕ nextSequence ➡️ 🖍 wrote
+
+          1 ➡️ 🖍 resting
+          💭 and it rests in LoggedIn
+        🍉
+      🍉
+    🍉
+    🙅↪️ resting 🙌 1 🍇
+      💭 resting in LoggedIn
+      ↪️ kind 🙌 79 🍇
+        💭 Logout Request
+        0 ➡️ 🖍 resting
+        💭 and it rests in NotLoggedIn
+      🍉
+      🙅↪️ kind 🙌 82 🍇
+        💭 Client Heartbeat
+        💭 and it stays in LoggedIn
+      🍉
+      🙅↪️ kind 🙌 76 🍇
+        💭 Login Request Packet
+        💭 and it stays in LoggedIn
+      🍉
+    🍉
+
+    💭 whatever it was, the connection has taken it
+    ending ➡️ 🖍 position
+  🍉
+
+  🍺 📻 🐇📄 wrotePath wrote ❗️
+🍉
+
