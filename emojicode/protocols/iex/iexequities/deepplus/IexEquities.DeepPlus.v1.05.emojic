@@ -556,12 +556,7 @@
 
       🍉
       🙅↪️ value3 🙌 82 🍇
-        💭 reserved1, 1 byte
-        📇 🔤reserved1=🔤❗️ ➡️ 🖍 named
-        wrote ➕ named ➡️ 🖍 wrote
-        🔪 frame position 1❗️ ➡️ 🖍 held
-        wrote ➕ held ➡️ 🖍 wrote
-        wrote ➕ newline ➡️ 🖍 wrote
+        💭 reserved1, 1 byte of padding, stepped over and not reported
         position ➕ 1 ➡️ 🖍 position
 
         💭 timestamp, 8 bytes
@@ -907,12 +902,7 @@
 
       🍉
       🙅↪️ value3 🙌 67 🍇
-        💭 reserved1, 1 byte
-        📇 🔤reserved1=🔤❗️ ➡️ 🖍 named
-        wrote ➕ named ➡️ 🖍 wrote
-        🔪 frame position 1❗️ ➡️ 🖍 held
-        wrote ➕ held ➡️ 🖍 wrote
-        wrote ➕ newline ➡️ 🖍 wrote
+        💭 reserved1, 1 byte of padding, stepped over and not reported
         position ➕ 1 ➡️ 🖍 position
 
         💭 timestamp, 8 bytes

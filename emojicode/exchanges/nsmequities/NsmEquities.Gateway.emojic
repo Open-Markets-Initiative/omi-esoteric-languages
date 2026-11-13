@@ -1,0 +1,598 @@
+💭🔜
+  Exchange: NsmEquities
+  Gateway: order entry
+  Reads: Nasdaq.NsmEquities.Orders.Ouch.v5.0
+  Writes: Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026
+  Generated. It reads a client's packets and writes each request the venue's transforms name as one of the venue's own messages, which is what the market beside it reads. It numbers the orders it admits from one and finds an order again by the reference its client named it by. It answers nobody: a response goes back to a client this program is not connected to. The packets to read are this program's first argument and the file to write is its second, because Emojicode has no standard input.
+🔚💭
+
+📦 files 🏠
+
+🏁 🍇
+  💭 one stream of clientpacket of Nasdaq.NsmEquities.Orders.Ouch.v5.0, a message at a time, and packet of Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026 back out
+
+  🎞 🐇💻❗️ ➡️ arguments
+  🐽 arguments 1❗️ ➡️ framePath
+  🐽 arguments 2❗️ ➡️ wrotePath
+
+  🍺 📇 🐇📄 framePath ❗️ ➡️ frame
+
+  💭 written over as the stream is read
+  0 ➡️ 🖍🆕 position
+  📇 🔤🔤❗️ ➡️ 🖍🆕 wrote
+  💭 every byte there is, built once. A field packed into a set of bits holds
+  💭 no bytes of its own, and nothing here makes a byte out of a number
+  📇 🔤🔤❗️ ➡️ 🖍🆕 table
+  0 ➡️ 🖍🆕 filled
+  ☣️ 🍇
+    🆕🧠 256❗️ ➡️ cells
+    🔂 at 🆕⏩ 0 256❗️ 🍇
+      at ➡️ 🖍 filled
+      💭 a byte here is signed, so the upper half goes in as what it is
+      ↪️ at ▶️ 127 🍇
+        at ➖ 256 ➡️ 🖍 filled
+      🍉
+      💧 filled❗️ ➡️ 🐽🐚💧🍆 cells at❗️
+    🍉
+    🆕📇 cells 256❗️ ➡️ 🖍 table
+  🍉
+
+  0 ➡️ 🖍🆕 began
+  0 ➡️ 🖍🆕 cursor
+  0 ➡️ 🖍🆕 raw
+  0 ➡️ 🖍🆕 digit
+  0 ➡️ 🖍🆕 taken
+  0 ➡️ 🖍🆕 code
+  0 ➡️ 🖍🆕 stated
+  0 ➡️ 🖍🆕 ending
+  0 ➡️ 🖍🆕 reach
+  0 ➡️ 🖍🆕 met
+  0 ➡️ 🖍🆕 hit
+  0 ➡️ 🖍🆕 probe
+  0 ➡️ 🖍🆕 reference
+  0 ➡️ 🖍🆕 order
+  0 ➡️ 🖍🆕 kind
+  0 ➡️ 🖍🆕 open
+  0 ➡️ 🖍🆕 next
+  0 ➡️ 🖍🆕 carried
+  0 ➡️ 🖍🆕 restated
+
+  💭 each order admitted: the reference its client named it by, and the number it was given
+  🆕🍨🐚🔢🍆❗️ ➡️ 🖍🆕 references
+  🆕🍨🐚🔢🍆❗️ ➡️ 🖍🆕 numbers
+  💭 the last number given, and the place of the next message sent to the engine
+  0 ➡️ 🖍🆕 admitted
+  1 ➡️ 🖍🆕 sent
+  💭 where the connection rests, as SoupBin Tcp states it: 0 is NotLoggedIn, 1 is LoggedIn
+  0 ➡️ 🖍🆕 state
+
+  💭 one packet at a time, as far as the stream reaches
+  🔁 📏 frame❓ ➖ position ▶️🙌 3 🍇
+    position ➡️ 🖍 began
+    💭 its value, a byte at a time, each masked because a byte here is signed
+    0 ➡️ 🖍 stated
+    began ➕ 0 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    stated ✖ 256 ➡️ 🖍 stated
+    stated ➕ digit ➡️ 🖍 stated
+    began ➕ 1 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    stated ✖ 256 ➡️ 🖍 stated
+    stated ➕ digit ➡️ 🖍 stated
+
+    💭 where the next one begins, as this one's own length states
+    position ➕ stated ➕ 2 ➡️ 🖍 ending
+    💭 how much of it there is to read, which is no more than the stream has left
+    ending ➖ position ➡️ 🖍 reach
+    ↪️ ending ▶️ 📏 frame❓ 🍇
+      📏 frame❓ ➖ position ➡️ 🖍 reach
+    🍉
+
+    💭 whether a request is admitted where the connection rests now
+    0 ➡️ 🖍 open
+    ↪️ state 🙌 1 🍇
+      1 ➡️ 🖍 open
+    🍉
+
+    💭 ouch_enter_order: enterordermessage becomes newordermessage
+    0 ➡️ 🖍 met
+    ↪️ reach ▶️🙌 34 🍇
+      1 ➡️ 🖍 met
+      position ➕ 2 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 probe
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      probe ✖ 256 ➡️ 🖍 probe
+      probe ➕ digit ➡️ 🖍 probe
+
+      0 ➡️ 🖍 hit
+      ↪️ probe 🙌 85 🍇
+        1 ➡️ 🖍 hit
+      🍉
+      ↪️ hit 🙌 0 🍇
+        0 ➡️ 🖍 met
+      🍉
+      position ➕ 3 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 probe
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      probe ✖ 256 ➡️ 🖍 probe
+      probe ➕ digit ➡️ 🖍 probe
+
+      0 ➡️ 🖍 hit
+      ↪️ probe 🙌 79 🍇
+        1 ➡️ 🖍 hit
+      🍉
+      ↪️ hit 🙌 0 🍇
+        0 ➡️ 🖍 met
+      🍉
+    🍉
+    ↪️ open 🙌 0 🍇
+      0 ➡️ 🖍 met
+    🍉
+    ↪️ met 🙌 1 🍇
+      position ➕ 4 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 reference
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      reference ✖ 256 ➡️ 🖍 reference
+      reference ➕ digit ➡️ 🖍 reference
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      reference ✖ 256 ➡️ 🖍 reference
+      reference ➕ digit ➡️ 🖍 reference
+      began ➕ 2 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      reference ✖ 256 ➡️ 🖍 reference
+      reference ➕ digit ➡️ 🖍 reference
+      began ➕ 3 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      reference ✖ 256 ➡️ 🖍 reference
+      reference ➕ digit ➡️ 🖍 reference
+
+      💭 a new order: the next number, and remembered under the reference it came with
+      admitted ➕ 1 ➡️ 🖍 admitted
+      admitted ➡️ 🖍 order
+      🐻 references reference❗️
+      🐻 numbers order❗️
+      ↪️ order ▶️ 0 🍇
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 49 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤N🔤❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        sent ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 8 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 16 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 24 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 32 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 40 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 48 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 56 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        order ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 8 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 16 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 24 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 32 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 40 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 48 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 56 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        💭 symbol, from symbol
+        wrote ➕ 🔪 frame position ➕ 13 8❗️ ➡️ 🖍 wrote
+        💭 side, from side
+        position ➕ 8 ➡️ 🖍 began
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍 carried
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+
+        carried ➡️ 🖍 restated
+        ↪️ carried 🙌 69 🍇
+          83 ➡️ 🖍 restated
+        🍉
+        ↪️ carried 🙌 84 🍇
+          83 ➡️ 🖍 restated
+        🍉
+        restated ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        💭 price, from price
+        position ➕ 21 ➡️ 🖍 began
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍 carried
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+        began ➕ 1 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+        began ➕ 2 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+        began ➕ 3 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+        began ➕ 4 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+        began ➕ 5 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+        began ➕ 6 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+        began ➕ 7 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+
+        carried ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 8 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 16 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 24 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 32 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 40 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 48 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 56 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        💭 quantity, from quantity
+        position ➕ 9 ➡️ 🖍 began
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍 carried
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+        began ➕ 1 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+        began ➕ 2 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+        began ➕ 3 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+
+        carried ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 8 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 16 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 24 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        💭 timeinforce, from timeinforce
+        position ➕ 29 ➡️ 🖍 began
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍 carried
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+
+        carried ➡️ 🖍 restated
+        ↪️ carried 🙌 53 🍇
+          48 ➡️ 🖍 restated
+        🍉
+        restated ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        💭 display, from display
+        position ➕ 30 ➡️ 🖍 began
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍 carried
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+
+        carried ➡️ 🖍 restated
+        ↪️ carried 🙌 65 🍇
+          89 ➡️ 🖍 restated
+        🍉
+        ↪️ carried 🙌 90 🍇
+          89 ➡️ 🖍 restated
+        🍉
+        restated ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        💭 crosstype, from crosstype
+        position ➕ 33 ➡️ 🖍 began
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍 carried
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        carried ✖ 256 ➡️ 🖍 carried
+        carried ➕ digit ➡️ 🖍 carried
+
+        carried ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        sent ➕ 1 ➡️ 🖍 sent
+      🍉
+    🍉
+
+    💭 ouch_cancel_order: cancelordermessage becomes cancelordermessage
+    0 ➡️ 🖍 met
+    ↪️ reach ▶️🙌 12 🍇
+      1 ➡️ 🖍 met
+      position ➕ 2 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 probe
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      probe ✖ 256 ➡️ 🖍 probe
+      probe ➕ digit ➡️ 🖍 probe
+
+      0 ➡️ 🖍 hit
+      ↪️ probe 🙌 85 🍇
+        1 ➡️ 🖍 hit
+      🍉
+      ↪️ hit 🙌 0 🍇
+        0 ➡️ 🖍 met
+      🍉
+      position ➕ 3 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 probe
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      probe ✖ 256 ➡️ 🖍 probe
+      probe ➕ digit ➡️ 🖍 probe
+
+      0 ➡️ 🖍 hit
+      ↪️ probe 🙌 88 🍇
+        1 ➡️ 🖍 hit
+      🍉
+      ↪️ hit 🙌 0 🍇
+        0 ➡️ 🖍 met
+      🍉
+      position ➕ 8 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 probe
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      probe ✖ 256 ➡️ 🖍 probe
+      probe ➕ digit ➡️ 🖍 probe
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      probe ✖ 256 ➡️ 🖍 probe
+      probe ➕ digit ➡️ 🖍 probe
+      began ➕ 2 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      probe ✖ 256 ➡️ 🖍 probe
+      probe ➕ digit ➡️ 🖍 probe
+      began ➕ 3 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      probe ✖ 256 ➡️ 🖍 probe
+      probe ➕ digit ➡️ 🖍 probe
+
+      0 ➡️ 🖍 hit
+      ↪️ probe 🙌 0 🍇
+        1 ➡️ 🖍 hit
+      🍉
+      ↪️ hit 🙌 0 🍇
+        0 ➡️ 🖍 met
+      🍉
+    🍉
+    ↪️ open 🙌 0 🍇
+      0 ➡️ 🖍 met
+    🍉
+    ↪️ met 🙌 1 🍇
+      position ➕ 4 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 reference
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      reference ✖ 256 ➡️ 🖍 reference
+      reference ➕ digit ➡️ 🖍 reference
+      began ➕ 1 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      reference ✖ 256 ➡️ 🖍 reference
+      reference ➕ digit ➡️ 🖍 reference
+      began ➕ 2 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      reference ✖ 256 ➡️ 🖍 reference
+      reference ➕ digit ➡️ 🖍 reference
+      began ➕ 3 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      reference ✖ 256 ➡️ 🖍 reference
+      reference ➕ digit ➡️ 🖍 reference
+
+      💭 an order already admitted: found again by the reference its client names it by
+      0 ➡️ 🖍 order
+      🔂 slot 🆕⏩ 0 📏 references❓❗️ 🍇
+        ↪️ 🐽 references slot❗️ 🙌 reference 🍇
+          🐽 numbers slot❗️ ➡️ 🖍 order
+        🍉
+      🍉
+      ↪️ order ▶️ 0 🍇
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 25 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤C🔤❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        sent ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 8 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 16 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 24 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 32 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 40 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 48 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 56 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        order ➡️ 🖍 taken
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 8 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 16 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 24 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 32 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 40 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 48 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken 👉 56 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        sent ➕ 1 ➡️ 🖍 sent
+      🍉
+    🍉
+
+    💭 and where that packet leaves the connection, as the chart states it
+    position ➕ 2 ➡️ 🖍 began
+    💭 its value, a byte at a time, each masked because a byte here is signed
+    0 ➡️ 🖍 kind
+    began ➕ 0 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    kind ✖ 256 ➡️ 🖍 kind
+    kind ➕ digit ➡️ 🖍 kind
+
+    state ➡️ 🖍 next
+    ↪️ state 🙌 0 🤝 kind 🙌 76 🍇
+      💭 NotLoggedIn becomes LoggedIn
+      1 ➡️ 🖍 next
+    🍉
+    ↪️ state 🙌 1 🤝 kind 🙌 79 🍇
+      💭 LoggedIn becomes NotLoggedIn
+      0 ➡️ 🖍 next
+    🍉
+    next ➡️ 🖍 state
+
+    ending ➡️ 🖍 position
+  🍉
+
+  🍺 📻 🐇📄 wrotePath wrote ❗️
+🍉
+

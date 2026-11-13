@@ -325,12 +325,7 @@
         wrote ➕ newline ➡️ 🖍 wrote
         position ➕ 1 ➡️ 🖍 position
 
-        💭 reserved, 1 byte
-        📇 🔤reserved=🔤❗️ ➡️ 🖍 named
-        wrote ➕ named ➡️ 🖍 wrote
-        🔪 frame position 1❗️ ➡️ 🖍 held
-        wrote ➕ held ➡️ 🖍 wrote
-        wrote ➕ newline ➡️ 🖍 wrote
+        💭 reserved, 1 byte of padding, stepped over and not reported
         position ➕ 1 ➡️ 🖍 position
 
         💭 reasoncode, 4 bytes

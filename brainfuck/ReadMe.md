@@ -22,11 +22,11 @@ Most programs have a frame to read published beside them, as hexadecimal in a `.
 A market can be driven rather than replayed. `run.py` builds that venue's own order stream out of steps said in words, runs the market on it, and reads back what the market published field by field:
 
 ```
-python3 run.py brainfuck/exchanges/iexequities/IexEquities.Market.bf to Continuous , buy 1 7@9995 , sell 2 4@9995
+python3 run.py brainfuck/exchanges/nsmequities/NsmEquities.Market.bf to Continuous , buy 1 7@9995 , sell 2 4@9995
 ```
 **Or run one without installing anything.** This repository's own build workflow takes a market and a run of orders when it is dispatched by hand, so the Actions tab will run an engine and print what it published — no clone and no Python. What a person types reaches the script through the environment and quoted, so a dispatch states a run of orders and cannot state a command.
 
-The steps are `buy <order> <quantity>@<price>`, `sell` the same, `cancel <order>`, `phase <change>` for a change the venue's chart answers, and `to <phase>` to walk the day to a phase by the shortest run of changes it answers. A price written plainly is the integer the field holds and one written with a point is scaled the way that field is scaled, so `9995` and `0.9995` are the same price where the model states four decimal places. `--frame <file>` replays a published frame instead of building one, `--at <nanoseconds>` fixes the stamp every step carries so that two runs can be compared, and `--every` replays every market here over everything published beside it, which is what the build runs.
+The steps are `buy <order> <quantity>@<price>`, `sell` the same, `cancel <order>`, `replace <order> with <new order> buy|sell <quantity>@<price>` where the venue's day answers a replace, `phase <change>` for a change the venue's chart answers, and `to <phase>` to walk the day to a phase by the shortest run of changes it answers. A price written plainly is the integer the field holds and one written with a point is scaled the way that field is scaled, so `9995` and `0.9995` are the same price where the model states four decimal places. `--frame <file>` replays a published frame instead of building one, `--at <nanoseconds>` fixes the stamp every step carries so that two runs can be compared, and `--every` replays every market here over everything published beside it, which is what the build runs.
 
 Any interpreter will do that holds to the stated dialect: cells of one byte that wrap, a tape of 65,536 of them, the pointer starting at the first and never leaving, and a read yielding zero once the input is spent. Brainfuck has no standard to appeal to for any of that — only a convention, and interpreters really do differ at these points — so whether yours keeps them is a question to ask it rather than to hope about:
 
@@ -35,7 +35,7 @@ bf brainfuck/dialect.bf < /dev/null
 ```
 That program takes no input and prints one line per claim, saying of each whether this interpreter kept it. All four should say `ok`. One that says `no`, or a line that stops partway through, names what your interpreter does differently — and the claims are listed in the order the programs here lean on them, which was measured rather than guessed.
 
-The one byte wrap is the one that matters most: of the 153 frames published here, only 18 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: the highest cell anything here touches is 943, so classic Brainfuck's 30,000 would do thirty times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
+The one byte wrap is the one that matters most: of 191 frames published here, only 18 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 982, so classic Brainfuck's 30,000 would do 30 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
 
 ## Layout
 
@@ -45,9 +45,15 @@ Where these sit, written from the repository root rather than from here, because
 brainfuck/
   protocols/<organization>/<division>/<protocol>/<protocol>.bf
   exchanges/<venue>/ReadMe.md
-  exchanges/<venue>/<venue>.<session>.bf
+  exchanges/<venue>/<venue>.Gateway.bf
   exchanges/<venue>/<venue>.Market.bf
+  exchanges/<venue>/<venue>.<feed>.Feed.bf
+  exchanges/<venue>/<venue>.<session>.bf
+  exchanges/<venue>/<program>.<run>.frame
+  exchanges/<venue>/<program>.<run>.wrote
 ```
+**A venue is a gateway, a market and its feeds, and they join.** The gateway reads the venue's order entry and writes its own orders, under the session the venue's chart states; the market reads those and writes the venue's own events, by its trading chart; each feed reads those and writes market data, by the venue's transforms. What one writes is what the next reads, so a run can begin where a participant begins and end with what a subscriber is sent. Each venue's own readme says which of these it has, what each was held to, and the lines that run them joined; `manifest.json` at the root lists every program, run and join for anything that would rather read that than a file's name.
+
 A protocol's decoder sits under `protocols` because it is the same program whoever speaks it; a session and a market sit under `exchanges` because they are the venue's own — a venue is what declares which chart runs over which protocol, which price its book is banded on, and which trading day its market runs. A market's program carries its day in its own notes, and that venue's own readme beside it states which day it ran and why — the days published here are not all the days the venues declare, because a venue declaring two of them for one protocol gets the simplest rather than a program picked between them. Where a chart asks for a cross of what a phase collected, the market crosses it at the change of phase and publishes the venue's own Cross Completed message for it — at each resting level's own price rather than at one clearing price struck for all of it, which each program says of itself.
 
 ### Investors Exchange Equities Open
@@ -59,7 +65,7 @@ A protocol's decoder sits under `protocols` because it is the same program whoev
 - Snap `Iex.IexEquities.Deep.Snap.v1.6`
 - Snap `Iex.IexEquities.Tops.Snap.v1.6`
 - Snap `Iex.IexEquities.DeepPlus.Snap.v1.06`
-- Ipc `Iex.IexEquities.MatchingEngine.Ipc.v1.0`
+- Ipc `Iex.IexEquities.MatchingEngine.Ipc.v2026`
 - Engine `Iex.IexEquities.Equities.Open.Trading`
 
 ### Investors Exchange Equities Session
@@ -71,7 +77,7 @@ A protocol's decoder sits under `protocols` because it is the same program whoev
 - Snap `Iex.IexEquities.Deep.Snap.v1.6`
 - Snap `Iex.IexEquities.Tops.Snap.v1.6`
 - Snap `Iex.IexEquities.DeepPlus.Snap.v1.06`
-- Ipc `Iex.IexEquities.MatchingEngine.Ipc.v1.0`
+- Ipc `Iex.IexEquities.MatchingEngine.Ipc.v2026`
 - Engine `Iex.IexEquities.Equities.Session.Trading`
 
 ### Nasdaq Stock Market Open
@@ -116,7 +122,7 @@ Each market is published with a run of orders and the messages it wrote, held to
 
 **What a market reads and writes is published beside it**, as a `.messages.json` file: each message under the code that selects it, its fields in the order the wire states them, each field's width, byte order and what it is to an engine, and the names its own values carry. That is what makes a market usable here rather than only checkable. The models are not in this repository, so without it the only orders anyone could put to a program were the frames that shipped with it, and the only way to change one was to edit hexadecimal and reckon a length by hand. It is a flattening of a model and not a model; `run.py` reads it and nothing that makes a claim does, so a mistake in it could put a wrong order and could not make a wrong program look right.
 
-A trade names the resting order and the price of the level it rested at, not the arriving order's limit, because that is where the trade happened: an order sweeping two levels trades at each of those rather than twice at its own price. **A level remembers one order, and that is a stated simplification** — a real level is a queue and this holds the last order put there, so a level two orders deep names only the second. It is kept because the venue's protocol says a trade carries the resting order's identifier, and a message carrying a made-up one would be worse than a book that admits what it remembers.
+A trade names the resting order and the price of the level it rested at, not the arriving order's limit, because that is where the trade happened: an order sweeping two levels trades at each of those rather than twice at its own price. **A side remembers its resting orders one by one, oldest first, and 16 of them.** A trade is made with the oldest order at the best price and names it, so an order reaching three at one price trades three times in the order they arrived; a cancel takes back the one order it names and leaves the rest of its price where it was. The number is a stated limit like the band: an order arriving at a side already holding 16 is refused rather than rested where it could not be found again.
 
 **Quantities in a published run are deliberately small, and the reason is worth stating because the obvious reading of it is wrong.** There is no addition here, only counting up, and every count up has to settle a carry through what the level already holds — which cannot be looked at without counting that down and back too. So filling a level costs by the product of what is added and what is already there: adding 1 to a level is about a thousand instructions, adding 10 is forty-five thousand, and adding 100 is four million. A run in round lots would cost a thousand times a run in tens and prove exactly the same thing.
 
@@ -128,14 +134,14 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 
 - Programs: 16
-- Instructions: 5,649,798
+- Instructions: 5,667,392
 - Reading every field the model states: 16 of 16
 - Published with a frame they are held to: 16 of 16
-- Frames, of which recorded from the wire: 150, 40
+- Frames, of which recorded from the wire: 156, 40
 - Sessions, of which proven on a run: 1, 1
 - Runs, and the packets they were answered with: 4, 4
-- Markets, of which proven on a run: 2, 2
-- Orders put to them, the trades those made and the orders refused: 14, 4, 4
+- Markets, of which proven on a run: 1, 1
+- Orders put to them, the trades those made and the orders refused: 21, 6, 2
 
 ## Testing
 
@@ -148,6 +154,8 @@ The second is a regression gate rather than a proof, and the difference is worth
 Please report any parsing errors as an [issue](https://github.com/Open-Markets-Initiative/omi-esoteric-languages/issues "Omi Esoteric Issues"). Include the bytes the program was given and what it wrote, beside what the protocol says it should have.
 
 ## Open Markets Initiative
+
+[![Omi](https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/raw/main/About/Images/Logo.png)](https://github.com/Open-Markets-Initiative/Directory)  The Open Markets Initiative (Omi) is a group of technologists dedicated to enhancing the stability of electronic financial markets using modern development methods.
 
 Other generated code can be found at [Omi Repositories](https://github.com/Open-Markets-Initiative/Directory/tree/main/Repositories "Open Markets Initiative Repositories"); for Omi rules and regulations, see [Omi Directory](https://github.com/Open-Markets-Initiative/Directory "Open Markets Initiative Directory").
 ## Disclaimer

@@ -21,35 +21,17 @@
     "highest": 10015
   },
   "day": {
-    "named": "Simple",
+    "named": "Nasdaq Equities Open",
     "starts": 0,
     "phases": [
       {
-        "named": "Closed",
-        "index": 0,
-        "arriving": "Order.Refused"
-      },
-      {
         "named": "Continuous",
-        "index": 1,
+        "index": 0,
         "arriving": "Book.Cross",
         "taking": "Book.Remove"
       }
     ],
-    "changes": [
-      {
-        "named": "Open",
-        "code": 79,
-        "from": 0,
-        "to": 1
-      },
-      {
-        "named": "Close",
-        "code": 67,
-        "from": 1,
-        "to": 0
-      }
-    ]
+    "changes": []
   },
   "messages": [
     {
@@ -216,6 +198,112 @@
             "Pre Close": 76,
             "Close": 67,
             "End": 69
+          }
+        }
+      ]
+    },
+    {
+      "does": "replace",
+      "way": "in",
+      "named": "replaceordermessage",
+      "codes": [
+        77
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "sequence",
+          "width": 8,
+          "endian": "little",
+          "role": "Sequence"
+        },
+        {
+          "named": "orderid",
+          "width": 8,
+          "endian": "little",
+          "role": "Order"
+        },
+        {
+          "named": "replacementid",
+          "width": 8,
+          "endian": "little",
+          "role": "Replacement"
+        },
+        {
+          "named": "symbol",
+          "width": 8,
+          "endian": "little",
+          "role": "Instrument",
+          "text": true
+        },
+        {
+          "named": "side",
+          "width": 1,
+          "endian": "little",
+          "role": "Side",
+          "text": true,
+          "values": {
+            "Buy": 66,
+            "Sell": 83
+          }
+        },
+        {
+          "named": "price",
+          "width": 8,
+          "endian": "little",
+          "role": "Price",
+          "scale": "-4"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "little",
+          "role": "Quantity"
+        },
+        {
+          "named": "timeinforce",
+          "width": 1,
+          "endian": "little",
+          "role": "TimeInForce",
+          "text": true,
+          "values": {
+            "Day": 48,
+            "Ioc": 51,
+            "Gtt": 54,
+            "After Hours": 69
+          }
+        },
+        {
+          "named": "display",
+          "width": 1,
+          "endian": "little",
+          "role": "Display",
+          "text": true,
+          "values": {
+            "Visible": 89,
+            "Hidden": 78
+          }
+        },
+        {
+          "named": "crosstype",
+          "width": 1,
+          "endian": "little",
+          "role": "CrossType",
+          "text": true,
+          "values": {
+            "Continuous": 78,
+            "Opening": 79,
+            "Closing": 67,
+            "Halt": 72,
+            "Supplemental": 83,
+            "Retail": 82,
+            "Extended Life": 69,
+            "After Hours Close": 65
           }
         }
       ]
@@ -531,6 +619,76 @@
           "width": 8,
           "endian": "little",
           "role": "Execution"
+        }
+      ]
+    },
+    {
+      "does": "replaced",
+      "way": "out",
+      "named": "orderreplacedmessage",
+      "codes": [
+        87
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "orderid",
+          "width": 8,
+          "endian": "little",
+          "role": "Order"
+        },
+        {
+          "named": "replacementid",
+          "width": 8,
+          "endian": "little",
+          "role": "Replacement"
+        },
+        {
+          "named": "symbol",
+          "width": 8,
+          "endian": "little",
+          "role": "Instrument",
+          "text": true
+        },
+        {
+          "named": "side",
+          "width": 1,
+          "endian": "little",
+          "role": "Side",
+          "text": true,
+          "values": {
+            "Buy": 66,
+            "Sell": 83
+          }
+        },
+        {
+          "named": "price",
+          "width": 8,
+          "endian": "little",
+          "role": "Price",
+          "scale": "-4"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "little",
+          "role": "Quantity"
+        },
+        {
+          "named": "display",
+          "width": 1,
+          "endian": "little",
+          "role": "Display",
+          "text": true,
+          "values": {
+            "Visible": 89,
+            "Hidden": 78
+          }
         }
       ]
     }

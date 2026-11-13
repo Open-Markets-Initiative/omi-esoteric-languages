@@ -42,6 +42,7 @@ LAYOUT = ".messages.json"
 # what a field is to an engine, as a venue's model marks it
 TIMESTAMP = "Timestamp"
 ORDER = "Order"
+REPLACEMENT = "Replacement"
 INSTRUMENT = "Instrument"
 SIDE = "Side"
 PRICE = "Price"
@@ -242,6 +243,23 @@ def cancel(layout, identifier):
     })
 
 
+def replace(layout, identifier, replacement, side, quantity, price):
+    """One replace as the venue frames one: the order it names, and what replaces it."""
+    message = speaking(layout, "replace")
+    field = next(held for held in message["fields"] if held.get("role") == PRICE)
+    arriving = speaking(layout, "order")
+
+    return framed(layout, message, {
+        TIMESTAMP: moment(),
+        ORDER: int(identifier),
+        REPLACEMENT: int(replacement),
+        INSTRUMENT: layout.get("symbol", "").encode("latin-1"),
+        SIDE: arriving["buys"] if side == "buy" else arriving["sells"],
+        PRICE: priced(field, price),
+        QUANTITY: int(quantity),
+    })
+
+
 def asking(layout, change):
     return framed(layout, speaking(layout, "phase"), {
         TIMESTAMP: moment(),
@@ -265,6 +283,11 @@ def built(layout, steps):
         elif does == "cancel" and len(words) == 2:
             stream += cancel(layout, words[1])
             said.append(f"take order {words[1]} back")
+        elif (does == "replace" and len(words) == 6 and words[2] == "with"
+              and words[4] in ("buy", "sell") and "@" in words[5]):
+            quantity, price = words[5].split("@", 1)
+            stream += replace(layout, words[1], words[3], words[4], quantity, price)
+            said.append(f"replace order {words[1]} with {words[4]} {quantity} at {price}, as order {words[3]}")
         elif does == "phase" and len(words) == 2:
             change = changed(layout, words[1])
             stream += asking(layout, change)
@@ -277,7 +300,8 @@ def built(layout, steps):
         else:
             raise Refused(f"'{step}' is not something to do; the steps are "
                           "buy <order> <quantity>@<price>, sell <order> <quantity>@<price>, "
-                          "cancel <order>, phase <change>, to <phase>")
+                          "cancel <order>, replace <order> with <new order> buy|sell "
+                          "<quantity>@<price>, phase <change>, to <phase>")
 
     return bytes(stream), said
 

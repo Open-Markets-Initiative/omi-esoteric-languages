@@ -11,7 +11,7 @@ One directory per language, and a readme in each saying what that language's pro
 | Language | Directory | What it lends the generator |
 | --- | --- | --- |
 | <a href="brainfuck/ReadMe.md"><img src="images/Brainfuck.png" width="24" align="top" alt="Brainfuck"></a> [Brainfuck](brainfuck/ReadMe.md "Brainfuck ReadMe") | `brainfuck` | Nothing: eight instructions and one tape of bytes |
-| <a href="emojicode/ReadMe.md"><img src="images/Emojicode.png" width="24" align="top" alt="Emojicode"></a> [Emojicode](emojicode/ReadMe.md "Emojicode ReadMe") | `emojicode` | Variables, arithmetic and a loop that takes a condition - over bytes that are signed |
+| [🏁 🍇 🍉](emojicode/ReadMe.md "Emojicode ReadMe") [Emojicode](emojicode/ReadMe.md "Emojicode ReadMe") | `emojicode` | Variables, arithmetic and a loop that takes a condition - over bytes that are signed |
 
 A second language is a sibling directory rather than a second repository, because what differs between them is a directory and not a protocol. The models are the same and the venues are the same, and every language's programs are held to the same claim before they are published: what one decodes must agree with what the C# parser decodes from the same bytes, and what one encodes must parse back.
 
@@ -22,6 +22,26 @@ A second language is a sibling directory rather than a second repository, becaus
 Every other generated language lends its generator something: arithmetic, addressing, variables, functions. A language that lends nothing leaves the generator nowhere to hide a gap, so whatever cannot be expressed in it is a gap in the protocol model rather than in the language. These programs are a conformance test of the models as much as they are code.
 
 They are also slow, by some six orders of magnitude against the generated C++. This is a demonstration and a test, not something to run a venue on.
+
+## Layout
+
+The same in every language, so that knowing one directory is knowing the other:
+
+```
+manifest.json                         every program, its runs, and how a venue's programs join
+<language>/ReadMe.md                  the language: how its programs are run
+<language>/protocols/<path>/          one decoder per protocol, wherever it is spoken
+<language>/exchanges/<venue>/         one venue's own programs, and a readme saying what each is
+    <Venue>.Gateway.<ext>             order entry in, the venue's own orders out
+    <Venue>.Market.<ext>              the venue's own orders in, its own events out
+    <Venue>.<Feed>.Feed.<ext>         the venue's own events in, market data out
+    <Venue>.<Session>.<ext>           the order entry's handshake
+    <Program>.<run>.frame             the bytes one run gives a program, as hexadecimal
+    <Program>.<run>.wrote             the bytes it should write for them
+```
+**A venue is more than one program, and they join.** What a gateway writes is what its market reads, and what a market writes is what each of its feeds reads. Where a run was carried through, the `.wrote` of one program and the `.frame` of the next hold the same bytes, and a venue's readme gives the lines that run them joined.
+
+**Nothing has to take a file's name apart.** `manifest.json` lists every program with the language it is in, what kind of program it is, the venue it belongs to, the protocol it reads and the one it writes, and each of its runs as the two files that hold it. It lists every join as the two files that must be the same. It is written by the run that writes everything else, and `check.py` holds it to the files: everything it lists is here, everything here is listed, and every join it states is true byte for byte.
 
 ## Running
 
@@ -48,6 +68,8 @@ Please report any parsing errors as an [issue](https://github.com/Open-Markets-I
 Updates are greatly appreciated; however, this entire repository is source generated...including the words you are reading right now. If you wish to suggest updates, the recommended process is to create an issue with changes and explanation. Time permitting, we will update the models and regenerate.
 
 ## Open Markets Initiative
+
+[![Omi](https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/raw/main/About/Images/Logo.png)](https://github.com/Open-Markets-Initiative/Directory)  The Open Markets Initiative (Omi) is a group of technologists dedicated to enhancing the stability of electronic financial markets using modern development methods.
 
 Other generated code can be found at [Omi Repositories](https://github.com/Open-Markets-Initiative/Directory/tree/main/Repositories "Open Markets Initiative Repositories"); for Omi rules and regulations, see [Omi Directory](https://github.com/Open-Markets-Initiative/Directory "Open Markets Initiative Directory").
 ## Disclaimer

@@ -25,6 +25,7 @@ it should produce beside it too. Whether it produces it is settled where the com
 that language's own readme says so.
 """
 
+import json
 import pathlib
 import sys
 
@@ -40,6 +41,10 @@ CLOSES = "\U0001F349"
 
 FRAME = ".frame"
 WROTE = ".wrote"
+
+# what is published and how it joins, stated once so that nothing has to take a file's
+# name apart to find out
+MANIFEST = "manifest.json"
 
 # the stated dialect: cells of one byte that wrap, a tape of 65,536 of them, the pointer
 # starting at the first and never leaving, and a read yielding zero once the input is spent
@@ -188,6 +193,52 @@ def reads(program, frame, wrote):
     return None
 
 
+def listed(root, programs):
+    """Holds the manifest to the files: how many programs it lists, how many joins hold, and
+    what is wrong.
+
+    Three things. Everything it lists is here. Every program here is listed, so a program
+    cannot be published without being said. And each join it states is true: what one of a
+    venue's programs wrote is, byte for byte, what the next was given - which is the whole
+    of the claim that a gateway, a market and a feed here are one venue."""
+    path = root / MANIFEST
+
+    if not path.exists():
+        return 0, 0, [f"{MANIFEST}: is not here, so nothing says what is published or how it joins"]
+
+    manifest = json.loads(path.read_text(encoding="utf-8"))
+    faults = []
+    stated = set()
+
+    for program in manifest["programs"]:
+        stated.add(program["path"])
+
+        for named in [program["path"]] + [run[kind] for run in program["runs"] for kind in ("frame", "wrote")]:
+            if not (root / named).exists():
+                faults.append(f"{MANIFEST}: lists {named}, which is not here")
+
+    for program in programs:
+        relative = program.relative_to(root).as_posix()
+
+        if relative not in stated:
+            faults.append(f"{relative}: is here, and {MANIFEST} does not list it")
+
+    joined = 0
+
+    for join in manifest["joins"]:
+        wrote, frame = root / join["wrote"], root / join["frame"]
+
+        if not wrote.exists() or not frame.exists():
+            faults.append(f"{MANIFEST}: joins {join['wrote']} to {join['frame']}, and one is not here")
+        elif bytes_of(wrote) != bytes_of(frame):
+            faults.append(f"{join['wrote']}: is not what {join['frame']} holds, so the two "
+                          "programs do not join there")
+        else:
+            joined += 1
+
+    return len(manifest["programs"]), joined, faults
+
+
 def main():
     root = pathlib.Path(__file__).resolve().parent
     programs = sorted(root.rglob("*" + BRAINFUCK)) + sorted(root.rglob("*" + EMOJICODE))
@@ -260,10 +311,17 @@ def main():
                 print(f"{frame.relative_to(root)}: {fault}")
                 refused += 1
 
+    count, joined, faults = listed(root, programs)
+
+    for fault in faults:
+        print(fault)
+        refused += 1
+
     print(f"{len(programs) - written} Brainfuck programs, {instructions:,} instructions, "
           f"{checked} frames read")
     print(f"{written} Emojicode programs, {characters:,} characters, "
           f"{carried} frames carried")
+    print(f"{count} programs listed, {joined} joins held")
     print(f"{refused} refused")
 
     return 1 if refused else 0

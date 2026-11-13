@@ -1,0 +1,2369 @@
+{
+  "format": 1,
+  "about": "Every program in this repository, the runs published beside each, and how a venue\u0027s programs join. A run is a .frame, the bytes a program is given, and a .wrote, the bytes it should write, both as hexadecimal text. A join is two files that hold the same bytes: what one program wrote and what the next was given.",
+  "fixtures": {
+    "frame": ".frame",
+    "wrote": ".wrote",
+    "encoding": "hexadecimal, any whitespace ignored"
+  },
+  "languages": [
+    {
+      "name": "brainfuck",
+      "extension": ".bf",
+      "reads": "standard input",
+      "writes": "standard output",
+      "joins": "a pipe: one program\u0027s output is the next one\u0027s input"
+    },
+    {
+      "name": "emojicode",
+      "extension": ".emojic",
+      "reads": "the file named by its first argument",
+      "writes": "the file named by its second argument",
+      "joins": "a file: one program\u0027s second argument is the next one\u0027s first"
+    }
+  ],
+  "programs": [
+    {
+      "language": "brainfuck",
+      "kind": "dialect",
+      "path": "brainfuck/dialect.bf",
+      "runs": [
+        {
+          "name": "stated",
+          "frame": "brainfuck/dialect.stated.frame",
+          "wrote": "brainfuck/dialect.stated.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "gateway",
+      "venue": "NsmEquities",
+      "path": "brainfuck/exchanges/nsmequities/NsmEquities.Gateway.bf",
+      "reads": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
+      "writes": "Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.Gateway.crossing.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Gateway.crossing.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.Gateway.cancelling.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Gateway.cancelling.wrote"
+        },
+        {
+          "name": "unadmitted",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.Gateway.unadmitted.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Gateway.unadmitted.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "market",
+      "venue": "NsmEquities",
+      "path": "brainfuck/exchanges/nsmequities/NsmEquities.Market.bf",
+      "reads": "Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026",
+      "writes": "Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.Market.crossing.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Market.crossing.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.Market.cancelling.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Market.cancelling.wrote"
+        },
+        {
+          "name": "sharing",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.Market.sharing.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Market.sharing.wrote"
+        },
+        {
+          "name": "replacing",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.Market.replacing.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Market.replacing.wrote"
+        },
+        {
+          "name": "entered-crossing",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.Market.entered-crossing.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Market.entered-crossing.wrote"
+        },
+        {
+          "name": "entered-cancelling",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.Market.entered-cancelling.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Market.entered-cancelling.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "session",
+      "venue": "NsmEquities",
+      "path": "brainfuck/exchanges/nsmequities/NsmEquities.SoupBin.bf",
+      "reads": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
+      "writes": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
+      "runs": [
+        {
+          "name": "NotLoggedIn.LoginRequest",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.SoupBin.NotLoggedIn.LoginRequest.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.SoupBin.NotLoggedIn.LoginRequest.wrote"
+        },
+        {
+          "name": "LoggedIn.SessionLogout",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.SoupBin.LoggedIn.SessionLogout.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.SoupBin.LoggedIn.SessionLogout.wrote"
+        },
+        {
+          "name": "LoggedIn.SessionHeartbeat",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.SoupBin.LoggedIn.SessionHeartbeat.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.SoupBin.LoggedIn.SessionHeartbeat.wrote"
+        },
+        {
+          "name": "LoggedIn.LoginRequest",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.SoupBin.LoggedIn.LoginRequest.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.SoupBin.LoggedIn.LoginRequest.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "feed",
+      "venue": "NsmEquities",
+      "path": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.bf",
+      "reads": "Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026",
+      "writes": "Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.crossing.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.crossing.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.cancelling.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.cancelling.wrote"
+        },
+        {
+          "name": "sharing",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.sharing.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.sharing.wrote"
+        },
+        {
+          "name": "replacing",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.replacing.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.replacing.wrote"
+        },
+        {
+          "name": "entered-crossing",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-crossing.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-crossing.wrote"
+        },
+        {
+          "name": "entered-cancelling",
+          "frame": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-cancelling.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-cancelling.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.bf",
+      "reads": "Iex.IexEquities.Deep.IexTp.v1.08",
+      "runs": [
+        {
+          "name": "AuctionInformationMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.AuctionInformationMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.AuctionInformationMessage.wrote"
+        },
+        {
+          "name": "OperationalHaltStatusMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.OperationalHaltStatusMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.OperationalHaltStatusMessage.wrote"
+        },
+        {
+          "name": "PriceLevelBuyUpdateMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.PriceLevelBuyUpdateMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.PriceLevelBuyUpdateMessage.wrote"
+        },
+        {
+          "name": "PriceLevelSellUpdateMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.PriceLevelSellUpdateMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.PriceLevelSellUpdateMessage.wrote"
+        },
+        {
+          "name": "RetailLiquidityIndicatorMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.RetailLiquidityIndicatorMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.RetailLiquidityIndicatorMessage.wrote"
+        },
+        {
+          "name": "SecurityEventMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.SecurityEventMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.SecurityEventMessage.wrote"
+        },
+        {
+          "name": "ShortSalePriceTestStatusMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.ShortSalePriceTestStatusMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.ShortSalePriceTestStatusMessage.wrote"
+        },
+        {
+          "name": "TradeReportMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.TradeReportMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.TradeReportMessage.wrote"
+        },
+        {
+          "name": "TradingStatusMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.TradingStatusMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.TradingStatusMessage.wrote"
+        },
+        {
+          "name": "Laid.message",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.Laid.message.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.Laid.message.wrote"
+        },
+        {
+          "name": "Laid.heartbeat",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.Laid.heartbeat.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.Laid.heartbeat.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.bf",
+      "reads": "Iex.IexEquities.Deep.Snap.v1.6",
+      "runs": [
+        {
+          "name": "Laid.snapshotdatamessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotdatamessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotdatamessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotrequestmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotrequestmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotstartmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotstartmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotstartmessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotendmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotendmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotendmessage.wrote"
+        },
+        {
+          "name": "Laid.errorresponsemessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.errorresponsemessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.errorresponsemessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.bf",
+      "reads": "Iex.IexEquities.DeepPlus.IexTp.v1.05",
+      "runs": [
+        {
+          "name": "AddOrderMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.AddOrderMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.AddOrderMessage.wrote"
+        },
+        {
+          "name": "OperationalHaltStatusMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OperationalHaltStatusMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OperationalHaltStatusMessage.wrote"
+        },
+        {
+          "name": "OrderDeleteMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OrderDeleteMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OrderDeleteMessage.wrote"
+        },
+        {
+          "name": "OrderExecutedMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OrderExecutedMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OrderExecutedMessage.wrote"
+        },
+        {
+          "name": "OrderModifyMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OrderModifyMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OrderModifyMessage.wrote"
+        },
+        {
+          "name": "RetailLiquidityIndicatorMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.RetailLiquidityIndicatorMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.RetailLiquidityIndicatorMessage.wrote"
+        },
+        {
+          "name": "SecurityEventMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.SecurityEventMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.SecurityEventMessage.wrote"
+        },
+        {
+          "name": "ShortSalePriceTestStatusMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.ShortSalePriceTestStatusMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.ShortSalePriceTestStatusMessage.wrote"
+        },
+        {
+          "name": "TradeMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.TradeMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.TradeMessage.wrote"
+        },
+        {
+          "name": "TradingStatusMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.TradingStatusMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.TradingStatusMessage.wrote"
+        },
+        {
+          "name": "Laid.message",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.Laid.message.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.Laid.message.wrote"
+        },
+        {
+          "name": "Laid.heartbeat",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.Laid.heartbeat.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.Laid.heartbeat.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.bf",
+      "reads": "Iex.IexEquities.DeepPlus.Snap.v1.06",
+      "runs": [
+        {
+          "name": "Laid.snapshotdatamessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotdatamessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotdatamessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotrequestmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotrequestmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotstartmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotstartmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotstartmessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotendmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotendmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotendmessage.wrote"
+        },
+        {
+          "name": "Laid.errorresponsemessage",
+          "frame": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.errorresponsemessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.errorresponsemessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.bf",
+      "reads": "Iex.IexEquities.MatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "Laid.newordermessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.newordermessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.newordermessage.wrote"
+        },
+        {
+          "name": "Laid.replaceordermessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.replaceordermessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.replaceordermessage.wrote"
+        },
+        {
+          "name": "Laid.trademessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.trademessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.trademessage.wrote"
+        },
+        {
+          "name": "Laid.orderreplacedmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderreplacedmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderreplacedmessage.wrote"
+        },
+        {
+          "name": "Laid.imbalanceindicatedmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.imbalanceindicatedmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.imbalanceindicatedmessage.wrote"
+        },
+        {
+          "name": "Laid.orderrestedmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderrestedmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderrestedmessage.wrote"
+        },
+        {
+          "name": "Laid.crosscompletedmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.crosscompletedmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.crosscompletedmessage.wrote"
+        },
+        {
+          "name": "Laid.ordereliminatedmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.ordereliminatedmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.ordereliminatedmessage.wrote"
+        },
+        {
+          "name": "Laid.cancelordermessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.cancelordermessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.cancelordermessage.wrote"
+        },
+        {
+          "name": "Laid.ordercanceledmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.ordercanceledmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.ordercanceledmessage.wrote"
+        },
+        {
+          "name": "Laid.orderrefusedmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderrefusedmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderrefusedmessage.wrote"
+        },
+        {
+          "name": "Laid.phaserequestmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.phaserequestmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.phaserequestmessage.wrote"
+        },
+        {
+          "name": "Laid.phaseannouncedmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.phaseannouncedmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.phaseannouncedmessage.wrote"
+        },
+        {
+          "name": "Laid.orderacceptedmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderacceptedmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderacceptedmessage.wrote"
+        },
+        {
+          "name": "Laid.cancelrefusedmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.cancelrefusedmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.cancelrefusedmessage.wrote"
+        },
+        {
+          "name": "Laid.imbalancerequestmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.imbalancerequestmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.imbalancerequestmessage.wrote"
+        },
+        {
+          "name": "Laid.clockmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.clockmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.clockmessage.wrote"
+        },
+        {
+          "name": "Laid.heartbeatmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.heartbeatmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.heartbeatmessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.bf",
+      "reads": "Iex.IexEquities.Tops.Snap.v1.6",
+      "runs": [
+        {
+          "name": "Laid.snapshotdatamessage",
+          "frame": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotdatamessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotdatamessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotrequestmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotrequestmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotstartmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotstartmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotstartmessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotendmessage",
+          "frame": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotendmessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotendmessage.wrote"
+        },
+        {
+          "name": "Laid.errorresponsemessage",
+          "frame": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.errorresponsemessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.errorresponsemessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.bf",
+      "reads": "Iex.IexEquities.Tops.IexTp.v1.66",
+      "runs": [
+        {
+          "name": "AuctionInformationMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.AuctionInformationMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.AuctionInformationMessage.wrote"
+        },
+        {
+          "name": "QuoteUpdateMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.QuoteUpdateMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.QuoteUpdateMessage.wrote"
+        },
+        {
+          "name": "ShortSalePriceTestStatusMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.ShortSalePriceTestStatusMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.ShortSalePriceTestStatusMessage.wrote"
+        },
+        {
+          "name": "TradeReportMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.TradeReportMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.TradeReportMessage.wrote"
+        },
+        {
+          "name": "TradingStatusMessage",
+          "frame": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.TradingStatusMessage.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.TradingStatusMessage.wrote"
+        },
+        {
+          "name": "Laid.message",
+          "frame": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.Laid.message.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.Laid.message.wrote"
+        },
+        {
+          "name": "Laid.heartbeat",
+          "frame": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.Laid.heartbeat.frame",
+          "wrote": "brainfuck/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.Laid.heartbeat.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.bf",
+      "reads": "Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "Laid.replaceordermessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.replaceordermessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.replaceordermessage.wrote"
+        },
+        {
+          "name": "Laid.trademessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.trademessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.trademessage.wrote"
+        },
+        {
+          "name": "Laid.newordermessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.newordermessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.newordermessage.wrote"
+        },
+        {
+          "name": "Laid.orderreplacedmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderreplacedmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderreplacedmessage.wrote"
+        },
+        {
+          "name": "Laid.imbalanceindicatedmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.imbalanceindicatedmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.imbalanceindicatedmessage.wrote"
+        },
+        {
+          "name": "Laid.orderrestedmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderrestedmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderrestedmessage.wrote"
+        },
+        {
+          "name": "Laid.crosscompletedmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.crosscompletedmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.crosscompletedmessage.wrote"
+        },
+        {
+          "name": "Laid.reduceordermessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.reduceordermessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.reduceordermessage.wrote"
+        },
+        {
+          "name": "Laid.ordereliminatedmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.ordereliminatedmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.ordereliminatedmessage.wrote"
+        },
+        {
+          "name": "Laid.orderreducedmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderreducedmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderreducedmessage.wrote"
+        },
+        {
+          "name": "Laid.cancelordermessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.cancelordermessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.cancelordermessage.wrote"
+        },
+        {
+          "name": "Laid.ordercanceledmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.ordercanceledmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.ordercanceledmessage.wrote"
+        },
+        {
+          "name": "Laid.orderrefusedmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderrefusedmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderrefusedmessage.wrote"
+        },
+        {
+          "name": "Laid.phaseannouncedmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.phaseannouncedmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.phaseannouncedmessage.wrote"
+        },
+        {
+          "name": "Laid.phaserequestmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.phaserequestmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.phaserequestmessage.wrote"
+        },
+        {
+          "name": "Laid.orderacceptedmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderacceptedmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderacceptedmessage.wrote"
+        },
+        {
+          "name": "Laid.imbalancerequestmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.imbalancerequestmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.imbalancerequestmessage.wrote"
+        },
+        {
+          "name": "Laid.heartbeatmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.heartbeatmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.heartbeatmessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.bf",
+      "reads": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
+      "runs": [
+        {
+          "name": "CancelOrderMessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.CancelOrderMessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.CancelOrderMessage.wrote"
+        },
+        {
+          "name": "ClientHeartbeat",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.ClientHeartbeat.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.ClientHeartbeat.wrote"
+        },
+        {
+          "name": "EnterOrderMessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.EnterOrderMessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.EnterOrderMessage.wrote"
+        },
+        {
+          "name": "Laid.unsequenceddatapacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.unsequenceddatapacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.unsequenceddatapacket.wrote"
+        },
+        {
+          "name": "Laid.loginrequestpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.loginrequestpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.loginrequestpacket.wrote"
+        },
+        {
+          "name": "Laid.debugpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.debugpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.debugpacket.wrote"
+        },
+        {
+          "name": "Laid.clientheartbeat",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.clientheartbeat.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.clientheartbeat.wrote"
+        },
+        {
+          "name": "Laid.logoutrequest",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.logoutrequest.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.logoutrequest.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.bf",
+      "reads": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
+      "runs": [
+        {
+          "name": "CanceledMessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.CanceledMessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.CanceledMessage.wrote"
+        },
+        {
+          "name": "OrderAcceptedMessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.OrderAcceptedMessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.OrderAcceptedMessage.wrote"
+        },
+        {
+          "name": "ServerHeartbeat",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.ServerHeartbeat.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.ServerHeartbeat.wrote"
+        },
+        {
+          "name": "Laid.sequenceddatapacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.sequenceddatapacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.sequenceddatapacket.wrote"
+        },
+        {
+          "name": "Laid.loginacceptedpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.loginacceptedpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.loginacceptedpacket.wrote"
+        },
+        {
+          "name": "Laid.loginrejectedpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.loginrejectedpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.loginrejectedpacket.wrote"
+        },
+        {
+          "name": "Laid.debugpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.debugpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.debugpacket.wrote"
+        },
+        {
+          "name": "Laid.serverheartbeat",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.serverheartbeat.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.serverheartbeat.wrote"
+        },
+        {
+          "name": "Laid.endofsession",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.endofsession.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.endofsession.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.bf",
+      "reads": "Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026",
+      "runs": [
+        {
+          "name": "Laid.loginrequestpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.loginrequestpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.loginrequestpacket.wrote"
+        },
+        {
+          "name": "Laid.unsequenceddatapacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.unsequenceddatapacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.unsequenceddatapacket.wrote"
+        },
+        {
+          "name": "Laid.debugpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.debugpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.debugpacket.wrote"
+        },
+        {
+          "name": "Laid.clientheartbeatpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.clientheartbeatpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.clientheartbeatpacket.wrote"
+        },
+        {
+          "name": "Laid.logoutrequestpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.logoutrequestpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.logoutrequestpacket.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.bf",
+      "reads": "Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026",
+      "runs": [
+        {
+          "name": "Laid.netorderimbalanceindicatormessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.netorderimbalanceindicatormessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.netorderimbalanceindicatormessage.wrote"
+        },
+        {
+          "name": "Laid.directlistingwithcapitalraisepricediscoverymessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.directlistingwithcapitalraisepricediscoverymessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.directlistingwithcapitalraisepricediscoverymessage.wrote"
+        },
+        {
+          "name": "Laid.noncrosstrademessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.noncrosstrademessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.noncrosstrademessage.wrote"
+        },
+        {
+          "name": "Laid.addorderwithmpidattributionmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.addorderwithmpidattributionmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.addorderwithmpidattributionmessage.wrote"
+        },
+        {
+          "name": "Laid.crosstrademessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.crosstrademessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.crosstrademessage.wrote"
+        },
+        {
+          "name": "Laid.stockdirectorymessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.stockdirectorymessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.stockdirectorymessage.wrote"
+        },
+        {
+          "name": "Laid.addordernompidattributionmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.addordernompidattributionmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.addordernompidattributionmessage.wrote"
+        },
+        {
+          "name": "Laid.orderexecutedwithpricemessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderexecutedwithpricemessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderexecutedwithpricemessage.wrote"
+        },
+        {
+          "name": "Laid.mwcbdeclinelevelmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.mwcbdeclinelevelmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.mwcbdeclinelevelmessage.wrote"
+        },
+        {
+          "name": "Laid.luldauctioncollarmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.luldauctioncollarmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.luldauctioncollarmessage.wrote"
+        },
+        {
+          "name": "Laid.orderreplacemessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderreplacemessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderreplacemessage.wrote"
+        },
+        {
+          "name": "Laid.orderexecutedmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderexecutedmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderexecutedmessage.wrote"
+        },
+        {
+          "name": "Laid.ipoquotingperiodupdate",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.ipoquotingperiodupdate.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.ipoquotingperiodupdate.wrote"
+        },
+        {
+          "name": "Laid.marketparticipantpositionmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.marketparticipantpositionmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.marketparticipantpositionmessage.wrote"
+        },
+        {
+          "name": "Laid.stocktradingactionmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.stocktradingactionmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.stocktradingactionmessage.wrote"
+        },
+        {
+          "name": "Laid.ordercancelmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.ordercancelmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.ordercancelmessage.wrote"
+        },
+        {
+          "name": "Laid.operationalhaltmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.operationalhaltmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.operationalhaltmessage.wrote"
+        },
+        {
+          "name": "Laid.regshoshortsalepricetestrestrictedindicatormessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.regshoshortsalepricetestrestrictedindicatormessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.regshoshortsalepricetestrestrictedindicatormessage.wrote"
+        },
+        {
+          "name": "Laid.retailpriceimprovementindicatormessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.retailpriceimprovementindicatormessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.retailpriceimprovementindicatormessage.wrote"
+        },
+        {
+          "name": "Laid.orderdeletemessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderdeletemessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderdeletemessage.wrote"
+        },
+        {
+          "name": "Laid.brokentrademessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.brokentrademessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.brokentrademessage.wrote"
+        },
+        {
+          "name": "Laid.systemeventmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.systemeventmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.systemeventmessage.wrote"
+        },
+        {
+          "name": "Laid.mwcbstatuslevelmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.mwcbstatuslevelmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.mwcbstatuslevelmessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.bf",
+      "reads": "Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026",
+      "runs": [
+        {
+          "name": "Laid.sequenceddatapacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.sequenceddatapacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.sequenceddatapacket.wrote"
+        },
+        {
+          "name": "Laid.loginacceptedpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.loginacceptedpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.loginacceptedpacket.wrote"
+        },
+        {
+          "name": "Laid.loginrejectedpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.loginrejectedpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.loginrejectedpacket.wrote"
+        },
+        {
+          "name": "Laid.debugpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.debugpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.debugpacket.wrote"
+        },
+        {
+          "name": "Laid.serverheartbeatpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.serverheartbeatpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.serverheartbeatpacket.wrote"
+        },
+        {
+          "name": "Laid.endofsessionpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.endofsessionpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.endofsessionpacket.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.bf",
+      "reads": "Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026",
+      "runs": [
+        {
+          "name": "AddOrderNoMpidAttributionMessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.AddOrderNoMpidAttributionMessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.AddOrderNoMpidAttributionMessage.wrote"
+        },
+        {
+          "name": "AddOrderWithMpidAttributionMessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.AddOrderWithMpidAttributionMessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.AddOrderWithMpidAttributionMessage.wrote"
+        },
+        {
+          "name": "LuldAuctionCollarMessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.LuldAuctionCollarMessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.LuldAuctionCollarMessage.wrote"
+        },
+        {
+          "name": "NetOrderImbalanceIndicatorMessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.NetOrderImbalanceIndicatorMessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.NetOrderImbalanceIndicatorMessage.wrote"
+        },
+        {
+          "name": "NonCrossTradeMessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.NonCrossTradeMessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.NonCrossTradeMessage.wrote"
+        },
+        {
+          "name": "OrderCancelMessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderCancelMessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderCancelMessage.wrote"
+        },
+        {
+          "name": "OrderDeleteMessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderDeleteMessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderDeleteMessage.wrote"
+        },
+        {
+          "name": "OrderExecutedMessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderExecutedMessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderExecutedMessage.wrote"
+        },
+        {
+          "name": "OrderReplaceMessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderReplaceMessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderReplaceMessage.wrote"
+        },
+        {
+          "name": "SystemEventMessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.SystemEventMessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.SystemEventMessage.wrote"
+        },
+        {
+          "name": "Laid.message",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.Laid.message.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.Laid.message.wrote"
+        },
+        {
+          "name": "Laid.heartbeat",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.Laid.heartbeat.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.Laid.heartbeat.wrote"
+        },
+        {
+          "name": "Laid.endofsession",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.Laid.endofsession.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.Laid.endofsession.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.bf",
+      "reads": "Nasdaq.NsmEquities.TotalView.Glimpse.v5.0",
+      "runs": [
+        {
+          "name": "Laid.loginrequestpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.loginrequestpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.loginrequestpacket.wrote"
+        },
+        {
+          "name": "Laid.unsequenceddatapacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.unsequenceddatapacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.unsequenceddatapacket.wrote"
+        },
+        {
+          "name": "Laid.debugpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.debugpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.debugpacket.wrote"
+        },
+        {
+          "name": "Laid.clientheartbeat",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.clientheartbeat.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.clientheartbeat.wrote"
+        },
+        {
+          "name": "Laid.logoutrequest",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.logoutrequest.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.logoutrequest.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.bf",
+      "reads": "Nasdaq.NsmEquities.TotalView.Glimpse.v5.0",
+      "runs": [
+        {
+          "name": "Laid.sequenceddatapacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.sequenceddatapacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.sequenceddatapacket.wrote"
+        },
+        {
+          "name": "Laid.loginacceptedpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.loginacceptedpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.loginacceptedpacket.wrote"
+        },
+        {
+          "name": "Laid.loginrejectedpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.loginrejectedpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.loginrejectedpacket.wrote"
+        },
+        {
+          "name": "Laid.debugpacket",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.debugpacket.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.debugpacket.wrote"
+        },
+        {
+          "name": "Laid.serverheartbeat",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.serverheartbeat.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.serverheartbeat.wrote"
+        },
+        {
+          "name": "Laid.endofsession",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.endofsession.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.endofsession.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "gateway",
+      "venue": "NsmEquities",
+      "path": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.emojic",
+      "reads": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
+      "writes": "Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.crossing.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.crossing.wrote"
+        },
+        {
+          "name": "unadmitted",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.unadmitted.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.unadmitted.wrote"
+        },
+        {
+          "name": "sweeping",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.sweeping.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.sweeping.wrote"
+        },
+        {
+          "name": "selling",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.selling.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.selling.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.cancelling.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.cancelling.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "market",
+      "venue": "NsmEquities",
+      "path": "emojicode/exchanges/nsmequities/NsmEquities.Market.emojic",
+      "reads": "Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026",
+      "writes": "Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.Market.crossing.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.crossing.wrote"
+        },
+        {
+          "name": "sweeping",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.Market.sweeping.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.sweeping.wrote"
+        },
+        {
+          "name": "selling",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.Market.selling.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.selling.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.Market.cancelling.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.cancelling.wrote"
+        },
+        {
+          "name": "replacing",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.Market.replacing.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.replacing.wrote"
+        },
+        {
+          "name": "entered-crossing",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-crossing.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-crossing.wrote"
+        },
+        {
+          "name": "entered-sweeping",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-sweeping.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-sweeping.wrote"
+        },
+        {
+          "name": "entered-selling",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-selling.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-selling.wrote"
+        },
+        {
+          "name": "entered-cancelling",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-cancelling.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-cancelling.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "session",
+      "venue": "NsmEquities",
+      "path": "emojicode/exchanges/nsmequities/NsmEquities.SoupBin.emojic",
+      "reads": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
+      "writes": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
+      "runs": [
+        {
+          "name": "NotLoggedIn.LoginRequest.RequestedSequenceNumber",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.SoupBin.NotLoggedIn.LoginRequest.RequestedSequenceNumber.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.SoupBin.NotLoggedIn.LoginRequest.RequestedSequenceNumber.wrote"
+        },
+        {
+          "name": "NotLoggedIn.LoginRequest",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.SoupBin.NotLoggedIn.LoginRequest.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.SoupBin.NotLoggedIn.LoginRequest.wrote"
+        },
+        {
+          "name": "LoggedIn.SessionLogout",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.SoupBin.LoggedIn.SessionLogout.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.SoupBin.LoggedIn.SessionLogout.wrote"
+        },
+        {
+          "name": "LoggedIn.SessionHeartbeat",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.SoupBin.LoggedIn.SessionHeartbeat.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.SoupBin.LoggedIn.SessionHeartbeat.wrote"
+        },
+        {
+          "name": "LoggedIn.LoginRequest",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.SoupBin.LoggedIn.LoginRequest.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.SoupBin.LoggedIn.LoginRequest.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "feed",
+      "venue": "NsmEquities",
+      "path": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.emojic",
+      "reads": "Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026",
+      "writes": "Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.crossing.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.crossing.wrote"
+        },
+        {
+          "name": "sweeping",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.sweeping.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.sweeping.wrote"
+        },
+        {
+          "name": "selling",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.selling.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.selling.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.cancelling.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.cancelling.wrote"
+        },
+        {
+          "name": "replacing",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.replacing.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.replacing.wrote"
+        },
+        {
+          "name": "entered-crossing",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-crossing.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-crossing.wrote"
+        },
+        {
+          "name": "entered-sweeping",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-sweeping.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-sweeping.wrote"
+        },
+        {
+          "name": "entered-selling",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-selling.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-selling.wrote"
+        },
+        {
+          "name": "entered-cancelling",
+          "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-cancelling.frame",
+          "wrote": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-cancelling.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.emojic",
+      "reads": "Iex.IexEquities.Deep.IexTp.v1.08",
+      "runs": [
+        {
+          "name": "AuctionInformationMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.AuctionInformationMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.AuctionInformationMessage.wrote"
+        },
+        {
+          "name": "OperationalHaltStatusMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.OperationalHaltStatusMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.OperationalHaltStatusMessage.wrote"
+        },
+        {
+          "name": "PriceLevelBuyUpdateMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.PriceLevelBuyUpdateMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.PriceLevelBuyUpdateMessage.wrote"
+        },
+        {
+          "name": "PriceLevelSellUpdateMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.PriceLevelSellUpdateMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.PriceLevelSellUpdateMessage.wrote"
+        },
+        {
+          "name": "RetailLiquidityIndicatorMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.RetailLiquidityIndicatorMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.RetailLiquidityIndicatorMessage.wrote"
+        },
+        {
+          "name": "SecurityEventMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.SecurityEventMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.SecurityEventMessage.wrote"
+        },
+        {
+          "name": "ShortSalePriceTestStatusMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.ShortSalePriceTestStatusMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.ShortSalePriceTestStatusMessage.wrote"
+        },
+        {
+          "name": "SystemEventMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.SystemEventMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.SystemEventMessage.wrote"
+        },
+        {
+          "name": "TradeReportMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.TradeReportMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.TradeReportMessage.wrote"
+        },
+        {
+          "name": "TradingStatusMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.TradingStatusMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.TradingStatusMessage.wrote"
+        },
+        {
+          "name": "Laid.message",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.Laid.message.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.Laid.message.wrote"
+        },
+        {
+          "name": "Laid.heartbeat",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.Laid.heartbeat.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.08.Laid.heartbeat.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.emojic",
+      "reads": "Iex.IexEquities.Deep.Snap.v1.6",
+      "runs": [
+        {
+          "name": "Laid.snapshotdatamessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotdatamessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotdatamessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotrequestmessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotrequestmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotstartmessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotstartmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotstartmessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotendmessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotendmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.snapshotendmessage.wrote"
+        },
+        {
+          "name": "Laid.errorresponsemessage",
+          "frame": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.errorresponsemessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deep/IexEquities.Deep.v1.6.Laid.errorresponsemessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.emojic",
+      "reads": "Iex.IexEquities.DeepPlus.IexTp.v1.05",
+      "runs": [
+        {
+          "name": "AddOrderMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.AddOrderMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.AddOrderMessage.wrote"
+        },
+        {
+          "name": "OperationalHaltStatusMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OperationalHaltStatusMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OperationalHaltStatusMessage.wrote"
+        },
+        {
+          "name": "OrderDeleteMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OrderDeleteMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OrderDeleteMessage.wrote"
+        },
+        {
+          "name": "OrderExecutedMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OrderExecutedMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OrderExecutedMessage.wrote"
+        },
+        {
+          "name": "OrderModifyMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OrderModifyMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.OrderModifyMessage.wrote"
+        },
+        {
+          "name": "RetailLiquidityIndicatorMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.RetailLiquidityIndicatorMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.RetailLiquidityIndicatorMessage.wrote"
+        },
+        {
+          "name": "SecurityEventMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.SecurityEventMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.SecurityEventMessage.wrote"
+        },
+        {
+          "name": "ShortSalePriceTestStatusMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.ShortSalePriceTestStatusMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.ShortSalePriceTestStatusMessage.wrote"
+        },
+        {
+          "name": "SystemEventMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.SystemEventMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.SystemEventMessage.wrote"
+        },
+        {
+          "name": "TradeMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.TradeMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.TradeMessage.wrote"
+        },
+        {
+          "name": "TradingStatusMessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.TradingStatusMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.TradingStatusMessage.wrote"
+        },
+        {
+          "name": "Laid.message",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.Laid.message.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.Laid.message.wrote"
+        },
+        {
+          "name": "Laid.heartbeat",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.Laid.heartbeat.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.05.Laid.heartbeat.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.emojic",
+      "reads": "Iex.IexEquities.DeepPlus.Snap.v1.06",
+      "runs": [
+        {
+          "name": "Laid.snapshotdatamessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotdatamessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotdatamessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotrequestmessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotrequestmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotstartmessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotstartmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotstartmessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotendmessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotendmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.snapshotendmessage.wrote"
+        },
+        {
+          "name": "Laid.errorresponsemessage",
+          "frame": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.errorresponsemessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/deepplus/IexEquities.DeepPlus.v1.06.Laid.errorresponsemessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.emojic",
+      "reads": "Iex.IexEquities.MatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "Laid.newordermessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.newordermessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.newordermessage.wrote"
+        },
+        {
+          "name": "Laid.replaceordermessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.replaceordermessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.replaceordermessage.wrote"
+        },
+        {
+          "name": "Laid.trademessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.trademessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.trademessage.wrote"
+        },
+        {
+          "name": "Laid.orderreplacedmessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderreplacedmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderreplacedmessage.wrote"
+        },
+        {
+          "name": "Laid.imbalanceindicatedmessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.imbalanceindicatedmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.imbalanceindicatedmessage.wrote"
+        },
+        {
+          "name": "Laid.orderrestedmessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderrestedmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderrestedmessage.wrote"
+        },
+        {
+          "name": "Laid.crosscompletedmessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.crosscompletedmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.crosscompletedmessage.wrote"
+        },
+        {
+          "name": "Laid.ordereliminatedmessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.ordereliminatedmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.ordereliminatedmessage.wrote"
+        },
+        {
+          "name": "Laid.cancelordermessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.cancelordermessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.cancelordermessage.wrote"
+        },
+        {
+          "name": "Laid.ordercanceledmessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.ordercanceledmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.ordercanceledmessage.wrote"
+        },
+        {
+          "name": "Laid.orderrefusedmessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderrefusedmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderrefusedmessage.wrote"
+        },
+        {
+          "name": "Laid.phaserequestmessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.phaserequestmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.phaserequestmessage.wrote"
+        },
+        {
+          "name": "Laid.phaseannouncedmessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.phaseannouncedmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.phaseannouncedmessage.wrote"
+        },
+        {
+          "name": "Laid.orderacceptedmessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderacceptedmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.orderacceptedmessage.wrote"
+        },
+        {
+          "name": "Laid.cancelrefusedmessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.cancelrefusedmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.cancelrefusedmessage.wrote"
+        },
+        {
+          "name": "Laid.imbalancerequestmessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.imbalancerequestmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.imbalancerequestmessage.wrote"
+        },
+        {
+          "name": "Laid.clockmessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.clockmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.clockmessage.wrote"
+        },
+        {
+          "name": "Laid.heartbeatmessage",
+          "frame": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.heartbeatmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/matchingengine/IexEquities.MatchingEngine.v2026.Laid.heartbeatmessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.emojic",
+      "reads": "Iex.IexEquities.Tops.Snap.v1.6",
+      "runs": [
+        {
+          "name": "Laid.snapshotdatamessage",
+          "frame": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotdatamessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotdatamessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotrequestmessage",
+          "frame": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotrequestmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotstartmessage",
+          "frame": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotstartmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotstartmessage.wrote"
+        },
+        {
+          "name": "Laid.snapshotendmessage",
+          "frame": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotendmessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.snapshotendmessage.wrote"
+        },
+        {
+          "name": "Laid.errorresponsemessage",
+          "frame": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.errorresponsemessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.6.Laid.errorresponsemessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.emojic",
+      "reads": "Iex.IexEquities.Tops.IexTp.v1.66",
+      "runs": [
+        {
+          "name": "AuctionInformationMessage",
+          "frame": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.AuctionInformationMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.AuctionInformationMessage.wrote"
+        },
+        {
+          "name": "QuoteUpdateMessage",
+          "frame": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.QuoteUpdateMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.QuoteUpdateMessage.wrote"
+        },
+        {
+          "name": "RetailLiquidityIndicatorMessage",
+          "frame": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.RetailLiquidityIndicatorMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.RetailLiquidityIndicatorMessage.wrote"
+        },
+        {
+          "name": "ShortSalePriceTestStatusMessage",
+          "frame": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.ShortSalePriceTestStatusMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.ShortSalePriceTestStatusMessage.wrote"
+        },
+        {
+          "name": "SystemEventMessage",
+          "frame": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.SystemEventMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.SystemEventMessage.wrote"
+        },
+        {
+          "name": "TradeReportMessage",
+          "frame": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.TradeReportMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.TradeReportMessage.wrote"
+        },
+        {
+          "name": "TradingStatusMessage",
+          "frame": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.TradingStatusMessage.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.TradingStatusMessage.wrote"
+        },
+        {
+          "name": "Laid.message",
+          "frame": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.Laid.message.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.Laid.message.wrote"
+        },
+        {
+          "name": "Laid.heartbeat",
+          "frame": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.Laid.heartbeat.frame",
+          "wrote": "emojicode/protocols/iex/iexequities/tops/IexEquities.Tops.v1.66.Laid.heartbeat.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.emojic",
+      "reads": "Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "Laid.replaceordermessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.replaceordermessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.replaceordermessage.wrote"
+        },
+        {
+          "name": "Laid.trademessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.trademessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.trademessage.wrote"
+        },
+        {
+          "name": "Laid.newordermessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.newordermessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.newordermessage.wrote"
+        },
+        {
+          "name": "Laid.orderreplacedmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderreplacedmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderreplacedmessage.wrote"
+        },
+        {
+          "name": "Laid.imbalanceindicatedmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.imbalanceindicatedmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.imbalanceindicatedmessage.wrote"
+        },
+        {
+          "name": "Laid.orderrestedmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderrestedmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderrestedmessage.wrote"
+        },
+        {
+          "name": "Laid.crosscompletedmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.crosscompletedmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.crosscompletedmessage.wrote"
+        },
+        {
+          "name": "Laid.reduceordermessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.reduceordermessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.reduceordermessage.wrote"
+        },
+        {
+          "name": "Laid.ordereliminatedmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.ordereliminatedmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.ordereliminatedmessage.wrote"
+        },
+        {
+          "name": "Laid.orderreducedmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderreducedmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderreducedmessage.wrote"
+        },
+        {
+          "name": "Laid.cancelordermessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.cancelordermessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.cancelordermessage.wrote"
+        },
+        {
+          "name": "Laid.ordercanceledmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.ordercanceledmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.ordercanceledmessage.wrote"
+        },
+        {
+          "name": "Laid.orderrefusedmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderrefusedmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderrefusedmessage.wrote"
+        },
+        {
+          "name": "Laid.phaseannouncedmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.phaseannouncedmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.phaseannouncedmessage.wrote"
+        },
+        {
+          "name": "Laid.phaserequestmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.phaserequestmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.phaserequestmessage.wrote"
+        },
+        {
+          "name": "Laid.orderacceptedmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderacceptedmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.orderacceptedmessage.wrote"
+        },
+        {
+          "name": "Laid.imbalancerequestmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.imbalancerequestmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.imbalancerequestmessage.wrote"
+        },
+        {
+          "name": "Laid.heartbeatmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.heartbeatmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/NsmEquities.MatchingEngine.v2026.Laid.heartbeatmessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.emojic",
+      "reads": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
+      "runs": [
+        {
+          "name": "CancelOrderMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.CancelOrderMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.CancelOrderMessage.wrote"
+        },
+        {
+          "name": "ClientHeartbeat",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.ClientHeartbeat.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.ClientHeartbeat.wrote"
+        },
+        {
+          "name": "EnterOrderMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.EnterOrderMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.EnterOrderMessage.wrote"
+        },
+        {
+          "name": "Laid.unsequenceddatapacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.unsequenceddatapacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.unsequenceddatapacket.wrote"
+        },
+        {
+          "name": "Laid.loginrequestpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.loginrequestpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.loginrequestpacket.wrote"
+        },
+        {
+          "name": "Laid.debugpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.debugpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.debugpacket.wrote"
+        },
+        {
+          "name": "Laid.clientheartbeat",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.clientheartbeat.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.clientheartbeat.wrote"
+        },
+        {
+          "name": "Laid.logoutrequest",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.logoutrequest.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.Laid.logoutrequest.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.emojic",
+      "reads": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
+      "runs": [
+        {
+          "name": "CanceledMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.CanceledMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.CanceledMessage.wrote"
+        },
+        {
+          "name": "OrderAcceptedMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.OrderAcceptedMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.OrderAcceptedMessage.wrote"
+        },
+        {
+          "name": "ServerHeartbeat",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.ServerHeartbeat.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.ServerHeartbeat.wrote"
+        },
+        {
+          "name": "Laid.sequenceddatapacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.sequenceddatapacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.sequenceddatapacket.wrote"
+        },
+        {
+          "name": "Laid.loginacceptedpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.loginacceptedpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.loginacceptedpacket.wrote"
+        },
+        {
+          "name": "Laid.loginrejectedpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.loginrejectedpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.loginrejectedpacket.wrote"
+        },
+        {
+          "name": "Laid.debugpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.debugpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.debugpacket.wrote"
+        },
+        {
+          "name": "Laid.serverheartbeat",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.serverheartbeat.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.serverheartbeat.wrote"
+        },
+        {
+          "name": "Laid.endofsession",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.endofsession.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Server.Laid.endofsession.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.emojic",
+      "reads": "Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026",
+      "runs": [
+        {
+          "name": "Laid.loginrequestpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.loginrequestpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.loginrequestpacket.wrote"
+        },
+        {
+          "name": "Laid.unsequenceddatapacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.unsequenceddatapacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.unsequenceddatapacket.wrote"
+        },
+        {
+          "name": "Laid.debugpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.debugpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.debugpacket.wrote"
+        },
+        {
+          "name": "Laid.clientheartbeatpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.clientheartbeatpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.clientheartbeatpacket.wrote"
+        },
+        {
+          "name": "Laid.logoutrequestpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.logoutrequestpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Client.Laid.logoutrequestpacket.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.emojic",
+      "reads": "Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026",
+      "runs": [
+        {
+          "name": "Laid.netorderimbalanceindicatormessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.netorderimbalanceindicatormessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.netorderimbalanceindicatormessage.wrote"
+        },
+        {
+          "name": "Laid.directlistingwithcapitalraisepricediscoverymessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.directlistingwithcapitalraisepricediscoverymessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.directlistingwithcapitalraisepricediscoverymessage.wrote"
+        },
+        {
+          "name": "Laid.noncrosstrademessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.noncrosstrademessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.noncrosstrademessage.wrote"
+        },
+        {
+          "name": "Laid.addorderwithmpidattributionmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.addorderwithmpidattributionmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.addorderwithmpidattributionmessage.wrote"
+        },
+        {
+          "name": "Laid.crosstrademessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.crosstrademessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.crosstrademessage.wrote"
+        },
+        {
+          "name": "Laid.stockdirectorymessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.stockdirectorymessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.stockdirectorymessage.wrote"
+        },
+        {
+          "name": "Laid.addordernompidattributionmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.addordernompidattributionmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.addordernompidattributionmessage.wrote"
+        },
+        {
+          "name": "Laid.orderexecutedwithpricemessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderexecutedwithpricemessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderexecutedwithpricemessage.wrote"
+        },
+        {
+          "name": "Laid.mwcbdeclinelevelmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.mwcbdeclinelevelmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.mwcbdeclinelevelmessage.wrote"
+        },
+        {
+          "name": "Laid.luldauctioncollarmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.luldauctioncollarmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.luldauctioncollarmessage.wrote"
+        },
+        {
+          "name": "Laid.orderreplacemessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderreplacemessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderreplacemessage.wrote"
+        },
+        {
+          "name": "Laid.orderexecutedmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderexecutedmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderexecutedmessage.wrote"
+        },
+        {
+          "name": "Laid.ipoquotingperiodupdate",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.ipoquotingperiodupdate.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.ipoquotingperiodupdate.wrote"
+        },
+        {
+          "name": "Laid.marketparticipantpositionmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.marketparticipantpositionmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.marketparticipantpositionmessage.wrote"
+        },
+        {
+          "name": "Laid.stocktradingactionmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.stocktradingactionmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.stocktradingactionmessage.wrote"
+        },
+        {
+          "name": "Laid.ordercancelmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.ordercancelmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.ordercancelmessage.wrote"
+        },
+        {
+          "name": "Laid.operationalhaltmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.operationalhaltmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.operationalhaltmessage.wrote"
+        },
+        {
+          "name": "Laid.regshoshortsalepricetestrestrictedindicatormessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.regshoshortsalepricetestrestrictedindicatormessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.regshoshortsalepricetestrestrictedindicatormessage.wrote"
+        },
+        {
+          "name": "Laid.retailpriceimprovementindicatormessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.retailpriceimprovementindicatormessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.retailpriceimprovementindicatormessage.wrote"
+        },
+        {
+          "name": "Laid.orderdeletemessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderdeletemessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.orderdeletemessage.wrote"
+        },
+        {
+          "name": "Laid.brokentrademessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.brokentrademessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.brokentrademessage.wrote"
+        },
+        {
+          "name": "Laid.systemeventmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.systemeventmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.systemeventmessage.wrote"
+        },
+        {
+          "name": "Laid.mwcbstatuslevelmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.mwcbstatuslevelmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.File.Laid.mwcbstatuslevelmessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.emojic",
+      "reads": "Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026",
+      "runs": [
+        {
+          "name": "Laid.sequenceddatapacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.sequenceddatapacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.sequenceddatapacket.wrote"
+        },
+        {
+          "name": "Laid.loginacceptedpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.loginacceptedpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.loginacceptedpacket.wrote"
+        },
+        {
+          "name": "Laid.loginrejectedpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.loginrejectedpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.loginrejectedpacket.wrote"
+        },
+        {
+          "name": "Laid.debugpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.debugpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.debugpacket.wrote"
+        },
+        {
+          "name": "Laid.serverheartbeatpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.serverheartbeatpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.serverheartbeatpacket.wrote"
+        },
+        {
+          "name": "Laid.endofsessionpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.endofsessionpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Server.Laid.endofsessionpacket.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.emojic",
+      "reads": "Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026",
+      "runs": [
+        {
+          "name": "AddOrderNoMpidAttributionMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.AddOrderNoMpidAttributionMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.AddOrderNoMpidAttributionMessage.wrote"
+        },
+        {
+          "name": "AddOrderWithMpidAttributionMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.AddOrderWithMpidAttributionMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.AddOrderWithMpidAttributionMessage.wrote"
+        },
+        {
+          "name": "CrossTradeMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.CrossTradeMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.CrossTradeMessage.wrote"
+        },
+        {
+          "name": "LuldAuctionCollarMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.LuldAuctionCollarMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.LuldAuctionCollarMessage.wrote"
+        },
+        {
+          "name": "MarketParticipantPositionMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.MarketParticipantPositionMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.MarketParticipantPositionMessage.wrote"
+        },
+        {
+          "name": "NetOrderImbalanceIndicatorMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.NetOrderImbalanceIndicatorMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.NetOrderImbalanceIndicatorMessage.wrote"
+        },
+        {
+          "name": "NonCrossTradeMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.NonCrossTradeMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.NonCrossTradeMessage.wrote"
+        },
+        {
+          "name": "OrderCancelMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderCancelMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderCancelMessage.wrote"
+        },
+        {
+          "name": "OrderDeleteMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderDeleteMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderDeleteMessage.wrote"
+        },
+        {
+          "name": "OrderExecutedMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderExecutedMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderExecutedMessage.wrote"
+        },
+        {
+          "name": "OrderExecutedWithPriceMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderExecutedWithPriceMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderExecutedWithPriceMessage.wrote"
+        },
+        {
+          "name": "OrderReplaceMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderReplaceMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.OrderReplaceMessage.wrote"
+        },
+        {
+          "name": "RegShoShortSalePriceTestRestrictedIndicatorMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.RegShoShortSalePriceTestRestrictedIndicatorMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.RegShoShortSalePriceTestRestrictedIndicatorMessage.wrote"
+        },
+        {
+          "name": "StockDirectoryMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.StockDirectoryMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.StockDirectoryMessage.wrote"
+        },
+        {
+          "name": "StockTradingActionMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.StockTradingActionMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.StockTradingActionMessage.wrote"
+        },
+        {
+          "name": "SystemEventMessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.SystemEventMessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.SystemEventMessage.wrote"
+        },
+        {
+          "name": "Laid.message",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.Laid.message.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.Laid.message.wrote"
+        },
+        {
+          "name": "Laid.heartbeat",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.Laid.heartbeat.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.Laid.heartbeat.wrote"
+        },
+        {
+          "name": "Laid.endofsession",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.Laid.endofsession.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.2026.Udp.Laid.endofsession.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.emojic",
+      "reads": "Nasdaq.NsmEquities.TotalView.Glimpse.v5.0",
+      "runs": [
+        {
+          "name": "Laid.loginrequestpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.loginrequestpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.loginrequestpacket.wrote"
+        },
+        {
+          "name": "Laid.unsequenceddatapacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.unsequenceddatapacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.unsequenceddatapacket.wrote"
+        },
+        {
+          "name": "Laid.debugpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.debugpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.debugpacket.wrote"
+        },
+        {
+          "name": "Laid.clientheartbeat",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.clientheartbeat.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.clientheartbeat.wrote"
+        },
+        {
+          "name": "Laid.logoutrequest",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.logoutrequest.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Client.Laid.logoutrequest.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.emojic",
+      "reads": "Nasdaq.NsmEquities.TotalView.Glimpse.v5.0",
+      "runs": [
+        {
+          "name": "Laid.sequenceddatapacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.sequenceddatapacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.sequenceddatapacket.wrote"
+        },
+        {
+          "name": "Laid.loginacceptedpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.loginacceptedpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.loginacceptedpacket.wrote"
+        },
+        {
+          "name": "Laid.loginrejectedpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.loginrejectedpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.loginrejectedpacket.wrote"
+        },
+        {
+          "name": "Laid.debugpacket",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.debugpacket.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.debugpacket.wrote"
+        },
+        {
+          "name": "Laid.serverheartbeat",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.serverheartbeat.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.serverheartbeat.wrote"
+        },
+        {
+          "name": "Laid.endofsession",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.endofsession.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/NsmEquities.TotalView.v5.0.Server.Laid.endofsession.wrote"
+        }
+      ]
+    }
+  ],
+  "joins": [
+    {
+      "language": "brainfuck",
+      "venue": "NsmEquities",
+      "run": "cancelling",
+      "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Gateway.cancelling.wrote",
+      "frame": "brainfuck/exchanges/nsmequities/NsmEquities.Market.entered-cancelling.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NsmEquities",
+      "run": "crossing",
+      "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Gateway.crossing.wrote",
+      "frame": "brainfuck/exchanges/nsmequities/NsmEquities.Market.entered-crossing.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NsmEquities",
+      "run": "cancelling",
+      "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Market.cancelling.wrote",
+      "frame": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.cancelling.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NsmEquities",
+      "run": "crossing",
+      "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Market.crossing.wrote",
+      "frame": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.crossing.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NsmEquities",
+      "run": "entered-cancelling",
+      "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Market.entered-cancelling.wrote",
+      "frame": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-cancelling.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NsmEquities",
+      "run": "entered-crossing",
+      "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Market.entered-crossing.wrote",
+      "frame": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-crossing.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NsmEquities",
+      "run": "replacing",
+      "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Market.replacing.wrote",
+      "frame": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.replacing.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NsmEquities",
+      "run": "sharing",
+      "wrote": "brainfuck/exchanges/nsmequities/NsmEquities.Market.sharing.wrote",
+      "frame": "brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.sharing.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "cancelling",
+      "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.cancelling.wrote",
+      "frame": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-cancelling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "crossing",
+      "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.crossing.wrote",
+      "frame": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-crossing.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "selling",
+      "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.selling.wrote",
+      "frame": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-selling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "sweeping",
+      "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.sweeping.wrote",
+      "frame": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-sweeping.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "cancelling",
+      "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.cancelling.wrote",
+      "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.cancelling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "crossing",
+      "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.crossing.wrote",
+      "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.crossing.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "entered-cancelling",
+      "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-cancelling.wrote",
+      "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-cancelling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "entered-crossing",
+      "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-crossing.wrote",
+      "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-crossing.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "entered-selling",
+      "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-selling.wrote",
+      "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-selling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "entered-sweeping",
+      "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.entered-sweeping.wrote",
+      "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.entered-sweeping.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "replacing",
+      "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.replacing.wrote",
+      "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.replacing.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "selling",
+      "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.selling.wrote",
+      "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.selling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "sweeping",
+      "wrote": "emojicode/exchanges/nsmequities/NsmEquities.Market.sweeping.wrote",
+      "frame": "emojicode/exchanges/nsmequities/NsmEquities.TotalView.Feed.sweeping.frame"
+    }
+  ]
+}

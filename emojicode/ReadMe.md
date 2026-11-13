@@ -1,6 +1,6 @@
 # Emojicode
 
-![Emojicode](../images/Emojicode.png)
+🏁 🍇 🍉
 
 Programs in Emojicode that read common binary exchange protocols, generated from the same compiled data models every other Omi repository is generated from.
 
@@ -53,7 +53,9 @@ emojicode/
   protocols/<organization>/<division>/<protocol>/<protocol>.<message>.frame
   protocols/<organization>/<division>/<protocol>/<protocol>.<message>.wrote
   exchanges/<venue>/ReadMe.md
+  exchanges/<venue>/<venue>.Gateway.emojic
   exchanges/<venue>/<venue>.Market.emojic
+  exchanges/<venue>/<venue>.<feed>.Feed.emojic
   exchanges/<venue>/<venue>.Market.<run>.frame
   exchanges/<venue>/<venue>.Market.<run>.wrote
   exchanges/<venue>/<venue>.<session>.emojic
@@ -61,6 +63,8 @@ emojicode/
   exchanges/<venue>/<venue>.<session>.<run>.wrote
 ```
 A decoder sits under `protocols` because it is the same program whoever speaks the protocol; a market and a session sit under `exchanges` because they are the venue's own — a venue is what declares which chart runs over which protocol and which security its book is for. A model stating more than one framing — a client's stream and a server's are different programs, because they read different bytes — writes one decoder for each.
+
+**A venue is a gateway, a market and its feeds, and they join.** The gateway reads the venue's order entry and writes its own orders, under the session the venue's chart states; the market reads those and writes the venue's own events, by its trading chart; each feed reads those and writes market data, by the venue's transforms. What one writes is what the next reads, so a run can begin where a participant begins and end with what a subscriber is sent. Each venue's own readme says which of these it has, what each was held to, and the lines that run them joined; `manifest.json` at the root lists every program, run and join for anything that would rather read that than a file's name.
 
 Each venue keeps a readme of its own beside its programs, saying what that venue declared, what was settled to build its market and its session, the runs published beside each, and the lines that compile and run them. This readme is about the language; those are about what one venue's programs do.
 
@@ -120,9 +124,11 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 | Programs | Characters | Reading every field the model states | Frames | Recorded from the wire |
 | --- | --- | --- | --- | --- |
-| 16 | 502,704 | 16 of 16 | 160 | 50 |
+| 16 | 511,863 | 16 of 16 | 166 | 50 |
 
 ## Open Markets Initiative
+
+[![Omi](https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/raw/main/About/Images/Logo.png)](https://github.com/Open-Markets-Initiative/Directory)  The Open Markets Initiative (Omi) is a group of technologists dedicated to enhancing the stability of electronic financial markets using modern development methods.
 
 Other generated code can be found at [Omi Repositories](https://github.com/Open-Markets-Initiative/Directory/tree/main/Repositories "Open Markets Initiative Repositories"); for Omi rules and regulations, see [Omi Directory](https://github.com/Open-Markets-Initiative/Directory "Open Markets Initiative Directory").
 ## Disclaimer
