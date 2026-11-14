@@ -172,6 +172,14 @@
     wrote ➕ newline ➡️ 🖍 wrote
     position ➕ 1 ➡️ 🖍 position
 
+    💭 instruction, 1 byte
+    📇 🔤instruction=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
     💭 expiretime, 8 bytes
     📇 🔤expiretime=🔤❗️ ➡️ 🖍 named
     wrote ➕ named ➡️ 🖍 wrote
@@ -770,6 +778,14 @@
 
     💭 peg, 1 byte
     📇 🔤peg=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
+    💭 instruction, 1 byte
+    📇 🔤instruction=🔤❗️ ➡️ 🖍 named
     wrote ➕ named ➡️ 🖍 wrote
     🔪 frame position 1❗️ ➡️ 🖍 held
     wrote ➕ held ➡️ 🖍 wrote

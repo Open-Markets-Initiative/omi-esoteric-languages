@@ -107,6 +107,14 @@ def stated(field, data):
 # --- the layout a market publishes about itself -----------------------------------------------------
 
 
+def kept(program):
+    """The folder a program's runs are kept in: runs/ for a venue's, frames/ for a protocol's,
+    and under that the program's own name less the word it opens with, in lower case."""
+    kind = "runs" if "exchanges" in program.parent.parts else "frames"
+
+    return program.parent / kind / program.stem.split(".", 1)[-1].lower()
+
+
 def layout_of(program):
     """The layout published beside a program, or None where it publishes none."""
     beside = program.parent / (program.stem + LAYOUT)
@@ -378,7 +386,7 @@ def every():
             refused += 1
             continue
 
-        for frame in sorted(program.parent.glob(program.stem + ".*.frame")):
+        for frame in sorted(kept(program).glob("*.frame")):
             replayed += 1
 
             if main([str(program), "--frame", str(frame)]) != 0:

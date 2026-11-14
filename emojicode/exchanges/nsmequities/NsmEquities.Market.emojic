@@ -56,6 +56,11 @@
   0 ➡️ 🖍🆕 going
   0 ➡️ 🖍🆕 change
   0 ➡️ 🖍🆕 replaced
+  0 ➡️ 🖍🆕 undecided
+  0 ➡️ 🖍🆕 holding
+  0 ➡️ 🖍🆕 matched
+  0 ➡️ 🖍🆕 reason
+  0 ➡️ 🖍🆕 askedTimeInForce
 
   💭 the book: a price, a quantity and whose order, a level apiece
   🆕🍨🐚🔢🍆❗️ ➡️ 🖍🆕 bidPrice
@@ -68,6 +73,7 @@
   💭 the day starts in Continuous
   0 ➡️ phase
   0 ➡️ 🖍🆕 execution
+  69 ➡️ 🖍 reason
   📇 🔤ZVZZT   🔤❗️ ➡️ 🖍🆕 symbol
 
   💭 one message at a time, as far as the frame reaches
@@ -266,428 +272,723 @@
       size ➕ digit ➡️ 🖍 size
 
       🔪 frame position ➕ 27 8❗️ ➡️ 🖍 symbol
+      position ➕ 48 ➡️ 🖍 began
+      💭 its value, a byte at a time, each masked because a byte here is signed
+      0 ➡️ 🖍 askedTimeInForce
+      began ➕ 0 ➡️ 🖍 cursor
+      🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+      raw ⭕ 255 ➡️ 🖍 digit
+      askedTimeInForce ✖ 256 ➡️ 🖍 askedTimeInForce
+      askedTimeInForce ➕ digit ➡️ 🖍 askedTimeInForce
+
+      69 ➡️ 🖍 reason
 
       ↪️ phase 🙌 0 🍇
         💭 Continuous: Book.Cross
-        1 ➡️ 🖍 going
-        🔁 going ▶️ 0 🍇
-          ↪️ size 🙌 0 🍇
-            0 ➡️ 🖍 going
+        1 ➡️ 🖍 undecided
+        ↪️ undecided 🙌 1 🍇
+          💭 TimeInForce is Timed: Order.Refused
+          1 ➡️ 🖍 holding
+          0 ➡️ 🖍 matched
+          ↪️ askedTimeInForce 🙌 54 🍇
+            1 ➡️ 🖍 matched
           🍉
-          ↪️ going ▶️ 0 🍇
-            ↪️ side 🙌 66 🍇
-              -1 ➡️ 🖍 found
-              0 ➡️ 🖍 best
-              🔂 level 🆕⏩ 0 📏 askPrice❓❗️ 🍇
-                ↪️ 🐽 askSize level❗️ ▶️ 0 🍇
-                  ↪️ 🐽 askPrice level❗️ ◀️🙌 price 🍇
-                    ↪️ found ◀️ 0 🍇
-                      level ➡️ 🖍 found
-                      🐽 askPrice level❗️ ➡️ 🖍 best
-                    🍉
-                    🙅↪️ 🐽 askPrice level❗️ ◀️ best 🍇
-                      level ➡️ 🖍 found
-                      🐽 askPrice level❗️ ➡️ 🖍 best
-                    🍉
-                  🍉
-                🍉
-              🍉
-            🍉
-            🙅 🍇
-              -1 ➡️ 🖍 found
-              0 ➡️ 🖍 best
-              🔂 level 🆕⏩ 0 📏 bidPrice❓❗️ 🍇
-                ↪️ 🐽 bidSize level❗️ ▶️ 0 🍇
-                  ↪️ 🐽 bidPrice level❗️ ▶️🙌 price 🍇
-                    ↪️ found ◀️ 0 🍇
-                      level ➡️ 🖍 found
-                      🐽 bidPrice level❗️ ➡️ 🖍 best
-                    🍉
-                    🙅↪️ 🐽 bidPrice level❗️ ▶️ best 🍇
-                      level ➡️ 🖍 found
-                      🐽 bidPrice level❗️ ➡️ 🖍 best
-                    🍉
-                  🍉
-                🍉
-              🍉
-            🍉
-            ↪️ found ◀️ 0 🍇
-              💭 nothing it reaches, so the rest of it comes to rest
-              0 ➡️ 🖍 going
-            🍉
-            ↪️ found ▶️🙌 0 🍇
-              ↪️ side 🙌 66 🍇
-                🐽 askSize found❗️ ➡️ 🖍 took
-                ↪️ size ◀️ took 🍇
-                  size ➡️ 🖍 took
-                🍉
-                🐽 askWhose found❗️ ➡️ 🖍 resting
-                🐽 askSize found❗️ ➖ took ➡️ 🐽 askSize found❗️
-                size ➖ took ➡️ 🖍 size
-                execution ➕ 1 ➡️ 🖍 execution
-                💭 trademessage
-                56 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 8 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                84 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                stamp ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 8 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 16 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 24 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 32 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 40 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 48 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 56 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                who ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 8 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 16 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 24 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 32 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 40 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 48 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 56 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                resting ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 8 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 16 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 24 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 32 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 40 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 48 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 56 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                execution ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 8 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 16 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 24 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 32 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 40 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 48 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 56 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                wrote ➕ symbol ➡️ 🖍 wrote
-                best ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 8 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 16 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 24 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 32 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 40 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 48 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 56 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                took ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 8 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 16 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 24 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                78 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                89 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                89 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          ↪️ matched 🙌 0 🍇
+            0 ➡️ 🖍 holding
+          🍉
+          ↪️ holding 🙌 1 🍇
+            0 ➡️ 🖍 undecided
+            79 ➡️ 🖍 reason
+            💭 orderrefusedmessage
+            18 ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 8 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            74 ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            stamp ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 8 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 16 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 24 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 32 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 40 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 48 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 56 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            who ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 8 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 16 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 24 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 32 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 40 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 48 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 56 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            reason ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
 
-              🍉
-              🙅 🍇
-                🐽 bidSize found❗️ ➡️ 🖍 took
-                ↪️ size ◀️ took 🍇
-                  size ➡️ 🖍 took
-                🍉
-                🐽 bidWhose found❗️ ➡️ 🖍 resting
-                🐽 bidSize found❗️ ➖ took ➡️ 🐽 bidSize found❗️
-                size ➖ took ➡️ 🖍 size
-                execution ➕ 1 ➡️ 🖍 execution
-                💭 trademessage
-                56 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 8 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                84 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                stamp ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 8 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 16 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 24 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 32 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 40 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 48 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 56 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                who ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 8 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 16 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 24 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 32 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 40 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 48 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 56 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                resting ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 8 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 16 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 24 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 32 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 40 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 48 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 56 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                execution ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 8 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 16 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 24 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 32 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 40 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 48 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 56 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                wrote ➕ symbol ➡️ 🖍 wrote
-                best ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 8 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 16 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 24 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 32 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 40 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 48 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 56 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                took ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 8 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 16 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                taken 👉 24 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                78 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                89 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                89 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-
-              🍉
-            🍉
           🍉
         🍉
+        ↪️ undecided 🙌 1 🍇
+          💭 OrderType is Market: Order.Refused
+          1 ➡️ 🖍 holding
+          0 ➡️ 🖍 matched
+          ↪️ price 🙌 2147483647 🍇
+            1 ➡️ 🖍 matched
+          🍉
+          ↪️ price 🙌 2000000000 🍇
+            1 ➡️ 🖍 matched
+          🍉
+          ↪️ matched 🙌 0 🍇
+            0 ➡️ 🖍 holding
+          🍉
+          ↪️ holding 🙌 1 🍇
+            0 ➡️ 🖍 undecided
+            84 ➡️ 🖍 reason
+            💭 orderrefusedmessage
+            18 ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 8 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            74 ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            stamp ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 8 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 16 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 24 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 32 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 40 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 48 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 56 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            who ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 8 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 16 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 24 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 32 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 40 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 48 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 56 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            reason ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
 
-        ↪️ size ▶️ 0 🍇
-          ↪️ side 🙌 66 🍇
-            🐻 bidPrice price❗️
-            🐻 bidSize size❗️
-            🐻 bidWhose who❗️
           🍉
-          🙅 🍇
-            🐻 askPrice price❗️
-            🐻 askSize size❗️
-            🐻 askWhose who❗️
+        🍉
+        ↪️ undecided 🙌 1 🍇
+          💭 anything else: Book.Cross
+          0 ➡️ 🖍 undecided
+          1 ➡️ 🖍 going
+          🔁 going ▶️ 0 🍇
+            ↪️ size 🙌 0 🍇
+              0 ➡️ 🖍 going
+            🍉
+            ↪️ going ▶️ 0 🍇
+              ↪️ side 🙌 66 🍇
+                -1 ➡️ 🖍 found
+                0 ➡️ 🖍 best
+                🔂 level 🆕⏩ 0 📏 askPrice❓❗️ 🍇
+                  ↪️ 🐽 askSize level❗️ ▶️ 0 🍇
+                    ↪️ 🐽 askPrice level❗️ ◀️🙌 price 🍇
+                      ↪️ found ◀️ 0 🍇
+                        level ➡️ 🖍 found
+                        🐽 askPrice level❗️ ➡️ 🖍 best
+                      🍉
+                      🙅↪️ 🐽 askPrice level❗️ ◀️ best 🍇
+                        level ➡️ 🖍 found
+                        🐽 askPrice level❗️ ➡️ 🖍 best
+                      🍉
+                    🍉
+                  🍉
+                🍉
+              🍉
+              🙅 🍇
+                -1 ➡️ 🖍 found
+                0 ➡️ 🖍 best
+                🔂 level 🆕⏩ 0 📏 bidPrice❓❗️ 🍇
+                  ↪️ 🐽 bidSize level❗️ ▶️ 0 🍇
+                    ↪️ 🐽 bidPrice level❗️ ▶️🙌 price 🍇
+                      ↪️ found ◀️ 0 🍇
+                        level ➡️ 🖍 found
+                        🐽 bidPrice level❗️ ➡️ 🖍 best
+                      🍉
+                      🙅↪️ 🐽 bidPrice level❗️ ▶️ best 🍇
+                        level ➡️ 🖍 found
+                        🐽 bidPrice level❗️ ➡️ 🖍 best
+                      🍉
+                    🍉
+                  🍉
+                🍉
+              🍉
+              ↪️ found ◀️ 0 🍇
+                💭 nothing it reaches, so the rest of it comes to rest
+                0 ➡️ 🖍 going
+              🍉
+              ↪️ found ▶️🙌 0 🍇
+                ↪️ side 🙌 66 🍇
+                  🐽 askSize found❗️ ➡️ 🖍 took
+                  ↪️ size ◀️ took 🍇
+                    size ➡️ 🖍 took
+                  🍉
+                  🐽 askWhose found❗️ ➡️ 🖍 resting
+                  🐽 askSize found❗️ ➖ took ➡️ 🐽 askSize found❗️
+                  size ➖ took ➡️ 🖍 size
+                  execution ➕ 1 ➡️ 🖍 execution
+                  💭 trademessage
+                  56 ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 8 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  84 ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  stamp ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 8 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 16 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 24 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 32 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 40 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 48 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 56 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  who ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 8 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 16 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 24 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 32 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 40 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 48 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 56 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  resting ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 8 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 16 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 24 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 32 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 40 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 48 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 56 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  execution ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 8 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 16 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 24 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 32 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 40 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 48 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 56 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  wrote ➕ symbol ➡️ 🖍 wrote
+                  best ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 8 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 16 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 24 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 32 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 40 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 48 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 56 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  took ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 8 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 16 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 24 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  78 ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  89 ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  89 ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+
+                🍉
+                🙅 🍇
+                  🐽 bidSize found❗️ ➡️ 🖍 took
+                  ↪️ size ◀️ took 🍇
+                    size ➡️ 🖍 took
+                  🍉
+                  🐽 bidWhose found❗️ ➡️ 🖍 resting
+                  🐽 bidSize found❗️ ➖ took ➡️ 🐽 bidSize found❗️
+                  size ➖ took ➡️ 🖍 size
+                  execution ➕ 1 ➡️ 🖍 execution
+                  💭 trademessage
+                  56 ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 8 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  84 ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  stamp ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 8 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 16 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 24 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 32 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 40 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 48 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 56 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  who ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 8 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 16 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 24 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 32 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 40 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 48 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 56 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  resting ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 8 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 16 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 24 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 32 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 40 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 48 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 56 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  execution ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 8 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 16 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 24 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 32 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 40 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 48 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 56 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  wrote ➕ symbol ➡️ 🖍 wrote
+                  best ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 8 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 16 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 24 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 32 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 40 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 48 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 56 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  took ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 8 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 16 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  taken 👉 24 ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  78 ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  89 ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+                  89 ➡️ 🖍 taken
+                  taken ➡️ 🖍 code
+                  code ⭕ 255 ➡️ 🖍 code
+                  wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+
+                🍉
+              🍉
+            🍉
           🍉
-          💭 orderrestedmessage
-          39 ➡️ 🖍 taken
+
+          ↪️ size ▶️ 0 🍇
+            ↪️ side 🙌 66 🍇
+              🐻 bidPrice price❗️
+              🐻 bidSize size❗️
+              🐻 bidWhose who❗️
+            🍉
+            🙅 🍇
+              🐻 askPrice price❗️
+              🐻 askSize size❗️
+              🐻 askWhose who❗️
+            🍉
+            💭 orderrestedmessage
+            39 ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 8 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            82 ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            stamp ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 8 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 16 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 24 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 32 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 40 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 48 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 56 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            who ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 8 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 16 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 24 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 32 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 40 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 48 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 56 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            wrote ➕ symbol ➡️ 🖍 wrote
+            side ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            price ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 8 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 16 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 24 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 32 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 40 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 48 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 56 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            size ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 8 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 16 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            taken 👉 24 ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+            89 ➡️ 🖍 taken
+            taken ➡️ 🖍 code
+            code ⭕ 255 ➡️ 🖍 code
+            wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+
+          🍉
+        🍉
+        ↪️ undecided 🙌 1 🍇
+          💭 no answer of the phase's was met, so the phase does not take the order
+          💭 orderrefusedmessage
+          18 ➡️ 🖍 taken
           taken ➡️ 🖍 code
           code ⭕ 255 ➡️ 🖍 code
           wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
           taken 👉 8 ➡️ 🖍 code
           code ⭕ 255 ➡️ 🖍 code
           wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          82 ➡️ 🖍 taken
+          74 ➡️ 🖍 taken
           taken ➡️ 🖍 code
           code ⭕ 255 ➡️ 🖍 code
           wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
@@ -741,50 +1042,7 @@
           taken 👉 56 ➡️ 🖍 code
           code ⭕ 255 ➡️ 🖍 code
           wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          wrote ➕ symbol ➡️ 🖍 wrote
-          side ➡️ 🖍 taken
-          taken ➡️ 🖍 code
-          code ⭕ 255 ➡️ 🖍 code
-          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          price ➡️ 🖍 taken
-          taken ➡️ 🖍 code
-          code ⭕ 255 ➡️ 🖍 code
-          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          taken 👉 8 ➡️ 🖍 code
-          code ⭕ 255 ➡️ 🖍 code
-          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          taken 👉 16 ➡️ 🖍 code
-          code ⭕ 255 ➡️ 🖍 code
-          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          taken 👉 24 ➡️ 🖍 code
-          code ⭕ 255 ➡️ 🖍 code
-          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          taken 👉 32 ➡️ 🖍 code
-          code ⭕ 255 ➡️ 🖍 code
-          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          taken 👉 40 ➡️ 🖍 code
-          code ⭕ 255 ➡️ 🖍 code
-          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          taken 👉 48 ➡️ 🖍 code
-          code ⭕ 255 ➡️ 🖍 code
-          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          taken 👉 56 ➡️ 🖍 code
-          code ⭕ 255 ➡️ 🖍 code
-          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          size ➡️ 🖍 taken
-          taken ➡️ 🖍 code
-          code ⭕ 255 ➡️ 🖍 code
-          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          taken 👉 8 ➡️ 🖍 code
-          code ⭕ 255 ➡️ 🖍 code
-          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          taken 👉 16 ➡️ 🖍 code
-          code ⭕ 255 ➡️ 🖍 code
-          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          taken 👉 24 ➡️ 🖍 code
-          code ⭕ 255 ➡️ 🖍 code
-          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          89 ➡️ 🖍 taken
+          reason ➡️ 🖍 taken
           taken ➡️ 🖍 code
           code ⭕ 255 ➡️ 🖍 code
           wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote

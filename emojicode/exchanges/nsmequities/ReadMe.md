@@ -36,11 +36,11 @@ ln -s /path/to/Emojicode-1.0-beta.2-Linux-x86_64/packages packages
 emojicodec NsmEquities.Gateway.emojic
 emojicodec NsmEquities.Market.emojic
 emojicodec NsmEquities.TotalView.Feed.emojic
-xxd -r -p < NsmEquities.Gateway.crossing.frame > requests.bin
+xxd -r -p < runs/gateway/crossing.frame > requests.bin
 ./NsmEquities.Gateway requests.bin orders.bin
 ./NsmEquities.Market orders.bin events.bin
 ./NsmEquities.TotalView.Feed events.bin packets.bin
-xxd -r -p < NsmEquities.TotalView.Feed.entered-crossing.wrote > want.bin
+xxd -r -p < runs/totalview.feed/entered-crossing.wrote > want.bin
 cmp want.bin packets.bin
 ```
 Every such join is stated in `manifest.json` at the root, as two files that hold the same bytes - what one program should write and what the next is given - and `python3 check.py` holds each pair to it.
@@ -53,6 +53,7 @@ What was settled when the program was written rather than asked while it ran:
 
 - timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as nought
 - sequence is a message's place in the order the engine is sent them, which the venue's sequencer states; with one gateway and nothing between it and the engine, this counts them itself, from one
+- expiretime is a field a request may carry or leave out, so it is looked for among the options the request ends in, each read by its length and its tag; a request leaving it out carries nought for it
 - the session is SoupBin Tcp: a connection opens in NotLoggedIn, and a request is admitted only while it rests in LoggedIn, which is where the chart receives the other end's own data. A login moves the connection as the chart says an accepted one does; whether to accept it is the session program's to say and was settled there
 
 What the venue declares of its order entry that this program does not run, and why:
@@ -60,17 +61,18 @@ What the venue declares of its order entry that this program does not run, and w
 - ouch_reduce_order: its fields.quantity states an intended size, which counts what the order has already executed, and that is something the engine reports on a stream this program does not read
 - ouch_modify_order: its fields.quantity states an intended size, which counts what the order has already executed, and that is something the engine reports on a stream this program does not read
 - ouch_replace_order: it replaces an order, which needs what the order it replaces has executed and the side and display it was entered with, and the first of those is the engine's to say
-- the 15 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
+- the 20 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
 
 Each run is a client's packets and what the gateway should write for them. A run nobody logged in for is published with nothing to write, because declining is half of what a gate does:
 
 | Run | Requests | Bytes written |
 | --- | ---: | ---: |
-| `NsmEquities.Gateway.crossing` | 3 | 153 |
+| `NsmEquities.Gateway.crossing` | 3 | 165 |
 | `NsmEquities.Gateway.unadmitted` | 3 | 0 |
-| `NsmEquities.Gateway.sweeping` | 3 | 153 |
-| `NsmEquities.Gateway.selling` | 2 | 102 |
-| `NsmEquities.Gateway.cancelling` | 3 | 129 |
+| `NsmEquities.Gateway.sweeping` | 3 | 165 |
+| `NsmEquities.Gateway.selling` | 2 | 110 |
+| `NsmEquities.Gateway.cancelling` | 3 | 137 |
+| `NsmEquities.Gateway.optioned` | 2 | 110 |
 
 ## Market
 
@@ -92,10 +94,12 @@ Each run below is published as a `.frame` of the orders put to it and a `.wrote`
 | `NsmEquities.Market.selling` | 2 | 1 | 0 |
 | `NsmEquities.Market.cancelling` | 2 | 0 | 0 |
 | `NsmEquities.Market.replacing` | 6 | 2 | 0 |
+| `NsmEquities.Market.declining` | 3 | 1 | 1 |
 | `NsmEquities.Market.entered-crossing` | 3 | 1 | 0 |
 | `NsmEquities.Market.entered-sweeping` | 3 | 2 | 0 |
 | `NsmEquities.Market.entered-selling` | 2 | 1 | 0 |
 | `NsmEquities.Market.entered-cancelling` | 2 | 0 | 0 |
+| `NsmEquities.Market.entered-optioned` | 2 | 1 | 0 |
 
 ## Feeds
 
@@ -118,10 +122,12 @@ Each run is what the market should write for the run of the same name, and the p
 | `NsmEquities.TotalView.Feed.selling` | 2 |
 | `NsmEquities.TotalView.Feed.cancelling` | 3 |
 | `NsmEquities.TotalView.Feed.replacing` | 7 |
+| `NsmEquities.TotalView.Feed.declining` | 2 |
 | `NsmEquities.TotalView.Feed.entered-crossing` | 4 |
 | `NsmEquities.TotalView.Feed.entered-sweeping` | 5 |
 | `NsmEquities.TotalView.Feed.entered-selling` | 2 |
 | `NsmEquities.TotalView.Feed.entered-cancelling` | 3 |
+| `NsmEquities.TotalView.Feed.entered-optioned` | 2 |
 
 ## Session
 
@@ -163,11 +169,11 @@ One run per way the chart states of answering a packet, named for the state it r
 | Program | What it is | Runs published |
 | --- | --- | ---: |
 | `NsmEquities.SoupBin.emojic` | the venue's handshake | 5 |
-| `NsmEquities.Gateway.emojic` | the venue's order entry, under its session chart | 5 |
-| `NsmEquities.Market.emojic` | the venue's book and the matching over it | 9 |
-| `NsmEquities.TotalView.Feed.emojic` | the venue's TotalView feed | 9 |
+| `NsmEquities.Gateway.emojic` | the venue's order entry, under its session chart | 6 |
+| `NsmEquities.Market.emojic` | the venue's book and the matching over it | 11 |
+| `NsmEquities.TotalView.Feed.emojic` | the venue's TotalView feed | 11 |
 
-Beside each program is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `replay.py` compiles each program against. They are written as hexadecimal because a frame holds any byte a protocol can carry and so does a program's output, so neither is text.
+Under `runs/`, in a folder named for each program, is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `replay.py` compiles each program against. They are written as hexadecimal because a frame holds any byte a protocol can carry and so does a program's output, so neither is text.
 
 ## Running
 
@@ -181,9 +187,9 @@ Compile one of these, and run it on a frame published beside it. A published fra
 cd emojicode/exchanges/nsmequities
 ln -s /path/to/Emojicode-1.0-beta.2-Linux-x86_64/packages packages
 emojicodec NsmEquities.SoupBin.emojic
-xxd -r -p < NsmEquities.SoupBin.NotLoggedIn.LoginRequest.RequestedSequenceNumber.frame > frame.bin
+xxd -r -p < runs/soupbin/NotLoggedIn.LoginRequest.RequestedSequenceNumber.frame > frame.bin
 ./NsmEquities.SoupBin frame.bin wrote.bin
-xxd -r -p < NsmEquities.SoupBin.NotLoggedIn.LoginRequest.RequestedSequenceNumber.wrote > want.bin
+xxd -r -p < runs/soupbin/NotLoggedIn.LoginRequest.RequestedSequenceNumber.wrote > want.bin
 cmp want.bin wrote.bin
 ```
 `replay.py` at the root does that for every program in this language and holds what each writes to the `.wrote` beside it, so a change here is caught without anybody running one by hand:

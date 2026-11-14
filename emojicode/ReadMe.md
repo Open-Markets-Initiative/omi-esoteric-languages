@@ -24,9 +24,9 @@ So the working directory is load-bearing here in a way it is not for a language 
 cd emojicode/protocols/iex/iexequities/deep
 ln -s /path/to/Emojicode-1.0-beta.2-Linux-x86_64/packages packages
 emojicodec IexEquities.Deep.v1.08.emojic
-xxd -r -p < IexEquities.Deep.v1.08.AuctionInformationMessage.frame > frame.bin
+xxd -r -p < frames/deep.v1.08/AuctionInformationMessage.frame > frame.bin
 ./IexEquities.Deep.v1.08 frame.bin wrote.bin
-xxd -r -p < IexEquities.Deep.v1.08.AuctionInformationMessage.wrote > want.bin
+xxd -r -p < frames/deep.v1.08/AuctionInformationMessage.wrote > want.bin
 cmp want.bin wrote.bin
 ```
 A silent `cmp` is the whole of the result: what the compiled program wrote is what this repository published for that frame. Six files are left in that directory and none of them is published here — the link, the program and its `.o`, and the three `.bin` files — so they are safe to delete.
@@ -50,17 +50,17 @@ Where these sit, written from the repository root rather than from here, because
 ```
 emojicode/
   protocols/<organization>/<division>/<protocol>/<protocol>.emojic
-  protocols/<organization>/<division>/<protocol>/<protocol>.<message>.frame
-  protocols/<organization>/<division>/<protocol>/<protocol>.<message>.wrote
+  protocols/<organization>/<division>/<protocol>/frames/<program>/<message>.frame
+  protocols/<organization>/<division>/<protocol>/frames/<program>/<message>.wrote
   exchanges/<venue>/ReadMe.md
   exchanges/<venue>/<venue>.Gateway.emojic
   exchanges/<venue>/<venue>.Market.emojic
   exchanges/<venue>/<venue>.<feed>.Feed.emojic
-  exchanges/<venue>/<venue>.Market.<run>.frame
-  exchanges/<venue>/<venue>.Market.<run>.wrote
+  exchanges/<venue>/runs/market/<run>.frame
+  exchanges/<venue>/runs/market/<run>.wrote
   exchanges/<venue>/<venue>.<session>.emojic
-  exchanges/<venue>/<venue>.<session>.<run>.frame
-  exchanges/<venue>/<venue>.<session>.<run>.wrote
+  exchanges/<venue>/runs/<session>/<run>.frame
+  exchanges/<venue>/runs/<session>/<run>.wrote
 ```
 A decoder sits under `protocols` because it is the same program whoever speaks the protocol; a market and a session sit under `exchanges` because they are the venue's own — a venue is what declares which chart runs over which protocol and which security its book is for. A model stating more than one framing — a client's stream and a server's are different programs, because they read different bytes — writes one decoder for each.
 
@@ -124,7 +124,7 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 | Programs | Characters | Reading every field the model states | Frames | Recorded from the wire |
 | --- | --- | --- | --- | --- |
-| 16 | 511,863 | 16 of 16 | 166 | 50 |
+| 16 | 513,952 | 16 of 16 | 169 | 50 |
 
 ## Open Markets Initiative
 

@@ -1,0 +1,795 @@
+{
+  "venue": "IexEquities",
+  "protocol": "Iex.IexEquities.MatchingEngine.Ipc.v2026",
+  "frame": {
+    "length": {
+      "named": "messagelength",
+      "width": 2,
+      "endian": "little"
+    },
+    "type": {
+      "named": "messagetype",
+      "width": 1,
+      "endian": "little",
+      "text": true
+    },
+    "addend": 2
+  },
+  "band": {
+    "reference": 10000,
+    "lowest": 9984,
+    "highest": 10015
+  },
+  "day": {
+    "named": "Iex Equities Open",
+    "starts": 0,
+    "phases": [
+      {
+        "named": "Continuous",
+        "index": 0,
+        "arriving": "Book.Cross",
+        "taking": "Book.Remove"
+      }
+    ],
+    "changes": []
+  },
+  "messages": [
+    {
+      "does": "order",
+      "way": "in",
+      "named": "newordermessage",
+      "codes": [
+        78
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "sequence",
+          "width": 8,
+          "endian": "little",
+          "role": "Sequence"
+        },
+        {
+          "named": "orderid",
+          "width": 8,
+          "endian": "little",
+          "role": "Order"
+        },
+        {
+          "named": "symbol",
+          "width": 8,
+          "endian": "little",
+          "role": "Instrument",
+          "text": true
+        },
+        {
+          "named": "side",
+          "width": 1,
+          "endian": "little",
+          "role": "Side",
+          "text": true,
+          "values": {
+            "Buy": 66,
+            "Sell": 83
+          }
+        },
+        {
+          "named": "price",
+          "width": 8,
+          "endian": "little",
+          "role": "Price",
+          "scale": "-4"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "little",
+          "role": "Quantity"
+        },
+        {
+          "named": "ordertype",
+          "width": 1,
+          "endian": "little",
+          "role": "OrderType",
+          "text": true,
+          "values": {
+            "Market": 49,
+            "Limit": 50,
+            "Pegged": 80
+          }
+        },
+        {
+          "named": "timeinforce",
+          "width": 1,
+          "endian": "little",
+          "role": "TimeInForce",
+          "text": true,
+          "values": {
+            "Day": 48,
+            "Ioc": 51,
+            "Fok": 52,
+            "Gtx": 53,
+            "Gtt": 54,
+            "System Hours": 77,
+            "At The Opening": 50,
+            "At The Close": 55
+          }
+        },
+        {
+          "named": "display",
+          "width": 1,
+          "endian": "little",
+          "role": "Display",
+          "text": true,
+          "values": {
+            "Displayed": 89,
+            "Hidden": 78
+          }
+        },
+        {
+          "named": "crosstype",
+          "width": 1,
+          "endian": "little",
+          "role": "CrossType",
+          "text": true,
+          "values": {
+            "Continuous": 78,
+            "Opening": 79,
+            "Closing": 67,
+            "Halt": 72
+          }
+        },
+        {
+          "named": "peg",
+          "width": 1,
+          "endian": "little",
+          "role": "Peg",
+          "text": true,
+          "values": {
+            "Unpegged": 78,
+            "Midpoint": 77,
+            "Primary": 82,
+            "Discretionary": 100,
+            "Corporate Discretionary": 122,
+            "Market Maker": 81,
+            "Offset": 111,
+            "Market": 80
+          }
+        },
+        {
+          "named": "instruction",
+          "width": 1,
+          "endian": "little",
+          "role": "Instruction",
+          "text": true,
+          "values": {
+            "Iex Only": 105,
+            "Router": 117,
+            "Iso": 102,
+            "Trade At Iso": 121,
+            "Discretionary Limit": 106
+          }
+        },
+        {
+          "named": "expiretime",
+          "width": 8,
+          "endian": "little",
+          "role": "Expiry"
+        }
+      ],
+      "buys": 66,
+      "sells": 83
+    },
+    {
+      "does": "cancel",
+      "way": "in",
+      "named": "cancelordermessage",
+      "codes": [
+        67
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "sequence",
+          "width": 8,
+          "endian": "little",
+          "role": "Sequence"
+        },
+        {
+          "named": "orderid",
+          "width": 8,
+          "endian": "little",
+          "role": "Order"
+        }
+      ]
+    },
+    {
+      "does": "phase",
+      "way": "in",
+      "named": "phaserequestmessage",
+      "codes": [
+        80
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "sequence",
+          "width": 8,
+          "endian": "little",
+          "role": "Sequence"
+        },
+        {
+          "named": "phasechange",
+          "width": 1,
+          "endian": "little",
+          "role": "PhaseChange",
+          "text": true,
+          "values": {
+            "Pre Open": 80,
+            "Opening Lock In": 73,
+            "Opening Lock Out": 75,
+            "Open": 79,
+            "Halt": 72,
+            "Resume": 82,
+            "Pre Close": 76,
+            "Closing Lock Out": 88,
+            "Close": 67,
+            "End": 69
+          }
+        }
+      ]
+    },
+    {
+      "does": "replace",
+      "way": "in",
+      "named": "replaceordermessage",
+      "codes": [
+        77
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "sequence",
+          "width": 8,
+          "endian": "little",
+          "role": "Sequence"
+        },
+        {
+          "named": "orderid",
+          "width": 8,
+          "endian": "little",
+          "role": "Order"
+        },
+        {
+          "named": "replacementid",
+          "width": 8,
+          "endian": "little",
+          "role": "Replacement"
+        },
+        {
+          "named": "symbol",
+          "width": 8,
+          "endian": "little",
+          "role": "Instrument",
+          "text": true
+        },
+        {
+          "named": "side",
+          "width": 1,
+          "endian": "little",
+          "role": "Side",
+          "text": true,
+          "values": {
+            "Buy": 66,
+            "Sell": 83
+          }
+        },
+        {
+          "named": "price",
+          "width": 8,
+          "endian": "little",
+          "role": "Price",
+          "scale": "-4"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "little",
+          "role": "Quantity"
+        },
+        {
+          "named": "ordertype",
+          "width": 1,
+          "endian": "little",
+          "role": "OrderType",
+          "text": true,
+          "values": {
+            "Market": 49,
+            "Limit": 50,
+            "Pegged": 80
+          }
+        },
+        {
+          "named": "timeinforce",
+          "width": 1,
+          "endian": "little",
+          "role": "TimeInForce",
+          "text": true,
+          "values": {
+            "Day": 48,
+            "Ioc": 51,
+            "Fok": 52,
+            "Gtx": 53,
+            "Gtt": 54,
+            "System Hours": 77,
+            "At The Opening": 50,
+            "At The Close": 55
+          }
+        },
+        {
+          "named": "display",
+          "width": 1,
+          "endian": "little",
+          "role": "Display",
+          "text": true,
+          "values": {
+            "Displayed": 89,
+            "Hidden": 78
+          }
+        },
+        {
+          "named": "crosstype",
+          "width": 1,
+          "endian": "little",
+          "role": "CrossType",
+          "text": true,
+          "values": {
+            "Continuous": 78,
+            "Opening": 79,
+            "Closing": 67,
+            "Halt": 72
+          }
+        },
+        {
+          "named": "peg",
+          "width": 1,
+          "endian": "little",
+          "role": "Peg",
+          "text": true,
+          "values": {
+            "Unpegged": 78,
+            "Midpoint": 77,
+            "Primary": 82,
+            "Discretionary": 100,
+            "Corporate Discretionary": 122,
+            "Market Maker": 81,
+            "Offset": 111,
+            "Market": 80
+          }
+        },
+        {
+          "named": "instruction",
+          "width": 1,
+          "endian": "little",
+          "role": "Instruction",
+          "text": true,
+          "values": {
+            "Iex Only": 105,
+            "Router": 117,
+            "Iso": 102,
+            "Trade At Iso": 121,
+            "Discretionary Limit": 106
+          }
+        }
+      ]
+    },
+    {
+      "does": "rested",
+      "way": "out",
+      "named": "orderrestedmessage",
+      "codes": [
+        82
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "orderid",
+          "width": 8,
+          "endian": "little",
+          "role": "Order"
+        },
+        {
+          "named": "symbol",
+          "width": 8,
+          "endian": "little",
+          "role": "Instrument",
+          "text": true
+        },
+        {
+          "named": "side",
+          "width": 1,
+          "endian": "little",
+          "role": "Side",
+          "text": true,
+          "values": {
+            "Buy": 66,
+            "Sell": 83
+          }
+        },
+        {
+          "named": "price",
+          "width": 8,
+          "endian": "little",
+          "role": "Price",
+          "scale": "-4"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "little",
+          "role": "Quantity"
+        },
+        {
+          "named": "display",
+          "width": 1,
+          "endian": "little",
+          "role": "Display",
+          "text": true,
+          "values": {
+            "Displayed": 89,
+            "Hidden": 78
+          }
+        }
+      ]
+    },
+    {
+      "does": "traded",
+      "way": "out",
+      "named": "trademessage",
+      "codes": [
+        84
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "aggressororderid",
+          "width": 8,
+          "endian": "little",
+          "role": "Aggressor"
+        },
+        {
+          "named": "restingorderid",
+          "width": 8,
+          "endian": "little",
+          "role": "Resting"
+        },
+        {
+          "named": "executionid",
+          "width": 8,
+          "endian": "little",
+          "role": "Execution"
+        },
+        {
+          "named": "symbol",
+          "width": 8,
+          "endian": "little",
+          "role": "Instrument",
+          "text": true
+        },
+        {
+          "named": "price",
+          "width": 8,
+          "endian": "little",
+          "role": "Price",
+          "scale": "-4"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "little",
+          "role": "Quantity"
+        },
+        {
+          "named": "auction",
+          "width": 1,
+          "endian": "little",
+          "role": "Auction",
+          "text": true,
+          "values": {
+            "None": 78,
+            "Opening": 79,
+            "Intraday": 73,
+            "Closing": 67
+          }
+        },
+        {
+          "named": "restingdisplay",
+          "width": 1,
+          "endian": "little",
+          "role": "RestingDisplay",
+          "text": true,
+          "values": {
+            "Displayed": 89,
+            "Hidden": 78
+          }
+        },
+        {
+          "named": "aggressordisplay",
+          "width": 1,
+          "endian": "little",
+          "role": "AggressorDisplay",
+          "text": true,
+          "values": {
+            "Displayed": 89,
+            "Hidden": 78
+          }
+        }
+      ]
+    },
+    {
+      "does": "refused",
+      "way": "out",
+      "named": "orderrefusedmessage",
+      "codes": [
+        74
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "orderid",
+          "width": 8,
+          "endian": "little",
+          "role": "Order"
+        },
+        {
+          "named": "refusalreason",
+          "width": 1,
+          "endian": "little",
+          "role": "Refusal",
+          "text": true,
+          "values": {
+            "Invalid Type": 84,
+            "Invalid Time In Force": 76,
+            "Closed": 80,
+            "Invalid Cross": 67,
+            "Invalid Quantity": 81,
+            "Halted": 72
+          }
+        }
+      ]
+    },
+    {
+      "does": "canceled",
+      "way": "out",
+      "named": "ordercanceledmessage",
+      "codes": [
+        88
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "orderid",
+          "width": 8,
+          "endian": "little",
+          "role": "Order"
+        },
+        {
+          "named": "display",
+          "width": 1,
+          "endian": "little",
+          "role": "Display",
+          "text": true,
+          "values": {
+            "Displayed": 89,
+            "Hidden": 78
+          }
+        }
+      ]
+    },
+    {
+      "does": "announced",
+      "way": "out",
+      "named": "phaseannouncedmessage",
+      "codes": [
+        83
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "symbol",
+          "width": 8,
+          "endian": "little",
+          "role": "Instrument",
+          "text": true
+        },
+        {
+          "named": "announcement",
+          "width": 1,
+          "endian": "little",
+          "role": "Announcement",
+          "text": true,
+          "values": {
+            "Start Of Messages": 79,
+            "Start Of System Hours": 83,
+            "Start Of Market Hours": 81,
+            "End Of Market Hours": 77,
+            "End Of System Hours": 69,
+            "End Of Messages": 67,
+            "Halted": 72,
+            "Resumed": 84
+          }
+        }
+      ]
+    },
+    {
+      "does": "crossed",
+      "way": "out",
+      "named": "crosscompletedmessage",
+      "codes": [
+        85
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "symbol",
+          "width": 8,
+          "endian": "little",
+          "role": "Instrument",
+          "text": true
+        },
+        {
+          "named": "cross",
+          "width": 1,
+          "endian": "little",
+          "role": "Cross",
+          "text": true,
+          "values": {
+            "Opening": 79,
+            "Intraday": 73,
+            "Closing": 67
+          }
+        },
+        {
+          "named": "price",
+          "width": 8,
+          "endian": "little",
+          "role": "Price",
+          "scale": "-4"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "little",
+          "role": "Quantity"
+        },
+        {
+          "named": "executionid",
+          "width": 8,
+          "endian": "little",
+          "role": "Execution"
+        }
+      ]
+    },
+    {
+      "does": "replaced",
+      "way": "out",
+      "named": "orderreplacedmessage",
+      "codes": [
+        87
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "orderid",
+          "width": 8,
+          "endian": "little",
+          "role": "Order"
+        },
+        {
+          "named": "replacementid",
+          "width": 8,
+          "endian": "little",
+          "role": "Replacement"
+        },
+        {
+          "named": "symbol",
+          "width": 8,
+          "endian": "little",
+          "role": "Instrument",
+          "text": true
+        },
+        {
+          "named": "side",
+          "width": 1,
+          "endian": "little",
+          "role": "Side",
+          "text": true,
+          "values": {
+            "Buy": 66,
+            "Sell": 83
+          }
+        },
+        {
+          "named": "price",
+          "width": 8,
+          "endian": "little",
+          "role": "Price",
+          "scale": "-4"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "little",
+          "role": "Quantity"
+        },
+        {
+          "named": "display",
+          "width": 1,
+          "endian": "little",
+          "role": "Display",
+          "text": true,
+          "values": {
+            "Displayed": 89,
+            "Hidden": 78
+          }
+        }
+      ]
+    }
+  ],
+  "symbol": "ZIEXT"
+}

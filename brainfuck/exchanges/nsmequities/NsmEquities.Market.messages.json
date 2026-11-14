@@ -100,6 +100,7 @@
           "values": {
             "Day": 48,
             "Ioc": 51,
+            "Gtx": 53,
             "Gtt": 54,
             "After Hours": 69
           }
@@ -131,6 +132,12 @@
             "Extended Life": 69,
             "After Hours Close": 65
           }
+        },
+        {
+          "named": "expiretime",
+          "width": 4,
+          "endian": "little",
+          "role": "Expiry"
         }
       ],
       "buys": 66,
@@ -195,6 +202,11 @@
             "Open": 79,
             "Halt": 72,
             "Resume": 82,
+            "Opening Lock In": 73,
+            "Opening Lock Out": 75,
+            "Opening Late": 74,
+            "Closing Lock Out": 88,
+            "Closing Freeze": 70,
             "Pre Close": 76,
             "Close": 67,
             "End": 69
@@ -274,6 +286,7 @@
           "values": {
             "Day": 48,
             "Ioc": 51,
+            "Gtx": 53,
             "Gtt": 54,
             "After Hours": 69
           }
@@ -489,6 +502,7 @@
           "text": true,
           "values": {
             "Closed": 69,
+            "Market Not Allowed": 84,
             "Other": 79,
             "Invalid Cross": 67
           }

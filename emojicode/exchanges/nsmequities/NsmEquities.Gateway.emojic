@@ -56,6 +56,11 @@
   0 ➡️ 🖍🆕 next
   0 ➡️ 🖍🆕 carried
   0 ➡️ 🖍🆕 restated
+  0 ➡️ 🖍🆕 walk
+  0 ➡️ 🖍🆕 limit
+  0 ➡️ 🖍🆕 stretch
+  0 ➡️ 🖍🆕 tag
+  0 ➡️ 🖍🆕 optioned0
 
   💭 each order admitted: the reference its client named it by, and the number it was given
   🆕🍨🐚🔢🍆❗️ ➡️ 🖍🆕 references
@@ -166,8 +171,46 @@
       admitted ➡️ 🖍 order
       🐻 references reference❗️
       🐻 numbers order❗️
+      💭 the fields this request may carry or leave out: its options are walked for them
+      0 ➡️ 🖍 optioned0
+      position ➕ reach ➡️ 🖍 limit
+      position ➕ 50 ➡️ 🖍 walk
+      🔁 limit ▶️ walk 🍇
+        walk ➡️ 🖍 began
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍 stretch
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        stretch ✖ 256 ➡️ 🖍 stretch
+        stretch ➕ digit ➡️ 🖍 stretch
+
+        walk ➕ 1 ➡️ 🖍 walk
+        ↪️ stretch ▶️ 0 🍇
+          ↪️ limit ▶️ walk 🍇
+            walk ➡️ 🖍 began
+            💭 its value, a byte at a time, each masked because a byte here is signed
+            0 ➡️ 🖍 tag
+            began ➕ 0 ➡️ 🖍 cursor
+            🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+            raw ⭕ 255 ➡️ 🖍 digit
+            tag ✖ 256 ➡️ 🖍 tag
+            tag ➕ digit ➡️ 🖍 tag
+
+            ↪️ tag 🙌 15 🍇
+              ↪️ stretch 🙌 5 🍇
+                ↪️ limit ▶️🙌 walk ➕ stretch 🍇
+                  walk ➕ 1 ➡️ 🖍 optioned0
+                🍉
+              🍉
+            🍉
+          🍉
+        🍉
+        walk ➕ stretch ➡️ 🖍 walk
+      🍉
+
       ↪️ order ▶️ 0 🍇
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 49 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 53 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤N🔤❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         sent ➡️ 🖍 taken
@@ -361,11 +404,7 @@
         carried ✖ 256 ➡️ 🖍 carried
         carried ➕ digit ➡️ 🖍 carried
 
-        carried ➡️ 🖍 restated
-        ↪️ carried 🙌 53 🍇
-          48 ➡️ 🖍 restated
-        🍉
-        restated ➡️ 🖍 taken
+        carried ➡️ 🖍 taken
         taken ➡️ 🖍 code
         code ⭕ 255 ➡️ 🖍 code
         wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
@@ -404,6 +443,61 @@
         taken ➡️ 🖍 code
         code ⭕ 255 ➡️ 🖍 code
         wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        ↪️ optioned0 ▶️ 0 🍇
+          💭 expiretime, from expiretime
+          optioned0 ➡️ 🖍 began
+          💭 its value, a byte at a time, each masked because a byte here is signed
+          0 ➡️ 🖍 carried
+          began ➕ 0 ➡️ 🖍 cursor
+          🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+          raw ⭕ 255 ➡️ 🖍 digit
+          carried ✖ 256 ➡️ 🖍 carried
+          carried ➕ digit ➡️ 🖍 carried
+          began ➕ 1 ➡️ 🖍 cursor
+          🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+          raw ⭕ 255 ➡️ 🖍 digit
+          carried ✖ 256 ➡️ 🖍 carried
+          carried ➕ digit ➡️ 🖍 carried
+          began ➕ 2 ➡️ 🖍 cursor
+          🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+          raw ⭕ 255 ➡️ 🖍 digit
+          carried ✖ 256 ➡️ 🖍 carried
+          carried ➕ digit ➡️ 🖍 carried
+          began ➕ 3 ➡️ 🖍 cursor
+          🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+          raw ⭕ 255 ➡️ 🖍 digit
+          carried ✖ 256 ➡️ 🖍 carried
+          carried ➕ digit ➡️ 🖍 carried
+
+          carried ➡️ 🖍 taken
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 8 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 16 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 24 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        🍉
+        🙅 🍇
+          0 ➡️ 🖍 taken
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 8 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 16 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken 👉 24 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        🍉
         sent ➕ 1 ➡️ 🖍 sent
       🍉
     🍉

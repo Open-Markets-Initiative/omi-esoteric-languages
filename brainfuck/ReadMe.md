@@ -22,7 +22,7 @@ Most programs have a frame to read published beside them, as hexadecimal in a `.
 A market can be driven rather than replayed. `run.py` builds that venue's own order stream out of steps said in words, runs the market on it, and reads back what the market published field by field:
 
 ```
-python3 run.py brainfuck/exchanges/nsmequities/NsmEquities.Market.bf to Continuous , buy 1 7@9995 , sell 2 4@9995
+python3 run.py brainfuck/exchanges/iexequities/IexEquities.Market.bf to Continuous , buy 1 7@9995 , sell 2 4@9995
 ```
 **Or run one without installing anything.** This repository's own build workflow takes a market and a run of orders when it is dispatched by hand, so the Actions tab will run an engine and print what it published — no clone and no Python. What a person types reaches the script through the environment and quoted, so a dispatch states a run of orders and cannot state a command.
 
@@ -35,7 +35,7 @@ bf brainfuck/dialect.bf < /dev/null
 ```
 That program takes no input and prints one line per claim, saying of each whether this interpreter kept it. All four should say `ok`. One that says `no`, or a line that stops partway through, names what your interpreter does differently — and the claims are listed in the order the programs here lean on them, which was measured rather than guessed.
 
-The one byte wrap is the one that matters most: of 191 frames published here, only 18 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 982, so classic Brainfuck's 30,000 would do 30 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
+The one byte wrap is the one that matters most: of 204 frames published here, only 18 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 1,001, so classic Brainfuck's 30,000 would do 29 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
 
 ## Layout
 
@@ -49,8 +49,8 @@ brainfuck/
   exchanges/<venue>/<venue>.Market.bf
   exchanges/<venue>/<venue>.<feed>.Feed.bf
   exchanges/<venue>/<venue>.<session>.bf
-  exchanges/<venue>/<program>.<run>.frame
-  exchanges/<venue>/<program>.<run>.wrote
+  exchanges/<venue>/runs/<program>/<run>.frame
+  exchanges/<venue>/runs/<program>/<run>.wrote
 ```
 **A venue is a gateway, a market and its feeds, and they join.** The gateway reads the venue's order entry and writes its own orders, under the session the venue's chart states; the market reads those and writes the venue's own events, by its trading chart; each feed reads those and writes market data, by the venue's transforms. What one writes is what the next reads, so a run can begin where a participant begins and end with what a subscriber is sent. Each venue's own readme says which of these it has, what each was held to, and the lines that run them joined; `manifest.json` at the root lists every program, run and join for anything that would rather read that than a file's name.
 
@@ -134,14 +134,14 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 
 - Programs: 16
-- Instructions: 5,667,392
+- Instructions: 5,674,077
 - Reading every field the model states: 16 of 16
 - Published with a frame they are held to: 16 of 16
-- Frames, of which recorded from the wire: 156, 40
+- Frames, of which recorded from the wire: 159, 40
 - Sessions, of which proven on a run: 1, 1
 - Runs, and the packets they were answered with: 4, 4
-- Markets, of which proven on a run: 1, 1
-- Orders put to them, the trades those made and the orders refused: 21, 6, 2
+- Markets, of which proven on a run: 2, 2
+- Orders put to them, the trades those made and the orders refused: 44, 14, 6
 
 ## Testing
 

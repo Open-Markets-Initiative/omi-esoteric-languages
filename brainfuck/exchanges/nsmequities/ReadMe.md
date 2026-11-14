@@ -29,7 +29,7 @@ A venue is declared as components that talk through one internal protocol, and e
 From the root of the repository, one published run through all of it - `xxd` turns the hexadecimal of a published frame into bytes and back:
 
 ```
-xxd -r -p < brainfuck/exchanges/nsmequities/NsmEquities.Gateway.crossing.frame \
+xxd -r -p < brainfuck/exchanges/nsmequities/runs/gateway/crossing.frame \
   | bf brainfuck/exchanges/nsmequities/NsmEquities.Gateway.bf \
   | bf brainfuck/exchanges/nsmequities/NsmEquities.Market.bf \
   | bf brainfuck/exchanges/nsmequities/NsmEquities.TotalView.Feed.bf \
@@ -45,6 +45,7 @@ What was settled when the program was written rather than asked while it ran:
 
 - timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as nought
 - sequence is a message's place in the order the engine is sent them, which the venue's sequencer states; with one gateway and nothing between it and the engine, this counts them itself, from one
+- expiretime is a field a request may carry or leave out, so it is looked for among the options the request ends in, each read by its length and its tag; a request leaving it out carries nought for it
 - the session is SoupBin Tcp: a connection opens in NotLoggedIn, and a request is admitted only while it rests in LoggedIn, which is where the chart receives the other end's own data. A login moves the connection as the chart says an accepted one does; whether to accept it is the session program's to say and was settled there
 - it remembers the first 16 orders of a connection by the reference each came with, because a tape cannot grow; an order admitted after those is still admitted and numbered, and a later cancel naming it finds nothing
 
@@ -53,15 +54,16 @@ What the venue declares of its order entry that this program does not run, and w
 - ouch_reduce_order: its fields.quantity states an intended size, which counts what the order has already executed, and that is something the engine reports on a stream this program does not read
 - ouch_modify_order: its fields.quantity states an intended size, which counts what the order has already executed, and that is something the engine reports on a stream this program does not read
 - ouch_replace_order: it replaces an order, which needs what the order it replaces has executed and the side and display it was entered with, and the first of those is the engine's to say
-- the 15 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
+- the 20 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
 
 Each run is a client's packets and what the gateway wrote for them. A run nobody logged in for is published with nothing written, because declining is half of what a gate does:
 
 | Run | Requests | Bytes written |
 | --- | ---: | ---: |
-| `NsmEquities.Gateway.crossing` | 3 | 153 |
-| `NsmEquities.Gateway.cancelling` | 3 | 129 |
+| `NsmEquities.Gateway.crossing` | 3 | 165 |
+| `NsmEquities.Gateway.cancelling` | 3 | 137 |
 | `NsmEquities.Gateway.unadmitted` | 3 | 0 |
+| `NsmEquities.Gateway.optioned` | 2 | 110 |
 
 ## Market
 
@@ -70,6 +72,8 @@ Each run is a client's packets and what the gateway wrote for them. A run nobody
 What was settled when the program was written rather than asked while it ran:
 
 - the book holds the 32 prices from 9984 to 10015, which is the band of the declared reference 10000; a price outside it is refused
+- a refusal for a limit of this engine's own - a price outside the band, a side that remembers no more orders, a cancel naming no order it holds - is written with the venue's reason for Phase, because every reason the protocol states is marked for something else and it states none for anything else: a stated simplification, and the nearest of the venue's words rather than one of its own
+- the chart answers an arriving order by what the order is, and so does this: each phase's answers are tried in the order the chart states them and the first whose conditions the order meets is the one it gets, with the reason the chart gives where that is a refusal. A word the protocol has no code for is a word no order is, and a code the venue marks with no word is none of the words
 - a level holds one summed quantity and remembers the identifier of the last order to rest there, so orders sharing a price are not held apart; the symbol is read and reported but not held, so one security is traded
 - packet.message.messagedata.orderrestedmessage.timestamp; packet.message.messagedata.trademessage.timestamp: marked SendTime; which asks whoever sends the message to stamp it from a clock; Brainfuck reads bytes and has no clock; so each published event carries the arriving order's timestamp instead: the time it was caused rather than the time it was sent
 - the day is Nasdaq Equities Open, in the phases Continuous; it starts in Continuous; the chart states no change of phase, so it stays there and nothing asks it to move
@@ -84,9 +88,11 @@ Each run below is published as a `.frame` of the orders put to it and a `.wrote`
 | `NsmEquities.Market.crossing` | 5 | 2 | 1 |
 | `NsmEquities.Market.cancelling` | 2 | 0 | 1 |
 | `NsmEquities.Market.sharing` | 4 | 2 | 0 |
+| `NsmEquities.Market.declining` | 3 | 1 | 1 |
 | `NsmEquities.Market.replacing` | 4 | 1 | 0 |
 | `NsmEquities.Market.entered-crossing` | 3 | 1 | 0 |
 | `NsmEquities.Market.entered-cancelling` | 3 | 0 | 0 |
+| `NsmEquities.Market.entered-optioned` | 2 | 1 | 0 |
 
 ## Feeds
 
@@ -107,9 +113,11 @@ Each run is what the market wrote for the run of the same name, and the packets 
 | `NsmEquities.TotalView.Feed.crossing` | 6 |
 | `NsmEquities.TotalView.Feed.cancelling` | 3 |
 | `NsmEquities.TotalView.Feed.sharing` | 7 |
+| `NsmEquities.TotalView.Feed.declining` | 3 |
 | `NsmEquities.TotalView.Feed.replacing` | 4 |
 | `NsmEquities.TotalView.Feed.entered-crossing` | 4 |
 | `NsmEquities.TotalView.Feed.entered-cancelling` | 3 |
+| `NsmEquities.TotalView.Feed.entered-optioned` | 3 |
 
 ## Session
 
@@ -147,11 +155,11 @@ One run per transition of the chart, named for the state it rests in and the pac
 | Program | What it is | Runs published |
 | --- | --- | ---: |
 | `NsmEquities.SoupBin.bf` | the venue's handshake | 4 |
-| `NsmEquities.Gateway.bf` | the venue's order entry, under its session chart | 3 |
-| `NsmEquities.Market.bf` | the venue's book and the matching over it | 6 |
-| `NsmEquities.TotalView.Feed.bf` | the venue's TotalView feed | 6 |
+| `NsmEquities.Gateway.bf` | the venue's order entry, under its session chart | 4 |
+| `NsmEquities.Market.bf` | the venue's book and the matching over it | 8 |
+| `NsmEquities.TotalView.Feed.bf` | the venue's TotalView feed | 8 |
 
-Beside each program is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `check.py` runs. A market also publishes a `.messages.json`, which is what it reads and writes flattened out of its model — that is what lets `run.py` build an order of your own rather than only replay what shipped.
+Under `runs/`, in a folder named for each program, is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `check.py` runs. A market also publishes a `.messages.json`, which is what it reads and writes flattened out of its model — that is what lets `run.py` build an order of your own rather than only replay what shipped.
 
 ## Running
 
@@ -163,7 +171,7 @@ python3 run.py brainfuck/exchanges/nsmequities/NsmEquities.Market.bf to Continuo
 Or replay a run that shipped with it:
 
 ```
-python3 run.py brainfuck/exchanges/nsmequities/NsmEquities.Market.bf --frame brainfuck/exchanges/nsmequities/NsmEquities.Market.crossing.frame
+python3 run.py brainfuck/exchanges/nsmequities/NsmEquities.Market.bf --frame brainfuck/exchanges/nsmequities/runs/market/crossing.frame
 ```
 A session is replayed rather than driven, because what it answers is decided by its chart and the packet that arrives:
 

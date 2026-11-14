@@ -32,6 +32,14 @@ LANGUAGE = "Emojicode"
 FRAME = ".frame"
 WROTE = ".wrote"
 
+
+def kept(program):
+    """The folder a program's runs are kept in: runs/ for a venue's, frames/ for a protocol's,
+    and under that the program's own name less the word it opens with, in lower case."""
+    kind = "runs" if "exchanges" in program.parent.parts else "frames"
+
+    return program.parent / kind / program.stem.split(".", 1)[-1].lower()
+
 # a program takes the frame to read and the file to write, because the language it is in has
 # no standard input: the file package is the only way in or out
 SECONDS = 120
@@ -173,7 +181,7 @@ def main():
 
             # a program has a frame for each message the corpus holds a capture of, and one
             # laid out from its model besides, so there is no one frame to look for
-            for frame in sorted(program.parent.glob(program.stem + ".*" + FRAME)):
+            for frame in sorted(kept(program).glob("*" + FRAME)):
                 wrote = frame.with_suffix(WROTE)
 
                 if not wrote.exists():

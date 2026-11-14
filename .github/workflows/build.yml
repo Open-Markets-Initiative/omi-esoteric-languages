@@ -7,7 +7,7 @@ on:
     inputs:
       market:
         description: Which market to run
-        default: brainfuck/exchanges/nsmequities/NsmEquities.Market.bf
+        default: brainfuck/exchanges/iexequities/IexEquities.Market.bf
       orders:
         description: What to do, separated by commas
         default: "to Continuous , buy 1 7@9995 , sell 2 4@9995"

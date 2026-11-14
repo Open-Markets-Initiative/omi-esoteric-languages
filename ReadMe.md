@@ -36,8 +36,10 @@ manifest.json                         every program, its runs, and how a venue's
     <Venue>.Market.<ext>              the venue's own orders in, its own events out
     <Venue>.<Feed>.Feed.<ext>         the venue's own events in, market data out
     <Venue>.<Session>.<ext>           the order entry's handshake
-    <Program>.<run>.frame             the bytes one run gives a program, as hexadecimal
-    <Program>.<run>.wrote             the bytes it should write for them
+    runs/<program>/<run>.frame        the bytes one run gives a program, as hexadecimal
+    runs/<program>/<run>.wrote        the bytes it should write for them
+<language>/protocols/.../<protocol>/  one protocol's decoders, a program for each version
+    frames/<program>/<frame>.frame    a frame a decoder reads, and beside it what it should write
 ```
 **A venue is more than one program, and they join.** What a gateway writes is what its market reads, and what a market writes is what each of its feeds reads. Where a run was carried through, the `.wrote` of one program and the `.frame` of the next hold the same bytes, and a venue's readme gives the lines that run them joined.
 
