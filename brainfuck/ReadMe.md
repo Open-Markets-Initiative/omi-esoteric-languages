@@ -19,6 +19,11 @@ bf brainfuck/protocols/nasdaq/nsmequities/orders/NsmEquities.Orders.v5.0.Client.
 ```
 Most programs have a frame to read published beside them, as hexadecimal in a `.frame` file, with what the program wrote when it read it in a `.wrote` file. Those are what `check.py` runs, and they are the shortest way to see one of these work.
 
+A whole venue can be watched. `demo.py` plays a published run through every program of one - gateway, market and feeds, each run there and then - and says what each read and wrote in words, with the book drawn after every step that changed it:
+
+```
+python3 demo.py NsmEquities
+```
 A market can be driven rather than replayed. `run.py` builds that venue's own order stream out of steps said in words, runs the market on it, and reads back what the market published field by field:
 
 ```
@@ -35,7 +40,7 @@ bf brainfuck/dialect.bf < /dev/null
 ```
 That program takes no input and prints one line per claim, saying of each whether this interpreter kept it. All four should say `ok`. One that says `no`, or a line that stops partway through, names what your interpreter does differently — and the claims are listed in the order the programs here lean on them, which was measured rather than guessed.
 
-The one byte wrap is the one that matters most: of 204 frames published here, only 18 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 1,001, so classic Brainfuck's 30,000 would do 29 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
+The one byte wrap is the one that matters most: of 213 frames published here, only 18 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 1,001, so classic Brainfuck's 30,000 would do 29 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
 
 ## Layout
 
@@ -86,7 +91,7 @@ A protocol's decoder sits under `protocols` because it is the same program whoev
 - Engine `Nasdaq.NsmEquities.Equities.Open.Trading`
 - OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
 - Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
-- Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0`
+- Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0.2026`
 - Replay `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Trader `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Trader `Nasdaq.NsmEquities.Orders.Ouch.v5.0`
@@ -97,7 +102,7 @@ A protocol's decoder sits under `protocols` because it is the same program whoev
 - Engine `Nasdaq.NsmEquities.Equities.Session.Trading`
 - OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
 - Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
-- Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0`
+- Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0.2026`
 - Replay `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Trader `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Trader `Nasdaq.NsmEquities.Orders.Ouch.v5.0`
@@ -134,14 +139,14 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 
 - Programs: 16
-- Instructions: 5,674,077
+- Instructions: 5,675,269
 - Reading every field the model states: 16 of 16
 - Published with a frame they are held to: 16 of 16
 - Frames, of which recorded from the wire: 159, 40
 - Sessions, of which proven on a run: 1, 1
 - Runs, and the packets they were answered with: 4, 4
 - Markets, of which proven on a run: 2, 2
-- Orders put to them, the trades those made and the orders refused: 44, 14, 6
+- Orders put to them, the trades those made and the orders refused: 68, 26, 8
 
 ## Testing
 

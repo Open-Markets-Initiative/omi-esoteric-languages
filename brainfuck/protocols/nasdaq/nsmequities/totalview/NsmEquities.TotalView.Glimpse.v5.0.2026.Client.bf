@@ -1,4 +1,4 @@
-Protocol: National Association of Securities Dealers Automated Quotations (Nasdaq) TotalView Itch v5 0
+Protocol: National Association of Securities Dealers Automated Quotations (Nasdaq) TotalView Itch v5 0 2026
 one frame of clientpacket: a line a field its address then the bytes it held
 >>,>,<<[-]++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.-----

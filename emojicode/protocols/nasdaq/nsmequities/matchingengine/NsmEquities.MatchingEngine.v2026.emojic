@@ -156,6 +156,22 @@
     wrote ➕ newline ➡️ 🖍 wrote
     position ➕ 1 ➡️ 🖍 position
 
+    💭 peg, 1 byte
+    📇 🔤peg=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
+    💭 minqty, 4 bytes
+    📇 🔤minqty=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 4❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 4 ➡️ 🖍 position
+
     💭 expiretime, 4 bytes
     📇 🔤expiretime=🔤❗️ ➡️ 🖍 named
     wrote ➕ named ➡️ 🖍 wrote
@@ -779,6 +795,22 @@
     wrote ➕ held ➡️ 🖍 wrote
     wrote ➕ newline ➡️ 🖍 wrote
     position ➕ 1 ➡️ 🖍 position
+
+    💭 peg, 1 byte
+    📇 🔤peg=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
+    💭 minqty, 4 bytes
+    📇 🔤minqty=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 4❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 4 ➡️ 🖍 position
 
   🍉
   🙅↪️ value1 🙌 87 🍇

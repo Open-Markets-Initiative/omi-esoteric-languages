@@ -1,0 +1,1546 @@
+{
+  "venue": "NsmEquities",
+  "feed": "TotalView",
+  "protocol": "Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026",
+  "reads": "Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026",
+  "packets": [
+    {
+      "named": "Add Order No Mpid Attribution Message",
+      "from": "orderrestedmessage",
+      "bytes": 58,
+      "fields": [
+        {
+          "named": "session",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Session",
+          "header": true,
+          "literal": "4e534d54563030303031"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagecount",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Count",
+          "header": true,
+          "literal": "0001"
+        },
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Length",
+          "header": true,
+          "literal": "0024"
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Stock Directory Message": 82,
+            "Stock Trading Action Message": 72,
+            "Reg Sho Short Sale Price Test Restricted Indicator Message": 89,
+            "Market Participant Position Message": 76,
+            "Mwcb Decline Level Message": 86,
+            "Mwcb Status Level Message": 87,
+            "Ipo Quoting Period Update": 75,
+            "Luld Auction Collar Message": 74,
+            "Operational Halt Message": 104,
+            "Add Order No Mpid Attribution Message": 65,
+            "Add Order With Mpid Attribution Message": 70,
+            "Order Executed Message": 69,
+            "Order Executed With Price Message": 67,
+            "Order Cancel Message": 88,
+            "Order Delete Message": 68,
+            "Order Replace Message": 85,
+            "Non Cross Trade Message": 80,
+            "Cross Trade Message": 81,
+            "Broken Trade Message": 66,
+            "Net Order Imbalance Indicator Message": 73,
+            "Retail Price Improvement Indicator Message": 78,
+            "Direct Listing With Capital Raise Price Discovery Message": 79
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "41"
+        },
+        {
+          "named": "stocklocate",
+          "width": 2,
+          "endian": "big",
+          "title": "Stock Locate",
+          "literal": "0001"
+        },
+        {
+          "named": "trackingnumber",
+          "width": 2,
+          "endian": "big",
+          "title": "Tracking Number",
+          "literal": "0000"
+        },
+        {
+          "named": "timestamp",
+          "width": 6,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "orderreferencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Order Reference Number"
+        },
+        {
+          "named": "buysellindicator",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Buy": 66,
+            "Sell": 83
+          },
+          "title": "Buy Sell Indicator"
+        },
+        {
+          "named": "shares",
+          "width": 4,
+          "endian": "big",
+          "title": "Shares"
+        },
+        {
+          "named": "stock",
+          "width": 8,
+          "endian": "little",
+          "text": true,
+          "title": "Stock"
+        },
+        {
+          "named": "price",
+          "width": 4,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Price"
+        }
+      ]
+    },
+    {
+      "named": "Order Executed Message",
+      "from": "trademessage",
+      "bytes": 53,
+      "fields": [
+        {
+          "named": "session",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Session",
+          "header": true,
+          "literal": "4e534d54563030303031"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagecount",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Count",
+          "header": true,
+          "literal": "0001"
+        },
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Length",
+          "header": true,
+          "literal": "001f"
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Stock Directory Message": 82,
+            "Stock Trading Action Message": 72,
+            "Reg Sho Short Sale Price Test Restricted Indicator Message": 89,
+            "Market Participant Position Message": 76,
+            "Mwcb Decline Level Message": 86,
+            "Mwcb Status Level Message": 87,
+            "Ipo Quoting Period Update": 75,
+            "Luld Auction Collar Message": 74,
+            "Operational Halt Message": 104,
+            "Add Order No Mpid Attribution Message": 65,
+            "Add Order With Mpid Attribution Message": 70,
+            "Order Executed Message": 69,
+            "Order Executed With Price Message": 67,
+            "Order Cancel Message": 88,
+            "Order Delete Message": 68,
+            "Order Replace Message": 85,
+            "Non Cross Trade Message": 80,
+            "Cross Trade Message": 81,
+            "Broken Trade Message": 66,
+            "Net Order Imbalance Indicator Message": 73,
+            "Retail Price Improvement Indicator Message": 78,
+            "Direct Listing With Capital Raise Price Discovery Message": 79
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "45"
+        },
+        {
+          "named": "stocklocate",
+          "width": 2,
+          "endian": "big",
+          "title": "Stock Locate",
+          "literal": "0001"
+        },
+        {
+          "named": "trackingnumber",
+          "width": 2,
+          "endian": "big",
+          "title": "Tracking Number",
+          "literal": "0000"
+        },
+        {
+          "named": "timestamp",
+          "width": 6,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "orderreferencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Order Reference Number"
+        },
+        {
+          "named": "executedshares",
+          "width": 4,
+          "endian": "big",
+          "title": "Executed Shares"
+        },
+        {
+          "named": "matchnumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Match Number"
+        }
+      ]
+    },
+    {
+      "named": "Order Executed With Price Message",
+      "from": "trademessage",
+      "bytes": 58,
+      "fields": [
+        {
+          "named": "session",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Session",
+          "header": true,
+          "literal": "4e534d54563030303031"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagecount",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Count",
+          "header": true,
+          "literal": "0001"
+        },
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Length",
+          "header": true,
+          "literal": "0024"
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Stock Directory Message": 82,
+            "Stock Trading Action Message": 72,
+            "Reg Sho Short Sale Price Test Restricted Indicator Message": 89,
+            "Market Participant Position Message": 76,
+            "Mwcb Decline Level Message": 86,
+            "Mwcb Status Level Message": 87,
+            "Ipo Quoting Period Update": 75,
+            "Luld Auction Collar Message": 74,
+            "Operational Halt Message": 104,
+            "Add Order No Mpid Attribution Message": 65,
+            "Add Order With Mpid Attribution Message": 70,
+            "Order Executed Message": 69,
+            "Order Executed With Price Message": 67,
+            "Order Cancel Message": 88,
+            "Order Delete Message": 68,
+            "Order Replace Message": 85,
+            "Non Cross Trade Message": 80,
+            "Cross Trade Message": 81,
+            "Broken Trade Message": 66,
+            "Net Order Imbalance Indicator Message": 73,
+            "Retail Price Improvement Indicator Message": 78,
+            "Direct Listing With Capital Raise Price Discovery Message": 79
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "43"
+        },
+        {
+          "named": "stocklocate",
+          "width": 2,
+          "endian": "big",
+          "title": "Stock Locate",
+          "literal": "0001"
+        },
+        {
+          "named": "trackingnumber",
+          "width": 2,
+          "endian": "big",
+          "title": "Tracking Number",
+          "literal": "0000"
+        },
+        {
+          "named": "timestamp",
+          "width": 6,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "orderreferencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Order Reference Number"
+        },
+        {
+          "named": "executedshares",
+          "width": 4,
+          "endian": "big",
+          "title": "Executed Shares"
+        },
+        {
+          "named": "matchnumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Match Number"
+        },
+        {
+          "named": "printable",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "No": 78,
+            "Yes": 89
+          },
+          "title": "Printable",
+          "literal": "4e"
+        },
+        {
+          "named": "executionprice",
+          "width": 4,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Execution Price"
+        }
+      ]
+    },
+    {
+      "named": "Non Cross Trade Message",
+      "from": "trademessage",
+      "bytes": 66,
+      "fields": [
+        {
+          "named": "session",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Session",
+          "header": true,
+          "literal": "4e534d54563030303031"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagecount",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Count",
+          "header": true,
+          "literal": "0001"
+        },
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Length",
+          "header": true,
+          "literal": "002c"
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Stock Directory Message": 82,
+            "Stock Trading Action Message": 72,
+            "Reg Sho Short Sale Price Test Restricted Indicator Message": 89,
+            "Market Participant Position Message": 76,
+            "Mwcb Decline Level Message": 86,
+            "Mwcb Status Level Message": 87,
+            "Ipo Quoting Period Update": 75,
+            "Luld Auction Collar Message": 74,
+            "Operational Halt Message": 104,
+            "Add Order No Mpid Attribution Message": 65,
+            "Add Order With Mpid Attribution Message": 70,
+            "Order Executed Message": 69,
+            "Order Executed With Price Message": 67,
+            "Order Cancel Message": 88,
+            "Order Delete Message": 68,
+            "Order Replace Message": 85,
+            "Non Cross Trade Message": 80,
+            "Cross Trade Message": 81,
+            "Broken Trade Message": 66,
+            "Net Order Imbalance Indicator Message": 73,
+            "Retail Price Improvement Indicator Message": 78,
+            "Direct Listing With Capital Raise Price Discovery Message": 79
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "50"
+        },
+        {
+          "named": "stocklocate",
+          "width": 2,
+          "endian": "big",
+          "title": "Stock Locate",
+          "literal": "0001"
+        },
+        {
+          "named": "trackingnumber",
+          "width": 2,
+          "endian": "big",
+          "title": "Tracking Number",
+          "literal": "0000"
+        },
+        {
+          "named": "timestamp",
+          "width": 6,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "orderreferencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Order Reference Number",
+          "literal": "0000000000000000"
+        },
+        {
+          "named": "buysellindicator",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Buy": 66,
+            "Sell": 83
+          },
+          "title": "Buy Sell Indicator",
+          "literal": "42"
+        },
+        {
+          "named": "shares",
+          "width": 4,
+          "endian": "big",
+          "title": "Shares"
+        },
+        {
+          "named": "stock",
+          "width": 8,
+          "endian": "little",
+          "text": true,
+          "title": "Stock"
+        },
+        {
+          "named": "price",
+          "width": 4,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Price"
+        },
+        {
+          "named": "matchnumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Match Number"
+        }
+      ]
+    },
+    {
+      "named": "Order Delete Message",
+      "from": "ordercanceledmessage",
+      "bytes": 41,
+      "fields": [
+        {
+          "named": "session",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Session",
+          "header": true,
+          "literal": "4e534d54563030303031"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagecount",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Count",
+          "header": true,
+          "literal": "0001"
+        },
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Length",
+          "header": true,
+          "literal": "0013"
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Stock Directory Message": 82,
+            "Stock Trading Action Message": 72,
+            "Reg Sho Short Sale Price Test Restricted Indicator Message": 89,
+            "Market Participant Position Message": 76,
+            "Mwcb Decline Level Message": 86,
+            "Mwcb Status Level Message": 87,
+            "Ipo Quoting Period Update": 75,
+            "Luld Auction Collar Message": 74,
+            "Operational Halt Message": 104,
+            "Add Order No Mpid Attribution Message": 65,
+            "Add Order With Mpid Attribution Message": 70,
+            "Order Executed Message": 69,
+            "Order Executed With Price Message": 67,
+            "Order Cancel Message": 88,
+            "Order Delete Message": 68,
+            "Order Replace Message": 85,
+            "Non Cross Trade Message": 80,
+            "Cross Trade Message": 81,
+            "Broken Trade Message": 66,
+            "Net Order Imbalance Indicator Message": 73,
+            "Retail Price Improvement Indicator Message": 78,
+            "Direct Listing With Capital Raise Price Discovery Message": 79
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "44"
+        },
+        {
+          "named": "stocklocate",
+          "width": 2,
+          "endian": "big",
+          "title": "Stock Locate",
+          "literal": "0001"
+        },
+        {
+          "named": "trackingnumber",
+          "width": 2,
+          "endian": "big",
+          "title": "Tracking Number",
+          "literal": "0000"
+        },
+        {
+          "named": "timestamp",
+          "width": 6,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "orderreferencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Order Reference Number"
+        }
+      ]
+    },
+    {
+      "named": "Order Replace Message",
+      "from": "orderreplacedmessage",
+      "bytes": 57,
+      "fields": [
+        {
+          "named": "session",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Session",
+          "header": true,
+          "literal": "4e534d54563030303031"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagecount",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Count",
+          "header": true,
+          "literal": "0001"
+        },
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Length",
+          "header": true,
+          "literal": "0023"
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Stock Directory Message": 82,
+            "Stock Trading Action Message": 72,
+            "Reg Sho Short Sale Price Test Restricted Indicator Message": 89,
+            "Market Participant Position Message": 76,
+            "Mwcb Decline Level Message": 86,
+            "Mwcb Status Level Message": 87,
+            "Ipo Quoting Period Update": 75,
+            "Luld Auction Collar Message": 74,
+            "Operational Halt Message": 104,
+            "Add Order No Mpid Attribution Message": 65,
+            "Add Order With Mpid Attribution Message": 70,
+            "Order Executed Message": 69,
+            "Order Executed With Price Message": 67,
+            "Order Cancel Message": 88,
+            "Order Delete Message": 68,
+            "Order Replace Message": 85,
+            "Non Cross Trade Message": 80,
+            "Cross Trade Message": 81,
+            "Broken Trade Message": 66,
+            "Net Order Imbalance Indicator Message": 73,
+            "Retail Price Improvement Indicator Message": 78,
+            "Direct Listing With Capital Raise Price Discovery Message": 79
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "55"
+        },
+        {
+          "named": "stocklocate",
+          "width": 2,
+          "endian": "big",
+          "title": "Stock Locate",
+          "literal": "0001"
+        },
+        {
+          "named": "trackingnumber",
+          "width": 2,
+          "endian": "big",
+          "title": "Tracking Number",
+          "literal": "0000"
+        },
+        {
+          "named": "timestamp",
+          "width": 6,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "originalorderreferencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Original Order Reference Number"
+        },
+        {
+          "named": "neworderreferencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "New Order Reference Number"
+        },
+        {
+          "named": "shares",
+          "width": 4,
+          "endian": "big",
+          "title": "Shares"
+        },
+        {
+          "named": "price",
+          "width": 4,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Price"
+        }
+      ]
+    },
+    {
+      "named": "Order Cancel Message",
+      "from": "orderreducedmessage",
+      "bytes": 45,
+      "fields": [
+        {
+          "named": "session",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Session",
+          "header": true,
+          "literal": "4e534d54563030303031"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagecount",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Count",
+          "header": true,
+          "literal": "0001"
+        },
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Length",
+          "header": true,
+          "literal": "0017"
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Stock Directory Message": 82,
+            "Stock Trading Action Message": 72,
+            "Reg Sho Short Sale Price Test Restricted Indicator Message": 89,
+            "Market Participant Position Message": 76,
+            "Mwcb Decline Level Message": 86,
+            "Mwcb Status Level Message": 87,
+            "Ipo Quoting Period Update": 75,
+            "Luld Auction Collar Message": 74,
+            "Operational Halt Message": 104,
+            "Add Order No Mpid Attribution Message": 65,
+            "Add Order With Mpid Attribution Message": 70,
+            "Order Executed Message": 69,
+            "Order Executed With Price Message": 67,
+            "Order Cancel Message": 88,
+            "Order Delete Message": 68,
+            "Order Replace Message": 85,
+            "Non Cross Trade Message": 80,
+            "Cross Trade Message": 81,
+            "Broken Trade Message": 66,
+            "Net Order Imbalance Indicator Message": 73,
+            "Retail Price Improvement Indicator Message": 78,
+            "Direct Listing With Capital Raise Price Discovery Message": 79
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "58"
+        },
+        {
+          "named": "stocklocate",
+          "width": 2,
+          "endian": "big",
+          "title": "Stock Locate",
+          "literal": "0001"
+        },
+        {
+          "named": "trackingnumber",
+          "width": 2,
+          "endian": "big",
+          "title": "Tracking Number",
+          "literal": "0000"
+        },
+        {
+          "named": "timestamp",
+          "width": 6,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "orderreferencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Order Reference Number"
+        },
+        {
+          "named": "canceledshares",
+          "width": 4,
+          "endian": "big",
+          "title": "Canceled Shares"
+        }
+      ]
+    },
+    {
+      "named": "Order Delete Message",
+      "from": "ordereliminatedmessage",
+      "bytes": 41,
+      "fields": [
+        {
+          "named": "session",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Session",
+          "header": true,
+          "literal": "4e534d54563030303031"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagecount",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Count",
+          "header": true,
+          "literal": "0001"
+        },
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Length",
+          "header": true,
+          "literal": "0013"
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Stock Directory Message": 82,
+            "Stock Trading Action Message": 72,
+            "Reg Sho Short Sale Price Test Restricted Indicator Message": 89,
+            "Market Participant Position Message": 76,
+            "Mwcb Decline Level Message": 86,
+            "Mwcb Status Level Message": 87,
+            "Ipo Quoting Period Update": 75,
+            "Luld Auction Collar Message": 74,
+            "Operational Halt Message": 104,
+            "Add Order No Mpid Attribution Message": 65,
+            "Add Order With Mpid Attribution Message": 70,
+            "Order Executed Message": 69,
+            "Order Executed With Price Message": 67,
+            "Order Cancel Message": 88,
+            "Order Delete Message": 68,
+            "Order Replace Message": 85,
+            "Non Cross Trade Message": 80,
+            "Cross Trade Message": 81,
+            "Broken Trade Message": 66,
+            "Net Order Imbalance Indicator Message": 73,
+            "Retail Price Improvement Indicator Message": 78,
+            "Direct Listing With Capital Raise Price Discovery Message": 79
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "44"
+        },
+        {
+          "named": "stocklocate",
+          "width": 2,
+          "endian": "big",
+          "title": "Stock Locate",
+          "literal": "0001"
+        },
+        {
+          "named": "trackingnumber",
+          "width": 2,
+          "endian": "big",
+          "title": "Tracking Number",
+          "literal": "0000"
+        },
+        {
+          "named": "timestamp",
+          "width": 6,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "orderreferencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Order Reference Number"
+        }
+      ]
+    },
+    {
+      "named": "System Event Message",
+      "from": "phaseannouncedmessage",
+      "bytes": 34,
+      "fields": [
+        {
+          "named": "session",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Session",
+          "header": true,
+          "literal": "4e534d54563030303031"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagecount",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Count",
+          "header": true,
+          "literal": "0001"
+        },
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Length",
+          "header": true,
+          "literal": "000c"
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Stock Directory Message": 82,
+            "Stock Trading Action Message": 72,
+            "Reg Sho Short Sale Price Test Restricted Indicator Message": 89,
+            "Market Participant Position Message": 76,
+            "Mwcb Decline Level Message": 86,
+            "Mwcb Status Level Message": 87,
+            "Ipo Quoting Period Update": 75,
+            "Luld Auction Collar Message": 74,
+            "Operational Halt Message": 104,
+            "Add Order No Mpid Attribution Message": 65,
+            "Add Order With Mpid Attribution Message": 70,
+            "Order Executed Message": 69,
+            "Order Executed With Price Message": 67,
+            "Order Cancel Message": 88,
+            "Order Delete Message": 68,
+            "Order Replace Message": 85,
+            "Non Cross Trade Message": 80,
+            "Cross Trade Message": 81,
+            "Broken Trade Message": 66,
+            "Net Order Imbalance Indicator Message": 73,
+            "Retail Price Improvement Indicator Message": 78,
+            "Direct Listing With Capital Raise Price Discovery Message": 79
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "53"
+        },
+        {
+          "named": "stocklocate",
+          "width": 2,
+          "endian": "big",
+          "title": "Stock Locate",
+          "literal": "0000"
+        },
+        {
+          "named": "trackingnumber",
+          "width": 2,
+          "endian": "big",
+          "title": "Tracking Number",
+          "literal": "0000"
+        },
+        {
+          "named": "timestamp",
+          "width": 6,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "eventcode",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Start Of Messages": 79,
+            "Start Of System Hours": 83,
+            "Start Of Market Hours": 81,
+            "End Of Market Hours": 77,
+            "End Of System Hours": 69,
+            "End Of Messages": 67
+          },
+          "title": "Event Code"
+        }
+      ]
+    },
+    {
+      "named": "Cross Trade Message",
+      "from": "crosscompletedmessage",
+      "bytes": 62,
+      "fields": [
+        {
+          "named": "session",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Session",
+          "header": true,
+          "literal": "4e534d54563030303031"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagecount",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Count",
+          "header": true,
+          "literal": "0001"
+        },
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Length",
+          "header": true,
+          "literal": "0028"
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Stock Directory Message": 82,
+            "Stock Trading Action Message": 72,
+            "Reg Sho Short Sale Price Test Restricted Indicator Message": 89,
+            "Market Participant Position Message": 76,
+            "Mwcb Decline Level Message": 86,
+            "Mwcb Status Level Message": 87,
+            "Ipo Quoting Period Update": 75,
+            "Luld Auction Collar Message": 74,
+            "Operational Halt Message": 104,
+            "Add Order No Mpid Attribution Message": 65,
+            "Add Order With Mpid Attribution Message": 70,
+            "Order Executed Message": 69,
+            "Order Executed With Price Message": 67,
+            "Order Cancel Message": 88,
+            "Order Delete Message": 68,
+            "Order Replace Message": 85,
+            "Non Cross Trade Message": 80,
+            "Cross Trade Message": 81,
+            "Broken Trade Message": 66,
+            "Net Order Imbalance Indicator Message": 73,
+            "Retail Price Improvement Indicator Message": 78,
+            "Direct Listing With Capital Raise Price Discovery Message": 79
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "51"
+        },
+        {
+          "named": "stocklocate",
+          "width": 2,
+          "endian": "big",
+          "title": "Stock Locate",
+          "literal": "0001"
+        },
+        {
+          "named": "trackingnumber",
+          "width": 2,
+          "endian": "big",
+          "title": "Tracking Number",
+          "literal": "0000"
+        },
+        {
+          "named": "timestamp",
+          "width": 6,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "crossshares",
+          "width": 8,
+          "endian": "big",
+          "title": "Cross Shares"
+        },
+        {
+          "named": "stock",
+          "width": 8,
+          "endian": "little",
+          "text": true,
+          "title": "Stock"
+        },
+        {
+          "named": "crossprice",
+          "width": 4,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Cross Price"
+        },
+        {
+          "named": "matchnumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Match Number"
+        },
+        {
+          "named": "crosstype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Opening": 79,
+            "Closing": 67,
+            "Halted Or Paused": 72,
+            "Extended Close": 65
+          },
+          "title": "Cross Type"
+        }
+      ]
+    },
+    {
+      "named": "Net Order Imbalance Indicator Message",
+      "from": "imbalanceindicatedmessage",
+      "bytes": 72,
+      "fields": [
+        {
+          "named": "session",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Session",
+          "header": true,
+          "literal": "4e534d54563030303031"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagecount",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Count",
+          "header": true,
+          "literal": "0001"
+        },
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Length",
+          "header": true,
+          "literal": "0032"
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Stock Directory Message": 82,
+            "Stock Trading Action Message": 72,
+            "Reg Sho Short Sale Price Test Restricted Indicator Message": 89,
+            "Market Participant Position Message": 76,
+            "Mwcb Decline Level Message": 86,
+            "Mwcb Status Level Message": 87,
+            "Ipo Quoting Period Update": 75,
+            "Luld Auction Collar Message": 74,
+            "Operational Halt Message": 104,
+            "Add Order No Mpid Attribution Message": 65,
+            "Add Order With Mpid Attribution Message": 70,
+            "Order Executed Message": 69,
+            "Order Executed With Price Message": 67,
+            "Order Cancel Message": 88,
+            "Order Delete Message": 68,
+            "Order Replace Message": 85,
+            "Non Cross Trade Message": 80,
+            "Cross Trade Message": 81,
+            "Broken Trade Message": 66,
+            "Net Order Imbalance Indicator Message": 73,
+            "Retail Price Improvement Indicator Message": 78,
+            "Direct Listing With Capital Raise Price Discovery Message": 79
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "49"
+        },
+        {
+          "named": "stocklocate",
+          "width": 2,
+          "endian": "big",
+          "title": "Stock Locate",
+          "literal": "0001"
+        },
+        {
+          "named": "trackingnumber",
+          "width": 2,
+          "endian": "big",
+          "title": "Tracking Number",
+          "literal": "0000"
+        },
+        {
+          "named": "timestamp",
+          "width": 6,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "pairedshares",
+          "width": 8,
+          "endian": "big",
+          "title": "Paired Shares"
+        },
+        {
+          "named": "imbalanceshares",
+          "width": 8,
+          "endian": "big",
+          "title": "Imbalance Shares"
+        },
+        {
+          "named": "imbalancedirection",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Buy": 66,
+            "Sell": 83,
+            "None": 78,
+            "Insufficient Orders": 79,
+            "Paused": 80
+          },
+          "title": "Imbalance Direction"
+        },
+        {
+          "named": "stock",
+          "width": 8,
+          "endian": "little",
+          "text": true,
+          "title": "Stock"
+        },
+        {
+          "named": "farprice",
+          "width": 4,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Far Price"
+        },
+        {
+          "named": "nearprice",
+          "width": 4,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Near Price"
+        },
+        {
+          "named": "currentreferenceprice",
+          "width": 4,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Current Reference Price"
+        },
+        {
+          "named": "crosstype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Opening": 79,
+            "Closing": 67,
+            "Halted Or Paused": 72,
+            "Extended Close": 65
+          },
+          "title": "Cross Type"
+        },
+        {
+          "named": "pricevariationindicator",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Less Than 1 Percent": 76,
+            "Less Than 2 Percent": 49,
+            "Less Than 3 Percent": 50,
+            "Less Than 4 Percent": 51,
+            "Less Than 5 Percent": 52,
+            "Less Than 6 Percent": 53,
+            "Less Than 7 Percent": 54,
+            "Less Than 8 Percent": 55,
+            "Less Than 9 Percent": 56,
+            "Less Than 10 Percent": 57,
+            "Less Than 20 Percent": 65,
+            "Less Than 30 Percent": 66,
+            "More Than 30 Percent": 67,
+            "Not Available": 32
+          },
+          "title": "Price Variation Indicator",
+          "literal": "4c"
+        }
+      ]
+    },
+    {
+      "named": "Net Order Imbalance Indicator Message",
+      "from": "imbalanceindicatedmessage",
+      "bytes": 72,
+      "fields": [
+        {
+          "named": "session",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Session",
+          "header": true,
+          "literal": "4e534d54563030303031"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagecount",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Count",
+          "header": true,
+          "literal": "0001"
+        },
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Message Length",
+          "header": true,
+          "literal": "0032"
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Stock Directory Message": 82,
+            "Stock Trading Action Message": 72,
+            "Reg Sho Short Sale Price Test Restricted Indicator Message": 89,
+            "Market Participant Position Message": 76,
+            "Mwcb Decline Level Message": 86,
+            "Mwcb Status Level Message": 87,
+            "Ipo Quoting Period Update": 75,
+            "Luld Auction Collar Message": 74,
+            "Operational Halt Message": 104,
+            "Add Order No Mpid Attribution Message": 65,
+            "Add Order With Mpid Attribution Message": 70,
+            "Order Executed Message": 69,
+            "Order Executed With Price Message": 67,
+            "Order Cancel Message": 88,
+            "Order Delete Message": 68,
+            "Order Replace Message": 85,
+            "Non Cross Trade Message": 80,
+            "Cross Trade Message": 81,
+            "Broken Trade Message": 66,
+            "Net Order Imbalance Indicator Message": 73,
+            "Retail Price Improvement Indicator Message": 78,
+            "Direct Listing With Capital Raise Price Discovery Message": 79
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "49"
+        },
+        {
+          "named": "stocklocate",
+          "width": 2,
+          "endian": "big",
+          "title": "Stock Locate",
+          "literal": "0001"
+        },
+        {
+          "named": "trackingnumber",
+          "width": 2,
+          "endian": "big",
+          "title": "Tracking Number",
+          "literal": "0000"
+        },
+        {
+          "named": "timestamp",
+          "width": 6,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "pairedshares",
+          "width": 8,
+          "endian": "big",
+          "title": "Paired Shares"
+        },
+        {
+          "named": "imbalanceshares",
+          "width": 8,
+          "endian": "big",
+          "title": "Imbalance Shares"
+        },
+        {
+          "named": "imbalancedirection",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Buy": 66,
+            "Sell": 83,
+            "None": 78,
+            "Insufficient Orders": 79,
+            "Paused": 80
+          },
+          "title": "Imbalance Direction"
+        },
+        {
+          "named": "stock",
+          "width": 8,
+          "endian": "little",
+          "text": true,
+          "title": "Stock"
+        },
+        {
+          "named": "farprice",
+          "width": 4,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Far Price"
+        },
+        {
+          "named": "nearprice",
+          "width": 4,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Near Price"
+        },
+        {
+          "named": "currentreferenceprice",
+          "width": 4,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Current Reference Price"
+        },
+        {
+          "named": "crosstype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Opening": 79,
+            "Closing": 67,
+            "Halted Or Paused": 72,
+            "Extended Close": 65
+          },
+          "title": "Cross Type"
+        },
+        {
+          "named": "pricevariationindicator",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Less Than 1 Percent": 76,
+            "Less Than 2 Percent": 49,
+            "Less Than 3 Percent": 50,
+            "Less Than 4 Percent": 51,
+            "Less Than 5 Percent": 52,
+            "Less Than 6 Percent": 53,
+            "Less Than 7 Percent": 54,
+            "Less Than 8 Percent": 55,
+            "Less Than 9 Percent": 56,
+            "Less Than 10 Percent": 57,
+            "Less Than 20 Percent": 65,
+            "Less Than 30 Percent": 66,
+            "More Than 30 Percent": 67,
+            "Not Available": 32
+          },
+          "title": "Price Variation Indicator",
+          "literal": "20"
+        }
+      ]
+    }
+  ]
+}

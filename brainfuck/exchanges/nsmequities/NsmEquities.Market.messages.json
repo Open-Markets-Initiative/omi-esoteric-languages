@@ -134,6 +134,27 @@
           }
         },
         {
+          "named": "peg",
+          "width": 1,
+          "endian": "little",
+          "role": "Peg",
+          "text": true,
+          "values": {
+            "Limit": 76,
+            "Midpoint": 77,
+            "Market Peg": 80,
+            "Primary Peg": 82,
+            "Market Maker Peg": 81,
+            "Midpoint Unexplained": 109
+          }
+        },
+        {
+          "named": "minqty",
+          "width": 4,
+          "endian": "little",
+          "role": "MinQuantity"
+        },
+        {
           "named": "expiretime",
           "width": 4,
           "endian": "little",
@@ -318,6 +339,27 @@
             "Extended Life": 69,
             "After Hours Close": 65
           }
+        },
+        {
+          "named": "peg",
+          "width": 1,
+          "endian": "little",
+          "role": "Peg",
+          "text": true,
+          "values": {
+            "Limit": 76,
+            "Midpoint": 77,
+            "Market Peg": 80,
+            "Primary Peg": 82,
+            "Market Maker Peg": 81,
+            "Midpoint Unexplained": 109
+          }
+        },
+        {
+          "named": "minqty",
+          "width": 4,
+          "endian": "little",
+          "role": "MinQuantity"
         }
       ]
     },
@@ -502,6 +544,7 @@
           "text": true,
           "values": {
             "Closed": 69,
+            "Invalid Peg Type": 80,
             "Market Not Allowed": 84,
             "Other": 79,
             "Invalid Cross": 67

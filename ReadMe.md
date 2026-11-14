@@ -6,12 +6,12 @@ Programs in esoteric languages that read common binary exchange protocols, gener
 
 ## Languages
 
-One directory per language, and a readme in each saying what that language's programs are, how to run them, and what they were held to before they were published:
+One directory per language. Each has a readme of its own: what its programs are, how to run them, and what they were held to before they were published.
 
-| Language | Directory | What it lends the generator |
-| --- | --- | --- |
-| <a href="brainfuck/ReadMe.md"><img src="images/Brainfuck.png" width="24" align="top" alt="Brainfuck"></a> [Brainfuck](brainfuck/ReadMe.md "Brainfuck ReadMe") | `brainfuck` | Nothing: eight instructions and one tape of bytes |
-| [🏁 🍇 🍉](emojicode/ReadMe.md "Emojicode ReadMe") [Emojicode](emojicode/ReadMe.md "Emojicode ReadMe") | `emojicode` | Variables, arithmetic and a loop that takes a condition - over bytes that are signed |
+| Language | Directory | Programs | Checked by |
+| --- | --- | --- | --- |
+| [Brainfuck](brainfuck/ReadMe.md "Brainfuck ReadMe") | `brainfuck/` | `.bf` | `python3 check.py` runs every program on every frame published for it |
+| [Emojicode](emojicode/ReadMe.md "Emojicode ReadMe") | `emojicode/` | `.emojic` | `python3 replay.py` compiles every program and runs it on every frame, and needs the compiler |
 
 A second language is a sibling directory rather than a second repository, because what differs between them is a directory and not a protocol. The models are the same and the venues are the same, and every language's programs are held to the same claim before they are published: what one decodes must agree with what the C# parser decodes from the same bytes, and what one encodes must parse back.
 
@@ -49,6 +49,12 @@ manifest.json                         every program, its runs, and how a venue's
 
 The scripts sit here at the root and are run from here, so a path given to any of them starts with the directory of the language it is in. `check.py` and `replay.py` are what the build runs, between them holding every program here to the frames published beside it. `run.py` puts a stream of a venue's own orders to one of the published markets and reads back what it wrote, field by field.
 
+`demo.py` is the one to start with. It plays a run through every program of a venue - a client's packets into the gateway, the venue's own orders into the market, market data out of each feed - and says what each read and wrote, with the book drawn as it changes:
+
+```
+python3 demo.py              the venues here, and the runs each can be shown by
+python3 demo.py NsmEquities     that venue's day, through every one of its programs
+```
 What a language's programs read, what they write when they read it, and the exact commands that run them are in that language's own readme, written from this directory.
 
 ## Testing

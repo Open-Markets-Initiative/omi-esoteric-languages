@@ -1,0 +1,368 @@
+{
+  "venue": "NsmEquities",
+  "protocol": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
+  "writes": "Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026",
+  "frame": {
+    "length": {
+      "named": "packetlength",
+      "width": 2,
+      "endian": "big"
+    },
+    "type": {
+      "named": "clientpackettype",
+      "width": 1,
+      "endian": "little",
+      "text": true,
+      "values": {
+        "Debug Packet": 43,
+        "Login Request Packet": 76,
+        "Unsequenced Data Packet": 85,
+        "Client Heartbeat Packet": 82,
+        "Logout Request Packet": 79
+      }
+    },
+    "addend": 2
+  },
+  "packets": [
+    {
+      "named": "Debug Packet",
+      "codes": [
+        43
+      ]
+    },
+    {
+      "named": "Login Request Packet",
+      "codes": [
+        76
+      ]
+    },
+    {
+      "named": "Unsequenced Data Packet",
+      "codes": [
+        85
+      ]
+    },
+    {
+      "named": "Client Heartbeat",
+      "codes": [
+        82
+      ]
+    },
+    {
+      "named": "Logout Request",
+      "codes": [
+        79
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "named": "Enter Order Message",
+      "transform": "ouch_enter_order",
+      "becomes": "New Order Message",
+      "admits": true,
+      "tests": [
+        {
+          "named": "clientpackettype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Debug Packet": 43,
+            "Login Request Packet": 76,
+            "Unsequenced Data Packet": 85,
+            "Client Heartbeat Packet": 82,
+            "Logout Request Packet": 79
+          },
+          "at": 2,
+          "codes": [
+            85
+          ],
+          "holds": true
+        },
+        {
+          "named": "unsequencedmessagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Enter Order Message": 79,
+            "Replace Order Message": 85,
+            "Cancel Order Message": 88,
+            "Modify Order Message": 77,
+            "Account Query Message": 81,
+            "Mass Cancel Request Message": 67,
+            "Disable Order Entry Request Message": 68,
+            "Enable Order Entry Request Message": 69
+          },
+          "at": 3,
+          "codes": [
+            79
+          ],
+          "holds": true
+        }
+      ],
+      "fields": [
+        {
+          "named": "userrefnum",
+          "width": 4,
+          "endian": "big",
+          "title": "User Ref Num",
+          "role": "Order",
+          "at": 4
+        },
+        {
+          "named": "side",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Buy": 66,
+            "Sell": 83,
+            "Sell Short": 84,
+            "Sell Short Exempt": 69
+          },
+          "title": "Side",
+          "role": "Side",
+          "at": 8
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "big",
+          "title": "Quantity",
+          "role": "Quantity",
+          "at": 9
+        },
+        {
+          "named": "symbol",
+          "width": 8,
+          "endian": "little",
+          "text": true,
+          "title": "Symbol",
+          "role": "Instrument",
+          "at": 13
+        },
+        {
+          "named": "price",
+          "width": 8,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Price",
+          "role": "Price",
+          "at": 21
+        },
+        {
+          "named": "timeinforce",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Day": 48,
+            "Ioc": 51,
+            "Gtx Extended Hours": 53,
+            "Gtt": 54,
+            "After Hours": 69
+          },
+          "title": "Time In Force",
+          "role": "TimeInForce",
+          "at": 29
+        },
+        {
+          "named": "display",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Attributable": 65,
+            "Visible": 89,
+            "Hidden": 78,
+            "Conformant": 90
+          },
+          "title": "Display",
+          "role": "Display",
+          "at": 30
+        },
+        {
+          "named": "capacity",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Other": 79,
+            "Agency": 65,
+            "Principal": 80,
+            "Riskless": 82
+          },
+          "title": "Capacity",
+          "at": 31
+        },
+        {
+          "named": "intermarketsweepeligibility",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Eligible": 89,
+            "Not Eligible": 78
+          },
+          "title": "Inter Market Sweep Eligibility",
+          "at": 32
+        },
+        {
+          "named": "crosstype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Continuous Market": 78,
+            "Opening Cross": 79,
+            "Closing Cross": 67,
+            "Halt Ipo": 72,
+            "Supplemental": 83,
+            "Retail": 82,
+            "Extended Life": 69,
+            "After Hours Close": 65
+          },
+          "title": "Cross Type",
+          "role": "CrossType",
+          "at": 33
+        },
+        {
+          "named": "clordid",
+          "width": 14,
+          "endian": "little",
+          "text": true,
+          "title": "ClOrdId",
+          "at": 34
+        },
+        {
+          "named": "appendagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Appendage Length",
+          "at": 48
+        }
+      ],
+      "options": {
+        "at": 50,
+        "fields": [
+          {
+            "named": "expiretime",
+            "width": 4,
+            "endian": "big",
+            "title": "Expire Time",
+            "role": "Expiry",
+            "tag": 15
+          },
+          {
+            "named": "pricetype",
+            "width": 1,
+            "endian": "little",
+            "text": true,
+            "values": {
+              "Limit": 76,
+              "Market Peg": 80,
+              "Midpoint Peg": 77,
+              "Primary Peg": 82,
+              "Market Maker Peg": 81,
+              "Midpoint": 109
+            },
+            "title": "Price Type",
+            "role": "Peg",
+            "tag": 6
+          },
+          {
+            "named": "minqty",
+            "width": 4,
+            "endian": "big",
+            "title": "Min Qty",
+            "role": "MinQuantity",
+            "tag": 3
+          }
+        ]
+      }
+    },
+    {
+      "named": "Cancel Order Message",
+      "transform": "ouch_cancel_order",
+      "becomes": "Cancel Order Message",
+      "admits": false,
+      "tests": [
+        {
+          "named": "clientpackettype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Debug Packet": 43,
+            "Login Request Packet": 76,
+            "Unsequenced Data Packet": 85,
+            "Client Heartbeat Packet": 82,
+            "Logout Request Packet": 79
+          },
+          "at": 2,
+          "codes": [
+            85
+          ],
+          "holds": true
+        },
+        {
+          "named": "unsequencedmessagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Enter Order Message": 79,
+            "Replace Order Message": 85,
+            "Cancel Order Message": 88,
+            "Modify Order Message": 77,
+            "Account Query Message": 81,
+            "Mass Cancel Request Message": 67,
+            "Disable Order Entry Request Message": 68,
+            "Enable Order Entry Request Message": 69
+          },
+          "at": 3,
+          "codes": [
+            88
+          ],
+          "holds": true
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "big",
+          "at": 8,
+          "codes": [
+            0
+          ],
+          "holds": true
+        }
+      ],
+      "fields": [
+        {
+          "named": "userrefnum",
+          "width": 4,
+          "endian": "big",
+          "title": "User Ref Num",
+          "role": "Order",
+          "at": 4
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "big",
+          "title": "Quantity",
+          "at": 8
+        },
+        {
+          "named": "appendagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Appendage Length",
+          "at": 12
+        }
+      ]
+    }
+  ]
+}

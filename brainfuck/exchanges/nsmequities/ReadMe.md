@@ -2,20 +2,6 @@
 
 The programs generated from what Nasdaq Stock Market Open declares, rather than from one protocol's model. A protocol's decoder is the same program whoever speaks it and sits under `brainfuck/protocols`; what is here is this venue's — the handshake it declares, and the book its own reference price bands.
 
-## Declared
-
-What the venue says it speaks, read from its own declaration and not kept as a list here:
-
-- Ipc `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026`
-- Engine `Nasdaq.NsmEquities.Equities.Open.Trading`
-- OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
-- Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
-- Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0`
-- Replay `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
-- Trader `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
-- Trader `Nasdaq.NsmEquities.Orders.Ouch.v5.0`
-- Engine `Nasdaq.NsmEquities.Equities.Session.Trading`
-
 ## The venue, end to end
 
 A venue is declared as components that talk through one internal protocol, and each of them is a program here. Each reads its input and writes its output, so they join with a pipe: what one writes is what the next reads.
@@ -25,6 +11,13 @@ A venue is declared as components that talk through one internal protocol, and e
 | `NsmEquities.Gateway.bf` | `Nasdaq.NsmEquities.Orders.Ouch.v5.0` | `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` | a client's requests become the venue's own orders, under the session chart |
 | `NsmEquities.Market.bf` | `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` | `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` | the venue's own orders become its own events, by the trading chart |
 | `NsmEquities.TotalView.Feed.bf` | `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` | `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026` | the venue's own events become market data, by the transforms |
+
+**To watch it happen**, from the root of the repository:
+
+```
+python3 demo.py NsmEquities
+```
+That runs every program in the table on the venue's `day` run and says in words what each read and wrote, step by step, with the book drawn after every step that changed it. Nothing it shows was recorded: each program is run there and then, by the interpreter `check.py` carries, and what it wrote is held to what is published for the run. It takes some tens of seconds, nearly all of it the market.
 
 From the root of the repository, one published run through all of it - `xxd` turns the hexadecimal of a published frame into bytes and back:
 
@@ -37,6 +30,20 @@ xxd -r -p < brainfuck/exchanges/nsmequities/runs/gateway/crossing.frame \
 ```
 Every such join is stated in `manifest.json` at the root, as two files that hold the same bytes - what one program wrote and what the next was given - and `python3 check.py` holds each pair to it.
 
+## Declared
+
+What the venue says it speaks, read from its own declaration and not kept as a list here:
+
+- Ipc `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026`
+- Engine `Nasdaq.NsmEquities.Equities.Open.Trading`
+- OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
+- Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
+- Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0.2026`
+- Replay `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
+- Trader `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
+- Trader `Nasdaq.NsmEquities.Orders.Ouch.v5.0`
+- Engine `Nasdaq.NsmEquities.Equities.Session.Trading`
+
 ## Gateway
 
 `NsmEquities.Gateway.bf` reads a client's packets in `Nasdaq.NsmEquities.Orders.Ouch.v5.0` and writes each request the venue's transforms name as one of the venue's own messages, which is what the market reads. It follows the session the venue's chart states, so a request is admitted only where that chart receives one.
@@ -46,6 +53,8 @@ What was settled when the program was written rather than asked while it ran:
 - timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as nought
 - sequence is a message's place in the order the engine is sent them, which the venue's sequencer states; with one gateway and nothing between it and the engine, this counts them itself, from one
 - expiretime is a field a request may carry or leave out, so it is looked for among the options the request ends in, each read by its length and its tag; a request leaving it out carries nought for it
+- pricetype is a field a request may carry or leave out, so it is looked for among the options the request ends in, each read by its length and its tag; a request leaving it out carries nought for it
+- minqty is a field a request may carry or leave out, so it is looked for among the options the request ends in, each read by its length and its tag; a request leaving it out carries nought for it
 - the session is SoupBin Tcp: a connection opens in NotLoggedIn, and a request is admitted only while it rests in LoggedIn, which is where the chart receives the other end's own data. A login moves the connection as the chart says an accepted one does; whether to accept it is the session program's to say and was settled there
 - it remembers the first 16 orders of a connection by the reference each came with, because a tape cannot grow; an order admitted after those is still admitted and numbered, and a later cancel naming it finds nothing
 
@@ -54,16 +63,17 @@ What the venue declares of its order entry that this program does not run, and w
 - ouch_reduce_order: its fields.quantity states an intended size, which counts what the order has already executed, and that is something the engine reports on a stream this program does not read
 - ouch_modify_order: its fields.quantity states an intended size, which counts what the order has already executed, and that is something the engine reports on a stream this program does not read
 - ouch_replace_order: it replaces an order, which needs what the order it replaces has executed and the side and display it was entered with, and the first of those is the engine's to say
-- the 20 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
+- the 23 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
 
 Each run is a client's packets and what the gateway wrote for them. A run nobody logged in for is published with nothing written, because declining is half of what a gate does:
 
 | Run | Requests | Bytes written |
 | --- | ---: | ---: |
-| `NsmEquities.Gateway.crossing` | 3 | 165 |
-| `NsmEquities.Gateway.cancelling` | 3 | 137 |
-| `NsmEquities.Gateway.unadmitted` | 3 | 0 |
-| `NsmEquities.Gateway.optioned` | 2 | 110 |
+| `crossing` | 3 | 180 |
+| `cancelling` | 3 | 147 |
+| `unadmitted` | 3 | 0 |
+| `day` | 8 | 447 |
+| `optioned` | 2 | 120 |
 
 ## Market
 
@@ -85,14 +95,16 @@ Each run below is published as a `.frame` of the orders put to it and a `.wrote`
 
 | Run | Orders | Trades | Refused |
 | --- | ---: | ---: | ---: |
-| `NsmEquities.Market.crossing` | 5 | 2 | 1 |
-| `NsmEquities.Market.cancelling` | 2 | 0 | 1 |
-| `NsmEquities.Market.sharing` | 4 | 2 | 0 |
-| `NsmEquities.Market.declining` | 3 | 1 | 1 |
-| `NsmEquities.Market.replacing` | 4 | 1 | 0 |
-| `NsmEquities.Market.entered-crossing` | 3 | 1 | 0 |
-| `NsmEquities.Market.entered-cancelling` | 3 | 0 | 0 |
-| `NsmEquities.Market.entered-optioned` | 2 | 1 | 0 |
+| `crossing` | 5 | 2 | 1 |
+| `cancelling` | 2 | 0 | 1 |
+| `sharing` | 4 | 2 | 0 |
+| `declining` | 3 | 1 | 1 |
+| `day` | 8 | 4 | 1 |
+| `replacing` | 4 | 1 | 0 |
+| `entered-crossing` | 3 | 1 | 0 |
+| `entered-cancelling` | 3 | 0 | 0 |
+| `entered-day` | 8 | 4 | 0 |
+| `entered-optioned` | 2 | 1 | 0 |
 
 ## Feeds
 
@@ -110,14 +122,16 @@ Each run is what the market wrote for the run of the same name, and the packets 
 
 | Run | Packets |
 | --- | ---: |
-| `NsmEquities.TotalView.Feed.crossing` | 6 |
-| `NsmEquities.TotalView.Feed.cancelling` | 3 |
-| `NsmEquities.TotalView.Feed.sharing` | 7 |
-| `NsmEquities.TotalView.Feed.declining` | 3 |
-| `NsmEquities.TotalView.Feed.replacing` | 4 |
-| `NsmEquities.TotalView.Feed.entered-crossing` | 4 |
-| `NsmEquities.TotalView.Feed.entered-cancelling` | 3 |
-| `NsmEquities.TotalView.Feed.entered-optioned` | 3 |
+| `crossing` | 6 |
+| `cancelling` | 3 |
+| `sharing` | 7 |
+| `declining` | 3 |
+| `day` | 12 |
+| `replacing` | 4 |
+| `entered-crossing` | 4 |
+| `entered-cancelling` | 3 |
+| `entered-day` | 12 |
+| `entered-optioned` | 3 |
 
 ## Session
 
@@ -145,19 +159,19 @@ One run per transition of the chart, named for the state it rests in and the pac
 
 | Run | Packets answered |
 | --- | ---: |
-| `NsmEquities.SoupBin.NotLoggedIn.LoginRequest` | 1 |
-| `NsmEquities.SoupBin.LoggedIn.SessionLogout` | 1 |
-| `NsmEquities.SoupBin.LoggedIn.SessionHeartbeat` | 1 |
-| `NsmEquities.SoupBin.LoggedIn.LoginRequest` | 1 |
+| `NotLoggedIn.LoginRequest` | 1 |
+| `LoggedIn.SessionLogout` | 1 |
+| `LoggedIn.SessionHeartbeat` | 1 |
+| `LoggedIn.LoginRequest` | 1 |
 
 ## Files
 
 | Program | What it is | Runs published |
 | --- | --- | ---: |
 | `NsmEquities.SoupBin.bf` | the venue's handshake | 4 |
-| `NsmEquities.Gateway.bf` | the venue's order entry, under its session chart | 4 |
-| `NsmEquities.Market.bf` | the venue's book and the matching over it | 8 |
-| `NsmEquities.TotalView.Feed.bf` | the venue's TotalView feed | 8 |
+| `NsmEquities.Gateway.bf` | the venue's order entry, under its session chart | 5 |
+| `NsmEquities.Market.bf` | the venue's book and the matching over it | 10 |
+| `NsmEquities.TotalView.Feed.bf` | the venue's TotalView feed | 10 |
 
 Under `runs/`, in a folder named for each program, is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `check.py` runs. A market also publishes a `.messages.json`, which is what it reads and writes flattened out of its model — that is what lets `run.py` build an order of your own rather than only replay what shipped.
 

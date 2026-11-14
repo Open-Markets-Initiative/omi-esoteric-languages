@@ -49,6 +49,7 @@ Each run below is published as a `.frame` of the orders put to it and a `.wrote`
 | `IexEquities.Market.sweeping` | 3 | 2 | 0 |
 | `IexEquities.Market.selling` | 2 | 1 | 0 |
 | `IexEquities.Market.cancelling` | 2 | 0 | 0 |
+| `IexEquities.Market.day` | 7 | 4 | 0 |
 | `IexEquities.Market.replacing` | 6 | 2 | 0 |
 | `IexEquities.Market.declining` | 3 | 1 | 1 |
 
@@ -69,6 +70,7 @@ Each run is what the market should write for the run of the same name, and the p
 | `IexEquities.Tops.Feed.sweeping` | 3 |
 | `IexEquities.Tops.Feed.selling` | 1 |
 | `IexEquities.Tops.Feed.cancelling` | 2 |
+| `IexEquities.Tops.Feed.day` | 5 |
 | `IexEquities.Tops.Feed.replacing` | 3 |
 | `IexEquities.Tops.Feed.declining` | 1 |
 
@@ -87,6 +89,7 @@ Each run is what the market should write for the run of the same name, and the p
 | `IexEquities.Deep.Feed.sweeping` | 5 |
 | `IexEquities.Deep.Feed.selling` | 2 |
 | `IexEquities.Deep.Feed.cancelling` | 2 |
+| `IexEquities.Deep.Feed.day` | 9 |
 | `IexEquities.Deep.Feed.replacing` | 5 |
 | `IexEquities.Deep.Feed.declining` | 2 |
 
@@ -105,6 +108,7 @@ Each run is what the market should write for the run of the same name, and the p
 | `IexEquities.DeepPlus.Feed.sweeping` | 5 |
 | `IexEquities.DeepPlus.Feed.selling` | 2 |
 | `IexEquities.DeepPlus.Feed.cancelling` | 2 |
+| `IexEquities.DeepPlus.Feed.day` | 9 |
 | `IexEquities.DeepPlus.Feed.replacing` | 5 |
 | `IexEquities.DeepPlus.Feed.declining` | 2 |
 
@@ -112,10 +116,10 @@ Each run is what the market should write for the run of the same name, and the p
 
 | Program | What it is | Runs published |
 | --- | --- | ---: |
-| `IexEquities.Market.emojic` | the venue's book and the matching over it | 6 |
-| `IexEquities.Tops.Feed.emojic` | the venue's Tops feed | 6 |
-| `IexEquities.Deep.Feed.emojic` | the venue's Deep feed | 6 |
-| `IexEquities.DeepPlus.Feed.emojic` | the venue's DeepPlus feed | 6 |
+| `IexEquities.Market.emojic` | the venue's book and the matching over it | 7 |
+| `IexEquities.Tops.Feed.emojic` | the venue's Tops feed | 7 |
+| `IexEquities.Deep.Feed.emojic` | the venue's Deep feed | 7 |
+| `IexEquities.DeepPlus.Feed.emojic` | the venue's DeepPlus feed | 7 |
 
 Under `runs/`, in a folder named for each program, is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `replay.py` compiles each program against. They are written as hexadecimal because a frame holds any byte a protocol can carry and so does a program's output, so neither is text.
 

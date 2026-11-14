@@ -38,6 +38,9 @@ jobs:
       - name: Run Markets
         run: python3 run.py --every
 
+      - name: Show Venues
+        run: python3 demo.py --every
+
       - name: Run Orders
         if: github.event_name == 'workflow_dispatch'
         env:

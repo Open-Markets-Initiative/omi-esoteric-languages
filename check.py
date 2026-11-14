@@ -113,8 +113,13 @@ def compiled(text):
     return code, jumps
 
 
-def run(code, jumps, given):
-    """What the program writes, and how much of the input it took."""
+def run(code, jumps, given, marks=None):
+    """What the program writes, and how much of the input it took.
+
+    Where a list is given for marks, each read is noted in it before it is made: how much of
+    the input had been taken, how much had been written, and how many instructions had run.
+    That is what lets something watching say which output answered which input; the last
+    entry is the whole run."""
     tape = bytearray(CELLS)
     written = bytearray()
     cell = 0
@@ -145,6 +150,9 @@ def run(code, jumps, given):
         elif character == ".":
             written.append(tape[cell])
         elif character == ",":
+            if marks is not None:
+                marks.append((taken, len(written), steps))
+
             # a read once the input is spent yields zero and takes nothing, because there is
             # nothing there to take. Counted as a byte it made a program that reads to the end
             # of its input — a session does — look as though it had read past it
@@ -161,6 +169,9 @@ def run(code, jumps, given):
                 at = jumps[at]
 
         at += 1
+
+    if marks is not None:
+        marks.append((taken, len(written), steps))
 
     return bytes(written), taken
 
