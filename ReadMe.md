@@ -13,37 +13,11 @@ One directory per language. Each has a readme of its own: what its programs are,
 | [Brainfuck](brainfuck/ReadMe.md "Brainfuck ReadMe") | `brainfuck/` | `.bf` | `python3 check.py` runs every program on every frame published for it |
 | [Emojicode](emojicode/ReadMe.md "Emojicode ReadMe") | `emojicode/` | `.emojic` | `python3 replay.py` compiles every program and runs it on every frame, and needs the compiler |
 
-A second language is a sibling directory rather than a second repository, because what differs between them is a directory and not a protocol. The models are the same and the venues are the same, and every language's programs are held to the same claim before they are published: what one decodes must agree with what the C# parser decodes from the same bytes, and what one encodes must parse back.
-
-**Each directory stands on its own.** A language lays its own frames, because a frame is laid for a reader rather than for a protocol and no two of these read quite the same parts of a model; it publishes them beside its own programs, with what each program should write for them; and nothing in one language's directory was checked against another's output. Where two of them happen to read the same bytes into the same fields, what they agree on is the model.
-
 ## Why
 
 Every other generated language lends its generator something: arithmetic, addressing, variables, functions. A language that lends nothing leaves the generator nowhere to hide a gap, so whatever cannot be expressed in it is a gap in the protocol model rather than in the language. These programs are a conformance test of the models as much as they are code.
 
 They are also slow, by some six orders of magnitude against the generated C++. This is a demonstration and a test, not something to run a venue on.
-
-## Layout
-
-The same in every language, so that knowing one directory is knowing the other:
-
-```
-manifest.json                         every program, its runs, and how a venue's programs join
-<language>/ReadMe.md                  the language: how its programs are run
-<language>/protocols/<path>/          one decoder per protocol, wherever it is spoken
-<language>/exchanges/<venue>/         one venue's own programs, and a readme saying what each is
-    <Venue>.Gateway.<ext>             order entry in, the venue's own orders out
-    <Venue>.Market.<ext>              the venue's own orders in, its own events out
-    <Venue>.<Feed>.Feed.<ext>         the venue's own events in, market data out
-    <Venue>.<Session>.<ext>           the order entry's handshake
-    runs/<program>/<run>.frame        the bytes one run gives a program, as hexadecimal
-    runs/<program>/<run>.wrote        the bytes it should write for them
-<language>/protocols/.../<protocol>/  one protocol's decoders, a program for each version
-    frames/<program>/<frame>.frame    a frame a decoder reads, and beside it what it should write
-```
-**A venue is more than one program, and they join.** What a gateway writes is what its market reads, and what a market writes is what each of its feeds reads. Where a run was carried through, the `.wrote` of one program and the `.frame` of the next hold the same bytes, and a venue's readme gives the lines that run them joined.
-
-**Nothing has to take a file's name apart.** `manifest.json` lists every program with the language it is in, what kind of program it is, the venue it belongs to, the protocol it reads and the one it writes, and each of its runs as the two files that hold it. It lists every join as the two files that must be the same. It is written by the run that writes everything else, and `check.py` holds it to the files: everything it lists is here, everything here is listed, and every join it states is true byte for byte.
 
 ## Running
 

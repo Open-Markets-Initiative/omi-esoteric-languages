@@ -1,6 +1,6 @@
-# Nasdaq Stock Market Open
+# Nasdaq Stock Market Basic
 
-The Emojicode programs generated from what Nasdaq Stock Market Open declares, rather than from one protocol's model. A protocol's decoder is the same program whoever speaks it and sits under `emojicode/protocols`; what is here is this venue's own — the handshake it declares, and the book over its own internal order stream.
+The Emojicode programs generated from what Nasdaq Stock Market Basic declares, rather than from one protocol's model. A protocol's decoder is the same program whoever speaks it and sits under `emojicode/protocols`; what is here is this venue's own — the handshake it declares, and the book over its own internal order stream.
 
 The same venue's programs in the repository's other language sit at the same path under that language's directory. They are not these with the emoji changed: each was generated from the models by its own backend, and the two do not come to the same program. Where they agree, what they agree on is the model.
 
@@ -9,14 +9,15 @@ The same venue's programs in the repository's other language sit at the same pat
 What the venue says it speaks, read from its own declaration and not kept as a list here:
 
 - Ipc `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026`
-- Engine `Nasdaq.NsmEquities.Equities.Open.Trading`
+- Engine `Nasdaq.NsmEquities.Equities.Basic.TradingSession`
 - OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
 - Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0.2026`
 - Replay `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Trader `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Trader `Nasdaq.NsmEquities.Orders.Ouch.v5.0`
-- Engine `Nasdaq.NsmEquities.Equities.Session.Trading`
+- Engine `Nasdaq.NsmEquities.Equities.Open.TradingSession`
+- Engine `Nasdaq.NsmEquities.Equities.Session.TradingSession`
 
 ## The venue, end to end
 
@@ -53,39 +54,32 @@ What was settled when the program was written rather than asked while it ran:
 
 - timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as nought
 - sequence is a message's place in the order the engine is sent them, which the venue's sequencer states; with one gateway and nothing between it and the engine, this counts them itself, from one
-- expiretime is a field a request may carry or leave out, so it is looked for among the options the request ends in, each read by its length and its tag; a request leaving it out carries nought for it
-- pricetype is a field a request may carry or leave out, so it is looked for among the options the request ends in, each read by its length and its tag; a request leaving it out carries nought for it
-- minqty is a field a request may carry or leave out, so it is looked for among the options the request ends in, each read by its length and its tag; a request leaving it out carries nought for it
 - the session is SoupBin Tcp: a connection opens in NotLoggedIn, and a request is admitted only while it rests in LoggedIn, which is where the chart receives the other end's own data. A login moves the connection as the chart says an accepted one does; whether to accept it is the session program's to say and was settled there
 
 What the venue declares of its order entry that this program does not run, and why:
 
-- ouch_reduce_order: its fields.quantity states an intended size, which counts what the order has already executed, and that is something the engine reports on a stream this program does not read
-- ouch_modify_order: its fields.quantity states an intended size, which counts what the order has already executed, and that is something the engine reports on a stream this program does not read
-- ouch_replace_order: it replaces an order, which needs what the order it replaces has executed and the side and display it was entered with, and the first of those is the engine's to say
-- the 23 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
+- the 10 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
 
 Each run is a client's packets and what the gateway should write for them. A run nobody logged in for is published with nothing to write, because declining is half of what a gate does:
 
 | Run | Requests | Bytes written |
 | --- | ---: | ---: |
-| `NsmEquities.Gateway.crossing` | 3 | 180 |
+| `NsmEquities.Gateway.crossing` | 3 | 195 |
 | `NsmEquities.Gateway.unadmitted` | 3 | 0 |
-| `NsmEquities.Gateway.sweeping` | 3 | 180 |
-| `NsmEquities.Gateway.selling` | 2 | 120 |
-| `NsmEquities.Gateway.cancelling` | 3 | 147 |
-| `NsmEquities.Gateway.day` | 8 | 447 |
-| `NsmEquities.Gateway.optioned` | 2 | 120 |
+| `NsmEquities.Gateway.sweeping` | 3 | 195 |
+| `NsmEquities.Gateway.selling` | 2 | 130 |
+| `NsmEquities.Gateway.cancelling` | 3 | 157 |
+| `NsmEquities.Gateway.day` | 8 | 482 |
 
 ## Market
 
-`NsmEquities.Market.emojic` reads the internal order stream Nasdaq Stock Market Open declares — `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out. It runs the `Nasdaq Equities Open` day, and stamps every message it publishes with the security that day is declared for.
+`NsmEquities.Market.emojic` reads the internal order stream Nasdaq Stock Market Basic declares — `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out. It runs the `Nasdaq Equities Basic` day, and stamps every message it publishes with the security that day is declared for.
 
 **Its book holds whatever price arrives.** A level is reached by its price rather than by an index into a tape, so nothing here is banded around a declared reference and no order is refused for being far from one. What this market does refuse, it refuses because the day it runs says to.
 
 What was settled when the program was written rather than asked while it ran:
 
-- the day is Nasdaq Equities Open, in the phases Continuous; it starts in Continuous
+- the day is Nasdaq Equities Basic, in the phases Continuous then Closed; it starts in Continuous
 - an order is a quantity at a price: the book holds whatever price arrives, because a list reaches a level by value and not by an index that has to fit in a byte
 
 Each run below is published as a `.frame` of the orders put to it and a `.wrote` of what the market published. Each was held to the C# parser on both halves, and to a second book in C# that must agree on every trade, before it was published:
@@ -97,26 +91,19 @@ Each run below is published as a `.frame` of the orders put to it and a `.wrote`
 | `NsmEquities.Market.selling` | 2 | 1 | 0 |
 | `NsmEquities.Market.cancelling` | 2 | 0 | 0 |
 | `NsmEquities.Market.day` | 7 | 4 | 0 |
-| `NsmEquities.Market.replacing` | 6 | 2 | 0 |
-| `NsmEquities.Market.declining` | 3 | 1 | 1 |
 | `NsmEquities.Market.entered-crossing` | 3 | 1 | 0 |
 | `NsmEquities.Market.entered-sweeping` | 3 | 2 | 0 |
 | `NsmEquities.Market.entered-selling` | 2 | 1 | 0 |
 | `NsmEquities.Market.entered-cancelling` | 2 | 0 | 0 |
 | `NsmEquities.Market.entered-day` | 7 | 4 | 0 |
-| `NsmEquities.Market.entered-optioned` | 2 | 1 | 0 |
 
 ## Feeds
 
-`NsmEquities.TotalView.Feed.emojic` reads the venue's own events and writes each one the venue's transforms name as a packet of `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`, one message to a packet. It writes 13 of the 14 events the venue declares for this feed.
+`NsmEquities.TotalView.Feed.emojic` reads the venue's own events and writes each one the venue's transforms name as a packet of `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`, one message to a packet. It writes 3 of the 3 events the venue declares for this feed.
 
 What was settled when the program was written rather than asked while it ran:
 
 - its times count from midnight in America/New_York, and a program with no clock library cannot ask when that zone changes, so the 260 changes from 1970 to the end of 2099 were read when it was written and are carried in it; a time past the last keeps the last offset
-
-Events the venue declares for it that the program does not write, and why:
-
-- totalview_stock_trading_action: fields.reserved is set to ' ', which is not something packet.messages.message.payload.stocktradingactionmessage.reserved can be written as
 
 Each run is what the market should write for the run of the same name, and the packets this should write for it:
 
@@ -127,14 +114,11 @@ Each run is what the market should write for the run of the same name, and the p
 | `NsmEquities.TotalView.Feed.selling` | 2 |
 | `NsmEquities.TotalView.Feed.cancelling` | 3 |
 | `NsmEquities.TotalView.Feed.day` | 10 |
-| `NsmEquities.TotalView.Feed.replacing` | 7 |
-| `NsmEquities.TotalView.Feed.declining` | 2 |
 | `NsmEquities.TotalView.Feed.entered-crossing` | 4 |
 | `NsmEquities.TotalView.Feed.entered-sweeping` | 5 |
 | `NsmEquities.TotalView.Feed.entered-selling` | 2 |
 | `NsmEquities.TotalView.Feed.entered-cancelling` | 3 |
 | `NsmEquities.TotalView.Feed.entered-day` | 10 |
-| `NsmEquities.TotalView.Feed.entered-optioned` | 2 |
 
 ## Session
 
@@ -176,9 +160,9 @@ One run per way the chart states of answering a packet, named for the state it r
 | Program | What it is | Runs published |
 | --- | --- | ---: |
 | `NsmEquities.SoupBin.emojic` | the venue's handshake | 5 |
-| `NsmEquities.Gateway.emojic` | the venue's order entry, under its session chart | 7 |
-| `NsmEquities.Market.emojic` | the venue's book and the matching over it | 13 |
-| `NsmEquities.TotalView.Feed.emojic` | the venue's TotalView feed | 13 |
+| `NsmEquities.Gateway.emojic` | the venue's order entry, under its session chart | 6 |
+| `NsmEquities.Market.emojic` | the venue's book and the matching over it | 10 |
+| `NsmEquities.TotalView.Feed.emojic` | the venue's TotalView feed | 10 |
 
 Under `runs/`, in a folder named for each program, is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `replay.py` compiles each program against. They are written as hexadecimal because a frame holds any byte a protocol can carry and so does a program's output, so neither is text.
 

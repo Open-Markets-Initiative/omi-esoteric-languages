@@ -124,7 +124,7 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 | Programs | Characters | Reading every field the model states | Frames | Recorded from the wire |
 | --- | --- | --- | --- | --- |
-| 16 | 514,806 | 16 of 16 | 169 | 50 |
+| 16 | 516,803 | 16 of 16 | 169 | 50 |
 
 ## Open Markets Initiative
 

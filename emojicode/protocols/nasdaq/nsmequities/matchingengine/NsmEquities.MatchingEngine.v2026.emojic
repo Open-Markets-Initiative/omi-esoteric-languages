@@ -172,6 +172,22 @@
     wrote ➕ newline ➡️ 🖍 wrote
     position ➕ 4 ➡️ 🖍 position
 
+    💭 pegoffset, 4 bytes
+    📇 🔤pegoffset=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 4❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 4 ➡️ 🖍 position
+
+    💭 postonly, 1 byte
+    📇 🔤postonly=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
     💭 expiretime, 4 bytes
     📇 🔤expiretime=🔤❗️ ➡️ 🖍 named
     wrote ➕ named ➡️ 🖍 wrote
@@ -384,6 +400,14 @@
 
     💭 orderid, 8 bytes
     📇 🔤orderid=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 8❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 8 ➡️ 🖍 position
+
+    💭 price, 8 bytes
+    📇 🔤price=🔤❗️ ➡️ 🖍 named
     wrote ➕ named ➡️ 🖍 wrote
     🔪 frame position 8❗️ ➡️ 🖍 held
     wrote ➕ held ➡️ 🖍 wrote
@@ -811,6 +835,22 @@
     wrote ➕ held ➡️ 🖍 wrote
     wrote ➕ newline ➡️ 🖍 wrote
     position ➕ 4 ➡️ 🖍 position
+
+    💭 pegoffset, 4 bytes
+    📇 🔤pegoffset=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 4❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 4 ➡️ 🖍 position
+
+    💭 postonly, 1 byte
+    📇 🔤postonly=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
 
   🍉
   🙅↪️ value1 🙌 87 🍇

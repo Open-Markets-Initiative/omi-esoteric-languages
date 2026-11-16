@@ -188,6 +188,22 @@
     wrote ➕ newline ➡️ 🖍 wrote
     position ➕ 8 ➡️ 🖍 position
 
+    💭 pegdifference, 8 bytes
+    📇 🔤pegdifference=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 8❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 8 ➡️ 🖍 position
+
+    💭 minqty, 4 bytes
+    📇 🔤minqty=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 4❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 4 ➡️ 🖍 position
+
   🍉
   🙅↪️ value1 🙌 67 🍇
     💭 timestamp, 8 bytes
@@ -791,6 +807,22 @@
     wrote ➕ held ➡️ 🖍 wrote
     wrote ➕ newline ➡️ 🖍 wrote
     position ➕ 1 ➡️ 🖍 position
+
+    💭 pegdifference, 8 bytes
+    📇 🔤pegdifference=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 8❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 8 ➡️ 🖍 position
+
+    💭 minqty, 4 bytes
+    📇 🔤minqty=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 4❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 4 ➡️ 🖍 position
 
   🍉
   🙅↪️ value1 🙌 87 🍇

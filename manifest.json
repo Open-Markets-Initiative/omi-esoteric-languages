@@ -59,19 +59,9 @@
           "wrote": "brainfuck/exchanges/iexequities/runs/deep.feed/sharing.wrote"
         },
         {
-          "name": "declining",
-          "frame": "brainfuck/exchanges/iexequities/runs/deep.feed/declining.frame",
-          "wrote": "brainfuck/exchanges/iexequities/runs/deep.feed/declining.wrote"
-        },
-        {
           "name": "day",
           "frame": "brainfuck/exchanges/iexequities/runs/deep.feed/day.frame",
           "wrote": "brainfuck/exchanges/iexequities/runs/deep.feed/day.wrote"
-        },
-        {
-          "name": "replacing",
-          "frame": "brainfuck/exchanges/iexequities/runs/deep.feed/replacing.frame",
-          "wrote": "brainfuck/exchanges/iexequities/runs/deep.feed/replacing.wrote"
         }
       ]
     },
@@ -99,19 +89,9 @@
           "wrote": "brainfuck/exchanges/iexequities/runs/deepplus.feed/sharing.wrote"
         },
         {
-          "name": "declining",
-          "frame": "brainfuck/exchanges/iexequities/runs/deepplus.feed/declining.frame",
-          "wrote": "brainfuck/exchanges/iexequities/runs/deepplus.feed/declining.wrote"
-        },
-        {
           "name": "day",
           "frame": "brainfuck/exchanges/iexequities/runs/deepplus.feed/day.frame",
           "wrote": "brainfuck/exchanges/iexequities/runs/deepplus.feed/day.wrote"
-        },
-        {
-          "name": "replacing",
-          "frame": "brainfuck/exchanges/iexequities/runs/deepplus.feed/replacing.frame",
-          "wrote": "brainfuck/exchanges/iexequities/runs/deepplus.feed/replacing.wrote"
         }
       ]
     },
@@ -139,19 +119,9 @@
           "wrote": "brainfuck/exchanges/iexequities/runs/market/sharing.wrote"
         },
         {
-          "name": "declining",
-          "frame": "brainfuck/exchanges/iexequities/runs/market/declining.frame",
-          "wrote": "brainfuck/exchanges/iexequities/runs/market/declining.wrote"
-        },
-        {
           "name": "day",
           "frame": "brainfuck/exchanges/iexequities/runs/market/day.frame",
           "wrote": "brainfuck/exchanges/iexequities/runs/market/day.wrote"
-        },
-        {
-          "name": "replacing",
-          "frame": "brainfuck/exchanges/iexequities/runs/market/replacing.frame",
-          "wrote": "brainfuck/exchanges/iexequities/runs/market/replacing.wrote"
         }
       ]
     },
@@ -179,19 +149,9 @@
           "wrote": "brainfuck/exchanges/iexequities/runs/tops.feed/sharing.wrote"
         },
         {
-          "name": "declining",
-          "frame": "brainfuck/exchanges/iexequities/runs/tops.feed/declining.frame",
-          "wrote": "brainfuck/exchanges/iexequities/runs/tops.feed/declining.wrote"
-        },
-        {
           "name": "day",
           "frame": "brainfuck/exchanges/iexequities/runs/tops.feed/day.frame",
           "wrote": "brainfuck/exchanges/iexequities/runs/tops.feed/day.wrote"
-        },
-        {
-          "name": "replacing",
-          "frame": "brainfuck/exchanges/iexequities/runs/tops.feed/replacing.frame",
-          "wrote": "brainfuck/exchanges/iexequities/runs/tops.feed/replacing.wrote"
         }
       ]
     },
@@ -222,11 +182,6 @@
           "name": "day",
           "frame": "brainfuck/exchanges/nsmequities/runs/gateway/day.frame",
           "wrote": "brainfuck/exchanges/nsmequities/runs/gateway/day.wrote"
-        },
-        {
-          "name": "optioned",
-          "frame": "brainfuck/exchanges/nsmequities/runs/gateway/optioned.frame",
-          "wrote": "brainfuck/exchanges/nsmequities/runs/gateway/optioned.wrote"
         }
       ]
     },
@@ -254,19 +209,9 @@
           "wrote": "brainfuck/exchanges/nsmequities/runs/market/sharing.wrote"
         },
         {
-          "name": "declining",
-          "frame": "brainfuck/exchanges/nsmequities/runs/market/declining.frame",
-          "wrote": "brainfuck/exchanges/nsmequities/runs/market/declining.wrote"
-        },
-        {
           "name": "day",
           "frame": "brainfuck/exchanges/nsmequities/runs/market/day.frame",
           "wrote": "brainfuck/exchanges/nsmequities/runs/market/day.wrote"
-        },
-        {
-          "name": "replacing",
-          "frame": "brainfuck/exchanges/nsmequities/runs/market/replacing.frame",
-          "wrote": "brainfuck/exchanges/nsmequities/runs/market/replacing.wrote"
         },
         {
           "name": "entered-crossing",
@@ -282,11 +227,6 @@
           "name": "entered-day",
           "frame": "brainfuck/exchanges/nsmequities/runs/market/entered-day.frame",
           "wrote": "brainfuck/exchanges/nsmequities/runs/market/entered-day.wrote"
-        },
-        {
-          "name": "entered-optioned",
-          "frame": "brainfuck/exchanges/nsmequities/runs/market/entered-optioned.frame",
-          "wrote": "brainfuck/exchanges/nsmequities/runs/market/entered-optioned.wrote"
         }
       ]
     },
@@ -344,19 +284,9 @@
           "wrote": "brainfuck/exchanges/nsmequities/runs/totalview.feed/sharing.wrote"
         },
         {
-          "name": "declining",
-          "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/declining.frame",
-          "wrote": "brainfuck/exchanges/nsmequities/runs/totalview.feed/declining.wrote"
-        },
-        {
           "name": "day",
           "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/day.frame",
           "wrote": "brainfuck/exchanges/nsmequities/runs/totalview.feed/day.wrote"
-        },
-        {
-          "name": "replacing",
-          "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/replacing.frame",
-          "wrote": "brainfuck/exchanges/nsmequities/runs/totalview.feed/replacing.wrote"
         },
         {
           "name": "entered-crossing",
@@ -372,11 +302,6 @@
           "name": "entered-day",
           "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/entered-day.frame",
           "wrote": "brainfuck/exchanges/nsmequities/runs/totalview.feed/entered-day.wrote"
-        },
-        {
-          "name": "entered-optioned",
-          "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/entered-optioned.frame",
-          "wrote": "brainfuck/exchanges/nsmequities/runs/totalview.feed/entered-optioned.wrote"
         }
       ]
     },
@@ -813,6 +738,11 @@
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.cancelordermessage.wrote"
         },
         {
+          "name": "Laid.orderacceptedmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.orderacceptedmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.orderacceptedmessage.wrote"
+        },
+        {
           "name": "Laid.ordercanceledmessage",
           "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.ordercanceledmessage.frame",
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.ordercanceledmessage.wrote"
@@ -831,11 +761,6 @@
           "name": "Laid.phaserequestmessage",
           "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaserequestmessage.frame",
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaserequestmessage.wrote"
-        },
-        {
-          "name": "Laid.orderacceptedmessage",
-          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.orderacceptedmessage.frame",
-          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.orderacceptedmessage.wrote"
         },
         {
           "name": "Laid.cancelpendingmessage",
@@ -1335,16 +1260,6 @@
           "name": "day",
           "frame": "emojicode/exchanges/iexequities/runs/deep.feed/day.frame",
           "wrote": "emojicode/exchanges/iexequities/runs/deep.feed/day.wrote"
-        },
-        {
-          "name": "replacing",
-          "frame": "emojicode/exchanges/iexequities/runs/deep.feed/replacing.frame",
-          "wrote": "emojicode/exchanges/iexequities/runs/deep.feed/replacing.wrote"
-        },
-        {
-          "name": "declining",
-          "frame": "emojicode/exchanges/iexequities/runs/deep.feed/declining.frame",
-          "wrote": "emojicode/exchanges/iexequities/runs/deep.feed/declining.wrote"
         }
       ]
     },
@@ -1380,16 +1295,6 @@
           "name": "day",
           "frame": "emojicode/exchanges/iexequities/runs/deepplus.feed/day.frame",
           "wrote": "emojicode/exchanges/iexequities/runs/deepplus.feed/day.wrote"
-        },
-        {
-          "name": "replacing",
-          "frame": "emojicode/exchanges/iexequities/runs/deepplus.feed/replacing.frame",
-          "wrote": "emojicode/exchanges/iexequities/runs/deepplus.feed/replacing.wrote"
-        },
-        {
-          "name": "declining",
-          "frame": "emojicode/exchanges/iexequities/runs/deepplus.feed/declining.frame",
-          "wrote": "emojicode/exchanges/iexequities/runs/deepplus.feed/declining.wrote"
         }
       ]
     },
@@ -1425,16 +1330,6 @@
           "name": "day",
           "frame": "emojicode/exchanges/iexequities/runs/market/day.frame",
           "wrote": "emojicode/exchanges/iexequities/runs/market/day.wrote"
-        },
-        {
-          "name": "replacing",
-          "frame": "emojicode/exchanges/iexequities/runs/market/replacing.frame",
-          "wrote": "emojicode/exchanges/iexequities/runs/market/replacing.wrote"
-        },
-        {
-          "name": "declining",
-          "frame": "emojicode/exchanges/iexequities/runs/market/declining.frame",
-          "wrote": "emojicode/exchanges/iexequities/runs/market/declining.wrote"
         }
       ]
     },
@@ -1470,16 +1365,6 @@
           "name": "day",
           "frame": "emojicode/exchanges/iexequities/runs/tops.feed/day.frame",
           "wrote": "emojicode/exchanges/iexequities/runs/tops.feed/day.wrote"
-        },
-        {
-          "name": "replacing",
-          "frame": "emojicode/exchanges/iexequities/runs/tops.feed/replacing.frame",
-          "wrote": "emojicode/exchanges/iexequities/runs/tops.feed/replacing.wrote"
-        },
-        {
-          "name": "declining",
-          "frame": "emojicode/exchanges/iexequities/runs/tops.feed/declining.frame",
-          "wrote": "emojicode/exchanges/iexequities/runs/tops.feed/declining.wrote"
         }
       ]
     },
@@ -1520,11 +1405,6 @@
           "name": "day",
           "frame": "emojicode/exchanges/nsmequities/runs/gateway/day.frame",
           "wrote": "emojicode/exchanges/nsmequities/runs/gateway/day.wrote"
-        },
-        {
-          "name": "optioned",
-          "frame": "emojicode/exchanges/nsmequities/runs/gateway/optioned.frame",
-          "wrote": "emojicode/exchanges/nsmequities/runs/gateway/optioned.wrote"
         }
       ]
     },
@@ -1562,16 +1442,6 @@
           "wrote": "emojicode/exchanges/nsmequities/runs/market/day.wrote"
         },
         {
-          "name": "replacing",
-          "frame": "emojicode/exchanges/nsmequities/runs/market/replacing.frame",
-          "wrote": "emojicode/exchanges/nsmequities/runs/market/replacing.wrote"
-        },
-        {
-          "name": "declining",
-          "frame": "emojicode/exchanges/nsmequities/runs/market/declining.frame",
-          "wrote": "emojicode/exchanges/nsmequities/runs/market/declining.wrote"
-        },
-        {
           "name": "entered-crossing",
           "frame": "emojicode/exchanges/nsmequities/runs/market/entered-crossing.frame",
           "wrote": "emojicode/exchanges/nsmequities/runs/market/entered-crossing.wrote"
@@ -1595,11 +1465,6 @@
           "name": "entered-day",
           "frame": "emojicode/exchanges/nsmequities/runs/market/entered-day.frame",
           "wrote": "emojicode/exchanges/nsmequities/runs/market/entered-day.wrote"
-        },
-        {
-          "name": "entered-optioned",
-          "frame": "emojicode/exchanges/nsmequities/runs/market/entered-optioned.frame",
-          "wrote": "emojicode/exchanges/nsmequities/runs/market/entered-optioned.wrote"
         }
       ]
     },
@@ -1672,16 +1537,6 @@
           "wrote": "emojicode/exchanges/nsmequities/runs/totalview.feed/day.wrote"
         },
         {
-          "name": "replacing",
-          "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/replacing.frame",
-          "wrote": "emojicode/exchanges/nsmequities/runs/totalview.feed/replacing.wrote"
-        },
-        {
-          "name": "declining",
-          "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/declining.frame",
-          "wrote": "emojicode/exchanges/nsmequities/runs/totalview.feed/declining.wrote"
-        },
-        {
           "name": "entered-crossing",
           "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-crossing.frame",
           "wrote": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-crossing.wrote"
@@ -1705,11 +1560,6 @@
           "name": "entered-day",
           "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-day.frame",
           "wrote": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-day.wrote"
-        },
-        {
-          "name": "entered-optioned",
-          "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-optioned.frame",
-          "wrote": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-optioned.wrote"
         }
       ]
     },
@@ -2166,6 +2016,11 @@
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.cancelordermessage.wrote"
         },
         {
+          "name": "Laid.orderacceptedmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.orderacceptedmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.orderacceptedmessage.wrote"
+        },
+        {
           "name": "Laid.ordercanceledmessage",
           "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.ordercanceledmessage.frame",
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.ordercanceledmessage.wrote"
@@ -2184,11 +2039,6 @@
           "name": "Laid.phaserequestmessage",
           "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaserequestmessage.frame",
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaserequestmessage.wrote"
-        },
-        {
-          "name": "Laid.orderacceptedmessage",
-          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.orderacceptedmessage.frame",
-          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.orderacceptedmessage.wrote"
         },
         {
           "name": "Laid.cancelpendingmessage",
@@ -2754,48 +2604,6 @@
     {
       "language": "brainfuck",
       "venue": "IexEquities",
-      "run": "declining",
-      "wrote": "brainfuck/exchanges/iexequities/runs/market/declining.wrote",
-      "frame": "brainfuck/exchanges/iexequities/runs/deep.feed/declining.frame"
-    },
-    {
-      "language": "brainfuck",
-      "venue": "IexEquities",
-      "run": "declining",
-      "wrote": "brainfuck/exchanges/iexequities/runs/market/declining.wrote",
-      "frame": "brainfuck/exchanges/iexequities/runs/deepplus.feed/declining.frame"
-    },
-    {
-      "language": "brainfuck",
-      "venue": "IexEquities",
-      "run": "declining",
-      "wrote": "brainfuck/exchanges/iexequities/runs/market/declining.wrote",
-      "frame": "brainfuck/exchanges/iexequities/runs/tops.feed/declining.frame"
-    },
-    {
-      "language": "brainfuck",
-      "venue": "IexEquities",
-      "run": "replacing",
-      "wrote": "brainfuck/exchanges/iexequities/runs/market/replacing.wrote",
-      "frame": "brainfuck/exchanges/iexequities/runs/deep.feed/replacing.frame"
-    },
-    {
-      "language": "brainfuck",
-      "venue": "IexEquities",
-      "run": "replacing",
-      "wrote": "brainfuck/exchanges/iexequities/runs/market/replacing.wrote",
-      "frame": "brainfuck/exchanges/iexequities/runs/deepplus.feed/replacing.frame"
-    },
-    {
-      "language": "brainfuck",
-      "venue": "IexEquities",
-      "run": "replacing",
-      "wrote": "brainfuck/exchanges/iexequities/runs/market/replacing.wrote",
-      "frame": "brainfuck/exchanges/iexequities/runs/tops.feed/replacing.frame"
-    },
-    {
-      "language": "brainfuck",
-      "venue": "IexEquities",
       "run": "sharing",
       "wrote": "brainfuck/exchanges/iexequities/runs/market/sharing.wrote",
       "frame": "brainfuck/exchanges/iexequities/runs/deep.feed/sharing.frame"
@@ -2838,13 +2646,6 @@
     {
       "language": "brainfuck",
       "venue": "NsmEquities",
-      "run": "optioned",
-      "wrote": "brainfuck/exchanges/nsmequities/runs/gateway/optioned.wrote",
-      "frame": "brainfuck/exchanges/nsmequities/runs/market/entered-optioned.frame"
-    },
-    {
-      "language": "brainfuck",
-      "venue": "NsmEquities",
       "run": "cancelling",
       "wrote": "brainfuck/exchanges/nsmequities/runs/market/cancelling.wrote",
       "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/cancelling.frame"
@@ -2866,13 +2667,6 @@
     {
       "language": "brainfuck",
       "venue": "NsmEquities",
-      "run": "declining",
-      "wrote": "brainfuck/exchanges/nsmequities/runs/market/declining.wrote",
-      "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/declining.frame"
-    },
-    {
-      "language": "brainfuck",
-      "venue": "NsmEquities",
       "run": "entered-cancelling",
       "wrote": "brainfuck/exchanges/nsmequities/runs/market/entered-cancelling.wrote",
       "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/entered-cancelling.frame"
@@ -2890,20 +2684,6 @@
       "run": "entered-day",
       "wrote": "brainfuck/exchanges/nsmequities/runs/market/entered-day.wrote",
       "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/entered-day.frame"
-    },
-    {
-      "language": "brainfuck",
-      "venue": "NsmEquities",
-      "run": "entered-optioned",
-      "wrote": "brainfuck/exchanges/nsmequities/runs/market/entered-optioned.wrote",
-      "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/entered-optioned.frame"
-    },
-    {
-      "language": "brainfuck",
-      "venue": "NsmEquities",
-      "run": "replacing",
-      "wrote": "brainfuck/exchanges/nsmequities/runs/market/replacing.wrote",
-      "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/replacing.frame"
     },
     {
       "language": "brainfuck",
@@ -2978,48 +2758,6 @@
     {
       "language": "emojicode",
       "venue": "IexEquities",
-      "run": "declining",
-      "wrote": "emojicode/exchanges/iexequities/runs/market/declining.wrote",
-      "frame": "emojicode/exchanges/iexequities/runs/deep.feed/declining.frame"
-    },
-    {
-      "language": "emojicode",
-      "venue": "IexEquities",
-      "run": "declining",
-      "wrote": "emojicode/exchanges/iexequities/runs/market/declining.wrote",
-      "frame": "emojicode/exchanges/iexequities/runs/deepplus.feed/declining.frame"
-    },
-    {
-      "language": "emojicode",
-      "venue": "IexEquities",
-      "run": "declining",
-      "wrote": "emojicode/exchanges/iexequities/runs/market/declining.wrote",
-      "frame": "emojicode/exchanges/iexequities/runs/tops.feed/declining.frame"
-    },
-    {
-      "language": "emojicode",
-      "venue": "IexEquities",
-      "run": "replacing",
-      "wrote": "emojicode/exchanges/iexequities/runs/market/replacing.wrote",
-      "frame": "emojicode/exchanges/iexequities/runs/deep.feed/replacing.frame"
-    },
-    {
-      "language": "emojicode",
-      "venue": "IexEquities",
-      "run": "replacing",
-      "wrote": "emojicode/exchanges/iexequities/runs/market/replacing.wrote",
-      "frame": "emojicode/exchanges/iexequities/runs/deepplus.feed/replacing.frame"
-    },
-    {
-      "language": "emojicode",
-      "venue": "IexEquities",
-      "run": "replacing",
-      "wrote": "emojicode/exchanges/iexequities/runs/market/replacing.wrote",
-      "frame": "emojicode/exchanges/iexequities/runs/tops.feed/replacing.frame"
-    },
-    {
-      "language": "emojicode",
-      "venue": "IexEquities",
       "run": "selling",
       "wrote": "emojicode/exchanges/iexequities/runs/market/selling.wrote",
       "frame": "emojicode/exchanges/iexequities/runs/deep.feed/selling.frame"
@@ -3083,13 +2821,6 @@
     {
       "language": "emojicode",
       "venue": "NsmEquities",
-      "run": "optioned",
-      "wrote": "emojicode/exchanges/nsmequities/runs/gateway/optioned.wrote",
-      "frame": "emojicode/exchanges/nsmequities/runs/market/entered-optioned.frame"
-    },
-    {
-      "language": "emojicode",
-      "venue": "NsmEquities",
       "run": "selling",
       "wrote": "emojicode/exchanges/nsmequities/runs/gateway/selling.wrote",
       "frame": "emojicode/exchanges/nsmequities/runs/market/entered-selling.frame"
@@ -3125,13 +2856,6 @@
     {
       "language": "emojicode",
       "venue": "NsmEquities",
-      "run": "declining",
-      "wrote": "emojicode/exchanges/nsmequities/runs/market/declining.wrote",
-      "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/declining.frame"
-    },
-    {
-      "language": "emojicode",
-      "venue": "NsmEquities",
       "run": "entered-cancelling",
       "wrote": "emojicode/exchanges/nsmequities/runs/market/entered-cancelling.wrote",
       "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-cancelling.frame"
@@ -3153,13 +2877,6 @@
     {
       "language": "emojicode",
       "venue": "NsmEquities",
-      "run": "entered-optioned",
-      "wrote": "emojicode/exchanges/nsmequities/runs/market/entered-optioned.wrote",
-      "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-optioned.frame"
-    },
-    {
-      "language": "emojicode",
-      "venue": "NsmEquities",
       "run": "entered-selling",
       "wrote": "emojicode/exchanges/nsmequities/runs/market/entered-selling.wrote",
       "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-selling.frame"
@@ -3170,13 +2887,6 @@
       "run": "entered-sweeping",
       "wrote": "emojicode/exchanges/nsmequities/runs/market/entered-sweeping.wrote",
       "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-sweeping.frame"
-    },
-    {
-      "language": "emojicode",
-      "venue": "NsmEquities",
-      "run": "replacing",
-      "wrote": "emojicode/exchanges/nsmequities/runs/market/replacing.wrote",
-      "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/replacing.frame"
     },
     {
       "language": "emojicode",

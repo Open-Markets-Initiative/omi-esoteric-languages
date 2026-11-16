@@ -1,6 +1,6 @@
-# Nasdaq Stock Market Open
+# Nasdaq Stock Market Basic
 
-The programs generated from what Nasdaq Stock Market Open declares, rather than from one protocol's model. A protocol's decoder is the same program whoever speaks it and sits under `brainfuck/protocols`; what is here is this venue's — the handshake it declares, and the book its own reference price bands.
+The programs generated from what Nasdaq Stock Market Basic declares, rather than from one protocol's model. A protocol's decoder is the same program whoever speaks it and sits under `brainfuck/protocols`; what is here is this venue's — the handshake it declares, and the book its own reference price bands.
 
 ## The venue, end to end
 
@@ -35,14 +35,15 @@ Every such join is stated in `manifest.json` at the root, as two files that hold
 What the venue says it speaks, read from its own declaration and not kept as a list here:
 
 - Ipc `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026`
-- Engine `Nasdaq.NsmEquities.Equities.Open.Trading`
+- Engine `Nasdaq.NsmEquities.Equities.Basic.TradingSession`
 - OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
 - Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0.2026`
 - Replay `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Trader `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Trader `Nasdaq.NsmEquities.Orders.Ouch.v5.0`
-- Engine `Nasdaq.NsmEquities.Equities.Session.Trading`
+- Engine `Nasdaq.NsmEquities.Equities.Open.TradingSession`
+- Engine `Nasdaq.NsmEquities.Equities.Session.TradingSession`
 
 ## Gateway
 
@@ -52,42 +53,33 @@ What was settled when the program was written rather than asked while it ran:
 
 - timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as nought
 - sequence is a message's place in the order the engine is sent them, which the venue's sequencer states; with one gateway and nothing between it and the engine, this counts them itself, from one
-- expiretime is a field a request may carry or leave out, so it is looked for among the options the request ends in, each read by its length and its tag; a request leaving it out carries nought for it
-- pricetype is a field a request may carry or leave out, so it is looked for among the options the request ends in, each read by its length and its tag; a request leaving it out carries nought for it
-- minqty is a field a request may carry or leave out, so it is looked for among the options the request ends in, each read by its length and its tag; a request leaving it out carries nought for it
 - the session is SoupBin Tcp: a connection opens in NotLoggedIn, and a request is admitted only while it rests in LoggedIn, which is where the chart receives the other end's own data. A login moves the connection as the chart says an accepted one does; whether to accept it is the session program's to say and was settled there
 - it remembers the first 16 orders of a connection by the reference each came with, because a tape cannot grow; an order admitted after those is still admitted and numbered, and a later cancel naming it finds nothing
 
 What the venue declares of its order entry that this program does not run, and why:
 
-- ouch_reduce_order: its fields.quantity states an intended size, which counts what the order has already executed, and that is something the engine reports on a stream this program does not read
-- ouch_modify_order: its fields.quantity states an intended size, which counts what the order has already executed, and that is something the engine reports on a stream this program does not read
-- ouch_replace_order: it replaces an order, which needs what the order it replaces has executed and the side and display it was entered with, and the first of those is the engine's to say
-- the 23 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
+- the 10 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
 
 Each run is a client's packets and what the gateway wrote for them. A run nobody logged in for is published with nothing written, because declining is half of what a gate does:
 
 | Run | Requests | Bytes written |
 | --- | ---: | ---: |
-| `crossing` | 3 | 180 |
-| `cancelling` | 3 | 147 |
+| `crossing` | 3 | 195 |
+| `cancelling` | 3 | 157 |
 | `unadmitted` | 3 | 0 |
-| `day` | 8 | 447 |
-| `optioned` | 2 | 120 |
+| `day` | 8 | 482 |
 
 ## Market
 
-`NsmEquities.Market.bf` reads the internal order stream Nasdaq Stock Market Open declares — `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out.
+`NsmEquities.Market.bf` reads the internal order stream Nasdaq Stock Market Basic declares — `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out.
 
 What was settled when the program was written rather than asked while it ran:
 
 - the book holds the 32 prices from 9984 to 10015, which is the band of the declared reference 10000; a price outside it is refused
 - a refusal for a limit of this engine's own - a price outside the band, a side that remembers no more orders, a cancel naming no order it holds - is written with the venue's reason for Phase, because every reason the protocol states is marked for something else and it states none for anything else: a stated simplification, and the nearest of the venue's words rather than one of its own
-- the chart answers an arriving order by what the order is, and so does this: each phase's answers are tried in the order the chart states them and the first whose conditions the order meets is the one it gets, with the reason the chart gives where that is a refusal. A word the protocol has no code for is a word no order is, and a code the venue marks with no word is none of the words
 - a level holds one summed quantity and remembers the identifier of the last order to rest there, so orders sharing a price are not held apart; the symbol is read and reported but not held, so one security is traded
 - packet.message.messagedata.orderrestedmessage.timestamp; packet.message.messagedata.trademessage.timestamp: marked SendTime; which asks whoever sends the message to stamp it from a clock; Brainfuck reads bytes and has no clock; so each published event carries the arriving order's timestamp instead: the time it was caused rather than the time it was sent
-- the day is Nasdaq Equities Open, in the phases Continuous; it starts in Continuous; the chart states no change of phase, so it stays there and nothing asks it to move
-- the chart answers a replace by crossing it, and it does: the order replaced is found by its identifier and taken back without a word, and the replacement goes into the book as an arriving order does, behind whatever already rests at its price, reported as the venue's own replace under both numbers rather than as an order resting. It is reported as it rests, before it trades, the way this engine reports any order
+- the day is Nasdaq Equities Basic, in the phases Continuous then Closed; it starts in Continuous; a request to Close or Open moves it
 - each side remembers its resting orders one by one, oldest first, and 16 of them: a trade is made with the oldest order at the best price and names it, a cancel takes back the one order it names and leaves the rest of its price where it was, and an order arriving at a side that already holds 16 is refused rather than rested where it could not be found again
 - the chart answers a cancel by taking the order out of the book, and it does: each side's remembered orders are walked for that identifier, and what is left of that one order comes off its price. Whatever else rests at the price stays
 
@@ -98,40 +90,30 @@ Each run below is published as a `.frame` of the orders put to it and a `.wrote`
 | `crossing` | 5 | 2 | 1 |
 | `cancelling` | 2 | 0 | 1 |
 | `sharing` | 4 | 2 | 0 |
-| `declining` | 3 | 1 | 1 |
-| `day` | 8 | 4 | 1 |
-| `replacing` | 4 | 1 | 0 |
+| `day` | 7 | 4 | 0 |
 | `entered-crossing` | 3 | 1 | 0 |
 | `entered-cancelling` | 3 | 0 | 0 |
 | `entered-day` | 8 | 4 | 0 |
-| `entered-optioned` | 2 | 1 | 0 |
 
 ## Feeds
 
-`NsmEquities.TotalView.Feed.bf` reads the venue's own events and writes each one the venue's transforms name as a packet of `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`, one message to a packet. It writes 13 of the 14 events the venue declares for this feed.
+`NsmEquities.TotalView.Feed.bf` reads the venue's own events and writes each one the venue's transforms name as a packet of `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`, one message to a packet. It writes 3 of the 3 events the venue declares for this feed.
 
 What was settled when the program was written rather than asked while it ran:
 
 - its times count from midnight in America/New_York, and a program with no clock library cannot ask when that zone changes, so the 260 changes from 1970 to the end of 2099 were read when it was written and are carried in it; a time past the last keeps the last offset
 
-Events the venue declares for it that the program does not write, and why:
-
-- totalview_stock_trading_action: fields.reserved is set to ' ', which is not something packet.messages.message.payload.stocktradingactionmessage.reserved can be written as
-
 Each run is what the market wrote for the run of the same name, and the packets this wrote for it:
 
 | Run | Packets |
 | --- | ---: |
-| `crossing` | 6 |
+| `crossing` | 5 |
 | `cancelling` | 3 |
-| `sharing` | 7 |
-| `declining` | 3 |
-| `day` | 12 |
-| `replacing` | 4 |
+| `sharing` | 6 |
+| `day` | 10 |
 | `entered-crossing` | 4 |
 | `entered-cancelling` | 3 |
-| `entered-day` | 12 |
-| `entered-optioned` | 3 |
+| `entered-day` | 10 |
 
 ## Session
 
@@ -169,9 +151,9 @@ One run per transition of the chart, named for the state it rests in and the pac
 | Program | What it is | Runs published |
 | --- | --- | ---: |
 | `NsmEquities.SoupBin.bf` | the venue's handshake | 4 |
-| `NsmEquities.Gateway.bf` | the venue's order entry, under its session chart | 5 |
-| `NsmEquities.Market.bf` | the venue's book and the matching over it | 10 |
-| `NsmEquities.TotalView.Feed.bf` | the venue's TotalView feed | 10 |
+| `NsmEquities.Gateway.bf` | the venue's order entry, under its session chart | 4 |
+| `NsmEquities.Market.bf` | the venue's book and the matching over it | 7 |
+| `NsmEquities.TotalView.Feed.bf` | the venue's TotalView feed | 7 |
 
 Under `runs/`, in a folder named for each program, is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `check.py` runs. A market also publishes a `.messages.json`, which is what it reads and writes flattened out of its model — that is what lets `run.py` build an order of your own rather than only replay what shipped.
 

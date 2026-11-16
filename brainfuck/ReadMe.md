@@ -40,7 +40,7 @@ bf brainfuck/dialect.bf < /dev/null
 ```
 That program takes no input and prints one line per claim, saying of each whether this interpreter kept it. All four should say `ok`. One that says `no`, or a line that stops partway through, names what your interpreter does differently — and the claims are listed in the order the programs here lean on them, which was measured rather than guessed.
 
-The one byte wrap is the one that matters most: of 213 frames published here, only 18 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 1,001, so classic Brainfuck's 30,000 would do 29 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
+The one byte wrap is the one that matters most: of 201 frames published here, only 18 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 994, so classic Brainfuck's 30,000 would do 30 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
 
 ## Layout
 
@@ -61,6 +61,18 @@ brainfuck/
 
 A protocol's decoder sits under `protocols` because it is the same program whoever speaks it; a session and a market sit under `exchanges` because they are the venue's own — a venue is what declares which chart runs over which protocol, which price its book is banded on, and which trading day its market runs. A market's program carries its day in its own notes, and that venue's own readme beside it states which day it ran and why — the days published here are not all the days the venues declare, because a venue declaring two of them for one protocol gets the simplest rather than a program picked between them. Where a chart asks for a cross of what a phase collected, the market crosses it at the change of phase and publishes the venue's own Cross Completed message for it — at each resting level's own price rather than at one clearing price struck for all of it, which each program says of itself.
 
+### Investors Exchange Equities Basic
+
+- OrderEntry `Iex.IexEquities.OrderEntry.Fix.v2.91`, session `Fix`
+- Feed `Iex.IexEquities.Tops.IexTp.v1.66`
+- Feed `Iex.IexEquities.Deep.IexTp.v1.08`
+- Feed `Iex.IexEquities.DeepPlus.IexTp.v1.05`
+- Snap `Iex.IexEquities.Deep.Snap.v1.6`
+- Snap `Iex.IexEquities.Tops.Snap.v1.6`
+- Snap `Iex.IexEquities.DeepPlus.Snap.v1.06`
+- Ipc `Iex.IexEquities.MatchingEngine.Ipc.v2026`
+- Engine `Iex.IexEquities.Equities.Basic.TradingSession`
+
 ### Investors Exchange Equities Open
 
 - OrderEntry `Iex.IexEquities.OrderEntry.Fix.v2.91`, session `Fix`
@@ -71,7 +83,7 @@ A protocol's decoder sits under `protocols` because it is the same program whoev
 - Snap `Iex.IexEquities.Tops.Snap.v1.6`
 - Snap `Iex.IexEquities.DeepPlus.Snap.v1.06`
 - Ipc `Iex.IexEquities.MatchingEngine.Ipc.v2026`
-- Engine `Iex.IexEquities.Equities.Open.Trading`
+- Engine `Iex.IexEquities.Equities.Open.TradingSession`
 
 ### Investors Exchange Equities Session
 
@@ -83,12 +95,23 @@ A protocol's decoder sits under `protocols` because it is the same program whoev
 - Snap `Iex.IexEquities.Tops.Snap.v1.6`
 - Snap `Iex.IexEquities.DeepPlus.Snap.v1.06`
 - Ipc `Iex.IexEquities.MatchingEngine.Ipc.v2026`
-- Engine `Iex.IexEquities.Equities.Session.Trading`
+- Engine `Iex.IexEquities.Equities.Session.TradingSession`
+
+### Nasdaq Stock Market Basic
+
+- Ipc `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026`
+- Engine `Nasdaq.NsmEquities.Equities.Basic.TradingSession`
+- OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
+- Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
+- Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0.2026`
+- Replay `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
+- Trader `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
+- Trader `Nasdaq.NsmEquities.Orders.Ouch.v5.0`
 
 ### Nasdaq Stock Market Open
 
 - Ipc `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026`
-- Engine `Nasdaq.NsmEquities.Equities.Open.Trading`
+- Engine `Nasdaq.NsmEquities.Equities.Open.TradingSession`
 - OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
 - Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0.2026`
@@ -99,7 +122,7 @@ A protocol's decoder sits under `protocols` because it is the same program whoev
 ### Nasdaq Stock Market Session
 
 - Ipc `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026`
-- Engine `Nasdaq.NsmEquities.Equities.Session.Trading`
+- Engine `Nasdaq.NsmEquities.Equities.Session.TradingSession`
 - OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
 - Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0.2026`
@@ -139,14 +162,14 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 
 - Programs: 16
-- Instructions: 5,675,269
+- Instructions: 5,678,809
 - Reading every field the model states: 16 of 16
 - Published with a frame they are held to: 16 of 16
 - Frames, of which recorded from the wire: 159, 40
 - Sessions, of which proven on a run: 1, 1
 - Runs, and the packets they were answered with: 4, 4
 - Markets, of which proven on a run: 2, 2
-- Orders put to them, the trades those made and the orders refused: 68, 26, 8
+- Orders put to them, the trades those made and the orders refused: 50, 21, 4
 
 ## Testing
 

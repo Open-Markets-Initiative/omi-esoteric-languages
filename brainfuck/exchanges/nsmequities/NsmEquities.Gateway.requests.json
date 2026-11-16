@@ -165,7 +165,6 @@
             "After Hours": 69
           },
           "title": "Time In Force",
-          "role": "TimeInForce",
           "at": 29
         },
         {
@@ -180,7 +179,6 @@
             "Conformant": 90
           },
           "title": "Display",
-          "role": "Display",
           "at": 30
         },
         {
@@ -225,7 +223,6 @@
             "After Hours Close": 65
           },
           "title": "Cross Type",
-          "role": "CrossType",
           "at": 33
         },
         {
@@ -243,45 +240,7 @@
           "title": "Appendage Length",
           "at": 48
         }
-      ],
-      "options": {
-        "at": 50,
-        "fields": [
-          {
-            "named": "expiretime",
-            "width": 4,
-            "endian": "big",
-            "title": "Expire Time",
-            "role": "Expiry",
-            "tag": 15
-          },
-          {
-            "named": "pricetype",
-            "width": 1,
-            "endian": "little",
-            "text": true,
-            "values": {
-              "Limit": 76,
-              "Market Peg": 80,
-              "Midpoint Peg": 77,
-              "Primary Peg": 82,
-              "Market Maker Peg": 81,
-              "Midpoint": 109
-            },
-            "title": "Price Type",
-            "role": "Peg",
-            "tag": 6
-          },
-          {
-            "named": "minqty",
-            "width": 4,
-            "endian": "big",
-            "title": "Min Qty",
-            "role": "MinQuantity",
-            "tag": 3
-          }
-        ]
-      }
+      ]
     },
     {
       "named": "Cancel Order Message",

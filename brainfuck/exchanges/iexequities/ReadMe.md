@@ -1,6 +1,6 @@
-# Investors Exchange Equities Open
+# Investors Exchange Equities Basic
 
-The programs generated from what Investors Exchange Equities Open declares, rather than from one protocol's model. A protocol's decoder is the same program whoever speaks it and sits under `brainfuck/protocols`; what is here is this venue's — the handshake it declares, and the book its own reference price bands.
+The programs generated from what Investors Exchange Equities Basic declares, rather than from one protocol's model. A protocol's decoder is the same program whoever speaks it and sits under `brainfuck/protocols`; what is here is this venue's — the handshake it declares, and the book its own reference price bands.
 
 ## The venue, end to end
 
@@ -42,22 +42,21 @@ What the venue says it speaks, read from its own declaration and not kept as a l
 - Snap `Iex.IexEquities.Tops.Snap.v1.6`
 - Snap `Iex.IexEquities.DeepPlus.Snap.v1.06`
 - Ipc `Iex.IexEquities.MatchingEngine.Ipc.v2026`
-- Engine `Iex.IexEquities.Equities.Open.Trading`
-- Engine `Iex.IexEquities.Equities.Session.Trading`
+- Engine `Iex.IexEquities.Equities.Basic.TradingSession`
+- Engine `Iex.IexEquities.Equities.Open.TradingSession`
+- Engine `Iex.IexEquities.Equities.Session.TradingSession`
 
 ## Market
 
-`IexEquities.Market.bf` reads the internal order stream Investors Exchange Equities Open declares — `Iex.IexEquities.MatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out.
+`IexEquities.Market.bf` reads the internal order stream Investors Exchange Equities Basic declares — `Iex.IexEquities.MatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out.
 
 What was settled when the program was written rather than asked while it ran:
 
 - the book holds the 32 prices from 9984 to 10015, which is the band of the declared reference 10000; a price outside it is refused
 - a refusal for a limit of this engine's own - a price outside the band, a side that remembers no more orders, a cancel naming no order it holds - is written with the venue's reason for Phase, because every reason the protocol states is marked for something else and it states none for anything else: a stated simplification, and the nearest of the venue's words rather than one of its own
-- the chart answers an arriving order by what the order is, and so does this: each phase's answers are tried in the order the chart states them and the first whose conditions the order meets is the one it gets, with the reason the chart gives where that is a refusal. A word the protocol has no code for is a word no order is, and a code the venue marks with no word is none of the words
 - a level holds one summed quantity and remembers the identifier of the last order to rest there, so orders sharing a price are not held apart; the symbol is read and reported but not held, so one security is traded
 - packet.message.messagedata.orderrestedmessage.timestamp; packet.message.messagedata.trademessage.timestamp: marked SendTime; which asks whoever sends the message to stamp it from a clock; Brainfuck reads bytes and has no clock; so each published event carries the arriving order's timestamp instead: the time it was caused rather than the time it was sent
-- the day is Iex Equities Open, in the phases Continuous; it starts in Continuous; the chart states no change of phase, so it stays there and nothing asks it to move
-- the chart answers a replace by crossing it, and it does: the order replaced is found by its identifier and taken back without a word, and the replacement goes into the book as an arriving order does, behind whatever already rests at its price, reported as the venue's own replace under both numbers rather than as an order resting. It is reported as it rests, before it trades, the way this engine reports any order
+- the day is Iex Equities Basic, in the phases Continuous then Closed; it starts in Continuous; a request to Close or Open moves it
 - each side remembers its resting orders one by one, oldest first, and 16 of them: a trade is made with the oldest order at the best price and names it, a cancel takes back the one order it names and leaves the rest of its price where it was, and an order arriving at a side that already holds 16 is refused rather than rested where it could not be found again
 - the chart answers a cancel by taking the order out of the book, and it does: each side's remembered orders are walked for that identifier, and what is left of that one order comes off its price. Whatever else rests at the price stays
 
@@ -68,13 +67,11 @@ Each run below is published as a `.frame` of the orders put to it and a `.wrote`
 | `crossing` | 5 | 2 | 1 |
 | `cancelling` | 2 | 0 | 1 |
 | `sharing` | 4 | 2 | 0 |
-| `declining` | 3 | 1 | 1 |
-| `day` | 8 | 4 | 1 |
-| `replacing` | 4 | 1 | 0 |
+| `day` | 7 | 4 | 0 |
 
 ## Feeds
 
-`IexEquities.Tops.Feed.bf` reads the venue's own events and writes each one the venue's transforms name as a packet of `Iex.IexEquities.Tops.IexTp.v1.66`, one message to a packet. It writes 7 of the 7 events the venue declares for this feed.
+`IexEquities.Tops.Feed.bf` reads the venue's own events and writes each one the venue's transforms name as a packet of `Iex.IexEquities.Tops.IexTp.v1.66`, one message to a packet. It writes 2 of the 2 events the venue declares for this feed.
 
 What was settled when the program was written rather than asked while it ran:
 
@@ -85,14 +82,12 @@ Each run is what the market wrote for the run of the same name, and the packets 
 
 | Run | Packets |
 | --- | ---: |
-| `crossing` | 4 |
+| `crossing` | 3 |
 | `cancelling` | 2 |
-| `sharing` | 4 |
-| `declining` | 2 |
-| `day` | 7 |
-| `replacing` | 2 |
+| `sharing` | 3 |
+| `day` | 5 |
 
-`IexEquities.Deep.Feed.bf` reads the venue's own events and writes each one the venue's transforms name as a packet of `Iex.IexEquities.Deep.IexTp.v1.08`, one message to a packet. It writes 10 of the 10 events the venue declares for this feed.
+`IexEquities.Deep.Feed.bf` reads the venue's own events and writes each one the venue's transforms name as a packet of `Iex.IexEquities.Deep.IexTp.v1.08`, one message to a packet. It writes 3 of the 3 events the venue declares for this feed.
 
 What was settled when the program was written rather than asked while it ran:
 
@@ -103,14 +98,12 @@ Each run is what the market wrote for the run of the same name, and the packets 
 
 | Run | Packets |
 | --- | ---: |
-| `crossing` | 6 |
+| `crossing` | 5 |
 | `cancelling` | 2 |
-| `sharing` | 6 |
-| `declining` | 3 |
-| `day` | 11 |
-| `replacing` | 3 |
+| `sharing` | 5 |
+| `day` | 9 |
 
-`IexEquities.DeepPlus.Feed.bf` reads the venue's own events and writes each one the venue's transforms name as a packet of `Iex.IexEquities.DeepPlus.IexTp.v1.05`, one message to a packet. It writes 6 of the 6 events the venue declares for this feed.
+`IexEquities.DeepPlus.Feed.bf` reads the venue's own events and writes each one the venue's transforms name as a packet of `Iex.IexEquities.DeepPlus.IexTp.v1.05`, one message to a packet. It writes 2 of the 2 events the venue declares for this feed.
 
 What was settled when the program was written rather than asked while it ran:
 
@@ -121,21 +114,19 @@ Each run is what the market wrote for the run of the same name, and the packets 
 
 | Run | Packets |
 | --- | ---: |
-| `crossing` | 6 |
+| `crossing` | 5 |
 | `cancelling` | 2 |
-| `sharing` | 6 |
-| `declining` | 3 |
-| `day` | 11 |
-| `replacing` | 3 |
+| `sharing` | 5 |
+| `day` | 9 |
 
 ## Files
 
 | Program | What it is | Runs published |
 | --- | --- | ---: |
-| `IexEquities.Market.bf` | the venue's book and the matching over it | 6 |
-| `IexEquities.Tops.Feed.bf` | the venue's Tops feed | 6 |
-| `IexEquities.Deep.Feed.bf` | the venue's Deep feed | 6 |
-| `IexEquities.DeepPlus.Feed.bf` | the venue's DeepPlus feed | 6 |
+| `IexEquities.Market.bf` | the venue's book and the matching over it | 4 |
+| `IexEquities.Tops.Feed.bf` | the venue's Tops feed | 4 |
+| `IexEquities.Deep.Feed.bf` | the venue's Deep feed | 4 |
+| `IexEquities.DeepPlus.Feed.bf` | the venue's DeepPlus feed | 4 |
 
 Under `runs/`, in a folder named for each program, is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `check.py` runs. A market also publishes a `.messages.json`, which is what it reads and writes flattened out of its model — that is what lets `run.py` build an order of your own rather than only replay what shipped.
 

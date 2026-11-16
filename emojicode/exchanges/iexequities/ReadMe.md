@@ -1,6 +1,6 @@
-# Investors Exchange Equities Open
+# Investors Exchange Equities Basic
 
-The Emojicode programs generated from what Investors Exchange Equities Open declares, rather than from one protocol's model. A protocol's decoder is the same program whoever speaks it and sits under `emojicode/protocols`; what is here is this venue's own — the book over its own internal order stream.
+The Emojicode programs generated from what Investors Exchange Equities Basic declares, rather than from one protocol's model. A protocol's decoder is the same program whoever speaks it and sits under `emojicode/protocols`; what is here is this venue's own — the book over its own internal order stream.
 
 The same venue's programs in the repository's other language sit at the same path under that language's directory. They are not these with the emoji changed: each was generated from the models by its own backend, and the two do not come to the same program. Where they agree, what they agree on is the model.
 
@@ -16,8 +16,9 @@ What the venue says it speaks, read from its own declaration and not kept as a l
 - Snap `Iex.IexEquities.Tops.Snap.v1.6`
 - Snap `Iex.IexEquities.DeepPlus.Snap.v1.06`
 - Ipc `Iex.IexEquities.MatchingEngine.Ipc.v2026`
-- Engine `Iex.IexEquities.Equities.Open.Trading`
-- Engine `Iex.IexEquities.Equities.Session.Trading`
+- Engine `Iex.IexEquities.Equities.Basic.TradingSession`
+- Engine `Iex.IexEquities.Equities.Open.TradingSession`
+- Engine `Iex.IexEquities.Equities.Session.TradingSession`
 
 ## The venue, end to end
 
@@ -32,13 +33,13 @@ A venue is declared as components that talk through one internal protocol, and e
 
 ## Market
 
-`IexEquities.Market.emojic` reads the internal order stream Investors Exchange Equities Open declares — `Iex.IexEquities.MatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out. It runs the `Iex Equities Open` day, and stamps every message it publishes with the security that day is declared for.
+`IexEquities.Market.emojic` reads the internal order stream Investors Exchange Equities Basic declares — `Iex.IexEquities.MatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out. It runs the `Iex Equities Basic` day, and stamps every message it publishes with the security that day is declared for.
 
 **Its book holds whatever price arrives.** A level is reached by its price rather than by an index into a tape, so nothing here is banded around a declared reference and no order is refused for being far from one. What this market does refuse, it refuses because the day it runs says to.
 
 What was settled when the program was written rather than asked while it ran:
 
-- the day is Iex Equities Open, in the phases Continuous; it starts in Continuous
+- the day is Iex Equities Basic, in the phases Continuous then Closed; it starts in Continuous
 - an order is a quantity at a price: the book holds whatever price arrives, because a list reaches a level by value and not by an index that has to fit in a byte
 
 Each run below is published as a `.frame` of the orders put to it and a `.wrote` of what the market published. Each was held to the C# parser on both halves, and to a second book in C# that must agree on every trade, before it was published:
@@ -50,12 +51,10 @@ Each run below is published as a `.frame` of the orders put to it and a `.wrote`
 | `IexEquities.Market.selling` | 2 | 1 | 0 |
 | `IexEquities.Market.cancelling` | 2 | 0 | 0 |
 | `IexEquities.Market.day` | 7 | 4 | 0 |
-| `IexEquities.Market.replacing` | 6 | 2 | 0 |
-| `IexEquities.Market.declining` | 3 | 1 | 1 |
 
 ## Feeds
 
-`IexEquities.Tops.Feed.emojic` reads the venue's own events and writes each one the venue's transforms name as a packet of `Iex.IexEquities.Tops.IexTp.v1.66`, one message to a packet. It writes 7 of the 7 events the venue declares for this feed.
+`IexEquities.Tops.Feed.emojic` reads the venue's own events and writes each one the venue's transforms name as a packet of `Iex.IexEquities.Tops.IexTp.v1.66`, one message to a packet. It writes 2 of the 2 events the venue declares for this feed.
 
 What was settled when the program was written rather than asked while it ran:
 
@@ -71,10 +70,8 @@ Each run is what the market should write for the run of the same name, and the p
 | `IexEquities.Tops.Feed.selling` | 1 |
 | `IexEquities.Tops.Feed.cancelling` | 2 |
 | `IexEquities.Tops.Feed.day` | 5 |
-| `IexEquities.Tops.Feed.replacing` | 3 |
-| `IexEquities.Tops.Feed.declining` | 1 |
 
-`IexEquities.Deep.Feed.emojic` reads the venue's own events and writes each one the venue's transforms name as a packet of `Iex.IexEquities.Deep.IexTp.v1.08`, one message to a packet. It writes 10 of the 10 events the venue declares for this feed.
+`IexEquities.Deep.Feed.emojic` reads the venue's own events and writes each one the venue's transforms name as a packet of `Iex.IexEquities.Deep.IexTp.v1.08`, one message to a packet. It writes 3 of the 3 events the venue declares for this feed.
 
 What was settled when the program was written rather than asked while it ran:
 
@@ -90,10 +87,8 @@ Each run is what the market should write for the run of the same name, and the p
 | `IexEquities.Deep.Feed.selling` | 2 |
 | `IexEquities.Deep.Feed.cancelling` | 2 |
 | `IexEquities.Deep.Feed.day` | 9 |
-| `IexEquities.Deep.Feed.replacing` | 5 |
-| `IexEquities.Deep.Feed.declining` | 2 |
 
-`IexEquities.DeepPlus.Feed.emojic` reads the venue's own events and writes each one the venue's transforms name as a packet of `Iex.IexEquities.DeepPlus.IexTp.v1.05`, one message to a packet. It writes 6 of the 6 events the venue declares for this feed.
+`IexEquities.DeepPlus.Feed.emojic` reads the venue's own events and writes each one the venue's transforms name as a packet of `Iex.IexEquities.DeepPlus.IexTp.v1.05`, one message to a packet. It writes 2 of the 2 events the venue declares for this feed.
 
 What was settled when the program was written rather than asked while it ran:
 
@@ -109,17 +104,15 @@ Each run is what the market should write for the run of the same name, and the p
 | `IexEquities.DeepPlus.Feed.selling` | 2 |
 | `IexEquities.DeepPlus.Feed.cancelling` | 2 |
 | `IexEquities.DeepPlus.Feed.day` | 9 |
-| `IexEquities.DeepPlus.Feed.replacing` | 5 |
-| `IexEquities.DeepPlus.Feed.declining` | 2 |
 
 ## Files
 
 | Program | What it is | Runs published |
 | --- | --- | ---: |
-| `IexEquities.Market.emojic` | the venue's book and the matching over it | 7 |
-| `IexEquities.Tops.Feed.emojic` | the venue's Tops feed | 7 |
-| `IexEquities.Deep.Feed.emojic` | the venue's Deep feed | 7 |
-| `IexEquities.DeepPlus.Feed.emojic` | the venue's DeepPlus feed | 7 |
+| `IexEquities.Market.emojic` | the venue's book and the matching over it | 5 |
+| `IexEquities.Tops.Feed.emojic` | the venue's Tops feed | 5 |
+| `IexEquities.Deep.Feed.emojic` | the venue's Deep feed | 5 |
+| `IexEquities.DeepPlus.Feed.emojic` | the venue's DeepPlus feed | 5 |
 
 Under `runs/`, in a folder named for each program, is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `replay.py` compiles each program against. They are written as hexadecimal because a frame holds any byte a protocol can carry and so does a program's output, so neither is text.
 
