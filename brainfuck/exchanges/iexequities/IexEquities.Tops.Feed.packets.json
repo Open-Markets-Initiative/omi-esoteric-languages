@@ -2,7 +2,7 @@
   "venue": "IexEquities",
   "feed": "Tops",
   "protocol": "Iex.IexEquities.Tops.IexTp.v1.66",
-  "reads": "Iex.IexEquities.MatchingEngine.Ipc.v2026",
+  "reads": "Iex.IexEquities.BasicMatchingEngine.Ipc.v2026",
   "packets": [
     {
       "named": "Quote Update Message",

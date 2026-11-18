@@ -2,7 +2,7 @@
   "venue": "IexEquities",
   "feed": "Deep",
   "protocol": "Iex.IexEquities.Deep.IexTp.v1.08",
-  "reads": "Iex.IexEquities.MatchingEngine.Ipc.v2026",
+  "reads": "Iex.IexEquities.BasicMatchingEngine.Ipc.v2026",
   "packets": [
     {
       "named": "Trade Report Message",

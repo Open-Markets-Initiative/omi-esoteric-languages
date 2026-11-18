@@ -8,7 +8,7 @@ The same venue's programs in the repository's other language sit at the same pat
 
 What the venue says it speaks, read from its own declaration and not kept as a list here:
 
-- Ipc `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026`
+- Ipc `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026`
 - Engine `Nasdaq.NsmEquities.Equities.Basic.TradingSession`
 - OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
 - Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
@@ -16,8 +16,6 @@ What the venue says it speaks, read from its own declaration and not kept as a l
 - Replay `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Trader `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Trader `Nasdaq.NsmEquities.Orders.Ouch.v5.0`
-- Engine `Nasdaq.NsmEquities.Equities.Open.TradingSession`
-- Engine `Nasdaq.NsmEquities.Equities.Session.TradingSession`
 
 ## The venue, end to end
 
@@ -25,9 +23,9 @@ A venue is declared as components that talk through one internal protocol, and e
 
 | Program | Reads | Writes | What happens |
 | --- | --- | --- | --- |
-| `NsmEquities.Gateway.emojic` | `Nasdaq.NsmEquities.Orders.Ouch.v5.0` | `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` | a client's requests become the venue's own orders, under the session chart |
-| `NsmEquities.Market.emojic` | `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` | `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` | the venue's own orders become its own events, by the trading chart |
-| `NsmEquities.TotalView.Feed.emojic` | `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` | `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026` | the venue's own events become market data, by the transforms |
+| `NsmEquities.Gateway.emojic` | `Nasdaq.NsmEquities.Orders.Ouch.v5.0` | `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` | a client's requests become the venue's own orders, under the session chart |
+| `NsmEquities.Market.emojic` | `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` | `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` | the venue's own orders become its own events, by the trading chart |
+| `NsmEquities.TotalView.Feed.emojic` | `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` | `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026` | the venue's own events become market data, by the transforms |
 
 From the root of the repository, one published run through all of it. The compiler wants its packages in the directory it is run from, and a published frame is hexadecimal, so it is turned back into bytes first and what comes out of the last program is held to the run published beside it:
 
@@ -64,16 +62,16 @@ Each run is a client's packets and what the gateway should write for them. A run
 
 | Run | Requests | Bytes written |
 | --- | ---: | ---: |
-| `NsmEquities.Gateway.crossing` | 3 | 195 |
+| `NsmEquities.Gateway.crossing` | 3 | 144 |
 | `NsmEquities.Gateway.unadmitted` | 3 | 0 |
-| `NsmEquities.Gateway.sweeping` | 3 | 195 |
-| `NsmEquities.Gateway.selling` | 2 | 130 |
-| `NsmEquities.Gateway.cancelling` | 3 | 157 |
-| `NsmEquities.Gateway.day` | 8 | 482 |
+| `NsmEquities.Gateway.sweeping` | 3 | 144 |
+| `NsmEquities.Gateway.selling` | 2 | 96 |
+| `NsmEquities.Gateway.cancelling` | 3 | 123 |
+| `NsmEquities.Gateway.day` | 8 | 363 |
 
 ## Market
 
-`NsmEquities.Market.emojic` reads the internal order stream Nasdaq Stock Market Basic declares — `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out. It runs the `Nasdaq Equities Basic` day, and stamps every message it publishes with the security that day is declared for.
+`NsmEquities.Market.emojic` reads the internal order stream Nasdaq Stock Market Basic declares — `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out. It runs the `Nasdaq Equities Basic` day, and stamps every message it publishes with the security that day is declared for.
 
 **Its book holds whatever price arrives.** A level is reached by its price rather than by an index into a tape, so nothing here is banded around a declared reference and no order is refused for being far from one. What this market does refuse, it refuses because the day it runs says to.
 

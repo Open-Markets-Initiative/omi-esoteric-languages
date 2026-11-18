@@ -35,14 +35,6 @@ What a language's programs read, what they write when they read it, and the exac
 
 [![Build](https://github.com/Open-Markets-Initiative/omi-esoteric-languages/actions/workflows/build.yml/badge.svg)](https://github.com/Open-Markets-Initiative/omi-esoteric-languages/actions/workflows/build.yml)
 
-`python3 check.py` runs over every program in the repository, and holds each to being a program at all — for one language a loop opened is a loop closed, for another a block opened is a block closed.
-
-**How much more than that it can say depends on the language, and the difference is worth keeping straight.** Where the script can carry an interpreter — eight instructions fit in two hundred lines — a program is run on each frame published beside it and held to writing what its `.wrote` file records. Where running one needs a compiler, no script can be the runtime; `check.py` holds only that the evidence is whole, every frame having the output it should produce beside it.
-
-`python3 replay.py` is the other half, and it is where that second kind of program is actually run. It installs nothing: it finds the compiler on the path or takes it from an environment variable, builds each program, and runs it on every frame published beside it. The build installs the compiler and passes `--required`, so a toolchain that failed to install fails the build rather than quietly replaying nothing. Without a compiler it says what it would have run and stops.
-
-Either way it is a regression gate rather than a proof. What makes a recorded output worth anything is that it was held against the C# parser reading the same bytes through the same model — field for field, in order, and accounting for every byte — before it was published. That comparison cannot be made here, because neither the models nor the parser are in this repository, so what the script says is that nothing has changed since. Each language's own readme says exactly what stands behind its programs.
-
 Please report any parsing errors as an [issue](https://github.com/Open-Markets-Initiative/omi-esoteric-languages/issues "Omi Esoteric Issues"). Include the bytes the program was given and what it wrote, beside what the protocol says it should have.
 
 ## Development

@@ -8,10 +8,10 @@ A venue is declared as components that talk through one internal protocol, and e
 
 | Program | Reads | Writes | What happens |
 | --- | --- | --- | --- |
-| `IexEquities.Market.bf` | `Iex.IexEquities.MatchingEngine.Ipc.v2026` | `Iex.IexEquities.MatchingEngine.Ipc.v2026` | the venue's own orders become its own events, by the trading chart |
-| `IexEquities.Tops.Feed.bf` | `Iex.IexEquities.MatchingEngine.Ipc.v2026` | `Iex.IexEquities.Tops.IexTp.v1.66` | the venue's own events become market data, by the transforms |
-| `IexEquities.Deep.Feed.bf` | `Iex.IexEquities.MatchingEngine.Ipc.v2026` | `Iex.IexEquities.Deep.IexTp.v1.08` | the venue's own events become market data, by the transforms |
-| `IexEquities.DeepPlus.Feed.bf` | `Iex.IexEquities.MatchingEngine.Ipc.v2026` | `Iex.IexEquities.DeepPlus.IexTp.v1.05` | the venue's own events become market data, by the transforms |
+| `IexEquities.Market.bf` | `Iex.IexEquities.BasicMatchingEngine.Ipc.v2026` | `Iex.IexEquities.BasicMatchingEngine.Ipc.v2026` | the venue's own orders become its own events, by the trading chart |
+| `IexEquities.Tops.Feed.bf` | `Iex.IexEquities.BasicMatchingEngine.Ipc.v2026` | `Iex.IexEquities.Tops.IexTp.v1.66` | the venue's own events become market data, by the transforms |
+| `IexEquities.Deep.Feed.bf` | `Iex.IexEquities.BasicMatchingEngine.Ipc.v2026` | `Iex.IexEquities.Deep.IexTp.v1.08` | the venue's own events become market data, by the transforms |
+| `IexEquities.DeepPlus.Feed.bf` | `Iex.IexEquities.BasicMatchingEngine.Ipc.v2026` | `Iex.IexEquities.DeepPlus.IexTp.v1.05` | the venue's own events become market data, by the transforms |
 
 **To watch it happen**, from the root of the repository:
 
@@ -41,14 +41,12 @@ What the venue says it speaks, read from its own declaration and not kept as a l
 - Snap `Iex.IexEquities.Deep.Snap.v1.6`
 - Snap `Iex.IexEquities.Tops.Snap.v1.6`
 - Snap `Iex.IexEquities.DeepPlus.Snap.v1.06`
-- Ipc `Iex.IexEquities.MatchingEngine.Ipc.v2026`
+- Ipc `Iex.IexEquities.BasicMatchingEngine.Ipc.v2026`
 - Engine `Iex.IexEquities.Equities.Basic.TradingSession`
-- Engine `Iex.IexEquities.Equities.Open.TradingSession`
-- Engine `Iex.IexEquities.Equities.Session.TradingSession`
 
 ## Market
 
-`IexEquities.Market.bf` reads the internal order stream Investors Exchange Equities Basic declares — `Iex.IexEquities.MatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out.
+`IexEquities.Market.bf` reads the internal order stream Investors Exchange Equities Basic declares — `Iex.IexEquities.BasicMatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out.
 
 What was settled when the program was written rather than asked while it ran:
 

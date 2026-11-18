@@ -2,7 +2,7 @@
   "venue": "IexEquities",
   "feed": "DeepPlus",
   "protocol": "Iex.IexEquities.DeepPlus.IexTp.v1.05",
-  "reads": "Iex.IexEquities.MatchingEngine.Ipc.v2026",
+  "reads": "Iex.IexEquities.BasicMatchingEngine.Ipc.v2026",
   "packets": [
     {
       "named": "Add Order Message",

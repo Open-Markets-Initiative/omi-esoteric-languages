@@ -2,14 +2,14 @@
   Exchange: NsmEquities
   Gateway: order entry
   Reads: Nasdaq.NsmEquities.Orders.Ouch.v5.0
-  Writes: Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026
+  Writes: Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026
   Generated. It reads a client's packets and writes each request the venue's transforms name as one of the venue's own messages, which is what the market beside it reads. It numbers the orders it admits from one and finds an order again by the reference its client named it by. It answers nobody: a response goes back to a client this program is not connected to. The packets to read are this program's first argument and the file to write is its second, because Emojicode has no standard input.
 🔚💭
 
 📦 files 🏠
 
 🏁 🍇
-  💭 one stream of clientpacket of Nasdaq.NsmEquities.Orders.Ouch.v5.0, a message at a time, and packet of Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026 back out
+  💭 one stream of clientpacket of Nasdaq.NsmEquities.Orders.Ouch.v5.0, a message at a time, and packet of Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026 back out
 
   🎞 🐇💻❗️ ➡️ arguments
   🐽 arguments 1❗️ ➡️ framePath
@@ -167,7 +167,7 @@
       🐻 references reference❗️
       🐻 numbers order❗️
       ↪️ order ▶️ 0 🍇
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 63 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 46 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤N🔤❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         sent ➡️ 🖍 taken
@@ -351,14 +351,6 @@
         taken 👉 24 ➡️ 🖍 code
         code ⭕ 255 ➡️ 🖍 code
         wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         sent ➕ 1 ➡️ 🖍 sent
       🍉
     🍉

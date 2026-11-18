@@ -325,7 +325,7 @@
                 size ➖ took ➡️ 🖍 size
                 execution ➕ 1 ➡️ 🖍 execution
                 💭 trademessage
-                56 ➡️ 🖍 taken
+                53 ➡️ 🖍 taken
                 taken ➡️ 🖍 code
                 code ⭕ 255 ➡️ 🖍 code
                 wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
@@ -473,18 +473,6 @@
                 code ⭕ 255 ➡️ 🖍 code
                 wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
                 taken 👉 24 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                78 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                89 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                89 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
                 code ⭕ 255 ➡️ 🖍 code
                 wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
 
@@ -499,7 +487,7 @@
                 size ➖ took ➡️ 🖍 size
                 execution ➕ 1 ➡️ 🖍 execution
                 💭 trademessage
-                56 ➡️ 🖍 taken
+                53 ➡️ 🖍 taken
                 taken ➡️ 🖍 code
                 code ⭕ 255 ➡️ 🖍 code
                 wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
@@ -647,18 +635,6 @@
                 code ⭕ 255 ➡️ 🖍 code
                 wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
                 taken 👉 24 ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                78 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                89 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
-                code ⭕ 255 ➡️ 🖍 code
-                wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-                89 ➡️ 🖍 taken
-                taken ➡️ 🖍 code
                 code ⭕ 255 ➡️ 🖍 code
                 wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
 
@@ -679,7 +655,7 @@
             🐻 askWhose who❗️
           🍉
           💭 orderrestedmessage
-          39 ➡️ 🖍 taken
+          38 ➡️ 🖍 taken
           taken ➡️ 🖍 code
           code ⭕ 255 ➡️ 🖍 code
           wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
@@ -781,10 +757,6 @@
           code ⭕ 255 ➡️ 🖍 code
           wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
           taken 👉 24 ➡️ 🖍 code
-          code ⭕ 255 ➡️ 🖍 code
-          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-          89 ➡️ 🖍 taken
-          taken ➡️ 🖍 code
           code ⭕ 255 ➡️ 🖍 code
           wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
 
@@ -974,7 +946,7 @@
       🍉
       ↪️ found ▶️ 0 🍇
         💭 ordercanceledmessage
-        18 ➡️ 🖍 taken
+        17 ➡️ 🖍 taken
         taken ➡️ 🖍 code
         code ⭕ 255 ➡️ 🖍 code
         wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
@@ -1033,10 +1005,6 @@
         code ⭕ 255 ➡️ 🖍 code
         wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
         taken 👉 56 ➡️ 🖍 code
-        code ⭕ 255 ➡️ 🖍 code
-        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-        89 ➡️ 🖍 taken
-        taken ➡️ 🖍 code
         code ⭕ 255 ➡️ 🖍 code
         wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
 

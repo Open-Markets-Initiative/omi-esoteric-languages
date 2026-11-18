@@ -219,7 +219,9 @@ def listed(root, programs):
     Three things. Everything it lists is here. Every program here is listed, so a program
     cannot be published without being said. And each join it states is true: what one of a
     venue's programs wrote is, byte for byte, what the next was given - which is the whole
-    of the claim that a gateway, a market and a feed here are one venue."""
+    of the claim that a gateway, a market and a feed here are one venue. A gather is held
+    the same way: what a program standing after two others was given is, byte for byte,
+    those two end to end with the stated bytes between."""
     path = root / MANIFEST
 
     if not path.exists():
@@ -251,6 +253,18 @@ def listed(root, programs):
             faults.append(f"{MANIFEST}: joins {join['wrote']} to {join['frame']}, and one is not here")
         elif bytes_of(wrote) != bytes_of(frame):
             faults.append(f"{join['wrote']}: is not what {join['frame']} holds, so the two "
+                          "programs do not join there")
+        else:
+            joined += 1
+
+    for gather in manifest.get("gathers", []):
+        parts, frame = [root / part for part in gather["parts"]], root / gather["frame"]
+
+        if not frame.exists() or not all(part.exists() for part in parts):
+            faults.append(f"{MANIFEST}: gathers {', '.join(gather['parts'])} into {gather['frame']}, "
+                          "and one is not here")
+        elif bytes.fromhex(gather["between"]).join(bytes_of(part) for part in parts) != bytes_of(frame):
+            faults.append(f"{gather['frame']}: is not {' then '.join(gather['parts'])}, so the "
                           "programs do not join there")
         else:
             joined += 1

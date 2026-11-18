@@ -1,7 +1,7 @@
 {
   "venue": "NsmEquities",
   "protocol": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
-  "writes": "Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026",
+  "writes": "Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026",
   "frame": {
     "length": {
       "named": "packetlength",

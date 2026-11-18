@@ -40,7 +40,7 @@ bf brainfuck/dialect.bf < /dev/null
 ```
 That program takes no input and prints one line per claim, saying of each whether this interpreter kept it. All four should say `ok`. One that says `no`, or a line that stops partway through, names what your interpreter does differently — and the claims are listed in the order the programs here lean on them, which was measured rather than guessed.
 
-The one byte wrap is the one that matters most: of 201 frames published here, only 18 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 994, so classic Brainfuck's 30,000 would do 30 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
+The one byte wrap is the one that matters most: of 227 frames published here, only 20 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 1,577, so classic Brainfuck's 30,000 would do 19 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
 
 ## Layout
 
@@ -70,7 +70,7 @@ A protocol's decoder sits under `protocols` because it is the same program whoev
 - Snap `Iex.IexEquities.Deep.Snap.v1.6`
 - Snap `Iex.IexEquities.Tops.Snap.v1.6`
 - Snap `Iex.IexEquities.DeepPlus.Snap.v1.06`
-- Ipc `Iex.IexEquities.MatchingEngine.Ipc.v2026`
+- Ipc `Iex.IexEquities.BasicMatchingEngine.Ipc.v2026`
 - Engine `Iex.IexEquities.Equities.Basic.TradingSession`
 
 ### Investors Exchange Equities Open
@@ -99,7 +99,7 @@ A protocol's decoder sits under `protocols` because it is the same program whoev
 
 ### Nasdaq Stock Market Basic
 
-- Ipc `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026`
+- Ipc `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026`
 - Engine `Nasdaq.NsmEquities.Equities.Basic.TradingSession`
 - OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
 - Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
@@ -161,11 +161,11 @@ What it does **not** cost is the size of the number. The amount added costs the 
 Updates are greatly appreciated; however, this entire repository is source generated...including the words you are reading right now. If you wish to suggest updates, the recommended process is to create an issue with changes and explanation. Time permitting, we will update the models and regenerate.
 
 
-- Programs: 16
-- Instructions: 5,678,809
-- Reading every field the model states: 16 of 16
-- Published with a frame they are held to: 16 of 16
-- Frames, of which recorded from the wire: 159, 40
+- Programs: 18
+- Instructions: 5,753,581
+- Reading every field the model states: 18 of 18
+- Published with a frame they are held to: 18 of 18
+- Frames, of which recorded from the wire: 185, 40
 - Sessions, of which proven on a run: 1, 1
 - Runs, and the packets they were answered with: 4, 4
 - Markets, of which proven on a run: 2, 2

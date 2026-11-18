@@ -1,7 +1,7 @@
 💭🔜
   Exchange: IexEquities
   Feed: Tops
-  Reads: Iex.IexEquities.MatchingEngine.Ipc.v2026
+  Reads: Iex.IexEquities.BasicMatchingEngine.Ipc.v2026
   Writes: Iex.IexEquities.Tops.IexTp.v1.66
   Generated. It reads the venue's own events, as the market beside it writes them, and writes each one the venue's transforms name as a packet of this feed, one message to a packet and one packet after another. The events to read are this program's first argument and the file to write is its second, because Emojicode has no standard input.
 🔚💭
@@ -9,7 +9,7 @@
 📦 files 🏠
 
 🏁 🍇
-  💭 one stream of packet of Iex.IexEquities.MatchingEngine.Ipc.v2026, a message at a time, and packet of Iex.IexEquities.Tops.IexTp.v1.66 back out
+  💭 one stream of packet of Iex.IexEquities.BasicMatchingEngine.Ipc.v2026, a message at a time, and packet of Iex.IexEquities.Tops.IexTp.v1.66 back out
 
   🎞 🐇💻❗️ ➡️ arguments
   🐽 arguments 1❗️ ➡️ framePath

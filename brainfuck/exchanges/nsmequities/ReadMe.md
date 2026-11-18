@@ -8,9 +8,10 @@ A venue is declared as components that talk through one internal protocol, and e
 
 | Program | Reads | Writes | What happens |
 | --- | --- | --- | --- |
-| `NsmEquities.Gateway.bf` | `Nasdaq.NsmEquities.Orders.Ouch.v5.0` | `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` | a client's requests become the venue's own orders, under the session chart |
-| `NsmEquities.Market.bf` | `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` | `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` | the venue's own orders become its own events, by the trading chart |
-| `NsmEquities.TotalView.Feed.bf` | `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` | `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026` | the venue's own events become market data, by the transforms |
+| `NsmEquities.Gateway.bf` | `Nasdaq.NsmEquities.Orders.Ouch.v5.0` | `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` | a client's requests become the venue's own orders, under the session chart |
+| `NsmEquities.Market.bf` | `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` | `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` | the venue's own orders become its own events, by the trading chart |
+| `NsmEquities.Responder.bf` | `Nasdaq.NsmEquities.Orders.Ouch.v5.0` then `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` | `Nasdaq.NsmEquities.Orders.Ouch.v5.0` | the client's requests and the venue's own events become the client's answers, by the transforms |
+| `NsmEquities.TotalView.Feed.bf` | `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` | `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026` | the venue's own events become market data, by the transforms |
 
 **To watch it happen**, from the root of the repository:
 
@@ -34,7 +35,7 @@ Every such join is stated in `manifest.json` at the root, as two files that hold
 
 What the venue says it speaks, read from its own declaration and not kept as a list here:
 
-- Ipc `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026`
+- Ipc `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026`
 - Engine `Nasdaq.NsmEquities.Equities.Basic.TradingSession`
 - OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
 - Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
@@ -42,8 +43,6 @@ What the venue says it speaks, read from its own declaration and not kept as a l
 - Replay `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Trader `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Trader `Nasdaq.NsmEquities.Orders.Ouch.v5.0`
-- Engine `Nasdaq.NsmEquities.Equities.Open.TradingSession`
-- Engine `Nasdaq.NsmEquities.Equities.Session.TradingSession`
 
 ## Gateway
 
@@ -64,14 +63,14 @@ Each run is a client's packets and what the gateway wrote for them. A run nobody
 
 | Run | Requests | Bytes written |
 | --- | ---: | ---: |
-| `crossing` | 3 | 195 |
-| `cancelling` | 3 | 157 |
+| `crossing` | 3 | 144 |
+| `cancelling` | 3 | 123 |
 | `unadmitted` | 3 | 0 |
-| `day` | 8 | 482 |
+| `day` | 8 | 363 |
 
 ## Market
 
-`NsmEquities.Market.bf` reads the internal order stream Nasdaq Stock Market Basic declares — `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out.
+`NsmEquities.Market.bf` reads the internal order stream Nasdaq Stock Market Basic declares — `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` — holds a book of price levels on each side, matches them whenever they cross, and writes the venue's own messages back out.
 
 What was settled when the program was written rather than asked while it ran:
 
@@ -95,6 +94,39 @@ Each run below is published as a `.frame` of the orders put to it and a `.wrote`
 | `entered-cancelling` | 3 | 0 | 0 |
 | `entered-day` | 8 | 4 | 0 |
 
+## Responder
+
+`NsmEquities.Responder.bf` writes what a client is answered with, in `Nasdaq.NsmEquities.Orders.Ouch.v5.0`: each event of the engine's the venue's transforms declare an answer for, as that answer. An answer is written from two things at once - the engine's event, and what the client entered of the order it is about - and a program reads one input, so its input is the two joined: the client's packets exactly as the gateway read them, a packet stating no length, and then the venue's own events exactly as the market wrote them. It writes nothing for the requests; it reads them to remember each order entered, numbered as the gateway numbers them, which is how an event naming an order by its number finds what the client called it.
+
+What was settled when the program was written rather than asked while it ran:
+
+- timestamp is when an answer is sent where the engine's event does not say, and a program reading one file and writing another has no clock, so it is written as nought
+- it reads the client's requests first and the engine's events after them, in one input: the requests end at a packet stating no length, which is where the gateway beside it stops reading too, and everything after that is the engine's
+- an answer is written as its event is read, so every answer follows the last request; answers to one event are written in the order the venue's transforms declare them
+- it remembers the first 16 orders of a connection, as the gateway beside it does and because a tape cannot grow; an event naming a later order is read and not answered
+
+What the venue declares of its answers that this program does not write, and why:
+
+- ouch_rejected_quantity: it turns a request away for its fields.quantity as the request arrives, and the gateway beside this admits every request its transforms name, so the engine is sent the order and answers for it
+- ouch_rejected_price: it turns a request away for its fields.price as the request arrives, and the gateway beside this admits every request its transforms name, so the engine is sent the order and answers for it
+- ouch_rejected_side: it turns a request away for its fields.side as the request arrives, and the gateway beside this admits every request its transforms name, so the engine is sent the order and answers for it
+- ouch_rejected_symbol: it turns a request away for its fields.symbol as the request arrives, and the gateway beside this admits every request its transforms name, so the engine is sent the order and answers for it
+
+Each run is the gateway's run of the same name and what the market wrote for it, joined, and the answers this wrote:
+
+| Run | Bytes of requests | Bytes of events | Answers | Bytes written |
+| --- | ---: | ---: | ---: | ---: |
+| `crossing` | 202 | 232 | 5 | 279 |
+| `cancelling` | 166 | 137 | 3 | 157 |
+| `day` | 416 | 572 | 16 | 804 |
+
+From the root of the repository, the same join made by hand - the client's requests, the packet stating no length, and what the gateway and the market make of those requests:
+
+```
+xxd -r -p < brainfuck/exchanges/nsmequities/runs/gateway/crossing.frame > requests
+( cat requests; printf '\0\0'; bf brainfuck/exchanges/nsmequities/NsmEquities.Gateway.bf < requests | bf brainfuck/exchanges/nsmequities/NsmEquities.Market.bf ) \
+  | bf brainfuck/exchanges/nsmequities/NsmEquities.Responder.bf | xxd -p
+```
 ## Feeds
 
 `NsmEquities.TotalView.Feed.bf` reads the venue's own events and writes each one the venue's transforms name as a packet of `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`, one message to a packet. It writes 3 of the 3 events the venue declares for this feed.

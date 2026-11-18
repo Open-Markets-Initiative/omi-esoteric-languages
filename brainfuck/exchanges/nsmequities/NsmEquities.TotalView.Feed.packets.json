@@ -2,7 +2,7 @@
   "venue": "NsmEquities",
   "feed": "TotalView",
   "protocol": "Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026",
-  "reads": "Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026",
+  "reads": "Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026",
   "packets": [
     {
       "named": "Add Order No Mpid Attribution Message",
