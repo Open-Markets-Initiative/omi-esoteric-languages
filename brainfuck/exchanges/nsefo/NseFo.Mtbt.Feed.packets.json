@@ -1,0 +1,287 @@
+{
+  "venue": "NseFo",
+  "program": "NseFo.Mtbt.Feed.packets.json",
+  "feed": "Mtbt",
+  "protocol": "Nse.NseFo.Mtbt.Tbt.v7.1",
+  "reads": "Nse.NseFo.BasicMatchingEngine.Ipc.v2026",
+  "packets": [
+    {
+      "named": "New Order Message",
+      "from": "orderrestedmessage",
+      "bytes": 38,
+      "fields": [
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "little",
+          "title": "Message Length",
+          "header": true,
+          "literal": "2600"
+        },
+        {
+          "named": "streamid",
+          "width": 2,
+          "endian": "little",
+          "title": "Stream Id",
+          "header": true,
+          "literal": "0100"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 4,
+          "endian": "little",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "New Order Message": 78,
+            "Order Modification Message": 77,
+            "Order Cancellation Message": 88,
+            "Trade Message": 84,
+            "New Spread Order Message": 71,
+            "Spread Order Modification Message": 72,
+            "Spread Order Cancellation Message": 74,
+            "Spread Trade Message": 75,
+            "Trade Cancel Message": 67,
+            "Heartbeat Message": 90
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "4e"
+        },
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "title": "Timestamp"
+        },
+        {
+          "named": "orderid",
+          "width": 8,
+          "endian": "little",
+          "float": true,
+          "title": "Order Id"
+        },
+        {
+          "named": "token",
+          "width": 4,
+          "endian": "little",
+          "title": "Token"
+        },
+        {
+          "named": "ordertype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Buy Order": 66,
+            "Sell Order": 83
+          },
+          "title": "Order Type"
+        },
+        {
+          "named": "price",
+          "width": 4,
+          "endian": "little",
+          "scale": "-2",
+          "title": "Price"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "little",
+          "title": "Quantity"
+        }
+      ]
+    },
+    {
+      "named": "Order Cancellation Message",
+      "from": "ordercanceledmessage",
+      "bytes": 38,
+      "fields": [
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "little",
+          "title": "Message Length",
+          "header": true,
+          "literal": "2600"
+        },
+        {
+          "named": "streamid",
+          "width": 2,
+          "endian": "little",
+          "title": "Stream Id",
+          "header": true,
+          "literal": "0100"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 4,
+          "endian": "little",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "New Order Message": 78,
+            "Order Modification Message": 77,
+            "Order Cancellation Message": 88,
+            "Trade Message": 84,
+            "New Spread Order Message": 71,
+            "Spread Order Modification Message": 72,
+            "Spread Order Cancellation Message": 74,
+            "Spread Trade Message": 75,
+            "Trade Cancel Message": 67,
+            "Heartbeat Message": 90
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "58"
+        },
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "title": "Timestamp"
+        },
+        {
+          "named": "orderid",
+          "width": 8,
+          "endian": "little",
+          "float": true,
+          "title": "Order Id"
+        },
+        {
+          "named": "token",
+          "width": 4,
+          "endian": "little",
+          "title": "Token"
+        },
+        {
+          "named": "ordertype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Buy Order": 66,
+            "Sell Order": 83
+          },
+          "title": "Order Type"
+        },
+        {
+          "named": "price",
+          "width": 4,
+          "endian": "little",
+          "scale": "-2",
+          "title": "Price"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "little",
+          "title": "Quantity"
+        }
+      ]
+    },
+    {
+      "named": "Trade Message",
+      "from": "trademessage",
+      "bytes": 45,
+      "fields": [
+        {
+          "named": "messagelength",
+          "width": 2,
+          "endian": "little",
+          "title": "Message Length",
+          "header": true,
+          "literal": "2d00"
+        },
+        {
+          "named": "streamid",
+          "width": 2,
+          "endian": "little",
+          "title": "Stream Id",
+          "header": true,
+          "literal": "0100"
+        },
+        {
+          "named": "sequencenumber",
+          "width": 4,
+          "endian": "little",
+          "title": "Sequence Number",
+          "header": true
+        },
+        {
+          "named": "messagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "New Order Message": 78,
+            "Order Modification Message": 77,
+            "Order Cancellation Message": 88,
+            "Trade Message": 84,
+            "New Spread Order Message": 71,
+            "Spread Order Modification Message": 72,
+            "Spread Order Cancellation Message": 74,
+            "Spread Trade Message": 75,
+            "Trade Cancel Message": 67,
+            "Heartbeat Message": 90
+          },
+          "title": "Message Type",
+          "header": true,
+          "literal": "54"
+        },
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "title": "Timestamp"
+        },
+        {
+          "named": "buyorderid",
+          "width": 8,
+          "endian": "little",
+          "float": true,
+          "title": "Buy Order Id"
+        },
+        {
+          "named": "sellorderid",
+          "width": 8,
+          "endian": "little",
+          "float": true,
+          "title": "Sell Order Id"
+        },
+        {
+          "named": "token",
+          "width": 4,
+          "endian": "little",
+          "title": "Token"
+        },
+        {
+          "named": "tradeprice",
+          "width": 4,
+          "endian": "little",
+          "scale": "-2",
+          "title": "Trade Price"
+        },
+        {
+          "named": "tradequantity",
+          "width": 4,
+          "endian": "little",
+          "title": "Trade Quantity"
+        }
+      ]
+    }
+  ]
+}

@@ -159,6 +159,10 @@
           💭 and it rests in LoggedIn
         🍉
       🍉
+      🙅↪️ kind 🙌 43 🍇
+        💭 Debug Packet
+        💭 and it stays in NotLoggedIn
+      🍉
     🍉
     🙅↪️ resting 🙌 1 🍇
       💭 resting in LoggedIn
@@ -166,6 +170,10 @@
         💭 Logout Request
         0 ➡️ 🖍 resting
         💭 and it rests in NotLoggedIn
+      🍉
+      🙅↪️ kind 🙌 43 🍇
+        💭 Debug Packet
+        💭 and it stays in LoggedIn
       🍉
       🙅↪️ kind 🙌 82 🍇
         💭 Client Heartbeat

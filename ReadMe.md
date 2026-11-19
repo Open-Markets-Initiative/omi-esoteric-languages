@@ -23,7 +23,7 @@ They are also slow, by some six orders of magnitude against the generated C++. T
 
 The scripts sit here at the root and are run from here, so a path given to any of them starts with the directory of the language it is in. `check.py` and `replay.py` are what the build runs, between them holding every program here to the frames published beside it. `run.py` puts a stream of a venue's own orders to one of the published markets and reads back what it wrote, field by field.
 
-`demo.py` is the one to start with. It plays a run through every program of a venue - a client's packets into the gateway, the venue's own orders into the market, market data out of each feed - and says what each read and wrote, with the book drawn as it changes:
+`demo.py` is the one to start with. It plays a run through every program of a venue - a client's packets into the gateway, the venue's own orders into the market, market data out of each feed, and the client's answers out of the responder - and says what each read and wrote, with the book drawn as it changes:
 
 ```
 python3 demo.py              the venues here, and the runs each can be shown by

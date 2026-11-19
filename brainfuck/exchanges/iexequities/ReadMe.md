@@ -128,6 +128,15 @@ Each run is what the market wrote for the run of the same name, and the packets 
 
 Under `runs/`, in a folder named for each program, is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `check.py` runs. A market also publishes a `.messages.json`, which is what it reads and writes flattened out of its model — that is what lets `run.py` build an order of your own rather than only replay what shipped.
 
+## What the programs are made of
+
+| Program | `+` | `-` | `<` | `>` | `[` | `]` | `.` | `,` | All |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `IexEquities.Market.bf` | 400,111 | 112,157 | 13,046,698 | 13,047,597 | 129,795 | 129,795 | 248 | 103 | 26,866,504 |
+| `IexEquities.Tops.Feed.bf` | 2,963 | 3,414 | 33,178 | 33,196 | 3,751 | 3,751 | 168 | 48 | 80,469 |
+| `IexEquities.Deep.Feed.bf` | 4,575 | 5,669 | 70,239 | 70,257 | 6,281 | 6,281 | 224 | 103 | 163,629 |
+| `IexEquities.DeepPlus.Feed.bf` | 3,753 | 4,646 | 42,947 | 42,965 | 5,122 | 5,122 | 160 | 103 | 104,818 |
+
 ## Running
 
 Put a run of your own orders to the market and read back what it published, field by field:

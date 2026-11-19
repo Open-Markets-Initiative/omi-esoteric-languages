@@ -53,11 +53,12 @@ What was settled when the program was written rather than asked while it ran:
 - timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as nought
 - sequence is a message's place in the order the engine is sent them, which the venue's sequencer states; with one gateway and nothing between it and the engine, this counts them itself, from one
 - the session is SoupBin Tcp: a connection opens in NotLoggedIn, and a request is admitted only while it rests in LoggedIn, which is where the chart receives the other end's own data. A login moves the connection as the chart says an accepted one does; whether to accept it is the session program's to say and was settled there
+- an order is held to 4 rules as it arrives, in the order the venue's transforms write them, and one failing any is not numbered and not sent to the engine: quantity from 1 to 999999; price from 0 to 1999999900; side one of 'B', 'S', 'T', 'E'; symbol one of 'ZVZZT'
 - it remembers the first 16 orders of a connection by the reference each came with, because a tape cannot grow; an order admitted after those is still admitted and numbered, and a later cancel naming it finds nothing
 
 What the venue declares of its order entry that this program does not run, and why:
 
-- the 10 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
+- the 6 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
 
 Each run is a client's packets and what the gateway wrote for them. A run nobody logged in for is published with nothing written, because declining is half of what a gate does:
 
@@ -67,6 +68,7 @@ Each run is a client's packets and what the gateway wrote for them. A run nobody
 | `cancelling` | 3 | 123 |
 | `unadmitted` | 3 | 0 |
 | `day` | 8 | 363 |
+| `rejecting` | 4 | 96 |
 
 ## Market
 
@@ -93,6 +95,7 @@ Each run below is published as a `.frame` of the orders put to it and a `.wrote`
 | `entered-crossing` | 3 | 1 | 0 |
 | `entered-cancelling` | 3 | 0 | 0 |
 | `entered-day` | 8 | 4 | 0 |
+| `entered-rejecting` | 2 | 1 | 0 |
 
 ## Responder
 
@@ -102,15 +105,8 @@ What was settled when the program was written rather than asked while it ran:
 
 - timestamp is when an answer is sent where the engine's event does not say, and a program reading one file and writing another has no clock, so it is written as nought
 - it reads the client's requests first and the engine's events after them, in one input: the requests end at a packet stating no length, which is where the gateway beside it stops reading too, and everything after that is the engine's
-- an answer is written as its event is read, so every answer follows the last request; answers to one event are written in the order the venue's transforms declare them
+- an answer is written as what it answers is read: a reject, or the answer to an order as the gateway takes it, as its request is, and so ahead of every answer to an event, and an answer to an event after the last request; answers to one event are written in the order the venue's transforms declare them
 - it remembers the first 16 orders of a connection, as the gateway beside it does and because a tape cannot grow; an event naming a later order is read and not answered
-
-What the venue declares of its answers that this program does not write, and why:
-
-- ouch_rejected_quantity: it turns a request away for its fields.quantity as the request arrives, and the gateway beside this admits every request its transforms name, so the engine is sent the order and answers for it
-- ouch_rejected_price: it turns a request away for its fields.price as the request arrives, and the gateway beside this admits every request its transforms name, so the engine is sent the order and answers for it
-- ouch_rejected_side: it turns a request away for its fields.side as the request arrives, and the gateway beside this admits every request its transforms name, so the engine is sent the order and answers for it
-- ouch_rejected_symbol: it turns a request away for its fields.symbol as the request arrives, and the gateway beside this admits every request its transforms name, so the engine is sent the order and answers for it
 
 Each run is the gateway's run of the same name and what the market wrote for it, joined, and the answers this wrote:
 
@@ -119,6 +115,7 @@ Each run is the gateway's run of the same name and what the market wrote for it,
 | `crossing` | 202 | 232 | 5 | 279 |
 | `cancelling` | 166 | 137 | 3 | 157 |
 | `day` | 416 | 572 | 16 | 804 |
+| `rejecting` | 252 | 133 | 6 | 280 |
 
 From the root of the repository, the same join made by hand - the client's requests, the packet stating no length, and what the gateway and the market make of those requests:
 
@@ -146,6 +143,7 @@ Each run is what the market wrote for the run of the same name, and the packets 
 | `entered-crossing` | 4 |
 | `entered-cancelling` | 3 |
 | `entered-day` | 10 |
+| `entered-rejecting` | 2 |
 
 ## Session
 
@@ -158,12 +156,14 @@ What was settled when the program was written rather than asked while it ran:
 
 Transitions of the chart no program with one input and one output can run, because a Request, a Handler or an Ask has nowhere to put a question and nobody to ask it of:
 
+- Timer.Login answers something that is not bytes, so no program with one input and one output can reach it
 - Request.ResumeFrom answers something that is not bytes, so no program with one input and one output can reach it
 - Request.Sequenced answers something that is not bytes, so no program with one input and one output can reach it
 - Request.Heartbeat answers something that is not bytes, so no program with one input and one output can reach it
 - Request.EndOfSession answers something that is not bytes, so no program with one input and one output can reach it
 - Timer.Heartbeat answers something that is not bytes, so no program with one input and one output can reach it
 - Timer.Silence answers something that is not bytes, so no program with one input and one output can reach it
+- entering NotLoggedIn: Send Timer.Login after State:LoginInterval goes somewhere that is not the wire
 - entering Authenticating: Send Ask.Login goes somewhere that is not the wire
 - entering LoggedIn: Send Timer.Heartbeat after State:HeartbeatInterval goes somewhere that is not the wire
 - entering LoggedIn: Send Timer.Silence after State:SilenceInterval goes somewhere that is not the wire
@@ -174,7 +174,9 @@ One run per transition of the chart, named for the state it rests in and the pac
 | Run | Packets answered |
 | --- | ---: |
 | `NotLoggedIn.LoginRequest` | 1 |
+| `NotLoggedIn.SessionDebug` | 0 |
 | `LoggedIn.SessionLogout` | 1 |
+| `LoggedIn.SessionDebug` | 1 |
 | `LoggedIn.SessionHeartbeat` | 1 |
 | `LoggedIn.LoginRequest` | 1 |
 
@@ -182,12 +184,22 @@ One run per transition of the chart, named for the state it rests in and the pac
 
 | Program | What it is | Runs published |
 | --- | --- | ---: |
-| `NsmEquities.SoupBin.bf` | the venue's handshake | 4 |
-| `NsmEquities.Gateway.bf` | the venue's order entry, under its session chart | 4 |
-| `NsmEquities.Market.bf` | the venue's book and the matching over it | 7 |
-| `NsmEquities.TotalView.Feed.bf` | the venue's TotalView feed | 7 |
+| `NsmEquities.SoupBin.bf` | the venue's handshake | 6 |
+| `NsmEquities.Gateway.bf` | the venue's order entry, under its session chart | 5 |
+| `NsmEquities.Market.bf` | the venue's book and the matching over it | 8 |
+| `NsmEquities.TotalView.Feed.bf` | the venue's TotalView feed | 8 |
 
 Under `runs/`, in a folder named for each program, is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `check.py` runs. A market also publishes a `.messages.json`, which is what it reads and writes flattened out of its model — that is what lets `run.py` build an order of your own rather than only replay what shipped.
+
+## What the programs are made of
+
+| Program | `+` | `-` | `<` | `>` | `[` | `]` | `.` | `,` | All |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `NsmEquities.SoupBin.bf` | 2,742 | 537 | 1,836 | 1,844 | 564 | 564 | 33 | 29 | 8,149 |
+| `NsmEquities.Gateway.bf` | 9,380 | 10,884 | 189,377 | 189,424 | 12,528 | 12,528 | 77 | 74 | 424,272 |
+| `NsmEquities.Market.bf` | 400,078 | 112,157 | 13,046,698 | 13,047,597 | 129,795 | 129,795 | 248 | 103 | 26,866,471 |
+| `NsmEquities.Responder.bf` | 211,183 | 69,608 | 3,814,779 | 3,814,872 | 77,670 | 77,670 | 394 | 182 | 8,066,358 |
+| `NsmEquities.TotalView.Feed.bf` | 175,022 | 20,895 | 365,742 | 366,142 | 24,500 | 24,500 | 152 | 122 | 977,075 |
 
 ## Running
 

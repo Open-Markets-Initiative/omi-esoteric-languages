@@ -96,6 +96,61 @@ Each market is published with the runs it was proven on. A run is laid out from 
 
 The runs cover an order crossing one level and resting the remainder, **an order crossing two levels at once** — which a book taking only the best level once would get wrong while looking right — a sell aggressing into a resting bid, a cancel taking an order back out, orders collected in a phase that does not cross and then crossed when the day reaches one that does, and an order arriving where the day takes nothing at all. A trade names the resting order and the price of the level it rested at rather than the arriving order's limit, because that is where the trade happened: an order sweeping two levels trades at each of those rather than twice at its own price.
 
+## What the programs are made of
+
+Every emoji of the 36 programs here, 214,610 of them and 48 different, counted off the files as they are published, most used first. Where the generator writes one under a name of its own, the name is given; the rest are written only as part of something longer, or only in the header a program opens with.
+
+| Emoji | The generator's name for it | Count | Share |
+| --- | --- | ---: | ---: |
+| ➡️ | Into | 54,050 | 25.2% |
+| 🖍 | Over | 53,775 | 25.1% |
+| ➕ | Joins | 30,077 | 14.0% |
+| ❗️ | Call | 19,845 | 9.2% |
+| 🔤 | Quote | 13,090 | 6.1% |
+| 🔪 | Slice | 8,823 | 4.1% |
+| 💭 | Note | 8,060 | 3.8% |
+| 📇 | Data, Reads | 6,602 | 3.1% |
+| ⭕ | And | 5,327 | 2.5% |
+| 👉 | Shifted | 2,290 | 1.1% |
+| 🐽 | At | 1,701 | 0.8% |
+| 🔢 | Integer | 1,496 | 0.7% |
+| ✖ | Scales | 1,481 | 0.7% |
+| 🍇 | Opens | 1,125 | 0.5% |
+| 🍉 | Closes | 1,125 | 0.5% |
+| 🐻 | Adds | 1,066 | 0.5% |
+| ↪️ | If | 898 | 0.4% |
+| 🆕 | Creates | 880 | 0.4% |
+| 🙌 | Same | 802 | 0.4% |
+| 🙅 | Else | 551 | 0.3% |
+| ➖ | Takes | 202 | 0.1% |
+| ▶️ | Above | 200 | 0.1% |
+| 🐇 | OfType | 108 | 0.1% |
+| 🔁 | Repeat | 87 | 0.0% |
+| 🍺 | Unwrap | 72 | 0.0% |
+| 📄 | File | 72 | 0.0% |
+| ❓ | Ask | 66 | 0.0% |
+| 📏 | Length | 66 | 0.0% |
+| 🍆 | Closing | 51 | 0.0% |
+| 🐚 | Opening | 51 | 0.0% |
+| ⏩ | Upto | 43 | 0.0% |
+| ◀️ | Under | 43 | 0.0% |
+| 🔂 | Counting | 43 | 0.0% |
+| 💧 | Byte | 42 | 0.0% |
+| 🎞 | Arguments | 36 | 0.0% |
+| 🏁 | Start | 36 | 0.0% |
+| 🏠 | Namespace | 36 | 0.0% |
+| 💻 | System | 36 | 0.0% |
+| 📦 | Import | 36 | 0.0% |
+| 📻 | Writes | 36 | 0.0% |
+| 🔚 |  | 36 | 0.0% |
+| 🔜 |  | 36 | 0.0% |
+| 🍨 | List | 30 | 0.0% |
+| ❌ | Escape | 23 | 0.0% |
+| ☣️ | Unsafe | 21 | 0.0% |
+| 🧠 | Memory | 21 | 0.0% |
+| 🤝 | Both | 10 | 0.0% |
+| 🚮 | Remainder | 7 | 0.0% |
+
 ## Testing
 
 [![Build](https://github.com/Open-Markets-Initiative/omi-esoteric-languages/actions/workflows/build.yml/badge.svg)](https://github.com/Open-Markets-Initiative/omi-esoteric-languages/actions/workflows/build.yml)
@@ -124,7 +179,7 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 | Programs | Characters | Reading every field the model states | Frames | Recorded from the wire |
 | --- | --- | --- | --- | --- |
-| 18 | 554,744 | 18 of 18 | 195 | 50 |
+| 23 | 1,739,173 | 22 of 23 | 280 | 50 |
 
 ## Open Markets Initiative
 

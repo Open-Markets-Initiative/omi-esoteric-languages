@@ -40,7 +40,7 @@ bf brainfuck/dialect.bf < /dev/null
 ```
 That program takes no input and prints one line per claim, saying of each whether this interpreter kept it. All four should say `ok`. One that says `no`, or a line that stops partway through, names what your interpreter does differently — and the claims are listed in the order the programs here lean on them, which was measured rather than guessed.
 
-The one byte wrap is the one that matters most: of 227 frames published here, only 20 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 1,577, so classic Brainfuck's 30,000 would do 19 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
+The one byte wrap is the one that matters most: of 336 frames published here, only 21 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 4,063, so classic Brainfuck's 30,000 would do 7 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
 
 ## Layout
 
@@ -96,6 +96,20 @@ A protocol's decoder sits under `protocols` because it is the same program whoev
 - Snap `Iex.IexEquities.DeepPlus.Snap.v1.06`
 - Ipc `Iex.IexEquities.MatchingEngine.Ipc.v2026`
 - Engine `Iex.IexEquities.Equities.Session.TradingSession`
+
+### Nse Futures and Options Basic
+
+- Ipc `Nse.NseFo.BasicMatchingEngine.Ipc.v2026`
+- Engine `Nse.NseFo.FuturesAndOptions.Basic.TradingSession`
+- OrderEntry `Nse.NseFo.OrderEntry.Nnf.v9.50`, session `Nse.Nnf`
+- Feed `Nse.NseFo.Mtbt.Tbt.v7.1`
+
+### Nse Futures and Options
+
+- Ipc `Nse.NseFo.MatchingEngine.Ipc.v2026`
+- Engine `Nse.NseFo.FuturesAndOptions.Open.TradingSession`
+- OrderEntry `Nse.NseFo.OrderEntry.Nnf.v9.50`, session `Nse.Nnf`
+- Feed `Nse.NseFo.Mtbt.Tbt.v7.1`
 
 ### Nasdaq Stock Market Basic
 
@@ -156,20 +170,36 @@ A trade names the resting order and the price of the level it rested at, not the
 
 What it does **not** cost is the size of the number. The amount added costs the sum of its bytes, each counted down once, so at most 255 a byte and 2,040 for an eight byte value however large: adding 256 is cheaper than adding 1, and adding a timestamp's worth of nanoseconds is cheaper than adding 255. No number here is unaffordable — only a middling one repeated often.
 
+## What the programs are made of
+
+Every instruction of the 38 programs here, counted off the files as they are published, by kind of program. A note in a program is not an instruction and is not counted.
+
+| Instruction | decoder | dialect | session | gateway | market | responder | feed | All | Share |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `+` | 640,642 | 3,373 | 4,547 | 26,123 | 1,199,951 | 230,342 | 208,277 | 2,313,255 | 2.0% |
+| `-` | 337,314 | 2,941 | 982 | 40,260 | 335,897 | 94,695 | 52,555 | 864,644 | 0.7% |
+| `<` | 9,511,490 | 65,622 | 3,277 | 772,159 | 38,933,057 | 5,355,992 | 762,178 | 55,403,775 | 48.0% |
+| `>` | 9,512,095 | 65,628 | 3,294 | 772,254 | 38,935,742 | 5,356,163 | 763,062 | 55,408,238 | 48.0% |
+| `[` | 60,923 | 67 | 1,020 | 45,809 | 388,759 | 105,133 | 53,883 | 655,594 | 0.6% |
+| `]` | 60,923 | 67 | 1,020 | 45,809 | 388,759 | 105,133 | 53,883 | 655,594 | 0.6% |
+| `.` | 55,165 | 164 | 33 | 134 | 730 | 1,618 | 825 | 58,669 | 0.1% |
+| `,` | 15,372 | 1 | 121 | 709 | 281 | 636 | 507 | 17,627 | 0.0% |
+| All | 20,193,924 | 137,863 | 14,294 | 1,703,257 | 80,183,176 | 11,249,712 | 1,895,170 | 115,377,396 | 100.0% |
+
 ## Development
 
 Updates are greatly appreciated; however, this entire repository is source generated...including the words you are reading right now. If you wish to suggest updates, the recommended process is to create an issue with changes and explanation. Time permitting, we will update the models and regenerate.
 
 
-- Programs: 18
-- Instructions: 5,753,581
-- Reading every field the model states: 18 of 18
-- Published with a frame they are held to: 18 of 18
-- Frames, of which recorded from the wire: 185, 40
-- Sessions, of which proven on a run: 1, 1
-- Runs, and the packets they were answered with: 4, 4
-- Markets, of which proven on a run: 2, 2
-- Orders put to them, the trades those made and the orders refused: 50, 21, 4
+- Programs: 23
+- Instructions: 20,193,924
+- Reading every field the model states: 22 of 23
+- Published with a frame they are held to: 23 of 23
+- Frames, of which recorded from the wire: 268, 40
+- Sessions, of which proven on a run: 2, 2
+- Runs, and the packets they were answered with: 8, 5
+- Markets, of which proven on a run: 3, 3
+- Orders put to them, the trades those made and the orders refused: 84, 35, 6
 
 ## Testing
 

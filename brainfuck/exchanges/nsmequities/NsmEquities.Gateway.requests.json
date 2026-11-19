@@ -6,7 +6,8 @@
     "length": {
       "named": "packetlength",
       "width": 2,
-      "endian": "big"
+      "endian": "big",
+      "at": 0
     },
     "type": {
       "named": "clientpackettype",
@@ -19,8 +20,10 @@
         "Unsequenced Data Packet": 85,
         "Client Heartbeat Packet": 82,
         "Logout Request Packet": 79
-      }
+      },
+      "at": 2
     },
+    "opening": 3,
     "addend": 2
   },
   "packets": [

@@ -1,0 +1,1316 @@
+{
+  "venue": "NseFo",
+  "protocol": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+  "writes": "Nse.NseFo.BasicMatchingEngine.Ipc.v2026",
+  "frame": {
+    "length": {
+      "named": "messagelength",
+      "width": 2,
+      "endian": "big",
+      "at": 38
+    },
+    "type": {
+      "named": "transactioncode",
+      "width": 2,
+      "endian": "big",
+      "values": {
+        "Sign On Request In Message": 2300,
+        "Sign On Request Out Message": 2301,
+        "Sign Off Request Out Message": 2321,
+        "System Information In Message": 1600,
+        "System Information Out Message": 1601,
+        "Gateway Router Request Message": 2400,
+        "Gateway Router Response Message": 2401,
+        "Sign Off Request In Message": 2320,
+        "Update Local Database In Message": 7300,
+        "Update Local Database Header Message": 7307,
+        "Update Local Database Trailer Message": 7308,
+        "Download Request Message": 7000,
+        "Update Local Database Data Message": 7304,
+        "Header Record Message": 7011,
+        "Message Record Message": 7021,
+        "Trailer Record Message": 7031,
+        "Order Entry Request Message": 2000,
+        "Order Modification Request Message": 2040,
+        "Order Cancellation Request Message": 2070,
+        "Order Confirmation Message": 2073,
+        "Order Modification Confirmation Message": 2074,
+        "Order Response Message": 9002,
+        "Kill Switch Request Message": 2062,
+        "Price Modification Message": 20406,
+        "Trade Inquiry Message": 2223,
+        "Spread Order Entry Message": 20416,
+        "Trade Confirmation Message": 2288,
+        "User Order Limit Update Message": 5731,
+        "Dealer Limit Update Message": 5733,
+        "Spread Order Limit Update Message": 5772,
+        "Control Message To Trader Message": 5295,
+        "Market Statistics Report Message": 1833,
+        "Enhanced Market Statistics Report Message": 11833,
+        "Market Index Report Message": 1836,
+        "Industry Index Report Message": 1837,
+        "Sector Index Report Message": 1838,
+        "Spread Bhavcopy Message": 1862,
+        "Global Indices Message": 7732,
+        "Global Contracts Message": 7733,
+        "Secure Box Registration Request In Message": 23008,
+        "Secure Box Registration Response Out Message": 23009,
+        "Box Sign On Request In Message": 23000,
+        "Box Sign On Request Out Message": 23001,
+        "Heartbeat Message": 23506,
+        "Box Sign Off Message": 20322,
+        "Contingency Broadcast Message": 5294,
+        "Branch Order Value Limit Update Message": 5716,
+        "User Order Value Limit Update Message": 5730,
+        "Normal Order Limit Update Message": 5732,
+        "Reset User Password Message": 5740,
+        "Collateral User Status Change Request Message": 5744,
+        "Collateral User Status Change Response Message": 5745,
+        "User Trade Modify Cancel Status Change Request Message": 5738,
+        "User Trade Modify Cancel Status Change Response Message": 5739,
+        "User Address Unlock Request Message": 5427,
+        "User Address Unlock Confirm Message": 5428,
+        "User Address Unlock Approve Message": 5483,
+        "Giveup Confirmation Message": 4507,
+        "Order Cancellation Confirmation Message": 2075
+      },
+      "at": 0
+    },
+    "opening": 40,
+    "addend": 0
+  },
+  "packets": [
+    {
+      "named": "Sign On Request In Message",
+      "codes": [
+        2300
+      ]
+    },
+    {
+      "named": "System Information In Message",
+      "codes": [
+        1600
+      ]
+    },
+    {
+      "named": "Gateway Router Request Message",
+      "codes": [
+        2400
+      ]
+    },
+    {
+      "named": "Sign Off Request In Message",
+      "codes": [
+        2320
+      ]
+    },
+    {
+      "named": "Update Local Database In Message",
+      "codes": [
+        7300
+      ]
+    },
+    {
+      "named": "Download Request Message",
+      "codes": [
+        7000
+      ]
+    },
+    {
+      "named": "Order Entry Request Message",
+      "codes": [
+        2000
+      ]
+    },
+    {
+      "named": "Order Modification Request Message",
+      "codes": [
+        2040
+      ]
+    },
+    {
+      "named": "Order Cancellation Request Message",
+      "codes": [
+        2070
+      ]
+    },
+    {
+      "named": "Kill Switch Request Message",
+      "codes": [
+        2062
+      ]
+    },
+    {
+      "named": "Price Modification Message",
+      "codes": [
+        2013,
+        20406
+      ]
+    },
+    {
+      "named": "Trade Inquiry Message",
+      "codes": [
+        5445,
+        5440,
+        5441,
+        2223
+      ]
+    },
+    {
+      "named": "Spread Order Entry Message",
+      "codes": [
+        2100,
+        2102,
+        2104,
+        2106,
+        2118,
+        2124,
+        2125,
+        2126,
+        2127,
+        2130,
+        2131,
+        2132,
+        2133,
+        2136,
+        2154,
+        2155,
+        2156,
+        9004,
+        20408,
+        20410,
+        20412,
+        20414,
+        20416
+      ]
+    },
+    {
+      "named": "Secure Box Registration Request In Message",
+      "codes": [
+        23008
+      ]
+    },
+    {
+      "named": "Box Sign On Request In Message",
+      "codes": [
+        23000
+      ]
+    },
+    {
+      "named": "Heartbeat Message",
+      "codes": [
+        23506
+      ]
+    },
+    {
+      "named": "Box Sign Off Message",
+      "codes": [
+        20322
+      ]
+    },
+    {
+      "named": "Branch Order Value Limit Update Message",
+      "codes": [
+        5716
+      ]
+    },
+    {
+      "named": "User Order Value Limit Update Message",
+      "codes": [
+        5730
+      ]
+    },
+    {
+      "named": "Normal Order Limit Update Message",
+      "codes": [
+        5732
+      ]
+    },
+    {
+      "named": "Reset User Password Message",
+      "codes": [
+        5740
+      ]
+    },
+    {
+      "named": "Collateral User Status Change Request Message",
+      "codes": [
+        5744
+      ]
+    },
+    {
+      "named": "User Trade Modify Cancel Status Change Request Message",
+      "codes": [
+        5738
+      ]
+    },
+    {
+      "named": "User Address Unlock Request Message",
+      "codes": [
+        5427
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "named": "Order Entry Request Message",
+      "transform": "nnf_order_entry",
+      "becomes": "New Order Message",
+      "admits": true,
+      "tests": [
+        {
+          "named": "transactioncode",
+          "width": 2,
+          "endian": "big",
+          "values": {
+            "Sign On Request In Message": 2300,
+            "Sign On Request Out Message": 2301,
+            "Sign Off Request Out Message": 2321,
+            "System Information In Message": 1600,
+            "System Information Out Message": 1601,
+            "Gateway Router Request Message": 2400,
+            "Gateway Router Response Message": 2401,
+            "Sign Off Request In Message": 2320,
+            "Update Local Database In Message": 7300,
+            "Update Local Database Header Message": 7307,
+            "Update Local Database Trailer Message": 7308,
+            "Download Request Message": 7000,
+            "Update Local Database Data Message": 7304,
+            "Header Record Message": 7011,
+            "Message Record Message": 7021,
+            "Trailer Record Message": 7031,
+            "Order Entry Request Message": 2000,
+            "Order Modification Request Message": 2040,
+            "Order Cancellation Request Message": 2070,
+            "Order Confirmation Message": 2073,
+            "Order Modification Confirmation Message": 2074,
+            "Order Response Message": 9002,
+            "Kill Switch Request Message": 2062,
+            "Price Modification Message": 20406,
+            "Trade Inquiry Message": 2223,
+            "Spread Order Entry Message": 20416,
+            "Trade Confirmation Message": 2288,
+            "User Order Limit Update Message": 5731,
+            "Dealer Limit Update Message": 5733,
+            "Spread Order Limit Update Message": 5772,
+            "Control Message To Trader Message": 5295,
+            "Market Statistics Report Message": 1833,
+            "Enhanced Market Statistics Report Message": 11833,
+            "Market Index Report Message": 1836,
+            "Industry Index Report Message": 1837,
+            "Sector Index Report Message": 1838,
+            "Spread Bhavcopy Message": 1862,
+            "Global Indices Message": 7732,
+            "Global Contracts Message": 7733,
+            "Secure Box Registration Request In Message": 23008,
+            "Secure Box Registration Response Out Message": 23009,
+            "Box Sign On Request In Message": 23000,
+            "Box Sign On Request Out Message": 23001,
+            "Heartbeat Message": 23506,
+            "Box Sign Off Message": 20322,
+            "Contingency Broadcast Message": 5294,
+            "Branch Order Value Limit Update Message": 5716,
+            "User Order Value Limit Update Message": 5730,
+            "Normal Order Limit Update Message": 5732,
+            "Reset User Password Message": 5740,
+            "Collateral User Status Change Request Message": 5744,
+            "Collateral User Status Change Response Message": 5745,
+            "User Trade Modify Cancel Status Change Request Message": 5738,
+            "User Trade Modify Cancel Status Change Response Message": 5739,
+            "User Address Unlock Request Message": 5427,
+            "User Address Unlock Confirm Message": 5428,
+            "User Address Unlock Approve Message": 5483,
+            "Giveup Confirmation Message": 4507,
+            "Order Cancellation Confirmation Message": 2075
+          },
+          "at": 0,
+          "codes": [
+            2000
+          ],
+          "holds": true
+        }
+      ],
+      "fields": [
+        {
+          "named": "participanttype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Initiator": 73,
+            "Competitor": 67,
+            "Solicitor": 83,
+            "No Value": 32
+          },
+          "title": "Participant Type",
+          "at": 40
+        },
+        {
+          "named": "reserved1",
+          "width": 1,
+          "endian": "little",
+          "title": "Reserved 1",
+          "at": 41
+        },
+        {
+          "named": "competitorperiod",
+          "width": 2,
+          "endian": "big",
+          "title": "Competitor Period",
+          "at": 42
+        },
+        {
+          "named": "solicitorperiod",
+          "width": 2,
+          "endian": "big",
+          "title": "Solicitor Period",
+          "at": 44
+        },
+        {
+          "named": "modifiedcancelledby",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Trader": 84,
+            "Branch Manager": 66,
+            "Corporate Manager": 77,
+            "Exchange": 67
+          },
+          "title": "Modified Cancelled By",
+          "at": 46
+        },
+        {
+          "named": "secondreserved1",
+          "width": 1,
+          "endian": "little",
+          "title": "Second Reserved 1",
+          "at": 47
+        },
+        {
+          "named": "reasoncode",
+          "width": 2,
+          "endian": "big",
+          "values": {
+            "Exercise": 2,
+            "Position Liquidation": 3,
+            "Security": 5,
+            "Broker": 6,
+            "Branch": 7,
+            "User": 8,
+            "Participant": 9,
+            "Counter Party": 10,
+            "Order Number": 11,
+            "Market Status": 12,
+            "Auction Number": 15,
+            "Order Type": 16,
+            "Price Freeze": 17,
+            "Quantity Freeze": 18,
+            "Contract": 20,
+            "Exercise Mode Mismatch": 30
+          },
+          "title": "Reason Code",
+          "at": 48
+        },
+        {
+          "named": "reserved4",
+          "width": 4,
+          "endian": "little",
+          "title": "Reserved 4",
+          "at": 50
+        },
+        {
+          "named": "tokenno",
+          "width": 4,
+          "endian": "big",
+          "title": "Token No",
+          "role": "Instrument",
+          "at": 54
+        },
+        {
+          "named": "instrumentname",
+          "width": 6,
+          "endian": "little",
+          "text": true,
+          "title": "Instrument Name",
+          "at": 58
+        },
+        {
+          "named": "symbol",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Symbol",
+          "at": 64
+        },
+        {
+          "named": "expirydate",
+          "width": 4,
+          "endian": "big",
+          "title": "Expiry Date",
+          "at": 74
+        },
+        {
+          "named": "strikeprice",
+          "width": 4,
+          "endian": "big",
+          "scale": "-2",
+          "title": "Strike Price",
+          "at": 78
+        },
+        {
+          "named": "optiontype",
+          "width": 2,
+          "endian": "little",
+          "text": true,
+          "title": "Option Type",
+          "at": 82
+        },
+        {
+          "named": "calevel",
+          "width": 2,
+          "endian": "big",
+          "title": "Ca Level",
+          "at": 84
+        },
+        {
+          "named": "counterpartybrokerid",
+          "width": 5,
+          "endian": "little",
+          "text": true,
+          "title": "Counter Party Broker Id",
+          "at": 86
+        },
+        {
+          "named": "thirdreserved1",
+          "width": 1,
+          "endian": "little",
+          "title": "Third Reserved 1",
+          "at": 91
+        },
+        {
+          "named": "reserved2",
+          "width": 2,
+          "endian": "little",
+          "title": "Reserved 2",
+          "at": 92
+        },
+        {
+          "named": "closeoutflag",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "title": "Closeout Flag",
+          "at": 94
+        },
+        {
+          "named": "fourthreserved1",
+          "width": 1,
+          "endian": "little",
+          "title": "Fourth Reserved 1",
+          "at": 95
+        },
+        {
+          "named": "ordertype",
+          "width": 2,
+          "endian": "big",
+          "title": "Order Type",
+          "at": 96
+        },
+        {
+          "named": "ordernumber",
+          "width": 8,
+          "endian": "big",
+          "float": true,
+          "title": "Order Number",
+          "role": "Order",
+          "at": 98
+        },
+        {
+          "named": "accountnumber",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Account Number",
+          "at": 106
+        },
+        {
+          "named": "booktype",
+          "width": 2,
+          "endian": "big",
+          "values": {
+            "Regular Lot Order": 1,
+            "Special Terms Order": 2,
+            "Stop Loss Or Mit Order": 3,
+            "Negotiated Order": 4,
+            "Odd Lot Order": 5,
+            "Spot Order": 6,
+            "Auction Order": 7
+          },
+          "title": "Book Type",
+          "at": 116
+        },
+        {
+          "named": "buysellindicator",
+          "width": 2,
+          "endian": "big",
+          "values": {
+            "Buy Order": 1,
+            "Sell Order": 2
+          },
+          "title": "Buy Sell Indicator",
+          "role": "Side",
+          "at": 118
+        },
+        {
+          "named": "disclosedvolume",
+          "width": 4,
+          "endian": "big",
+          "title": "Disclosed Volume",
+          "at": 120
+        },
+        {
+          "named": "disclosedvolumeremaining",
+          "width": 4,
+          "endian": "big",
+          "title": "Disclosed Volume Remaining",
+          "at": 124
+        },
+        {
+          "named": "totalvolumeremaining",
+          "width": 4,
+          "endian": "big",
+          "title": "Total Volume Remaining",
+          "at": 128
+        },
+        {
+          "named": "volume",
+          "width": 4,
+          "endian": "big",
+          "title": "Volume",
+          "role": "Quantity",
+          "at": 132
+        },
+        {
+          "named": "volumefilledtoday",
+          "width": 4,
+          "endian": "big",
+          "title": "Volume Filled Today",
+          "at": 136
+        },
+        {
+          "named": "price",
+          "width": 4,
+          "endian": "big",
+          "scale": "-2",
+          "title": "Price",
+          "role": "Price",
+          "at": 140
+        },
+        {
+          "named": "triggerprice",
+          "width": 4,
+          "endian": "big",
+          "scale": "-2",
+          "title": "Trigger Price",
+          "at": 144
+        },
+        {
+          "named": "goodtilldate",
+          "width": 4,
+          "endian": "big",
+          "title": "Good Till Date",
+          "at": 148
+        },
+        {
+          "named": "entrydatetime",
+          "width": 4,
+          "endian": "big",
+          "title": "Entry Date Time",
+          "at": 152
+        },
+        {
+          "named": "minimumfillaonvolume",
+          "width": 4,
+          "endian": "big",
+          "title": "Minimum Fill Aon Volume",
+          "at": 156
+        },
+        {
+          "named": "lastmodified",
+          "width": 4,
+          "endian": "big",
+          "title": "Last Modified",
+          "at": 160
+        },
+        {
+          "named": "branchid",
+          "width": 2,
+          "endian": "big",
+          "title": "Branch Id",
+          "at": 166
+        },
+        {
+          "named": "traderid",
+          "width": 4,
+          "endian": "big",
+          "title": "Trader Id",
+          "at": 168
+        },
+        {
+          "named": "brokerid",
+          "width": 5,
+          "endian": "little",
+          "text": true,
+          "title": "Broker Id",
+          "at": 172
+        },
+        {
+          "named": "cordfiller",
+          "width": 24,
+          "endian": "little",
+          "text": true,
+          "title": "C Ord Filler",
+          "at": 177
+        },
+        {
+          "named": "openclose",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "title": "Open Close",
+          "at": 201
+        },
+        {
+          "named": "settlor",
+          "width": 12,
+          "endian": "little",
+          "text": true,
+          "title": "Settlor",
+          "at": 202
+        },
+        {
+          "named": "proclientindicator",
+          "width": 2,
+          "endian": "big",
+          "title": "Pro Client Indicator",
+          "at": 214
+        },
+        {
+          "named": "settlementperiod",
+          "width": 2,
+          "endian": "big",
+          "title": "Settlement Period",
+          "at": 216
+        },
+        {
+          "named": "fifthreserved1",
+          "width": 1,
+          "endian": "little",
+          "title": "Fifth Reserved 1",
+          "at": 219
+        },
+        {
+          "named": "filler116",
+          "width": 2,
+          "endian": "little",
+          "title": "Filler 116",
+          "at": 220
+        },
+        {
+          "named": "filler17",
+          "width": 1,
+          "endian": "little",
+          "title": "Filler 17",
+          "at": 222
+        },
+        {
+          "named": "filler18",
+          "width": 1,
+          "endian": "little",
+          "title": "Filler 18",
+          "at": 223
+        },
+        {
+          "named": "nnffield",
+          "width": 8,
+          "endian": "big",
+          "float": true,
+          "title": "Nnf Field",
+          "at": 224
+        },
+        {
+          "named": "mktreplay",
+          "width": 8,
+          "endian": "big",
+          "title": "Mkt Replay",
+          "at": 232
+        },
+        {
+          "named": "pan",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Pan",
+          "at": 240
+        },
+        {
+          "named": "algoid",
+          "width": 4,
+          "endian": "big",
+          "title": "Algo Id",
+          "at": 250
+        },
+        {
+          "named": "secondreserved2",
+          "width": 2,
+          "endian": "little",
+          "title": "Second Reserved 2",
+          "at": 254
+        },
+        {
+          "named": "lastactivityreference",
+          "width": 8,
+          "endian": "big",
+          "title": "Last Activity Reference",
+          "at": 256
+        },
+        {
+          "named": "reserved52",
+          "width": 52,
+          "endian": "little",
+          "title": "Reserved 52",
+          "at": 264
+        }
+      ]
+    },
+    {
+      "named": "Order Cancellation Request Message",
+      "transform": "nnf_order_cancel",
+      "becomes": "Cancel Order Message",
+      "admits": false,
+      "tests": [
+        {
+          "named": "transactioncode",
+          "width": 2,
+          "endian": "big",
+          "values": {
+            "Sign On Request In Message": 2300,
+            "Sign On Request Out Message": 2301,
+            "Sign Off Request Out Message": 2321,
+            "System Information In Message": 1600,
+            "System Information Out Message": 1601,
+            "Gateway Router Request Message": 2400,
+            "Gateway Router Response Message": 2401,
+            "Sign Off Request In Message": 2320,
+            "Update Local Database In Message": 7300,
+            "Update Local Database Header Message": 7307,
+            "Update Local Database Trailer Message": 7308,
+            "Download Request Message": 7000,
+            "Update Local Database Data Message": 7304,
+            "Header Record Message": 7011,
+            "Message Record Message": 7021,
+            "Trailer Record Message": 7031,
+            "Order Entry Request Message": 2000,
+            "Order Modification Request Message": 2040,
+            "Order Cancellation Request Message": 2070,
+            "Order Confirmation Message": 2073,
+            "Order Modification Confirmation Message": 2074,
+            "Order Response Message": 9002,
+            "Kill Switch Request Message": 2062,
+            "Price Modification Message": 20406,
+            "Trade Inquiry Message": 2223,
+            "Spread Order Entry Message": 20416,
+            "Trade Confirmation Message": 2288,
+            "User Order Limit Update Message": 5731,
+            "Dealer Limit Update Message": 5733,
+            "Spread Order Limit Update Message": 5772,
+            "Control Message To Trader Message": 5295,
+            "Market Statistics Report Message": 1833,
+            "Enhanced Market Statistics Report Message": 11833,
+            "Market Index Report Message": 1836,
+            "Industry Index Report Message": 1837,
+            "Sector Index Report Message": 1838,
+            "Spread Bhavcopy Message": 1862,
+            "Global Indices Message": 7732,
+            "Global Contracts Message": 7733,
+            "Secure Box Registration Request In Message": 23008,
+            "Secure Box Registration Response Out Message": 23009,
+            "Box Sign On Request In Message": 23000,
+            "Box Sign On Request Out Message": 23001,
+            "Heartbeat Message": 23506,
+            "Box Sign Off Message": 20322,
+            "Contingency Broadcast Message": 5294,
+            "Branch Order Value Limit Update Message": 5716,
+            "User Order Value Limit Update Message": 5730,
+            "Normal Order Limit Update Message": 5732,
+            "Reset User Password Message": 5740,
+            "Collateral User Status Change Request Message": 5744,
+            "Collateral User Status Change Response Message": 5745,
+            "User Trade Modify Cancel Status Change Request Message": 5738,
+            "User Trade Modify Cancel Status Change Response Message": 5739,
+            "User Address Unlock Request Message": 5427,
+            "User Address Unlock Confirm Message": 5428,
+            "User Address Unlock Approve Message": 5483,
+            "Giveup Confirmation Message": 4507,
+            "Order Cancellation Confirmation Message": 2075
+          },
+          "at": 0,
+          "codes": [
+            2070
+          ],
+          "holds": true
+        }
+      ],
+      "fields": [
+        {
+          "named": "participanttype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Initiator": 73,
+            "Competitor": 67,
+            "Solicitor": 83,
+            "No Value": 32
+          },
+          "title": "Participant Type",
+          "at": 40
+        },
+        {
+          "named": "reserved1",
+          "width": 1,
+          "endian": "little",
+          "title": "Reserved 1",
+          "at": 41
+        },
+        {
+          "named": "competitorperiod",
+          "width": 2,
+          "endian": "big",
+          "title": "Competitor Period",
+          "at": 42
+        },
+        {
+          "named": "solicitorperiod",
+          "width": 2,
+          "endian": "big",
+          "title": "Solicitor Period",
+          "at": 44
+        },
+        {
+          "named": "modifiedcancelledby",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Trader": 84,
+            "Branch Manager": 66,
+            "Corporate Manager": 77,
+            "Exchange": 67
+          },
+          "title": "Modified Cancelled By",
+          "at": 46
+        },
+        {
+          "named": "secondreserved1",
+          "width": 1,
+          "endian": "little",
+          "title": "Second Reserved 1",
+          "at": 47
+        },
+        {
+          "named": "reasoncode",
+          "width": 2,
+          "endian": "big",
+          "values": {
+            "Exercise": 2,
+            "Position Liquidation": 3,
+            "Security": 5,
+            "Broker": 6,
+            "Branch": 7,
+            "User": 8,
+            "Participant": 9,
+            "Counter Party": 10,
+            "Order Number": 11,
+            "Market Status": 12,
+            "Auction Number": 15,
+            "Order Type": 16,
+            "Price Freeze": 17,
+            "Quantity Freeze": 18,
+            "Contract": 20,
+            "Exercise Mode Mismatch": 30
+          },
+          "title": "Reason Code",
+          "at": 48
+        },
+        {
+          "named": "reserved4",
+          "width": 4,
+          "endian": "little",
+          "title": "Reserved 4",
+          "at": 50
+        },
+        {
+          "named": "tokenno",
+          "width": 4,
+          "endian": "big",
+          "title": "Token No",
+          "at": 54
+        },
+        {
+          "named": "instrumentname",
+          "width": 6,
+          "endian": "little",
+          "text": true,
+          "title": "Instrument Name",
+          "at": 58
+        },
+        {
+          "named": "symbol",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Symbol",
+          "at": 64
+        },
+        {
+          "named": "expirydate",
+          "width": 4,
+          "endian": "big",
+          "title": "Expiry Date",
+          "at": 74
+        },
+        {
+          "named": "strikeprice",
+          "width": 4,
+          "endian": "big",
+          "scale": "-2",
+          "title": "Strike Price",
+          "at": 78
+        },
+        {
+          "named": "optiontype",
+          "width": 2,
+          "endian": "little",
+          "text": true,
+          "title": "Option Type",
+          "at": 82
+        },
+        {
+          "named": "calevel",
+          "width": 2,
+          "endian": "big",
+          "title": "Ca Level",
+          "at": 84
+        },
+        {
+          "named": "counterpartybrokerid",
+          "width": 5,
+          "endian": "little",
+          "text": true,
+          "title": "Counter Party Broker Id",
+          "at": 86
+        },
+        {
+          "named": "thirdreserved1",
+          "width": 1,
+          "endian": "little",
+          "title": "Third Reserved 1",
+          "at": 91
+        },
+        {
+          "named": "reserved2",
+          "width": 2,
+          "endian": "little",
+          "title": "Reserved 2",
+          "at": 92
+        },
+        {
+          "named": "closeoutflag",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "title": "Closeout Flag",
+          "at": 94
+        },
+        {
+          "named": "fourthreserved1",
+          "width": 1,
+          "endian": "little",
+          "title": "Fourth Reserved 1",
+          "at": 95
+        },
+        {
+          "named": "ordertype",
+          "width": 2,
+          "endian": "big",
+          "title": "Order Type",
+          "at": 96
+        },
+        {
+          "named": "ordernumber",
+          "width": 8,
+          "endian": "big",
+          "float": true,
+          "title": "Order Number",
+          "role": "Order",
+          "at": 98
+        },
+        {
+          "named": "accountnumber",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Account Number",
+          "at": 106
+        },
+        {
+          "named": "booktype",
+          "width": 2,
+          "endian": "big",
+          "values": {
+            "Regular Lot Order": 1,
+            "Special Terms Order": 2,
+            "Stop Loss Or Mit Order": 3,
+            "Negotiated Order": 4,
+            "Odd Lot Order": 5,
+            "Spot Order": 6,
+            "Auction Order": 7
+          },
+          "title": "Book Type",
+          "at": 116
+        },
+        {
+          "named": "buysellindicator",
+          "width": 2,
+          "endian": "big",
+          "values": {
+            "Buy Order": 1,
+            "Sell Order": 2
+          },
+          "title": "Buy Sell Indicator",
+          "at": 118
+        },
+        {
+          "named": "disclosedvolume",
+          "width": 4,
+          "endian": "big",
+          "title": "Disclosed Volume",
+          "at": 120
+        },
+        {
+          "named": "disclosedvolumeremaining",
+          "width": 4,
+          "endian": "big",
+          "title": "Disclosed Volume Remaining",
+          "at": 124
+        },
+        {
+          "named": "totalvolumeremaining",
+          "width": 4,
+          "endian": "big",
+          "title": "Total Volume Remaining",
+          "at": 128
+        },
+        {
+          "named": "volume",
+          "width": 4,
+          "endian": "big",
+          "title": "Volume",
+          "at": 132
+        },
+        {
+          "named": "volumefilledtoday",
+          "width": 4,
+          "endian": "big",
+          "title": "Volume Filled Today",
+          "at": 136
+        },
+        {
+          "named": "price",
+          "width": 4,
+          "endian": "big",
+          "scale": "-2",
+          "title": "Price",
+          "at": 140
+        },
+        {
+          "named": "triggerprice",
+          "width": 4,
+          "endian": "big",
+          "scale": "-2",
+          "title": "Trigger Price",
+          "at": 144
+        },
+        {
+          "named": "goodtilldate",
+          "width": 4,
+          "endian": "big",
+          "title": "Good Till Date",
+          "at": 148
+        },
+        {
+          "named": "entrydatetime",
+          "width": 4,
+          "endian": "big",
+          "title": "Entry Date Time",
+          "at": 152
+        },
+        {
+          "named": "minimumfillaonvolume",
+          "width": 4,
+          "endian": "big",
+          "title": "Minimum Fill Aon Volume",
+          "at": 156
+        },
+        {
+          "named": "lastmodified",
+          "width": 4,
+          "endian": "big",
+          "title": "Last Modified",
+          "at": 160
+        },
+        {
+          "named": "branchid",
+          "width": 2,
+          "endian": "big",
+          "title": "Branch Id",
+          "at": 166
+        },
+        {
+          "named": "traderid",
+          "width": 4,
+          "endian": "big",
+          "title": "Trader Id",
+          "at": 168
+        },
+        {
+          "named": "brokerid",
+          "width": 5,
+          "endian": "little",
+          "text": true,
+          "title": "Broker Id",
+          "at": 172
+        },
+        {
+          "named": "cordfiller",
+          "width": 24,
+          "endian": "little",
+          "text": true,
+          "title": "C Ord Filler",
+          "at": 177
+        },
+        {
+          "named": "openclose",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "title": "Open Close",
+          "at": 201
+        },
+        {
+          "named": "settlor",
+          "width": 12,
+          "endian": "little",
+          "text": true,
+          "title": "Settlor",
+          "at": 202
+        },
+        {
+          "named": "proclientindicator",
+          "width": 2,
+          "endian": "big",
+          "title": "Pro Client Indicator",
+          "at": 214
+        },
+        {
+          "named": "settlementperiod",
+          "width": 2,
+          "endian": "big",
+          "title": "Settlement Period",
+          "at": 216
+        },
+        {
+          "named": "fifthreserved1",
+          "width": 1,
+          "endian": "little",
+          "title": "Fifth Reserved 1",
+          "at": 219
+        },
+        {
+          "named": "filler116",
+          "width": 2,
+          "endian": "little",
+          "title": "Filler 116",
+          "at": 220
+        },
+        {
+          "named": "filler17",
+          "width": 1,
+          "endian": "little",
+          "title": "Filler 17",
+          "at": 222
+        },
+        {
+          "named": "filler18",
+          "width": 1,
+          "endian": "little",
+          "title": "Filler 18",
+          "at": 223
+        },
+        {
+          "named": "nnffield",
+          "width": 8,
+          "endian": "big",
+          "float": true,
+          "title": "Nnf Field",
+          "at": 224
+        },
+        {
+          "named": "mktreplay",
+          "width": 8,
+          "endian": "big",
+          "title": "Mkt Replay",
+          "at": 232
+        },
+        {
+          "named": "pan",
+          "width": 10,
+          "endian": "little",
+          "text": true,
+          "title": "Pan",
+          "at": 240
+        },
+        {
+          "named": "algoid",
+          "width": 4,
+          "endian": "big",
+          "title": "Algo Id",
+          "at": 250
+        },
+        {
+          "named": "secondreserved2",
+          "width": 2,
+          "endian": "little",
+          "title": "Second Reserved 2",
+          "at": 254
+        },
+        {
+          "named": "lastactivityreference",
+          "width": 8,
+          "endian": "big",
+          "title": "Last Activity Reference",
+          "at": 256
+        },
+        {
+          "named": "reserved52",
+          "width": 52,
+          "endian": "little",
+          "title": "Reserved 52",
+          "at": 264
+        }
+      ]
+    }
+  ]
+}

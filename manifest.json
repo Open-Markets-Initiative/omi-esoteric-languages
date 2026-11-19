@@ -158,6 +158,171 @@
     {
       "language": "brainfuck",
       "kind": "gateway",
+      "venue": "NseFo",
+      "path": "brainfuck/exchanges/nsefo/NseFo.Gateway.bf",
+      "reads": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+      "writes": "Nse.NseFo.BasicMatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "brainfuck/exchanges/nsefo/runs/gateway/crossing.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/gateway/crossing.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "brainfuck/exchanges/nsefo/runs/gateway/cancelling.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/gateway/cancelling.wrote"
+        },
+        {
+          "name": "unadmitted",
+          "frame": "brainfuck/exchanges/nsefo/runs/gateway/unadmitted.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/gateway/unadmitted.wrote"
+        },
+        {
+          "name": "day",
+          "frame": "brainfuck/exchanges/nsefo/runs/gateway/day.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/gateway/day.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "market",
+      "venue": "NseFo",
+      "path": "brainfuck/exchanges/nsefo/NseFo.Market.bf",
+      "reads": "Nse.NseFo.BasicMatchingEngine.Ipc.v2026",
+      "writes": "Nse.NseFo.BasicMatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "brainfuck/exchanges/nsefo/runs/market/crossing.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/market/crossing.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "brainfuck/exchanges/nsefo/runs/market/cancelling.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/market/cancelling.wrote"
+        },
+        {
+          "name": "sharing",
+          "frame": "brainfuck/exchanges/nsefo/runs/market/sharing.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/market/sharing.wrote"
+        },
+        {
+          "name": "day",
+          "frame": "brainfuck/exchanges/nsefo/runs/market/day.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/market/day.wrote"
+        },
+        {
+          "name": "entered-crossing",
+          "frame": "brainfuck/exchanges/nsefo/runs/market/entered-crossing.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/market/entered-crossing.wrote"
+        },
+        {
+          "name": "entered-cancelling",
+          "frame": "brainfuck/exchanges/nsefo/runs/market/entered-cancelling.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/market/entered-cancelling.wrote"
+        },
+        {
+          "name": "entered-day",
+          "frame": "brainfuck/exchanges/nsefo/runs/market/entered-day.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/market/entered-day.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "feed",
+      "venue": "NseFo",
+      "path": "brainfuck/exchanges/nsefo/NseFo.Mtbt.Feed.bf",
+      "reads": "Nse.NseFo.BasicMatchingEngine.Ipc.v2026",
+      "writes": "Nse.NseFo.Mtbt.Tbt.v7.1",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "brainfuck/exchanges/nsefo/runs/mtbt.feed/crossing.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/mtbt.feed/crossing.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "brainfuck/exchanges/nsefo/runs/mtbt.feed/cancelling.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/mtbt.feed/cancelling.wrote"
+        },
+        {
+          "name": "sharing",
+          "frame": "brainfuck/exchanges/nsefo/runs/mtbt.feed/sharing.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/mtbt.feed/sharing.wrote"
+        },
+        {
+          "name": "day",
+          "frame": "brainfuck/exchanges/nsefo/runs/mtbt.feed/day.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/mtbt.feed/day.wrote"
+        },
+        {
+          "name": "entered-crossing",
+          "frame": "brainfuck/exchanges/nsefo/runs/mtbt.feed/entered-crossing.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/mtbt.feed/entered-crossing.wrote"
+        },
+        {
+          "name": "entered-cancelling",
+          "frame": "brainfuck/exchanges/nsefo/runs/mtbt.feed/entered-cancelling.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/mtbt.feed/entered-cancelling.wrote"
+        },
+        {
+          "name": "entered-day",
+          "frame": "brainfuck/exchanges/nsefo/runs/mtbt.feed/entered-day.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/mtbt.feed/entered-day.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "session",
+      "venue": "NseFo",
+      "path": "brainfuck/exchanges/nsefo/NseFo.Nnf.bf",
+      "reads": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+      "writes": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+      "runs": [
+        {
+          "name": "NotSignedOn.LoginRequest",
+          "frame": "brainfuck/exchanges/nsefo/runs/nnf/NotSignedOn.LoginRequest.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/nnf/NotSignedOn.LoginRequest.wrote"
+        },
+        {
+          "name": "SignedOn.SessionHeartbeat",
+          "frame": "brainfuck/exchanges/nsefo/runs/nnf/SignedOn.SessionHeartbeat.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/nnf/SignedOn.SessionHeartbeat.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "responder",
+      "venue": "NseFo",
+      "path": "brainfuck/exchanges/nsefo/NseFo.Responder.bf",
+      "reads": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+      "writes": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "brainfuck/exchanges/nsefo/runs/responder/crossing.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/responder/crossing.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "brainfuck/exchanges/nsefo/runs/responder/cancelling.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/responder/cancelling.wrote"
+        },
+        {
+          "name": "day",
+          "frame": "brainfuck/exchanges/nsefo/runs/responder/day.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/responder/day.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "gateway",
       "venue": "NsmEquities",
       "path": "brainfuck/exchanges/nsmequities/NsmEquities.Gateway.bf",
       "reads": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
@@ -182,6 +347,11 @@
           "name": "day",
           "frame": "brainfuck/exchanges/nsmequities/runs/gateway/day.frame",
           "wrote": "brainfuck/exchanges/nsmequities/runs/gateway/day.wrote"
+        },
+        {
+          "name": "rejecting",
+          "frame": "brainfuck/exchanges/nsmequities/runs/gateway/rejecting.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/runs/gateway/rejecting.wrote"
         }
       ]
     },
@@ -227,6 +397,11 @@
           "name": "entered-day",
           "frame": "brainfuck/exchanges/nsmequities/runs/market/entered-day.frame",
           "wrote": "brainfuck/exchanges/nsmequities/runs/market/entered-day.wrote"
+        },
+        {
+          "name": "entered-rejecting",
+          "frame": "brainfuck/exchanges/nsmequities/runs/market/entered-rejecting.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/runs/market/entered-rejecting.wrote"
         }
       ]
     },
@@ -252,6 +427,11 @@
           "name": "day",
           "frame": "brainfuck/exchanges/nsmequities/runs/responder/day.frame",
           "wrote": "brainfuck/exchanges/nsmequities/runs/responder/day.wrote"
+        },
+        {
+          "name": "rejecting",
+          "frame": "brainfuck/exchanges/nsmequities/runs/responder/rejecting.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/runs/responder/rejecting.wrote"
         }
       ]
     },
@@ -269,9 +449,19 @@
           "wrote": "brainfuck/exchanges/nsmequities/runs/soupbin/NotLoggedIn.LoginRequest.wrote"
         },
         {
+          "name": "NotLoggedIn.SessionDebug",
+          "frame": "brainfuck/exchanges/nsmequities/runs/soupbin/NotLoggedIn.SessionDebug.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/runs/soupbin/NotLoggedIn.SessionDebug.wrote"
+        },
+        {
           "name": "LoggedIn.SessionLogout",
           "frame": "brainfuck/exchanges/nsmequities/runs/soupbin/LoggedIn.SessionLogout.frame",
           "wrote": "brainfuck/exchanges/nsmequities/runs/soupbin/LoggedIn.SessionLogout.wrote"
+        },
+        {
+          "name": "LoggedIn.SessionDebug",
+          "frame": "brainfuck/exchanges/nsmequities/runs/soupbin/LoggedIn.SessionDebug.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/runs/soupbin/LoggedIn.SessionDebug.wrote"
         },
         {
           "name": "LoggedIn.SessionHeartbeat",
@@ -327,6 +517,11 @@
           "name": "entered-day",
           "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/entered-day.frame",
           "wrote": "brainfuck/exchanges/nsmequities/runs/totalview.feed/entered-day.wrote"
+        },
+        {
+          "name": "entered-rejecting",
+          "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/entered-rejecting.frame",
+          "wrote": "brainfuck/exchanges/nsmequities/runs/totalview.feed/entered-rejecting.wrote"
         }
       ]
     },
@@ -849,6 +1044,11 @@
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.newordermessage.wrote"
         },
         {
+          "name": "Laid.phaseannouncedmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaseannouncedmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaseannouncedmessage.wrote"
+        },
+        {
           "name": "Laid.trademessage",
           "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.trademessage.frame",
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.trademessage.wrote"
@@ -879,6 +1079,11 @@
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.imbalanceindicatedmessage.wrote"
         },
         {
+          "name": "Laid.tradebrokenmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.tradebrokenmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.tradebrokenmessage.wrote"
+        },
+        {
           "name": "Laid.ordercanceledmessage",
           "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.ordercanceledmessage.frame",
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.ordercanceledmessage.wrote"
@@ -887,6 +1092,11 @@
           "name": "Laid.ordereliminatedmessage",
           "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.ordereliminatedmessage.frame",
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.ordereliminatedmessage.wrote"
+        },
+        {
+          "name": "Laid.phaserequestmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaserequestmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaserequestmessage.wrote"
         },
         {
           "name": "Laid.crosscompletedmessage",
@@ -909,6 +1119,11 @@
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.orderacceptedmessage.wrote"
         },
         {
+          "name": "Laid.breaktrademessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.breaktrademessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.breaktrademessage.wrote"
+        },
+        {
           "name": "Laid.orderrefusedmessage",
           "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.orderrefusedmessage.frame",
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.orderrefusedmessage.wrote"
@@ -922,16 +1137,6 @@
           "name": "Laid.reducerefusedmessage",
           "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.reducerefusedmessage.frame",
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.reducerefusedmessage.wrote"
-        },
-        {
-          "name": "Laid.phaseannouncedmessage",
-          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaseannouncedmessage.frame",
-          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaseannouncedmessage.wrote"
-        },
-        {
-          "name": "Laid.phaserequestmessage",
-          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaserequestmessage.frame",
-          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaserequestmessage.wrote"
         },
         {
           "name": "Laid.bookendmessage",
@@ -1400,6 +1605,451 @@
       ]
     },
     {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/nse/nsefo/basicmatchingengine/NseFo.BasicMatchingEngine.v2026.bf",
+      "reads": "Nse.NseFo.BasicMatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "Laid.trademessage",
+          "frame": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.trademessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.trademessage.wrote"
+        },
+        {
+          "name": "Laid.newordermessage",
+          "frame": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.newordermessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.newordermessage.wrote"
+        },
+        {
+          "name": "Laid.orderrestedmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.orderrestedmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.orderrestedmessage.wrote"
+        },
+        {
+          "name": "Laid.ordercanceledmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.ordercanceledmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.ordercanceledmessage.wrote"
+        },
+        {
+          "name": "Laid.orderrefusedmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.orderrefusedmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.orderrefusedmessage.wrote"
+        },
+        {
+          "name": "Laid.cancelordermessage",
+          "frame": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.cancelordermessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.cancelordermessage.wrote"
+        },
+        {
+          "name": "Laid.phaseannouncedmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.phaseannouncedmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.phaseannouncedmessage.wrote"
+        },
+        {
+          "name": "Laid.heartbeatmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.heartbeatmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.heartbeatmessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/nse/nsefo/matchingengine/NseFo.MatchingEngine.v2026.bf",
+      "reads": "Nse.NseFo.MatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "Laid.trademessage",
+          "frame": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.trademessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.trademessage.wrote"
+        },
+        {
+          "name": "Laid.newordermessage",
+          "frame": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.newordermessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.newordermessage.wrote"
+        },
+        {
+          "name": "Laid.orderrestedmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.orderrestedmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.orderrestedmessage.wrote"
+        },
+        {
+          "name": "Laid.ordercanceledmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.ordercanceledmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.ordercanceledmessage.wrote"
+        },
+        {
+          "name": "Laid.crosscompletedmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.crosscompletedmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.crosscompletedmessage.wrote"
+        },
+        {
+          "name": "Laid.imbalanceindicatedmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.imbalanceindicatedmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.imbalanceindicatedmessage.wrote"
+        },
+        {
+          "name": "Laid.orderrefusedmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.orderrefusedmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.orderrefusedmessage.wrote"
+        },
+        {
+          "name": "Laid.cancelordermessage",
+          "frame": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.cancelordermessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.cancelordermessage.wrote"
+        },
+        {
+          "name": "Laid.phaseannouncedmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.phaseannouncedmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.phaseannouncedmessage.wrote"
+        },
+        {
+          "name": "Laid.heartbeatmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.heartbeatmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.heartbeatmessage.wrote"
+        },
+        {
+          "name": "Laid.imbalancerequestmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.imbalancerequestmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.imbalancerequestmessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/nse/nsefo/mtbt/NseFo.Mtbt.v7.1.bf",
+      "reads": "Nse.NseFo.Mtbt.Tbt.v7.1",
+      "runs": [
+        {
+          "name": "Laid.trademessage",
+          "frame": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.trademessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.trademessage.wrote"
+        },
+        {
+          "name": "Laid.spreadtrademessage",
+          "frame": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.spreadtrademessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.spreadtrademessage.wrote"
+        },
+        {
+          "name": "Laid.tradecancelmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.tradecancelmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.tradecancelmessage.wrote"
+        },
+        {
+          "name": "Laid.newordermessage",
+          "frame": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.newordermessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.newordermessage.wrote"
+        },
+        {
+          "name": "Laid.ordermodificationmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.ordermodificationmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.ordermodificationmessage.wrote"
+        },
+        {
+          "name": "Laid.ordercancellationmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.ordercancellationmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.ordercancellationmessage.wrote"
+        },
+        {
+          "name": "Laid.newspreadordermessage",
+          "frame": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.newspreadordermessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.newspreadordermessage.wrote"
+        },
+        {
+          "name": "Laid.spreadordermodificationmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.spreadordermodificationmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.spreadordermodificationmessage.wrote"
+        },
+        {
+          "name": "Laid.spreadordercancellationmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.spreadordercancellationmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.spreadordercancellationmessage.wrote"
+        },
+        {
+          "name": "Laid.heartbeatmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.heartbeatmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.heartbeatmessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/nse/nsefo/orderentry/NseFo.OrderEntry.v9.50.Client.bf",
+      "reads": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+      "runs": [
+        {
+          "name": "Laid.spreadorderentrymessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.spreadorderentrymessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.spreadorderentrymessage.wrote"
+        },
+        {
+          "name": "Laid.orderentryrequestmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.orderentryrequestmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.orderentryrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.ordermodificationrequestmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.ordermodificationrequestmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.ordermodificationrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.ordercancellationrequestmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.ordercancellationrequestmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.ordercancellationrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.killswitchrequestmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.killswitchrequestmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.killswitchrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.signonrequestinmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.signonrequestinmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.signonrequestinmessage.wrote"
+        },
+        {
+          "name": "Laid.tradeinquirymessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.tradeinquirymessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.tradeinquirymessage.wrote"
+        },
+        {
+          "name": "Laid.userordervaluelimitupdatemessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.userordervaluelimitupdatemessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.userordervaluelimitupdatemessage.wrote"
+        },
+        {
+          "name": "Laid.useraddressunlockrequestmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.useraddressunlockrequestmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.useraddressunlockrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.pricemodificationmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.pricemodificationmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.pricemodificationmessage.wrote"
+        },
+        {
+          "name": "Laid.updatelocaldatabaseinmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.updatelocaldatabaseinmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.updatelocaldatabaseinmessage.wrote"
+        },
+        {
+          "name": "Laid.normalorderlimitupdatemessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.normalorderlimitupdatemessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.normalorderlimitupdatemessage.wrote"
+        },
+        {
+          "name": "Laid.boxsignonrequestinmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.boxsignonrequestinmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.boxsignonrequestinmessage.wrote"
+        },
+        {
+          "name": "Laid.resetuserpasswordmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.resetuserpasswordmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.resetuserpasswordmessage.wrote"
+        },
+        {
+          "name": "Laid.collateraluserstatuschangerequestmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.collateraluserstatuschangerequestmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.collateraluserstatuschangerequestmessage.wrote"
+        },
+        {
+          "name": "Laid.usertrademodifycancelstatuschangerequestmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.usertrademodifycancelstatuschangerequestmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.usertrademodifycancelstatuschangerequestmessage.wrote"
+        },
+        {
+          "name": "Laid.gatewayrouterrequestmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.gatewayrouterrequestmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.gatewayrouterrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.downloadrequestmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.downloadrequestmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.downloadrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.systeminformationinmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.systeminformationinmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.systeminformationinmessage.wrote"
+        },
+        {
+          "name": "Laid.secureboxregistrationrequestinmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.secureboxregistrationrequestinmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.secureboxregistrationrequestinmessage.wrote"
+        },
+        {
+          "name": "Laid.boxsignoffmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.boxsignoffmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.boxsignoffmessage.wrote"
+        },
+        {
+          "name": "Laid.signoffrequestinmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.signoffrequestinmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.signoffrequestinmessage.wrote"
+        },
+        {
+          "name": "Laid.heartbeatmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.heartbeatmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.heartbeatmessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "brainfuck",
+      "kind": "decoder",
+      "path": "brainfuck/protocols/nse/nsefo/orderentry/NseFo.OrderEntry.v9.50.Server.bf",
+      "reads": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+      "runs": [
+        {
+          "name": "Laid.ordercancellationconfirmationmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.ordercancellationconfirmationmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.ordercancellationconfirmationmessage.wrote"
+        },
+        {
+          "name": "Laid.orderconfirmationmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.orderconfirmationmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.orderconfirmationmessage.wrote"
+        },
+        {
+          "name": "Laid.ordermodificationconfirmationmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.ordermodificationconfirmationmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.ordermodificationconfirmationmessage.wrote"
+        },
+        {
+          "name": "Laid.orderresponsemessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.orderresponsemessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.orderresponsemessage.wrote"
+        },
+        {
+          "name": "Laid.tradeconfirmationmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.tradeconfirmationmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.tradeconfirmationmessage.wrote"
+        },
+        {
+          "name": "Laid.controlmessagetotradermessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.controlmessagetotradermessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.controlmessagetotradermessage.wrote"
+        },
+        {
+          "name": "Laid.signonrequestoutmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.signonrequestoutmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.signonrequestoutmessage.wrote"
+        },
+        {
+          "name": "Laid.contingencybroadcastmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.contingencybroadcastmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.contingencybroadcastmessage.wrote"
+        },
+        {
+          "name": "Laid.spreadbhavcopymessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.spreadbhavcopymessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.spreadbhavcopymessage.wrote"
+        },
+        {
+          "name": "Laid.signoffrequestoutmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.signoffrequestoutmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.signoffrequestoutmessage.wrote"
+        },
+        {
+          "name": "Laid.gatewayrouterresponsemessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.gatewayrouterresponsemessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.gatewayrouterresponsemessage.wrote"
+        },
+        {
+          "name": "Laid.globalindicesmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.globalindicesmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.globalindicesmessage.wrote"
+        },
+        {
+          "name": "Laid.giveupconfirmationmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.giveupconfirmationmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.giveupconfirmationmessage.wrote"
+        },
+        {
+          "name": "Laid.systeminformationoutmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.systeminformationoutmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.systeminformationoutmessage.wrote"
+        },
+        {
+          "name": "Laid.useraddressunlockconfirmmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.useraddressunlockconfirmmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.useraddressunlockconfirmmessage.wrote"
+        },
+        {
+          "name": "Laid.useraddressunlockapprovemessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.useraddressunlockapprovemessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.useraddressunlockapprovemessage.wrote"
+        },
+        {
+          "name": "Laid.industryindexreportmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.industryindexreportmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.industryindexreportmessage.wrote"
+        },
+        {
+          "name": "Laid.sectorindexreportmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.sectorindexreportmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.sectorindexreportmessage.wrote"
+        },
+        {
+          "name": "Laid.marketindexreportmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.marketindexreportmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.marketindexreportmessage.wrote"
+        },
+        {
+          "name": "Laid.dealerlimitupdatemessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.dealerlimitupdatemessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.dealerlimitupdatemessage.wrote"
+        },
+        {
+          "name": "Laid.spreadorderlimitupdatemessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.spreadorderlimitupdatemessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.spreadorderlimitupdatemessage.wrote"
+        },
+        {
+          "name": "Laid.boxsignonrequestoutmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.boxsignonrequestoutmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.boxsignonrequestoutmessage.wrote"
+        },
+        {
+          "name": "Laid.collateraluserstatuschangeresponsemessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.collateraluserstatuschangeresponsemessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.collateraluserstatuschangeresponsemessage.wrote"
+        },
+        {
+          "name": "Laid.usertrademodifycancelstatuschangeresponsemessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.usertrademodifycancelstatuschangeresponsemessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.usertrademodifycancelstatuschangeresponsemessage.wrote"
+        },
+        {
+          "name": "Laid.updatelocaldatabaseheadermessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.updatelocaldatabaseheadermessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.updatelocaldatabaseheadermessage.wrote"
+        },
+        {
+          "name": "Laid.updatelocaldatabasetrailermessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.updatelocaldatabasetrailermessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.updatelocaldatabasetrailermessage.wrote"
+        },
+        {
+          "name": "Laid.headerrecordmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.headerrecordmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.headerrecordmessage.wrote"
+        },
+        {
+          "name": "Laid.trailerrecordmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.trailerrecordmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.trailerrecordmessage.wrote"
+        },
+        {
+          "name": "Laid.secureboxregistrationresponseoutmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.secureboxregistrationresponseoutmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.secureboxregistrationresponseoutmessage.wrote"
+        }
+      ]
+    },
+    {
       "language": "emojicode",
       "kind": "feed",
       "venue": "IexEquities",
@@ -1542,6 +2192,196 @@
     {
       "language": "emojicode",
       "kind": "gateway",
+      "venue": "NseFo",
+      "path": "emojicode/exchanges/nsefo/NseFo.Gateway.emojic",
+      "reads": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+      "writes": "Nse.NseFo.BasicMatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "emojicode/exchanges/nsefo/runs/gateway/crossing.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/gateway/crossing.wrote"
+        },
+        {
+          "name": "sweeping",
+          "frame": "emojicode/exchanges/nsefo/runs/gateway/sweeping.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/gateway/sweeping.wrote"
+        },
+        {
+          "name": "selling",
+          "frame": "emojicode/exchanges/nsefo/runs/gateway/selling.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/gateway/selling.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "emojicode/exchanges/nsefo/runs/gateway/cancelling.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/gateway/cancelling.wrote"
+        },
+        {
+          "name": "day",
+          "frame": "emojicode/exchanges/nsefo/runs/gateway/day.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/gateway/day.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "market",
+      "venue": "NseFo",
+      "path": "emojicode/exchanges/nsefo/NseFo.Market.emojic",
+      "reads": "Nse.NseFo.BasicMatchingEngine.Ipc.v2026",
+      "writes": "Nse.NseFo.BasicMatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "emojicode/exchanges/nsefo/runs/market/crossing.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/market/crossing.wrote"
+        },
+        {
+          "name": "sweeping",
+          "frame": "emojicode/exchanges/nsefo/runs/market/sweeping.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/market/sweeping.wrote"
+        },
+        {
+          "name": "selling",
+          "frame": "emojicode/exchanges/nsefo/runs/market/selling.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/market/selling.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "emojicode/exchanges/nsefo/runs/market/cancelling.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/market/cancelling.wrote"
+        },
+        {
+          "name": "day",
+          "frame": "emojicode/exchanges/nsefo/runs/market/day.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/market/day.wrote"
+        },
+        {
+          "name": "entered-crossing",
+          "frame": "emojicode/exchanges/nsefo/runs/market/entered-crossing.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/market/entered-crossing.wrote"
+        },
+        {
+          "name": "entered-sweeping",
+          "frame": "emojicode/exchanges/nsefo/runs/market/entered-sweeping.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/market/entered-sweeping.wrote"
+        },
+        {
+          "name": "entered-selling",
+          "frame": "emojicode/exchanges/nsefo/runs/market/entered-selling.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/market/entered-selling.wrote"
+        },
+        {
+          "name": "entered-cancelling",
+          "frame": "emojicode/exchanges/nsefo/runs/market/entered-cancelling.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/market/entered-cancelling.wrote"
+        },
+        {
+          "name": "entered-day",
+          "frame": "emojicode/exchanges/nsefo/runs/market/entered-day.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/market/entered-day.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "feed",
+      "venue": "NseFo",
+      "path": "emojicode/exchanges/nsefo/NseFo.Mtbt.Feed.emojic",
+      "reads": "Nse.NseFo.BasicMatchingEngine.Ipc.v2026",
+      "writes": "Nse.NseFo.Mtbt.Tbt.v7.1",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/crossing.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/mtbt.feed/crossing.wrote"
+        },
+        {
+          "name": "sweeping",
+          "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/sweeping.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/mtbt.feed/sweeping.wrote"
+        },
+        {
+          "name": "selling",
+          "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/selling.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/mtbt.feed/selling.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/cancelling.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/mtbt.feed/cancelling.wrote"
+        },
+        {
+          "name": "day",
+          "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/day.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/mtbt.feed/day.wrote"
+        },
+        {
+          "name": "entered-crossing",
+          "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-crossing.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-crossing.wrote"
+        },
+        {
+          "name": "entered-sweeping",
+          "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-sweeping.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-sweeping.wrote"
+        },
+        {
+          "name": "entered-selling",
+          "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-selling.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-selling.wrote"
+        },
+        {
+          "name": "entered-cancelling",
+          "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-cancelling.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-cancelling.wrote"
+        },
+        {
+          "name": "entered-day",
+          "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-day.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-day.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "responder",
+      "venue": "NseFo",
+      "path": "emojicode/exchanges/nsefo/NseFo.Responder.emojic",
+      "reads": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+      "writes": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "emojicode/exchanges/nsefo/runs/responder/crossing.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/responder/crossing.wrote"
+        },
+        {
+          "name": "sweeping",
+          "frame": "emojicode/exchanges/nsefo/runs/responder/sweeping.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/responder/sweeping.wrote"
+        },
+        {
+          "name": "selling",
+          "frame": "emojicode/exchanges/nsefo/runs/responder/selling.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/responder/selling.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "emojicode/exchanges/nsefo/runs/responder/cancelling.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/responder/cancelling.wrote"
+        },
+        {
+          "name": "day",
+          "frame": "emojicode/exchanges/nsefo/runs/responder/day.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/responder/day.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "gateway",
       "venue": "NsmEquities",
       "path": "emojicode/exchanges/nsmequities/NsmEquities.Gateway.emojic",
       "reads": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
@@ -1576,6 +2416,11 @@
           "name": "day",
           "frame": "emojicode/exchanges/nsmequities/runs/gateway/day.frame",
           "wrote": "emojicode/exchanges/nsmequities/runs/gateway/day.wrote"
+        },
+        {
+          "name": "rejecting",
+          "frame": "emojicode/exchanges/nsmequities/runs/gateway/rejecting.frame",
+          "wrote": "emojicode/exchanges/nsmequities/runs/gateway/rejecting.wrote"
         }
       ]
     },
@@ -1636,6 +2481,51 @@
           "name": "entered-day",
           "frame": "emojicode/exchanges/nsmequities/runs/market/entered-day.frame",
           "wrote": "emojicode/exchanges/nsmequities/runs/market/entered-day.wrote"
+        },
+        {
+          "name": "entered-rejecting",
+          "frame": "emojicode/exchanges/nsmequities/runs/market/entered-rejecting.frame",
+          "wrote": "emojicode/exchanges/nsmequities/runs/market/entered-rejecting.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "responder",
+      "venue": "NsmEquities",
+      "path": "emojicode/exchanges/nsmequities/NsmEquities.Responder.emojic",
+      "reads": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
+      "writes": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
+      "runs": [
+        {
+          "name": "crossing",
+          "frame": "emojicode/exchanges/nsmequities/runs/responder/crossing.frame",
+          "wrote": "emojicode/exchanges/nsmequities/runs/responder/crossing.wrote"
+        },
+        {
+          "name": "sweeping",
+          "frame": "emojicode/exchanges/nsmequities/runs/responder/sweeping.frame",
+          "wrote": "emojicode/exchanges/nsmequities/runs/responder/sweeping.wrote"
+        },
+        {
+          "name": "selling",
+          "frame": "emojicode/exchanges/nsmequities/runs/responder/selling.frame",
+          "wrote": "emojicode/exchanges/nsmequities/runs/responder/selling.wrote"
+        },
+        {
+          "name": "cancelling",
+          "frame": "emojicode/exchanges/nsmequities/runs/responder/cancelling.frame",
+          "wrote": "emojicode/exchanges/nsmequities/runs/responder/cancelling.wrote"
+        },
+        {
+          "name": "day",
+          "frame": "emojicode/exchanges/nsmequities/runs/responder/day.frame",
+          "wrote": "emojicode/exchanges/nsmequities/runs/responder/day.wrote"
+        },
+        {
+          "name": "rejecting",
+          "frame": "emojicode/exchanges/nsmequities/runs/responder/rejecting.frame",
+          "wrote": "emojicode/exchanges/nsmequities/runs/responder/rejecting.wrote"
         }
       ]
     },
@@ -1658,9 +2548,19 @@
           "wrote": "emojicode/exchanges/nsmequities/runs/soupbin/NotLoggedIn.LoginRequest.wrote"
         },
         {
+          "name": "NotLoggedIn.SessionDebug",
+          "frame": "emojicode/exchanges/nsmequities/runs/soupbin/NotLoggedIn.SessionDebug.frame",
+          "wrote": "emojicode/exchanges/nsmequities/runs/soupbin/NotLoggedIn.SessionDebug.wrote"
+        },
+        {
           "name": "LoggedIn.SessionLogout",
           "frame": "emojicode/exchanges/nsmequities/runs/soupbin/LoggedIn.SessionLogout.frame",
           "wrote": "emojicode/exchanges/nsmequities/runs/soupbin/LoggedIn.SessionLogout.wrote"
+        },
+        {
+          "name": "LoggedIn.SessionDebug",
+          "frame": "emojicode/exchanges/nsmequities/runs/soupbin/LoggedIn.SessionDebug.frame",
+          "wrote": "emojicode/exchanges/nsmequities/runs/soupbin/LoggedIn.SessionDebug.wrote"
         },
         {
           "name": "LoggedIn.SessionHeartbeat",
@@ -1731,6 +2631,11 @@
           "name": "entered-day",
           "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-day.frame",
           "wrote": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-day.wrote"
+        },
+        {
+          "name": "entered-rejecting",
+          "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-rejecting.frame",
+          "wrote": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-rejecting.wrote"
         }
       ]
     },
@@ -2273,6 +3178,11 @@
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.newordermessage.wrote"
         },
         {
+          "name": "Laid.phaseannouncedmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaseannouncedmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaseannouncedmessage.wrote"
+        },
+        {
           "name": "Laid.trademessage",
           "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.trademessage.frame",
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.trademessage.wrote"
@@ -2303,6 +3213,11 @@
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.imbalanceindicatedmessage.wrote"
         },
         {
+          "name": "Laid.tradebrokenmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.tradebrokenmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.tradebrokenmessage.wrote"
+        },
+        {
           "name": "Laid.ordercanceledmessage",
           "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.ordercanceledmessage.frame",
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.ordercanceledmessage.wrote"
@@ -2311,6 +3226,11 @@
           "name": "Laid.ordereliminatedmessage",
           "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.ordereliminatedmessage.frame",
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.ordereliminatedmessage.wrote"
+        },
+        {
+          "name": "Laid.phaserequestmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaserequestmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaserequestmessage.wrote"
         },
         {
           "name": "Laid.crosscompletedmessage",
@@ -2333,6 +3253,11 @@
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.orderacceptedmessage.wrote"
         },
         {
+          "name": "Laid.breaktrademessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.breaktrademessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.breaktrademessage.wrote"
+        },
+        {
           "name": "Laid.orderrefusedmessage",
           "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.orderrefusedmessage.frame",
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.orderrefusedmessage.wrote"
@@ -2346,16 +3271,6 @@
           "name": "Laid.reducerefusedmessage",
           "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.reducerefusedmessage.frame",
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.reducerefusedmessage.wrote"
-        },
-        {
-          "name": "Laid.phaseannouncedmessage",
-          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaseannouncedmessage.frame",
-          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaseannouncedmessage.wrote"
-        },
-        {
-          "name": "Laid.phaserequestmessage",
-          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaserequestmessage.frame",
-          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Laid.phaserequestmessage.wrote"
         },
         {
           "name": "Laid.bookendmessage",
@@ -2852,6 +3767,461 @@
           "wrote": "emojicode/protocols/nasdaq/nsmequities/totalview/frames/totalview.itch.v5.0.2026.udp/Laid.endofsession.wrote"
         }
       ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/nse/nsefo/basicmatchingengine/NseFo.BasicMatchingEngine.v2026.emojic",
+      "reads": "Nse.NseFo.BasicMatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "Laid.trademessage",
+          "frame": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.trademessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.trademessage.wrote"
+        },
+        {
+          "name": "Laid.newordermessage",
+          "frame": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.newordermessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.newordermessage.wrote"
+        },
+        {
+          "name": "Laid.orderrestedmessage",
+          "frame": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.orderrestedmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.orderrestedmessage.wrote"
+        },
+        {
+          "name": "Laid.ordercanceledmessage",
+          "frame": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.ordercanceledmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.ordercanceledmessage.wrote"
+        },
+        {
+          "name": "Laid.orderrefusedmessage",
+          "frame": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.orderrefusedmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.orderrefusedmessage.wrote"
+        },
+        {
+          "name": "Laid.cancelordermessage",
+          "frame": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.cancelordermessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.cancelordermessage.wrote"
+        },
+        {
+          "name": "Laid.phaseannouncedmessage",
+          "frame": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.phaseannouncedmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.phaseannouncedmessage.wrote"
+        },
+        {
+          "name": "Laid.phaserequestmessage",
+          "frame": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.phaserequestmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.phaserequestmessage.wrote"
+        },
+        {
+          "name": "Laid.heartbeatmessage",
+          "frame": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.heartbeatmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/basicmatchingengine/frames/basicmatchingengine.v2026/Laid.heartbeatmessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/nse/nsefo/matchingengine/NseFo.MatchingEngine.v2026.emojic",
+      "reads": "Nse.NseFo.MatchingEngine.Ipc.v2026",
+      "runs": [
+        {
+          "name": "Laid.trademessage",
+          "frame": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.trademessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.trademessage.wrote"
+        },
+        {
+          "name": "Laid.newordermessage",
+          "frame": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.newordermessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.newordermessage.wrote"
+        },
+        {
+          "name": "Laid.orderrestedmessage",
+          "frame": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.orderrestedmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.orderrestedmessage.wrote"
+        },
+        {
+          "name": "Laid.ordercanceledmessage",
+          "frame": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.ordercanceledmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.ordercanceledmessage.wrote"
+        },
+        {
+          "name": "Laid.crosscompletedmessage",
+          "frame": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.crosscompletedmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.crosscompletedmessage.wrote"
+        },
+        {
+          "name": "Laid.imbalanceindicatedmessage",
+          "frame": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.imbalanceindicatedmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.imbalanceindicatedmessage.wrote"
+        },
+        {
+          "name": "Laid.orderrefusedmessage",
+          "frame": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.orderrefusedmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.orderrefusedmessage.wrote"
+        },
+        {
+          "name": "Laid.cancelordermessage",
+          "frame": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.cancelordermessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.cancelordermessage.wrote"
+        },
+        {
+          "name": "Laid.phaseannouncedmessage",
+          "frame": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.phaseannouncedmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.phaseannouncedmessage.wrote"
+        },
+        {
+          "name": "Laid.phaserequestmessage",
+          "frame": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.phaserequestmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.phaserequestmessage.wrote"
+        },
+        {
+          "name": "Laid.heartbeatmessage",
+          "frame": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.heartbeatmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.heartbeatmessage.wrote"
+        },
+        {
+          "name": "Laid.imbalancerequestmessage",
+          "frame": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.imbalancerequestmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/matchingengine/frames/matchingengine.v2026/Laid.imbalancerequestmessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/nse/nsefo/mtbt/NseFo.Mtbt.v7.1.emojic",
+      "reads": "Nse.NseFo.Mtbt.Tbt.v7.1",
+      "runs": [
+        {
+          "name": "Laid.trademessage",
+          "frame": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.trademessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.trademessage.wrote"
+        },
+        {
+          "name": "Laid.spreadtrademessage",
+          "frame": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.spreadtrademessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.spreadtrademessage.wrote"
+        },
+        {
+          "name": "Laid.tradecancelmessage",
+          "frame": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.tradecancelmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.tradecancelmessage.wrote"
+        },
+        {
+          "name": "Laid.newordermessage",
+          "frame": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.newordermessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.newordermessage.wrote"
+        },
+        {
+          "name": "Laid.ordermodificationmessage",
+          "frame": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.ordermodificationmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.ordermodificationmessage.wrote"
+        },
+        {
+          "name": "Laid.ordercancellationmessage",
+          "frame": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.ordercancellationmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.ordercancellationmessage.wrote"
+        },
+        {
+          "name": "Laid.newspreadordermessage",
+          "frame": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.newspreadordermessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.newspreadordermessage.wrote"
+        },
+        {
+          "name": "Laid.spreadordermodificationmessage",
+          "frame": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.spreadordermodificationmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.spreadordermodificationmessage.wrote"
+        },
+        {
+          "name": "Laid.spreadordercancellationmessage",
+          "frame": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.spreadordercancellationmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.spreadordercancellationmessage.wrote"
+        },
+        {
+          "name": "Laid.heartbeatmessage",
+          "frame": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.heartbeatmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/mtbt/frames/mtbt.v7.1/Laid.heartbeatmessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/nse/nsefo/orderentry/NseFo.OrderEntry.v9.50.Client.emojic",
+      "reads": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+      "runs": [
+        {
+          "name": "Laid.spreadorderentrymessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.spreadorderentrymessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.spreadorderentrymessage.wrote"
+        },
+        {
+          "name": "Laid.orderentryrequestmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.orderentryrequestmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.orderentryrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.ordermodificationrequestmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.ordermodificationrequestmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.ordermodificationrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.ordercancellationrequestmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.ordercancellationrequestmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.ordercancellationrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.killswitchrequestmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.killswitchrequestmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.killswitchrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.signonrequestinmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.signonrequestinmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.signonrequestinmessage.wrote"
+        },
+        {
+          "name": "Laid.tradeinquirymessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.tradeinquirymessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.tradeinquirymessage.wrote"
+        },
+        {
+          "name": "Laid.userordervaluelimitupdatemessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.userordervaluelimitupdatemessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.userordervaluelimitupdatemessage.wrote"
+        },
+        {
+          "name": "Laid.useraddressunlockrequestmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.useraddressunlockrequestmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.useraddressunlockrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.pricemodificationmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.pricemodificationmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.pricemodificationmessage.wrote"
+        },
+        {
+          "name": "Laid.updatelocaldatabaseinmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.updatelocaldatabaseinmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.updatelocaldatabaseinmessage.wrote"
+        },
+        {
+          "name": "Laid.normalorderlimitupdatemessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.normalorderlimitupdatemessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.normalorderlimitupdatemessage.wrote"
+        },
+        {
+          "name": "Laid.boxsignonrequestinmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.boxsignonrequestinmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.boxsignonrequestinmessage.wrote"
+        },
+        {
+          "name": "Laid.resetuserpasswordmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.resetuserpasswordmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.resetuserpasswordmessage.wrote"
+        },
+        {
+          "name": "Laid.collateraluserstatuschangerequestmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.collateraluserstatuschangerequestmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.collateraluserstatuschangerequestmessage.wrote"
+        },
+        {
+          "name": "Laid.usertrademodifycancelstatuschangerequestmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.usertrademodifycancelstatuschangerequestmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.usertrademodifycancelstatuschangerequestmessage.wrote"
+        },
+        {
+          "name": "Laid.gatewayrouterrequestmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.gatewayrouterrequestmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.gatewayrouterrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.downloadrequestmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.downloadrequestmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.downloadrequestmessage.wrote"
+        },
+        {
+          "name": "Laid.systeminformationinmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.systeminformationinmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.systeminformationinmessage.wrote"
+        },
+        {
+          "name": "Laid.secureboxregistrationrequestinmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.secureboxregistrationrequestinmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.secureboxregistrationrequestinmessage.wrote"
+        },
+        {
+          "name": "Laid.boxsignoffmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.boxsignoffmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.boxsignoffmessage.wrote"
+        },
+        {
+          "name": "Laid.signoffrequestinmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.signoffrequestinmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.signoffrequestinmessage.wrote"
+        },
+        {
+          "name": "Laid.heartbeatmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.heartbeatmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.client/Laid.heartbeatmessage.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "decoder",
+      "path": "emojicode/protocols/nse/nsefo/orderentry/NseFo.OrderEntry.v9.50.Server.emojic",
+      "reads": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+      "runs": [
+        {
+          "name": "Laid.ordercancellationconfirmationmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.ordercancellationconfirmationmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.ordercancellationconfirmationmessage.wrote"
+        },
+        {
+          "name": "Laid.orderconfirmationmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.orderconfirmationmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.orderconfirmationmessage.wrote"
+        },
+        {
+          "name": "Laid.ordermodificationconfirmationmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.ordermodificationconfirmationmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.ordermodificationconfirmationmessage.wrote"
+        },
+        {
+          "name": "Laid.orderresponsemessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.orderresponsemessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.orderresponsemessage.wrote"
+        },
+        {
+          "name": "Laid.tradeconfirmationmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.tradeconfirmationmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.tradeconfirmationmessage.wrote"
+        },
+        {
+          "name": "Laid.controlmessagetotradermessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.controlmessagetotradermessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.controlmessagetotradermessage.wrote"
+        },
+        {
+          "name": "Laid.signonrequestoutmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.signonrequestoutmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.signonrequestoutmessage.wrote"
+        },
+        {
+          "name": "Laid.contingencybroadcastmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.contingencybroadcastmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.contingencybroadcastmessage.wrote"
+        },
+        {
+          "name": "Laid.spreadbhavcopymessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.spreadbhavcopymessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.spreadbhavcopymessage.wrote"
+        },
+        {
+          "name": "Laid.signoffrequestoutmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.signoffrequestoutmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.signoffrequestoutmessage.wrote"
+        },
+        {
+          "name": "Laid.gatewayrouterresponsemessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.gatewayrouterresponsemessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.gatewayrouterresponsemessage.wrote"
+        },
+        {
+          "name": "Laid.globalindicesmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.globalindicesmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.globalindicesmessage.wrote"
+        },
+        {
+          "name": "Laid.giveupconfirmationmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.giveupconfirmationmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.giveupconfirmationmessage.wrote"
+        },
+        {
+          "name": "Laid.systeminformationoutmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.systeminformationoutmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.systeminformationoutmessage.wrote"
+        },
+        {
+          "name": "Laid.useraddressunlockconfirmmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.useraddressunlockconfirmmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.useraddressunlockconfirmmessage.wrote"
+        },
+        {
+          "name": "Laid.useraddressunlockapprovemessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.useraddressunlockapprovemessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.useraddressunlockapprovemessage.wrote"
+        },
+        {
+          "name": "Laid.industryindexreportmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.industryindexreportmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.industryindexreportmessage.wrote"
+        },
+        {
+          "name": "Laid.sectorindexreportmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.sectorindexreportmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.sectorindexreportmessage.wrote"
+        },
+        {
+          "name": "Laid.marketindexreportmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.marketindexreportmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.marketindexreportmessage.wrote"
+        },
+        {
+          "name": "Laid.dealerlimitupdatemessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.dealerlimitupdatemessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.dealerlimitupdatemessage.wrote"
+        },
+        {
+          "name": "Laid.spreadorderlimitupdatemessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.spreadorderlimitupdatemessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.spreadorderlimitupdatemessage.wrote"
+        },
+        {
+          "name": "Laid.boxsignonrequestoutmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.boxsignonrequestoutmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.boxsignonrequestoutmessage.wrote"
+        },
+        {
+          "name": "Laid.collateraluserstatuschangeresponsemessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.collateraluserstatuschangeresponsemessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.collateraluserstatuschangeresponsemessage.wrote"
+        },
+        {
+          "name": "Laid.usertrademodifycancelstatuschangeresponsemessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.usertrademodifycancelstatuschangeresponsemessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.usertrademodifycancelstatuschangeresponsemessage.wrote"
+        },
+        {
+          "name": "Laid.updatelocaldatabaseheadermessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.updatelocaldatabaseheadermessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.updatelocaldatabaseheadermessage.wrote"
+        },
+        {
+          "name": "Laid.updatelocaldatabasetrailermessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.updatelocaldatabasetrailermessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.updatelocaldatabasetrailermessage.wrote"
+        },
+        {
+          "name": "Laid.headerrecordmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.headerrecordmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.headerrecordmessage.wrote"
+        },
+        {
+          "name": "Laid.trailerrecordmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.trailerrecordmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.trailerrecordmessage.wrote"
+        },
+        {
+          "name": "Laid.secureboxregistrationresponseoutmessage",
+          "frame": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.secureboxregistrationresponseoutmessage.frame",
+          "wrote": "emojicode/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Laid.secureboxregistrationresponseoutmessage.wrote"
+        }
+      ]
     }
   ],
   "joins": [
@@ -2941,6 +4311,76 @@
     },
     {
       "language": "brainfuck",
+      "venue": "NseFo",
+      "run": "cancelling",
+      "wrote": "brainfuck/exchanges/nsefo/runs/gateway/cancelling.wrote",
+      "frame": "brainfuck/exchanges/nsefo/runs/market/entered-cancelling.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NseFo",
+      "run": "crossing",
+      "wrote": "brainfuck/exchanges/nsefo/runs/gateway/crossing.wrote",
+      "frame": "brainfuck/exchanges/nsefo/runs/market/entered-crossing.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NseFo",
+      "run": "day",
+      "wrote": "brainfuck/exchanges/nsefo/runs/gateway/day.wrote",
+      "frame": "brainfuck/exchanges/nsefo/runs/market/entered-day.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NseFo",
+      "run": "cancelling",
+      "wrote": "brainfuck/exchanges/nsefo/runs/market/cancelling.wrote",
+      "frame": "brainfuck/exchanges/nsefo/runs/mtbt.feed/cancelling.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NseFo",
+      "run": "crossing",
+      "wrote": "brainfuck/exchanges/nsefo/runs/market/crossing.wrote",
+      "frame": "brainfuck/exchanges/nsefo/runs/mtbt.feed/crossing.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NseFo",
+      "run": "day",
+      "wrote": "brainfuck/exchanges/nsefo/runs/market/day.wrote",
+      "frame": "brainfuck/exchanges/nsefo/runs/mtbt.feed/day.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NseFo",
+      "run": "entered-cancelling",
+      "wrote": "brainfuck/exchanges/nsefo/runs/market/entered-cancelling.wrote",
+      "frame": "brainfuck/exchanges/nsefo/runs/mtbt.feed/entered-cancelling.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NseFo",
+      "run": "entered-crossing",
+      "wrote": "brainfuck/exchanges/nsefo/runs/market/entered-crossing.wrote",
+      "frame": "brainfuck/exchanges/nsefo/runs/mtbt.feed/entered-crossing.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NseFo",
+      "run": "entered-day",
+      "wrote": "brainfuck/exchanges/nsefo/runs/market/entered-day.wrote",
+      "frame": "brainfuck/exchanges/nsefo/runs/mtbt.feed/entered-day.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NseFo",
+      "run": "sharing",
+      "wrote": "brainfuck/exchanges/nsefo/runs/market/sharing.wrote",
+      "frame": "brainfuck/exchanges/nsefo/runs/mtbt.feed/sharing.frame"
+    },
+    {
+      "language": "brainfuck",
       "venue": "NsmEquities",
       "run": "cancelling",
       "wrote": "brainfuck/exchanges/nsmequities/runs/gateway/cancelling.wrote",
@@ -2959,6 +4399,13 @@
       "run": "day",
       "wrote": "brainfuck/exchanges/nsmequities/runs/gateway/day.wrote",
       "frame": "brainfuck/exchanges/nsmequities/runs/market/entered-day.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NsmEquities",
+      "run": "rejecting",
+      "wrote": "brainfuck/exchanges/nsmequities/runs/gateway/rejecting.wrote",
+      "frame": "brainfuck/exchanges/nsmequities/runs/market/entered-rejecting.frame"
     },
     {
       "language": "brainfuck",
@@ -3001,6 +4448,13 @@
       "run": "entered-day",
       "wrote": "brainfuck/exchanges/nsmequities/runs/market/entered-day.wrote",
       "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/entered-day.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NsmEquities",
+      "run": "entered-rejecting",
+      "wrote": "brainfuck/exchanges/nsmequities/runs/market/entered-rejecting.wrote",
+      "frame": "brainfuck/exchanges/nsmequities/runs/totalview.feed/entered-rejecting.frame"
     },
     {
       "language": "brainfuck",
@@ -3116,6 +4570,111 @@
     },
     {
       "language": "emojicode",
+      "venue": "NseFo",
+      "run": "cancelling",
+      "wrote": "emojicode/exchanges/nsefo/runs/gateway/cancelling.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/market/entered-cancelling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "crossing",
+      "wrote": "emojicode/exchanges/nsefo/runs/gateway/crossing.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/market/entered-crossing.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "day",
+      "wrote": "emojicode/exchanges/nsefo/runs/gateway/day.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/market/entered-day.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "selling",
+      "wrote": "emojicode/exchanges/nsefo/runs/gateway/selling.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/market/entered-selling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "sweeping",
+      "wrote": "emojicode/exchanges/nsefo/runs/gateway/sweeping.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/market/entered-sweeping.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "cancelling",
+      "wrote": "emojicode/exchanges/nsefo/runs/market/cancelling.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/cancelling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "crossing",
+      "wrote": "emojicode/exchanges/nsefo/runs/market/crossing.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/crossing.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "day",
+      "wrote": "emojicode/exchanges/nsefo/runs/market/day.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/day.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "entered-cancelling",
+      "wrote": "emojicode/exchanges/nsefo/runs/market/entered-cancelling.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-cancelling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "entered-crossing",
+      "wrote": "emojicode/exchanges/nsefo/runs/market/entered-crossing.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-crossing.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "entered-day",
+      "wrote": "emojicode/exchanges/nsefo/runs/market/entered-day.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-day.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "entered-selling",
+      "wrote": "emojicode/exchanges/nsefo/runs/market/entered-selling.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-selling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "entered-sweeping",
+      "wrote": "emojicode/exchanges/nsefo/runs/market/entered-sweeping.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-sweeping.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "selling",
+      "wrote": "emojicode/exchanges/nsefo/runs/market/selling.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/selling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "sweeping",
+      "wrote": "emojicode/exchanges/nsefo/runs/market/sweeping.wrote",
+      "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/sweeping.frame"
+    },
+    {
+      "language": "emojicode",
       "venue": "NsmEquities",
       "run": "cancelling",
       "wrote": "emojicode/exchanges/nsmequities/runs/gateway/cancelling.wrote",
@@ -3134,6 +4693,13 @@
       "run": "day",
       "wrote": "emojicode/exchanges/nsmequities/runs/gateway/day.wrote",
       "frame": "emojicode/exchanges/nsmequities/runs/market/entered-day.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "rejecting",
+      "wrote": "emojicode/exchanges/nsmequities/runs/gateway/rejecting.wrote",
+      "frame": "emojicode/exchanges/nsmequities/runs/market/entered-rejecting.frame"
     },
     {
       "language": "emojicode",
@@ -3194,6 +4760,13 @@
     {
       "language": "emojicode",
       "venue": "NsmEquities",
+      "run": "entered-rejecting",
+      "wrote": "emojicode/exchanges/nsmequities/runs/market/entered-rejecting.wrote",
+      "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-rejecting.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
       "run": "entered-selling",
       "wrote": "emojicode/exchanges/nsmequities/runs/market/entered-selling.wrote",
       "frame": "emojicode/exchanges/nsmequities/runs/totalview.feed/entered-selling.frame"
@@ -3221,6 +4794,39 @@
     }
   ],
   "gathers": [
+    {
+      "language": "brainfuck",
+      "venue": "NseFo",
+      "run": "cancelling",
+      "parts": [
+        "brainfuck/exchanges/nsefo/runs/gateway/cancelling.frame",
+        "brainfuck/exchanges/nsefo/runs/market/entered-cancelling.wrote"
+      ],
+      "between": "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "frame": "brainfuck/exchanges/nsefo/runs/responder/cancelling.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NseFo",
+      "run": "crossing",
+      "parts": [
+        "brainfuck/exchanges/nsefo/runs/gateway/crossing.frame",
+        "brainfuck/exchanges/nsefo/runs/market/entered-crossing.wrote"
+      ],
+      "between": "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "frame": "brainfuck/exchanges/nsefo/runs/responder/crossing.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NseFo",
+      "run": "day",
+      "parts": [
+        "brainfuck/exchanges/nsefo/runs/gateway/day.frame",
+        "brainfuck/exchanges/nsefo/runs/market/entered-day.wrote"
+      ],
+      "between": "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "frame": "brainfuck/exchanges/nsefo/runs/responder/day.frame"
+    },
     {
       "language": "brainfuck",
       "venue": "NsmEquities",
@@ -3253,6 +4859,138 @@
       ],
       "between": "0000",
       "frame": "brainfuck/exchanges/nsmequities/runs/responder/day.frame"
+    },
+    {
+      "language": "brainfuck",
+      "venue": "NsmEquities",
+      "run": "rejecting",
+      "parts": [
+        "brainfuck/exchanges/nsmequities/runs/gateway/rejecting.frame",
+        "brainfuck/exchanges/nsmequities/runs/market/entered-rejecting.wrote"
+      ],
+      "between": "0000",
+      "frame": "brainfuck/exchanges/nsmequities/runs/responder/rejecting.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "cancelling",
+      "parts": [
+        "emojicode/exchanges/nsefo/runs/gateway/cancelling.frame",
+        "emojicode/exchanges/nsefo/runs/market/entered-cancelling.wrote"
+      ],
+      "between": "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "frame": "emojicode/exchanges/nsefo/runs/responder/cancelling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "crossing",
+      "parts": [
+        "emojicode/exchanges/nsefo/runs/gateway/crossing.frame",
+        "emojicode/exchanges/nsefo/runs/market/entered-crossing.wrote"
+      ],
+      "between": "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "frame": "emojicode/exchanges/nsefo/runs/responder/crossing.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "day",
+      "parts": [
+        "emojicode/exchanges/nsefo/runs/gateway/day.frame",
+        "emojicode/exchanges/nsefo/runs/market/entered-day.wrote"
+      ],
+      "between": "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "frame": "emojicode/exchanges/nsefo/runs/responder/day.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "selling",
+      "parts": [
+        "emojicode/exchanges/nsefo/runs/gateway/selling.frame",
+        "emojicode/exchanges/nsefo/runs/market/entered-selling.wrote"
+      ],
+      "between": "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "frame": "emojicode/exchanges/nsefo/runs/responder/selling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NseFo",
+      "run": "sweeping",
+      "parts": [
+        "emojicode/exchanges/nsefo/runs/gateway/sweeping.frame",
+        "emojicode/exchanges/nsefo/runs/market/entered-sweeping.wrote"
+      ],
+      "between": "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "frame": "emojicode/exchanges/nsefo/runs/responder/sweeping.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "cancelling",
+      "parts": [
+        "emojicode/exchanges/nsmequities/runs/gateway/cancelling.frame",
+        "emojicode/exchanges/nsmequities/runs/market/entered-cancelling.wrote"
+      ],
+      "between": "0000",
+      "frame": "emojicode/exchanges/nsmequities/runs/responder/cancelling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "crossing",
+      "parts": [
+        "emojicode/exchanges/nsmequities/runs/gateway/crossing.frame",
+        "emojicode/exchanges/nsmequities/runs/market/entered-crossing.wrote"
+      ],
+      "between": "0000",
+      "frame": "emojicode/exchanges/nsmequities/runs/responder/crossing.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "day",
+      "parts": [
+        "emojicode/exchanges/nsmequities/runs/gateway/day.frame",
+        "emojicode/exchanges/nsmequities/runs/market/entered-day.wrote"
+      ],
+      "between": "0000",
+      "frame": "emojicode/exchanges/nsmequities/runs/responder/day.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "rejecting",
+      "parts": [
+        "emojicode/exchanges/nsmequities/runs/gateway/rejecting.frame",
+        "emojicode/exchanges/nsmequities/runs/market/entered-rejecting.wrote"
+      ],
+      "between": "0000",
+      "frame": "emojicode/exchanges/nsmequities/runs/responder/rejecting.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "selling",
+      "parts": [
+        "emojicode/exchanges/nsmequities/runs/gateway/selling.frame",
+        "emojicode/exchanges/nsmequities/runs/market/entered-selling.wrote"
+      ],
+      "between": "0000",
+      "frame": "emojicode/exchanges/nsmequities/runs/responder/selling.frame"
+    },
+    {
+      "language": "emojicode",
+      "venue": "NsmEquities",
+      "run": "sweeping",
+      "parts": [
+        "emojicode/exchanges/nsmequities/runs/gateway/sweeping.frame",
+        "emojicode/exchanges/nsmequities/runs/market/entered-sweeping.wrote"
+      ],
+      "between": "0000",
+      "frame": "emojicode/exchanges/nsmequities/runs/responder/sweeping.frame"
     }
   ]
 }

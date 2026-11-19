@@ -2,8 +2,9 @@
 """Plays a run through a whole venue and shows what happened, step by step.
 
 A venue here is several programs that join: a gateway reads a client's packets and writes the
-venue's own orders, a market reads those and writes the venue's own events, and each feed reads
-those and writes market data. This runs them one after another on a published run, and says what
+venue's own orders, a market reads those and writes the venue's own events, each feed reads
+those and writes market data, and a responder answers the client from what the gateway read and
+the market wrote. This runs them one after another on a published run, and says what
 each one read and wrote as a person would say it, with the book drawn after every step that
 changed it.
 
@@ -23,6 +24,7 @@ is the frames published for it; check.py is what makes that claim.
 
 import json
 import pathlib
+import struct
 import sys
 import time
 
@@ -40,6 +42,7 @@ DAY = "day"
 MESSAGES = ".messages.json"
 REQUESTS = ".requests.json"
 PACKETS = ".packets.json"
+ANSWERS = ".answers.json"
 
 # what a field is to an engine, as a venue's model marks it
 ORDER = "Order"
@@ -67,6 +70,11 @@ def integer(field, data):
 
 def stated(field, data):
     """What a field holds, said as a person would read it."""
+    if field.get("float"):
+        number = struct.unpack((">" if field["endian"] == "big" else "<") + ("d" if len(data) == 8 else "f"), data)[0]
+
+        return str(int(number)) if number.is_integer() else str(number)
+
     held = integer(field, data)
 
     for name, code in field.get("values", {}).items():
@@ -185,11 +193,12 @@ class Ran:
 def framed(frame, data):
     """Where each frame of a stream starts and ends, by the length each one states."""
     width = frame["length"]["width"]
+    stands = frame["length"]["at"]
     parts = []
     at = 0
 
-    while at + width <= len(data):
-        whole = integer(frame["length"], data[at:at + width]) + frame["addend"]
+    while at + stands + width <= len(data):
+        whole = integer(frame["length"], data[at + stands:at + stands + width]) + frame["addend"]
 
         if whole <= 0 or at + whole > len(data):
             break
@@ -245,8 +254,9 @@ def listed(by_name):
 def event(messages, data, start):
     """One of a market's own messages, as (what it does, its fields by role, a line saying it)."""
     frame = messages["frame"]
-    header = frame["length"]["width"] + frame["type"]["width"]
-    code = integer(frame["type"], data[start + frame["length"]["width"]:start + header])
+    header = frame["opening"]
+    typed = start + frame["type"]["at"]
+    code = integer(frame["type"], data[typed:typed + frame["type"]["width"]])
 
     message = next((held for held in messages["messages"] if code in held["codes"]), None)
 
@@ -260,6 +270,8 @@ def event(messages, data, start):
         line = ordered(by_role, number(by_role, SIDE) == message["buys"])
     elif does == "cancel":
         line = f"cancel order {said(by_role, ORDER)}"
+    elif does == "accepted":
+        line = f"accepted  order {said(by_role, ORDER)}"
     elif does == "rested":
         line = f"rested    order {said(by_role, ORDER)}, {said(by_role, QUANTITY)} at {said(by_role, PRICE)}"
     elif does == "traded":
@@ -301,7 +313,7 @@ def request(requests, data, start, end):
         return asked["named"]
 
     frame = requests["frame"]
-    at = start + frame["length"]["width"]
+    at = start + frame["type"]["at"]
     code = integer(frame["type"], data[at:at + frame["type"]["width"]])
 
     for packet in requests["packets"]:
@@ -331,7 +343,10 @@ def packets(layout, data, start, end):
 
                 if "literal" in field:
                     matches = matches and held == bytes.fromhex(field["literal"])
-                elif not field.get("header"):
+
+                # a field that never changes is shown only where its value has a name: a
+                # reason, which is what a reader wants to know; padding and nought are not
+                if not field.get("header") and ("literal" not in field or field.get("values")):
                     shown.append((field, held))
 
             if matches:
@@ -339,7 +354,7 @@ def packets(layout, data, start, end):
                 at += packet["bytes"]
                 break
         else:
-            raise Refused(f"{layout['feed']}: wrote something at byte {at} that is none of the packets it states")
+            raise Refused(f"{layout['program']}: wrote something at byte {at} that is none of the packets it states")
 
     return lines
 
@@ -462,6 +477,19 @@ def played(manifest, venue, programs, named):
             print(f"  running {pathlib.PurePosixPath(program['path']).name} ...", flush=True)
             feeds.append((Ran(program, run), described))
 
+    # and the responder, which reads what the gateway read and then what the market wrote
+    responder = None
+
+    if gateway is not None:
+        for program in programs:
+            if program["kind"] != "responder" or (described := layout(ROOT / program["path"], ANSWERS)) is None:
+                continue
+
+            for run in program["runs"]:
+                if run["name"] == first_run["name"]:
+                    print(f"  running {pathlib.PurePosixPath(program['path']).name} ...", flush=True)
+                    responder = (Ran(program, run), described)
+
     print()
 
     # the venue's own orders, each with the events the market wrote for it
@@ -469,6 +497,31 @@ def played(manifest, venue, programs, named):
     answers = market.wrote_for([at for at, _ in orders])
     events = framed(messages["frame"], market.written)
     book = Book(messages)
+
+    # what the responder wrote for each request and each event, by where each was in its input:
+    # the client's requests first, as the gateway read them, and the market's events after
+    replies = {}
+
+    if responder is not None:
+        ran, described = responder
+        requested = [at for at, _ in framed(layout(gateway.path, REQUESTS)["frame"], gateway.given)]
+        base = len(ran.given) - len(market.written)
+        starts = requested + [base + at for at, _ in events]
+
+        if ran.given[:len(gateway.given)] != gateway.given or ran.given[base:] != market.written:
+            raise Refused(f"{ran.path.name}: was not given what the gateway read and the market wrote")
+
+        for start, (low, high) in zip(starts, ran.wrote_for(starts)):
+            replies[start] = packets(described, ran.written, low, high)
+
+        replies = {("request" if start < len(gateway.given) else "event",
+                    start if start < len(gateway.given) else start - base): lines
+                   for start, lines in replies.items()}
+
+    def replied(kind, at):
+        """What the client was answered with for one request or one event."""
+        for line in replies.get((kind, at), []):
+            print(f"      responder   {line}")
 
     def answered(order):
         """What the market and every feed did with one of the venue's own orders."""
@@ -489,6 +542,9 @@ def played(manifest, venue, programs, named):
             for at in mine:
                 for line in packets(described, feed.written, *sent[index[at]]):
                     print(f"      {described['feed']:<11} {line}")
+
+        for at in mine:
+            replied("event", at)
 
         if (ladder := book.changed()) is not None:
             print()
@@ -512,6 +568,9 @@ def played(manifest, venue, programs, named):
                     print(f"      gateway     {event(messages, market.given, start_of)[2]}")
                     answered(order)
 
+            # an order the gateway turned away is answered here, and went no further
+            replied("request", at)
+
             print()
     else:
         for order, (start_of, _) in enumerate(orders):
@@ -522,7 +581,8 @@ def played(manifest, venue, programs, named):
 
     print("What that took:")
 
-    for ran in ([gateway] if gateway else []) + [market] + [feed for feed, _ in feeds]:
+    for ran in (([gateway] if gateway else []) + [market] + [feed for feed, _ in feeds]
+                + ([responder[0]] if responder else [])):
         print(f"  {ran.path.name:<36} {ran.length:>12,} instructions long, {ran.steps:>12,} run"
               f" in {ran.seconds:.1f}s, {len(ran.given):>5} bytes in, {len(ran.written):>5} out")
 

@@ -1,5 +1,6 @@
 {
   "venue": "IexEquities",
+  "program": "IexEquities.DeepPlus.Feed.packets.json",
   "feed": "DeepPlus",
   "protocol": "Iex.IexEquities.DeepPlus.IexTp.v1.05",
   "reads": "Iex.IexEquities.BasicMatchingEngine.Ipc.v2026",
@@ -177,7 +178,7 @@
     {
       "named": "Trade Message",
       "from": "trademessage",
-      "bytes": 85,
+      "bytes": 80,
       "fields": [
         {
           "named": "version",
@@ -234,7 +235,7 @@
           "endian": "little",
           "title": "Payload Length",
           "header": true,
-          "literal": "2d00"
+          "literal": "2800"
         },
         {
           "named": "messagecount",
@@ -271,7 +272,7 @@
           "endian": "little",
           "title": "Message Length",
           "header": true,
-          "literal": "2b00"
+          "literal": "2600"
         },
         {
           "named": "messagetype",
@@ -299,45 +300,10 @@
           "literal": "54"
         },
         {
-          "named": "unused3",
+          "named": "saleconditionflags",
           "width": 1,
           "endian": "little",
-          "title": "Unused 3",
-          "literal": "00"
-        },
-        {
-          "named": "singlepricecrosstrade",
-          "width": 1,
-          "endian": "little",
-          "title": "Single Price Cross Trade",
-          "literal": "00"
-        },
-        {
-          "named": "tradethroughexempt",
-          "width": 1,
-          "endian": "little",
-          "title": "Trade Through Exempt",
-          "literal": "00"
-        },
-        {
-          "named": "oddlot",
-          "width": 1,
-          "endian": "little",
-          "title": "Odd Lot",
-          "literal": "00"
-        },
-        {
-          "named": "extendedhours",
-          "width": 1,
-          "endian": "little",
-          "title": "Extended Hours",
-          "literal": "00"
-        },
-        {
-          "named": "intermarketsweep",
-          "width": 1,
-          "endian": "little",
-          "title": "Intermarket Sweep",
+          "title": "Sale Condition Flags",
           "literal": "00"
         },
         {

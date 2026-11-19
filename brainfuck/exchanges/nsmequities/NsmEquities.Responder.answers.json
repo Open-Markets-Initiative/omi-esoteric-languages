@@ -1,0 +1,1288 @@
+{
+  "venue": "NsmEquities",
+  "program": "NsmEquities.Responder.bf",
+  "protocol": "Nasdaq.NsmEquities.Orders.Ouch.v5.0",
+  "packets": [
+    {
+      "named": "Rejected Order Message",
+      "bytes": 34,
+      "fields": [
+        {
+          "named": "packetlength",
+          "width": 2,
+          "endian": "big",
+          "title": "Packet Length",
+          "header": true,
+          "literal": "0020"
+        },
+        {
+          "named": "serverpackettype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Debug Packet": 43,
+            "Login Accepted Packet": 65,
+            "Login Rejected Packet": 74,
+            "Sequenced Data Packet": 83,
+            "Server Heartbeat Packet": 72,
+            "End Of Session Packet": 90
+          },
+          "title": "Server Packet Type",
+          "header": true,
+          "literal": "53"
+        },
+        {
+          "named": "sequencedmessagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Order Accepted Message": 65,
+            "Replaced Message": 85,
+            "Canceled Message": 67,
+            "Aiq Canceled Message": 68,
+            "Order Executed Message": 69,
+            "Broken Trade Message": 66,
+            "Rejected Order Message": 74,
+            "Cancel Pending Message": 80,
+            "Cancel Reject Message": 73,
+            "Order Priority Update Message": 84,
+            "Order Modified Message": 77,
+            "Order Restated Message": 82,
+            "Account Query Response Message": 81,
+            "Mass Cancel Response Message": 88,
+            "Disable Order Entry Response Message": 71,
+            "Enable Order Entry Response Message": 75
+          },
+          "title": "Sequenced Message Type",
+          "header": true,
+          "literal": "4a"
+        },
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "big",
+          "title": "Timestamp",
+          "literal": "0000000000000000"
+        },
+        {
+          "named": "userrefnum",
+          "width": 4,
+          "endian": "big",
+          "title": "User Ref Num"
+        },
+        {
+          "named": "rejectedorderreason",
+          "width": 2,
+          "endian": "big",
+          "values": {
+            "Quote Unavailable": 1,
+            "Destination Closed": 2,
+            "Invalid Display": 3,
+            "Invalid Max Floor": 4,
+            "Invalid Peg Type": 5,
+            "Fat Finger": 6,
+            "Halted": 7,
+            "Iso Not Allowed": 8,
+            "Invalid Side": 9,
+            "Processing Error": 10,
+            "Cancel Pending": 11,
+            "Firm Not Authorized": 12,
+            "Invalid Min Quantity": 13,
+            "No Closing Reference Price": 14,
+            "Other": 15,
+            "Cancel Not Allowed": 16,
+            "Pegging Not Allowed": 17,
+            "Crossed Market": 18,
+            "Invalid Quantity": 19,
+            "Invalid Cross Order": 20,
+            "Replace Not Allowed": 21,
+            "Routing Not Allowed": 22,
+            "Invalid Symbol": 23,
+            "Test": 24,
+            "Late Loc Too Aggressive": 25,
+            "Retail Not Allowed": 26,
+            "Invalid Midpoint Post Only Price": 27,
+            "Invalid Destination": 28,
+            "Invalid Price": 29,
+            "Shares Exceed Threshold": 30,
+            "Exceeds Maximum Allowed Notional Value": 31,
+            "Risk Aggregate Exposure Exceeded": 32,
+            "Risk Market Impact": 33,
+            "Risk Restricted Stock": 34,
+            "Risk Short Sell Restricted": 35,
+            "Risk Iso Not Allowed": 36,
+            "Risk Exceeds Adv Limit": 37,
+            "Risk Fat Finger": 38,
+            "Risk Locate Required": 39,
+            "Risk Symbol Message Rate Restriction": 40,
+            "Risk Port Message Rate Restriction": 41,
+            "Risk Duplicate Message Rate Restriction": 42,
+            "Risk Short Sell Not Allowed": 43,
+            "Risk Market Order Not Allowed": 44,
+            "Risk Pre Market Not Allowed": 45,
+            "Risk Post Market Not Allowed": 46,
+            "Risk Short Sell Exempt Not Allowed": 47,
+            "Risk Single Order Notional Exceeded": 48,
+            "Risk Max Quantity Exceeded": 49,
+            "Reg Sho State Not Available": 50,
+            "Risk Ipo Market Buy Not Allowed": 51,
+            "Invalid Aiq": 64
+          },
+          "title": "Rejected Order Reason",
+          "literal": "0013"
+        },
+        {
+          "named": "clordid",
+          "width": 14,
+          "endian": "little",
+          "text": true,
+          "title": "ClOrdId"
+        },
+        {
+          "named": "appendagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Appendage Length",
+          "literal": "0000"
+        }
+      ]
+    },
+    {
+      "named": "Rejected Order Message",
+      "bytes": 34,
+      "fields": [
+        {
+          "named": "packetlength",
+          "width": 2,
+          "endian": "big",
+          "title": "Packet Length",
+          "header": true,
+          "literal": "0020"
+        },
+        {
+          "named": "serverpackettype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Debug Packet": 43,
+            "Login Accepted Packet": 65,
+            "Login Rejected Packet": 74,
+            "Sequenced Data Packet": 83,
+            "Server Heartbeat Packet": 72,
+            "End Of Session Packet": 90
+          },
+          "title": "Server Packet Type",
+          "header": true,
+          "literal": "53"
+        },
+        {
+          "named": "sequencedmessagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Order Accepted Message": 65,
+            "Replaced Message": 85,
+            "Canceled Message": 67,
+            "Aiq Canceled Message": 68,
+            "Order Executed Message": 69,
+            "Broken Trade Message": 66,
+            "Rejected Order Message": 74,
+            "Cancel Pending Message": 80,
+            "Cancel Reject Message": 73,
+            "Order Priority Update Message": 84,
+            "Order Modified Message": 77,
+            "Order Restated Message": 82,
+            "Account Query Response Message": 81,
+            "Mass Cancel Response Message": 88,
+            "Disable Order Entry Response Message": 71,
+            "Enable Order Entry Response Message": 75
+          },
+          "title": "Sequenced Message Type",
+          "header": true,
+          "literal": "4a"
+        },
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "big",
+          "title": "Timestamp",
+          "literal": "0000000000000000"
+        },
+        {
+          "named": "userrefnum",
+          "width": 4,
+          "endian": "big",
+          "title": "User Ref Num"
+        },
+        {
+          "named": "rejectedorderreason",
+          "width": 2,
+          "endian": "big",
+          "values": {
+            "Quote Unavailable": 1,
+            "Destination Closed": 2,
+            "Invalid Display": 3,
+            "Invalid Max Floor": 4,
+            "Invalid Peg Type": 5,
+            "Fat Finger": 6,
+            "Halted": 7,
+            "Iso Not Allowed": 8,
+            "Invalid Side": 9,
+            "Processing Error": 10,
+            "Cancel Pending": 11,
+            "Firm Not Authorized": 12,
+            "Invalid Min Quantity": 13,
+            "No Closing Reference Price": 14,
+            "Other": 15,
+            "Cancel Not Allowed": 16,
+            "Pegging Not Allowed": 17,
+            "Crossed Market": 18,
+            "Invalid Quantity": 19,
+            "Invalid Cross Order": 20,
+            "Replace Not Allowed": 21,
+            "Routing Not Allowed": 22,
+            "Invalid Symbol": 23,
+            "Test": 24,
+            "Late Loc Too Aggressive": 25,
+            "Retail Not Allowed": 26,
+            "Invalid Midpoint Post Only Price": 27,
+            "Invalid Destination": 28,
+            "Invalid Price": 29,
+            "Shares Exceed Threshold": 30,
+            "Exceeds Maximum Allowed Notional Value": 31,
+            "Risk Aggregate Exposure Exceeded": 32,
+            "Risk Market Impact": 33,
+            "Risk Restricted Stock": 34,
+            "Risk Short Sell Restricted": 35,
+            "Risk Iso Not Allowed": 36,
+            "Risk Exceeds Adv Limit": 37,
+            "Risk Fat Finger": 38,
+            "Risk Locate Required": 39,
+            "Risk Symbol Message Rate Restriction": 40,
+            "Risk Port Message Rate Restriction": 41,
+            "Risk Duplicate Message Rate Restriction": 42,
+            "Risk Short Sell Not Allowed": 43,
+            "Risk Market Order Not Allowed": 44,
+            "Risk Pre Market Not Allowed": 45,
+            "Risk Post Market Not Allowed": 46,
+            "Risk Short Sell Exempt Not Allowed": 47,
+            "Risk Single Order Notional Exceeded": 48,
+            "Risk Max Quantity Exceeded": 49,
+            "Reg Sho State Not Available": 50,
+            "Risk Ipo Market Buy Not Allowed": 51,
+            "Invalid Aiq": 64
+          },
+          "title": "Rejected Order Reason",
+          "literal": "001d"
+        },
+        {
+          "named": "clordid",
+          "width": 14,
+          "endian": "little",
+          "text": true,
+          "title": "ClOrdId"
+        },
+        {
+          "named": "appendagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Appendage Length",
+          "literal": "0000"
+        }
+      ]
+    },
+    {
+      "named": "Rejected Order Message",
+      "bytes": 34,
+      "fields": [
+        {
+          "named": "packetlength",
+          "width": 2,
+          "endian": "big",
+          "title": "Packet Length",
+          "header": true,
+          "literal": "0020"
+        },
+        {
+          "named": "serverpackettype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Debug Packet": 43,
+            "Login Accepted Packet": 65,
+            "Login Rejected Packet": 74,
+            "Sequenced Data Packet": 83,
+            "Server Heartbeat Packet": 72,
+            "End Of Session Packet": 90
+          },
+          "title": "Server Packet Type",
+          "header": true,
+          "literal": "53"
+        },
+        {
+          "named": "sequencedmessagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Order Accepted Message": 65,
+            "Replaced Message": 85,
+            "Canceled Message": 67,
+            "Aiq Canceled Message": 68,
+            "Order Executed Message": 69,
+            "Broken Trade Message": 66,
+            "Rejected Order Message": 74,
+            "Cancel Pending Message": 80,
+            "Cancel Reject Message": 73,
+            "Order Priority Update Message": 84,
+            "Order Modified Message": 77,
+            "Order Restated Message": 82,
+            "Account Query Response Message": 81,
+            "Mass Cancel Response Message": 88,
+            "Disable Order Entry Response Message": 71,
+            "Enable Order Entry Response Message": 75
+          },
+          "title": "Sequenced Message Type",
+          "header": true,
+          "literal": "4a"
+        },
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "big",
+          "title": "Timestamp",
+          "literal": "0000000000000000"
+        },
+        {
+          "named": "userrefnum",
+          "width": 4,
+          "endian": "big",
+          "title": "User Ref Num"
+        },
+        {
+          "named": "rejectedorderreason",
+          "width": 2,
+          "endian": "big",
+          "values": {
+            "Quote Unavailable": 1,
+            "Destination Closed": 2,
+            "Invalid Display": 3,
+            "Invalid Max Floor": 4,
+            "Invalid Peg Type": 5,
+            "Fat Finger": 6,
+            "Halted": 7,
+            "Iso Not Allowed": 8,
+            "Invalid Side": 9,
+            "Processing Error": 10,
+            "Cancel Pending": 11,
+            "Firm Not Authorized": 12,
+            "Invalid Min Quantity": 13,
+            "No Closing Reference Price": 14,
+            "Other": 15,
+            "Cancel Not Allowed": 16,
+            "Pegging Not Allowed": 17,
+            "Crossed Market": 18,
+            "Invalid Quantity": 19,
+            "Invalid Cross Order": 20,
+            "Replace Not Allowed": 21,
+            "Routing Not Allowed": 22,
+            "Invalid Symbol": 23,
+            "Test": 24,
+            "Late Loc Too Aggressive": 25,
+            "Retail Not Allowed": 26,
+            "Invalid Midpoint Post Only Price": 27,
+            "Invalid Destination": 28,
+            "Invalid Price": 29,
+            "Shares Exceed Threshold": 30,
+            "Exceeds Maximum Allowed Notional Value": 31,
+            "Risk Aggregate Exposure Exceeded": 32,
+            "Risk Market Impact": 33,
+            "Risk Restricted Stock": 34,
+            "Risk Short Sell Restricted": 35,
+            "Risk Iso Not Allowed": 36,
+            "Risk Exceeds Adv Limit": 37,
+            "Risk Fat Finger": 38,
+            "Risk Locate Required": 39,
+            "Risk Symbol Message Rate Restriction": 40,
+            "Risk Port Message Rate Restriction": 41,
+            "Risk Duplicate Message Rate Restriction": 42,
+            "Risk Short Sell Not Allowed": 43,
+            "Risk Market Order Not Allowed": 44,
+            "Risk Pre Market Not Allowed": 45,
+            "Risk Post Market Not Allowed": 46,
+            "Risk Short Sell Exempt Not Allowed": 47,
+            "Risk Single Order Notional Exceeded": 48,
+            "Risk Max Quantity Exceeded": 49,
+            "Reg Sho State Not Available": 50,
+            "Risk Ipo Market Buy Not Allowed": 51,
+            "Invalid Aiq": 64
+          },
+          "title": "Rejected Order Reason",
+          "literal": "0009"
+        },
+        {
+          "named": "clordid",
+          "width": 14,
+          "endian": "little",
+          "text": true,
+          "title": "ClOrdId"
+        },
+        {
+          "named": "appendagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Appendage Length",
+          "literal": "0000"
+        }
+      ]
+    },
+    {
+      "named": "Rejected Order Message",
+      "bytes": 34,
+      "fields": [
+        {
+          "named": "packetlength",
+          "width": 2,
+          "endian": "big",
+          "title": "Packet Length",
+          "header": true,
+          "literal": "0020"
+        },
+        {
+          "named": "serverpackettype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Debug Packet": 43,
+            "Login Accepted Packet": 65,
+            "Login Rejected Packet": 74,
+            "Sequenced Data Packet": 83,
+            "Server Heartbeat Packet": 72,
+            "End Of Session Packet": 90
+          },
+          "title": "Server Packet Type",
+          "header": true,
+          "literal": "53"
+        },
+        {
+          "named": "sequencedmessagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Order Accepted Message": 65,
+            "Replaced Message": 85,
+            "Canceled Message": 67,
+            "Aiq Canceled Message": 68,
+            "Order Executed Message": 69,
+            "Broken Trade Message": 66,
+            "Rejected Order Message": 74,
+            "Cancel Pending Message": 80,
+            "Cancel Reject Message": 73,
+            "Order Priority Update Message": 84,
+            "Order Modified Message": 77,
+            "Order Restated Message": 82,
+            "Account Query Response Message": 81,
+            "Mass Cancel Response Message": 88,
+            "Disable Order Entry Response Message": 71,
+            "Enable Order Entry Response Message": 75
+          },
+          "title": "Sequenced Message Type",
+          "header": true,
+          "literal": "4a"
+        },
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "big",
+          "title": "Timestamp",
+          "literal": "0000000000000000"
+        },
+        {
+          "named": "userrefnum",
+          "width": 4,
+          "endian": "big",
+          "title": "User Ref Num"
+        },
+        {
+          "named": "rejectedorderreason",
+          "width": 2,
+          "endian": "big",
+          "values": {
+            "Quote Unavailable": 1,
+            "Destination Closed": 2,
+            "Invalid Display": 3,
+            "Invalid Max Floor": 4,
+            "Invalid Peg Type": 5,
+            "Fat Finger": 6,
+            "Halted": 7,
+            "Iso Not Allowed": 8,
+            "Invalid Side": 9,
+            "Processing Error": 10,
+            "Cancel Pending": 11,
+            "Firm Not Authorized": 12,
+            "Invalid Min Quantity": 13,
+            "No Closing Reference Price": 14,
+            "Other": 15,
+            "Cancel Not Allowed": 16,
+            "Pegging Not Allowed": 17,
+            "Crossed Market": 18,
+            "Invalid Quantity": 19,
+            "Invalid Cross Order": 20,
+            "Replace Not Allowed": 21,
+            "Routing Not Allowed": 22,
+            "Invalid Symbol": 23,
+            "Test": 24,
+            "Late Loc Too Aggressive": 25,
+            "Retail Not Allowed": 26,
+            "Invalid Midpoint Post Only Price": 27,
+            "Invalid Destination": 28,
+            "Invalid Price": 29,
+            "Shares Exceed Threshold": 30,
+            "Exceeds Maximum Allowed Notional Value": 31,
+            "Risk Aggregate Exposure Exceeded": 32,
+            "Risk Market Impact": 33,
+            "Risk Restricted Stock": 34,
+            "Risk Short Sell Restricted": 35,
+            "Risk Iso Not Allowed": 36,
+            "Risk Exceeds Adv Limit": 37,
+            "Risk Fat Finger": 38,
+            "Risk Locate Required": 39,
+            "Risk Symbol Message Rate Restriction": 40,
+            "Risk Port Message Rate Restriction": 41,
+            "Risk Duplicate Message Rate Restriction": 42,
+            "Risk Short Sell Not Allowed": 43,
+            "Risk Market Order Not Allowed": 44,
+            "Risk Pre Market Not Allowed": 45,
+            "Risk Post Market Not Allowed": 46,
+            "Risk Short Sell Exempt Not Allowed": 47,
+            "Risk Single Order Notional Exceeded": 48,
+            "Risk Max Quantity Exceeded": 49,
+            "Reg Sho State Not Available": 50,
+            "Risk Ipo Market Buy Not Allowed": 51,
+            "Invalid Aiq": 64
+          },
+          "title": "Rejected Order Reason",
+          "literal": "0017"
+        },
+        {
+          "named": "clordid",
+          "width": 14,
+          "endian": "little",
+          "text": true,
+          "title": "ClOrdId"
+        },
+        {
+          "named": "appendagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Appendage Length",
+          "literal": "0000"
+        }
+      ]
+    },
+    {
+      "named": "Order Accepted Message",
+      "bytes": 67,
+      "fields": [
+        {
+          "named": "packetlength",
+          "width": 2,
+          "endian": "big",
+          "title": "Packet Length",
+          "header": true,
+          "literal": "0041"
+        },
+        {
+          "named": "serverpackettype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Debug Packet": 43,
+            "Login Accepted Packet": 65,
+            "Login Rejected Packet": 74,
+            "Sequenced Data Packet": 83,
+            "Server Heartbeat Packet": 72,
+            "End Of Session Packet": 90
+          },
+          "title": "Server Packet Type",
+          "header": true,
+          "literal": "53"
+        },
+        {
+          "named": "sequencedmessagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Order Accepted Message": 65,
+            "Replaced Message": 85,
+            "Canceled Message": 67,
+            "Aiq Canceled Message": 68,
+            "Order Executed Message": 69,
+            "Broken Trade Message": 66,
+            "Rejected Order Message": 74,
+            "Cancel Pending Message": 80,
+            "Cancel Reject Message": 73,
+            "Order Priority Update Message": 84,
+            "Order Modified Message": 77,
+            "Order Restated Message": 82,
+            "Account Query Response Message": 81,
+            "Mass Cancel Response Message": 88,
+            "Disable Order Entry Response Message": 71,
+            "Enable Order Entry Response Message": 75
+          },
+          "title": "Sequenced Message Type",
+          "header": true,
+          "literal": "41"
+        },
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "big",
+          "title": "Timestamp",
+          "literal": "0000000000000000"
+        },
+        {
+          "named": "userrefnum",
+          "width": 4,
+          "endian": "big",
+          "title": "User Ref Num"
+        },
+        {
+          "named": "side",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Buy": 66,
+            "Sell": 83,
+            "Sell Short": 84,
+            "Sell Short Exempt": 69
+          },
+          "title": "Side"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "big",
+          "title": "Quantity"
+        },
+        {
+          "named": "symbol",
+          "width": 8,
+          "endian": "little",
+          "text": true,
+          "title": "Symbol"
+        },
+        {
+          "named": "price",
+          "width": 8,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Price"
+        },
+        {
+          "named": "timeinforce",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Day": 48,
+            "Ioc": 51,
+            "Gtx Extended Hours": 53,
+            "Gtt": 54,
+            "After Hours": 69
+          },
+          "title": "Time In Force"
+        },
+        {
+          "named": "display",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Attributable": 65,
+            "Visible": 89,
+            "Hidden": 78,
+            "Conformant": 90
+          },
+          "title": "Display"
+        },
+        {
+          "named": "orderreferencenumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Order Reference Number"
+        },
+        {
+          "named": "capacity",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Other": 79,
+            "Agency": 65,
+            "Principal": 80,
+            "Riskless": 82
+          },
+          "title": "Capacity"
+        },
+        {
+          "named": "intermarketsweepeligibility",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Eligible": 89,
+            "Not Eligible": 78
+          },
+          "title": "Inter Market Sweep Eligibility"
+        },
+        {
+          "named": "crosstype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Continuous Market": 78,
+            "Opening Cross": 79,
+            "Closing Cross": 67,
+            "Halt Ipo": 72,
+            "Supplemental": 83,
+            "Retail": 82,
+            "Extended Life": 69,
+            "After Hours Close": 65
+          },
+          "title": "Cross Type"
+        },
+        {
+          "named": "orderstate",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Order Live": 76,
+            "Order Dead": 68
+          },
+          "title": "Order State",
+          "literal": "4c"
+        },
+        {
+          "named": "clordid",
+          "width": 14,
+          "endian": "little",
+          "text": true,
+          "title": "ClOrdId"
+        },
+        {
+          "named": "appendagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Appendage Length",
+          "literal": "0000"
+        }
+      ]
+    },
+    {
+      "named": "Order Executed Message",
+      "bytes": 39,
+      "fields": [
+        {
+          "named": "packetlength",
+          "width": 2,
+          "endian": "big",
+          "title": "Packet Length",
+          "header": true,
+          "literal": "0025"
+        },
+        {
+          "named": "serverpackettype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Debug Packet": 43,
+            "Login Accepted Packet": 65,
+            "Login Rejected Packet": 74,
+            "Sequenced Data Packet": 83,
+            "Server Heartbeat Packet": 72,
+            "End Of Session Packet": 90
+          },
+          "title": "Server Packet Type",
+          "header": true,
+          "literal": "53"
+        },
+        {
+          "named": "sequencedmessagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Order Accepted Message": 65,
+            "Replaced Message": 85,
+            "Canceled Message": 67,
+            "Aiq Canceled Message": 68,
+            "Order Executed Message": 69,
+            "Broken Trade Message": 66,
+            "Rejected Order Message": 74,
+            "Cancel Pending Message": 80,
+            "Cancel Reject Message": 73,
+            "Order Priority Update Message": 84,
+            "Order Modified Message": 77,
+            "Order Restated Message": 82,
+            "Account Query Response Message": 81,
+            "Mass Cancel Response Message": 88,
+            "Disable Order Entry Response Message": 71,
+            "Enable Order Entry Response Message": 75
+          },
+          "title": "Sequenced Message Type",
+          "header": true,
+          "literal": "45"
+        },
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "userrefnum",
+          "width": 4,
+          "endian": "big",
+          "title": "User Ref Num"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "big",
+          "title": "Quantity"
+        },
+        {
+          "named": "price",
+          "width": 8,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Price"
+        },
+        {
+          "named": "liquidityflag",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Added": 65,
+            "Closing": 67,
+            "Retail Designated": 101,
+            "Halt Ipo": 72,
+            "After Hours Closing": 105,
+            "Non Displayed Adding Liquidity": 74,
+            "Rpi Order Provides Liquidity": 106,
+            "Added Liquidity Via A Midpoint Order": 107,
+            "Halt Cross": 75,
+            "Closing Cross": 76,
+            "Opening Cross": 77,
+            "Removed Liquidity At A Midpoint": 109,
+            "Passive Midpoint Execution": 78,
+            "Midpoint Extended Life Order Execution": 110,
+            "Opening": 79,
+            "Removed Price Improving Non Displayed Liquidity": 112,
+            "Rmo Retail Order Removes Non Rpi Midpoint Liquidity": 113,
+            "Removed": 82,
+            "Retail Order Removes Rpi Liquidity": 114,
+            "Retail Order Removes Price Improving Non Displayed Liquidity Other Than Rpi Liquidity": 116,
+            "Added Non Displayed Liquidity Via A Reserve Order": 117,
+            "Supplemental": 48,
+            "Displayed Liquidity Adding Order Improves The Nbbo": 55,
+            "Displayed Liquidity Adding Order Sets The Qbbo While Joining The Nbbo": 56,
+            "Rpi Order Provides Liquidity No Rpii": 49,
+            "Added In The Pre Market": 50,
+            "Removed In The Pre Market": 51,
+            "Displayed Liquidity Adding Order Improves The Nbbo In The Pre Market": 53,
+            "Non Displayed Adding Liquidity In The Pre Market": 57
+          },
+          "title": "Liquidity Flag",
+          "literal": "41"
+        },
+        {
+          "named": "matchnumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Match Number"
+        },
+        {
+          "named": "appendagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Appendage Length",
+          "literal": "0000"
+        }
+      ]
+    },
+    {
+      "named": "Order Executed Message",
+      "bytes": 39,
+      "fields": [
+        {
+          "named": "packetlength",
+          "width": 2,
+          "endian": "big",
+          "title": "Packet Length",
+          "header": true,
+          "literal": "0025"
+        },
+        {
+          "named": "serverpackettype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Debug Packet": 43,
+            "Login Accepted Packet": 65,
+            "Login Rejected Packet": 74,
+            "Sequenced Data Packet": 83,
+            "Server Heartbeat Packet": 72,
+            "End Of Session Packet": 90
+          },
+          "title": "Server Packet Type",
+          "header": true,
+          "literal": "53"
+        },
+        {
+          "named": "sequencedmessagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Order Accepted Message": 65,
+            "Replaced Message": 85,
+            "Canceled Message": 67,
+            "Aiq Canceled Message": 68,
+            "Order Executed Message": 69,
+            "Broken Trade Message": 66,
+            "Rejected Order Message": 74,
+            "Cancel Pending Message": 80,
+            "Cancel Reject Message": 73,
+            "Order Priority Update Message": 84,
+            "Order Modified Message": 77,
+            "Order Restated Message": 82,
+            "Account Query Response Message": 81,
+            "Mass Cancel Response Message": 88,
+            "Disable Order Entry Response Message": 71,
+            "Enable Order Entry Response Message": 75
+          },
+          "title": "Sequenced Message Type",
+          "header": true,
+          "literal": "45"
+        },
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "userrefnum",
+          "width": 4,
+          "endian": "big",
+          "title": "User Ref Num"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "big",
+          "title": "Quantity"
+        },
+        {
+          "named": "price",
+          "width": 8,
+          "endian": "big",
+          "scale": "-4",
+          "title": "Price"
+        },
+        {
+          "named": "liquidityflag",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Added": 65,
+            "Closing": 67,
+            "Retail Designated": 101,
+            "Halt Ipo": 72,
+            "After Hours Closing": 105,
+            "Non Displayed Adding Liquidity": 74,
+            "Rpi Order Provides Liquidity": 106,
+            "Added Liquidity Via A Midpoint Order": 107,
+            "Halt Cross": 75,
+            "Closing Cross": 76,
+            "Opening Cross": 77,
+            "Removed Liquidity At A Midpoint": 109,
+            "Passive Midpoint Execution": 78,
+            "Midpoint Extended Life Order Execution": 110,
+            "Opening": 79,
+            "Removed Price Improving Non Displayed Liquidity": 112,
+            "Rmo Retail Order Removes Non Rpi Midpoint Liquidity": 113,
+            "Removed": 82,
+            "Retail Order Removes Rpi Liquidity": 114,
+            "Retail Order Removes Price Improving Non Displayed Liquidity Other Than Rpi Liquidity": 116,
+            "Added Non Displayed Liquidity Via A Reserve Order": 117,
+            "Supplemental": 48,
+            "Displayed Liquidity Adding Order Improves The Nbbo": 55,
+            "Displayed Liquidity Adding Order Sets The Qbbo While Joining The Nbbo": 56,
+            "Rpi Order Provides Liquidity No Rpii": 49,
+            "Added In The Pre Market": 50,
+            "Removed In The Pre Market": 51,
+            "Displayed Liquidity Adding Order Improves The Nbbo In The Pre Market": 53,
+            "Non Displayed Adding Liquidity In The Pre Market": 57
+          },
+          "title": "Liquidity Flag",
+          "literal": "52"
+        },
+        {
+          "named": "matchnumber",
+          "width": 8,
+          "endian": "big",
+          "title": "Match Number"
+        },
+        {
+          "named": "appendagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Appendage Length",
+          "literal": "0000"
+        }
+      ]
+    },
+    {
+      "named": "Canceled Message",
+      "bytes": 23,
+      "fields": [
+        {
+          "named": "packetlength",
+          "width": 2,
+          "endian": "big",
+          "title": "Packet Length",
+          "header": true,
+          "literal": "0015"
+        },
+        {
+          "named": "serverpackettype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Debug Packet": 43,
+            "Login Accepted Packet": 65,
+            "Login Rejected Packet": 74,
+            "Sequenced Data Packet": 83,
+            "Server Heartbeat Packet": 72,
+            "End Of Session Packet": 90
+          },
+          "title": "Server Packet Type",
+          "header": true,
+          "literal": "53"
+        },
+        {
+          "named": "sequencedmessagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Order Accepted Message": 65,
+            "Replaced Message": 85,
+            "Canceled Message": 67,
+            "Aiq Canceled Message": 68,
+            "Order Executed Message": 69,
+            "Broken Trade Message": 66,
+            "Rejected Order Message": 74,
+            "Cancel Pending Message": 80,
+            "Cancel Reject Message": 73,
+            "Order Priority Update Message": 84,
+            "Order Modified Message": 77,
+            "Order Restated Message": 82,
+            "Account Query Response Message": 81,
+            "Mass Cancel Response Message": 88,
+            "Disable Order Entry Response Message": 71,
+            "Enable Order Entry Response Message": 75
+          },
+          "title": "Sequenced Message Type",
+          "header": true,
+          "literal": "43"
+        },
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "userrefnum",
+          "width": 4,
+          "endian": "big",
+          "title": "User Ref Num"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "big",
+          "title": "Quantity"
+        },
+        {
+          "named": "cancelorderreason",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "User Requested Cancel": 85,
+            "Immediate Or Cancel Order": 73,
+            "Timeout": 84,
+            "Supervisory": 83,
+            "Regulatory Restriction": 68,
+            "Self Match Prevention": 81,
+            "System Cancel": 90,
+            "This Order Cannot Be Executed": 75,
+            "Halted": 72,
+            "Open Protection": 88,
+            "Closed": 69,
+            "Post Only Cancel": 70,
+            "Post Only Cancel Contra Side Displayed": 71,
+            "Company Direct Listing Capital Raise Order Exceeds Allowable Shares Offered": 101
+          },
+          "title": "Cancel Order Reason",
+          "literal": "55"
+        },
+        {
+          "named": "appendagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Appendage Length",
+          "literal": "0000"
+        }
+      ]
+    },
+    {
+      "named": "Canceled Message",
+      "bytes": 23,
+      "fields": [
+        {
+          "named": "packetlength",
+          "width": 2,
+          "endian": "big",
+          "title": "Packet Length",
+          "header": true,
+          "literal": "0015"
+        },
+        {
+          "named": "serverpackettype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "Debug Packet": 43,
+            "Login Accepted Packet": 65,
+            "Login Rejected Packet": 74,
+            "Sequenced Data Packet": 83,
+            "Server Heartbeat Packet": 72,
+            "End Of Session Packet": 90
+          },
+          "title": "Server Packet Type",
+          "header": true,
+          "literal": "53"
+        },
+        {
+          "named": "sequencedmessagetype",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "System Event Message": 83,
+            "Order Accepted Message": 65,
+            "Replaced Message": 85,
+            "Canceled Message": 67,
+            "Aiq Canceled Message": 68,
+            "Order Executed Message": 69,
+            "Broken Trade Message": 66,
+            "Rejected Order Message": 74,
+            "Cancel Pending Message": 80,
+            "Cancel Reject Message": 73,
+            "Order Priority Update Message": 84,
+            "Order Modified Message": 77,
+            "Order Restated Message": 82,
+            "Account Query Response Message": 81,
+            "Mass Cancel Response Message": 88,
+            "Disable Order Entry Response Message": 71,
+            "Enable Order Entry Response Message": 75
+          },
+          "title": "Sequenced Message Type",
+          "header": true,
+          "literal": "43"
+        },
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "big",
+          "title": "Timestamp"
+        },
+        {
+          "named": "userrefnum",
+          "width": 4,
+          "endian": "big",
+          "title": "User Ref Num"
+        },
+        {
+          "named": "quantity",
+          "width": 4,
+          "endian": "big",
+          "title": "Quantity"
+        },
+        {
+          "named": "cancelorderreason",
+          "width": 1,
+          "endian": "little",
+          "text": true,
+          "values": {
+            "User Requested Cancel": 85,
+            "Immediate Or Cancel Order": 73,
+            "Timeout": 84,
+            "Supervisory": 83,
+            "Regulatory Restriction": 68,
+            "Self Match Prevention": 81,
+            "System Cancel": 90,
+            "This Order Cannot Be Executed": 75,
+            "Halted": 72,
+            "Open Protection": 88,
+            "Closed": 69,
+            "Post Only Cancel": 70,
+            "Post Only Cancel Contra Side Displayed": 71,
+            "Company Direct Listing Capital Raise Order Exceeds Allowable Shares Offered": 101
+          },
+          "title": "Cancel Order Reason",
+          "literal": "45"
+        },
+        {
+          "named": "appendagelength",
+          "width": 2,
+          "endian": "big",
+          "title": "Appendage Length",
+          "literal": "0000"
+        }
+      ]
+    }
+  ]
+}

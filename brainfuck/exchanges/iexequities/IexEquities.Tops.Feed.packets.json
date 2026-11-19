@@ -1,5 +1,6 @@
 {
   "venue": "IexEquities",
+  "program": "IexEquities.Tops.Feed.packets.json",
   "feed": "Tops",
   "protocol": "Iex.IexEquities.Tops.IexTp.v1.66",
   "reads": "Iex.IexEquities.BasicMatchingEngine.Ipc.v2026",
@@ -7,7 +8,7 @@
     {
       "named": "Quote Update Message",
       "from": "orderrestedmessage",
-      "bytes": 86,
+      "bytes": 84,
       "fields": [
         {
           "named": "version",
@@ -64,7 +65,7 @@
           "endian": "little",
           "title": "Payload Length",
           "header": true,
-          "literal": "2e00"
+          "literal": "2c00"
         },
         {
           "named": "messagecount",
@@ -101,7 +102,7 @@
           "endian": "little",
           "title": "Message Length",
           "header": true,
-          "literal": "2c00"
+          "literal": "2a00"
         },
         {
           "named": "messagetype",
@@ -126,24 +127,10 @@
           "literal": "51"
         },
         {
-          "named": "unused6",
+          "named": "quoteupdateflags",
           "width": 1,
           "endian": "little",
-          "title": "Unused 6",
-          "literal": "00"
-        },
-        {
-          "named": "marketsession",
-          "width": 1,
-          "endian": "little",
-          "title": "Market Session",
-          "literal": "00"
-        },
-        {
-          "named": "symbolavailability",
-          "width": 1,
-          "endian": "little",
-          "title": "Symbol Availability",
+          "title": "Quote Update Flags",
           "literal": "00"
         },
         {
@@ -192,7 +179,7 @@
     {
       "named": "Quote Update Message",
       "from": "orderrestedmessage",
-      "bytes": 86,
+      "bytes": 84,
       "fields": [
         {
           "named": "version",
@@ -249,7 +236,7 @@
           "endian": "little",
           "title": "Payload Length",
           "header": true,
-          "literal": "2e00"
+          "literal": "2c00"
         },
         {
           "named": "messagecount",
@@ -286,7 +273,7 @@
           "endian": "little",
           "title": "Message Length",
           "header": true,
-          "literal": "2c00"
+          "literal": "2a00"
         },
         {
           "named": "messagetype",
@@ -311,24 +298,10 @@
           "literal": "51"
         },
         {
-          "named": "unused6",
+          "named": "quoteupdateflags",
           "width": 1,
           "endian": "little",
-          "title": "Unused 6",
-          "literal": "00"
-        },
-        {
-          "named": "marketsession",
-          "width": 1,
-          "endian": "little",
-          "title": "Market Session",
-          "literal": "00"
-        },
-        {
-          "named": "symbolavailability",
-          "width": 1,
-          "endian": "little",
-          "title": "Symbol Availability",
+          "title": "Quote Update Flags",
           "literal": "00"
         },
         {

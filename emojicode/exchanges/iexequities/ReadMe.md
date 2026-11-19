@@ -114,6 +114,15 @@ Each run is what the market should write for the run of the same name, and the p
 
 Under `runs/`, in a folder named for each program, is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `replay.py` compiles each program against. They are written as hexadecimal because a frame holds any byte a protocol can carry and so does a program's output, so neither is text.
 
+## What the programs are made of
+
+| Program | Emoji | Different | Most used |
+| --- | ---: | ---: | --- |
+| `IexEquities.Market.emojic` | 3,737 | 46 | ➡️ 981 🖍 971 ❗️ 356 ➕ 316 ⭕ 241 |
+| `IexEquities.Tops.Feed.emojic` | 2,738 | 41 | ➡️ 673 🖍 667 ➕ 317 ❗️ 310 🔪 152 |
+| `IexEquities.Deep.Feed.emojic` | 3,844 | 42 | ➡️ 970 🖍 964 ➕ 435 ❗️ 421 ⭕ 221 |
+| `IexEquities.DeepPlus.Feed.emojic` | 2,833 | 42 | ➡️ 715 🖍 709 ➕ 317 ❗️ 311 ⭕ 163 |
+
 ## Running
 
 A program here is **compiled first, and then takes two paths**: the file to read and the file to write. Emojicode 1.0 beta 2 has no standard input — the file package is the only way in or out — so nothing here is piped.

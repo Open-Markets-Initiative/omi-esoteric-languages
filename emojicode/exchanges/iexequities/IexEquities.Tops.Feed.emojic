@@ -110,7 +110,7 @@
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 3 1❗️ ➕ 🔪 table 128 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 1 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 46 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 44 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 1 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         streamed ➡️ 🖍 taken
         taken ➡️ 🖍 code
@@ -232,10 +232,8 @@
         taken 👉 56 ➡️ 🖍 code
         code ⭕ 255 ➡️ 🖍 code
         wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 44 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 42 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤Q🔤❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         💭 timestamp, from timestamp
         position ➕ 3 ➡️ 🖍 began
@@ -420,7 +418,7 @@
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         sequence ➕ 1 ➡️ 🖍 sequence
-        streamed ➕ 46 ➡️ 🖍 streamed
+        streamed ➕ 44 ➡️ 🖍 streamed
       🍉
 
       💭 tops_quote_ask: quoteupdatemessage
@@ -447,7 +445,7 @@
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 3 1❗️ ➕ 🔪 table 128 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 1 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 46 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 44 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 1 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         streamed ➡️ 🖍 taken
         taken ➡️ 🖍 code
@@ -569,10 +567,8 @@
         taken 👉 56 ➡️ 🖍 code
         code ⭕ 255 ➡️ 🖍 code
         wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 44 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 42 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤Q🔤❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         💭 timestamp, from timestamp
         position ➕ 3 ➡️ 🖍 began
@@ -757,7 +753,7 @@
         code ⭕ 255 ➡️ 🖍 code
         wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
         sequence ➕ 1 ➡️ 🖍 sequence
-        streamed ➕ 46 ➡️ 🖍 streamed
+        streamed ➕ 44 ➡️ 🖍 streamed
       🍉
 
     🍉

@@ -5,14 +5,17 @@
     "length": {
       "named": "messagelength",
       "width": 2,
-      "endian": "little"
+      "endian": "little",
+      "at": 0
     },
     "type": {
       "named": "messagetype",
       "width": 1,
       "endian": "little",
-      "text": true
+      "text": true,
+      "at": 2
     },
+    "opening": 3,
     "addend": 2
   },
   "band": {
@@ -171,6 +174,28 @@
             "Open": 79,
             "Close": 67
           }
+        }
+      ]
+    },
+    {
+      "does": "accepted",
+      "way": "out",
+      "named": "orderacceptedmessage",
+      "codes": [
+        65
+      ],
+      "fields": [
+        {
+          "named": "timestamp",
+          "width": 8,
+          "endian": "little",
+          "role": "Timestamp"
+        },
+        {
+          "named": "orderid",
+          "width": 8,
+          "endian": "little",
+          "role": "Order"
         }
       ]
     },

@@ -144,9 +144,14 @@ def framed(layout, message, holding):
     frame = layout["frame"]
     body = b"".join(serialised(field, held(field, holding)) for field in message["fields"])
 
+    # what is written here is a length and then a type, so a frame opening any other way is refused
+    # rather than written wrongly
+    if frame["length"]["at"] != 0 or frame["type"]["at"] != frame["length"]["width"]:
+        raise Refused(f"{layout['venue']} frames a message opening with more than its length and type")
+
     # the length is what the protocol's own rule reckons, so what is built here is what the program
     # will read back out of it
-    length = frame["length"]["width"] + frame["type"]["width"] + len(body) - frame["addend"]
+    length = frame["opening"] + len(body) - frame["addend"]
 
     return (serialised(frame["length"], length)
             + serialised(frame["type"], message["codes"][0])

@@ -25,6 +25,7 @@ A venue is declared as components that talk through one internal protocol, and e
 | --- | --- | --- | --- |
 | `NsmEquities.Gateway.emojic` | `Nasdaq.NsmEquities.Orders.Ouch.v5.0` | `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` | a client's requests become the venue's own orders, under the session chart |
 | `NsmEquities.Market.emojic` | `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` | `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` | the venue's own orders become its own events, by the trading chart |
+| `NsmEquities.Responder.emojic` | `Nasdaq.NsmEquities.Orders.Ouch.v5.0` then `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` | `Nasdaq.NsmEquities.Orders.Ouch.v5.0` | the client's requests and the venue's own events become the client's answers, by the transforms |
 | `NsmEquities.TotalView.Feed.emojic` | `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026` | `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026` | the venue's own events become market data, by the transforms |
 
 From the root of the repository, one published run through all of it. The compiler wants its packages in the directory it is run from, and a published frame is hexadecimal, so it is turned back into bytes first and what comes out of the last program is held to the run published beside it:
@@ -53,10 +54,11 @@ What was settled when the program was written rather than asked while it ran:
 - timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as nought
 - sequence is a message's place in the order the engine is sent them, which the venue's sequencer states; with one gateway and nothing between it and the engine, this counts them itself, from one
 - the session is SoupBin Tcp: a connection opens in NotLoggedIn, and a request is admitted only while it rests in LoggedIn, which is where the chart receives the other end's own data. A login moves the connection as the chart says an accepted one does; whether to accept it is the session program's to say and was settled there
+- an order is held to 4 rules as it arrives, in the order the venue's transforms write them, and one failing any is not numbered and not sent to the engine: quantity from 1 to 999999; price from 0 to 1999999900; side one of 'B', 'S', 'T', 'E'; symbol one of 'ZVZZT'
 
 What the venue declares of its order entry that this program does not run, and why:
 
-- the 10 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
+- the 6 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
 
 Each run is a client's packets and what the gateway should write for them. A run nobody logged in for is published with nothing to write, because declining is half of what a gate does:
 
@@ -68,6 +70,7 @@ Each run is a client's packets and what the gateway should write for them. A run
 | `NsmEquities.Gateway.selling` | 2 | 96 |
 | `NsmEquities.Gateway.cancelling` | 3 | 123 |
 | `NsmEquities.Gateway.day` | 8 | 363 |
+| `NsmEquities.Gateway.rejecting` | 4 | 96 |
 
 ## Market
 
@@ -94,7 +97,45 @@ Each run below is published as a `.frame` of the orders put to it and a `.wrote`
 | `NsmEquities.Market.entered-selling` | 2 | 1 | 0 |
 | `NsmEquities.Market.entered-cancelling` | 2 | 0 | 0 |
 | `NsmEquities.Market.entered-day` | 7 | 4 | 0 |
+| `NsmEquities.Market.entered-rejecting` | 2 | 1 | 0 |
 
+## Responder
+
+`NsmEquities.Responder.emojic` writes what a client is answered with, in `Nasdaq.NsmEquities.Orders.Ouch.v5.0`: each event of the engine's that the venue's transforms declare an answer for, as that answer. An answer is written from two things at once - the engine's event, and what the client entered of the order it is about - and a program reads one file, so its input is the two joined: the client's packets exactly as the gateway read them, a packet stating no length, and then the venue's own events exactly as the market wrote them. It writes nothing for the requests; it reads them to remember where each order was entered, numbered as the gateway numbers them, which is how an event naming an order by its number finds what the client called it.
+
+What was settled when the program was written rather than asked while it ran:
+
+- timestamp is when an answer is sent where the engine's event does not say, and a program reading one file and writing another has no clock, so it is written as nought
+- it reads the client's requests first and the engine's events after them, in one file: the requests end at a packet stating no length, and everything after that is the engine's
+- an answer is written as what it answers is read: a reject, or the answer to an order as the gateway takes it, as its request is, and so ahead of every answer to an event, and an answer to an event after the last request; answers to one event are written in the order the venue's transforms declare them
+
+Each run is the gateway's run of the same name and what the market should write for it, joined, and the answers this should write. Each was held to the C# parser reading the answers back through the order entry's own model before it was published:
+
+| Run | Bytes of requests | Bytes of events | Answers | Bytes written |
+| --- | ---: | ---: | ---: | ---: |
+| `crossing` | 202 | 232 | 5 | 279 |
+| `sweeping` | 202 | 287 | 7 | 357 |
+| `selling` | 152 | 133 | 4 | 212 |
+| `cancelling` | 166 | 137 | 3 | 157 |
+| `day` | 416 | 572 | 16 | 804 |
+| `rejecting` | 252 | 133 | 6 | 280 |
+
+From the root of the repository, the same join made by hand - the client's requests, the packet stating no length, and what the gateway and the market make of those requests - and what the responder writes for it held to the run published beside it:
+
+```
+cd emojicode/exchanges/nsmequities
+ln -s /path/to/Emojicode-1.0-beta.2-Linux-x86_64/packages packages
+emojicodec NsmEquities.Gateway.emojic
+emojicodec NsmEquities.Market.emojic
+emojicodec NsmEquities.Responder.emojic
+xxd -r -p < runs/gateway/crossing.frame > requests.bin
+./NsmEquities.Gateway requests.bin orders.bin
+./NsmEquities.Market orders.bin events.bin
+( cat requests.bin; printf '\0\0'; cat events.bin ) > joined.bin
+./NsmEquities.Responder joined.bin answers.bin
+xxd -r -p < runs/responder/crossing.wrote > want.bin
+cmp want.bin answers.bin
+```
 ## Feeds
 
 `NsmEquities.TotalView.Feed.emojic` reads the venue's own events and writes each one the venue's transforms name as a packet of `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`, one message to a packet. It writes 3 of the 3 events the venue declares for this feed.
@@ -117,6 +158,7 @@ Each run is what the market should write for the run of the same name, and the p
 | `NsmEquities.TotalView.Feed.entered-selling` | 2 |
 | `NsmEquities.TotalView.Feed.entered-cancelling` | 3 |
 | `NsmEquities.TotalView.Feed.entered-day` | 10 |
+| `NsmEquities.TotalView.Feed.entered-rejecting` | 2 |
 
 ## Session
 
@@ -131,9 +173,11 @@ What was settled when the program was written rather than asked while it ran:
 
 Transitions of the chart no program reading one file and writing another can run, because a Request, an Ask, a Handler or a Timer has nowhere to put a question, nobody to ask it of and no clock to read:
 
+- Timer.Login is armed to fire after a wait, and a program reading one file and writing another has no clock to wait on
 - Ask.Login is put to a handler, and a program reading one file and writing another has nobody to put it to
 - Timer.Heartbeat is armed to fire after a wait, and a program reading one file and writing another has no clock to wait on
 - Timer.Silence is armed to fire after a wait, and a program reading one file and writing another has no clock to wait on
+- Timer.Login answers something that is not bytes, so no program reading one file and writing another can reach it
 - Request.ResumeFrom answers something that is not bytes, so no program reading one file and writing another can reach it
 - Receive.Payload.Application is the other end's own data rather than one packet this protocol names, so nothing in the frame tells it apart from the session's own packets
 - Handler.Logout is put to a handler, and a program reading one file and writing another has nobody to put it to
@@ -149,7 +193,9 @@ One run per way the chart states of answering a packet, named for the state it r
 | --- | ---: |
 | `NsmEquities.SoupBin.NotLoggedIn.LoginRequest.RequestedSequenceNumber` | 1 |
 | `NsmEquities.SoupBin.NotLoggedIn.LoginRequest` | 1 |
+| `NsmEquities.SoupBin.NotLoggedIn.SessionDebug` | 0 |
 | `NsmEquities.SoupBin.LoggedIn.SessionLogout` | 1 |
+| `NsmEquities.SoupBin.LoggedIn.SessionDebug` | 1 |
 | `NsmEquities.SoupBin.LoggedIn.SessionHeartbeat` | 1 |
 | `NsmEquities.SoupBin.LoggedIn.LoginRequest` | 1 |
 
@@ -157,12 +203,23 @@ One run per way the chart states of answering a packet, named for the state it r
 
 | Program | What it is | Runs published |
 | --- | --- | ---: |
-| `NsmEquities.SoupBin.emojic` | the venue's handshake | 5 |
-| `NsmEquities.Gateway.emojic` | the venue's order entry, under its session chart | 6 |
-| `NsmEquities.Market.emojic` | the venue's book and the matching over it | 10 |
-| `NsmEquities.TotalView.Feed.emojic` | the venue's TotalView feed | 10 |
+| `NsmEquities.SoupBin.emojic` | the venue's handshake | 7 |
+| `NsmEquities.Gateway.emojic` | the venue's order entry, under its session chart | 7 |
+| `NsmEquities.Market.emojic` | the venue's book and the matching over it | 11 |
+| `NsmEquities.Responder.emojic` | the venue's answers to a client | 6 |
+| `NsmEquities.TotalView.Feed.emojic` | the venue's TotalView feed | 11 |
 
 Under `runs/`, in a folder named for each program, is a `.frame` per run, holding the bytes it was given as hexadecimal, and a `.wrote` holding what it wrote for them. Those are what `replay.py` compiles each program against. They are written as hexadecimal because a frame holds any byte a protocol can carry and so does a program's output, so neither is text.
+
+## What the programs are made of
+
+| Program | Emoji | Different | Most used |
+| --- | ---: | ---: | --- |
+| `NsmEquities.SoupBin.emojic` | 446 | 42 | ➡️ 90 🖍 82 💭 41 ❗️ 33 ➕ 23 |
+| `NsmEquities.Gateway.emojic` | 2,172 | 45 | ➡️ 538 🖍 532 ➕ 199 ❗️ 197 ⭕ 98 |
+| `NsmEquities.Market.emojic` | 3,737 | 46 | ➡️ 981 🖍 971 ❗️ 356 ➕ 316 ⭕ 241 |
+| `NsmEquities.Responder.emojic` | 9,417 | 47 | ➡️ 2,102 🖍 2,094 ❗️ 1,412 ➕ 905 🐻 522 |
+| `NsmEquities.TotalView.Feed.emojic` | 3,990 | 45 | ❗️ 825 ➡️ 755 🖍 749 🐻 520 ➕ 306 |
 
 ## Running
 
