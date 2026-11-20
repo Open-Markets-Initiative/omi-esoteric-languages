@@ -100,18 +100,18 @@ The runs cover an order crossing one level and resting the remainder, **an order
 
 ## What the programs are made of
 
-Every emoji of the 37 programs here, 216,199 of them and 48 different, counted off the files as they are published, most used first. Where the generator writes one under a name of its own, the name is given; the rest are written only as part of something longer, or only in the header a program opens with.
+Every emoji of the 37 programs here, 216,291 of them and 48 different, counted off the files as they are published, most used first. Where the generator writes one under a name of its own, the name is given; the rest are written only as part of something longer, or only in the header a program opens with.
 
 | Emoji | The generator's name for it | Count | Share |
 | --- | --- | ---: | ---: |
-| ➡️ | Into | 54,316 | 25.1% |
-| 🖍 | Over | 54,035 | 25.0% |
-| ➕ | Joins | 30,324 | 14.0% |
-| ❗️ | Call | 20,080 | 9.3% |
-| 🔤 | Quote | 13,184 | 6.1% |
-| 🔪 | Slice | 8,970 | 4.1% |
-| 💭 | Note | 8,142 | 3.8% |
-| 📇 | Data, Reads | 6,651 | 3.1% |
+| ➡️ | Into | 54,340 | 25.1% |
+| 🖍 | Over | 54,059 | 25.0% |
+| ➕ | Joins | 30,340 | 14.0% |
+| ❗️ | Call | 20,088 | 9.3% |
+| 🔤 | Quote | 13,192 | 6.1% |
+| 🔪 | Slice | 8,974 | 4.1% |
+| 💭 | Note | 8,146 | 3.8% |
+| 📇 | Data, Reads | 6,655 | 3.1% |
 | ⭕ | And | 5,351 | 2.5% |
 | 👉 | Shifted | 2,295 | 1.1% |
 | 🐽 | At | 1,721 | 0.8% |
@@ -191,7 +191,7 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 | Protocol decoders | Characters in them | Reading every field the model states | Frames | Recorded from the wire |
 | --- | --- | --- | --- | --- |
-| 23 | 1,741,438 | 22 of 23 | 280 | 50 |
+| 23 | 1,742,390 | 22 of 23 | 280 | 50 |
 
 ## Open Markets Initiative
 

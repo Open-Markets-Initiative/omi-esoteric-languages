@@ -502,6 +502,22 @@
     wrote ➕ newline ➡️ 🖍 wrote
     position ➕ 1 ➡️ 🖍 position
 
+    💭 protectionpercent, 4 bytes
+    📇 🔤protectionpercent=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 4❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 4 ➡️ 🖍 position
+
+    💭 protectionamount, 8 bytes
+    📇 🔤protectionamount=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 8❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 8 ➡️ 🖍 position
+
   🍉
   🙅↪️ value1 🙌 67 🍇
     💭 timestamp, 8 bytes
@@ -1517,6 +1533,22 @@
     wrote ➕ held ➡️ 🖍 wrote
     wrote ➕ newline ➡️ 🖍 wrote
     position ➕ 1 ➡️ 🖍 position
+
+    💭 protectionpercent, 4 bytes
+    📇 🔤protectionpercent=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 4❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 4 ➡️ 🖍 position
+
+    💭 protectionamount, 8 bytes
+    📇 🔤protectionamount=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 8❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 8 ➡️ 🖍 position
 
   🍉
   🙅↪️ value1 🙌 87 🍇
