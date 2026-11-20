@@ -70,11 +70,11 @@ Each venue keeps a readme of its own beside its programs, saying what that venue
 
 ## Sessions
 
-A session is a venue's handshake: it reads the other end's packets off one file, holds the state the connection is in and the data the chart says it keeps, and writes the venue's own answers to the other file. The chart it runs is the same definition the generated C++ session runs, and nothing in that chart names a packet — an event is a marking on one, so `Receive.Login.Request` means the packet marked Login Request arriving, and one chart serves every protocol marked the same way.
+A session is a venue's handshake: it reads the other end's packets off one file, holds the state the connection is in and the data the chart says it keeps, and writes the venue's own answers to the other file. The chart it runs is the same definition the generated C++ session runs, and nothing in that chart names a packet — an event is a marking on one, so `Receive.Login.Request` means the packet marked Login Request arriving, and one chart serves every protocol marked the same way. A marking is read for the value it states rather than for what the venue called the packet, which is what lets that chart drive protocols that name their packets in their own words: Nse's Nnf calls its answer to a sign-on Sign On Request Out, and marks it Login Accepted.
 
 **It admits every login, and that is not a detail.** A chart names six kinds of event. Receive and Send are bytes; Request is a service asking the session to do something, Ask and Handler are the endpoint putting a question it cannot answer itself and hearing the answer, and Timer is a clock. A program reading one file and writing another has no service, nobody to ask and no clock, so of a handshake's transitions only the ones answering bytes can run at all. Rather than refuse the chart over it, the handler's answer is decided when the program is written and the accepting one is taken. So this is a demonstration of a handshake and never an authenticator, and every transition that cannot run is reported by the generator rather than passed over.
 
-**What it does run, a session written in constants cannot.** A program whose answers are all known before it starts cannot fill a reply field from a field of the packet that arrived, and cannot run a guard on one. SoupBin states two accepting answers told apart by exactly that: a guard on the arriving login's requested sequence number, deciding whether the connection resumes where the client asked or where the session already was. Both are published as runs, and their answers differ in the twenty bytes that say where the stream is numbered from — one carries the sequence the client asked for, the other the value the chart opens with. A session that could not read the arriving packet would answer both the same way, and both answers would parse.
+**What it does run, a session written in constants cannot.** A program whose answers are all known before it starts cannot fill a reply field from a field of the packet that arrived, and cannot run a guard on one. SoupBin states two accepting answers told apart by exactly that: a guard on the arriving login's requested sequence number, deciding whether the connection resumes where the client asked or where the session already was. Both are published as runs, and their answers differ in the twenty bytes that say where the stream is numbered from — one carries the sequence the client asked for, the other the value the chart opens with. A session that could not read the arriving packet would answer both the same way, and both answers would parse. A field the chart names is read off the packet that arrived, rather than looked for across every packet the other end sends: Nse's Nnf marks thirteen of its client's fields as a user, and its answer to a sign-on restates the user of the sign-on that arrived.
 
 **What it keeps, it keeps as bytes.** A session's data is answered in a field, and the field is what says how wide that is and how a value sits in it, so the program holds it already laid out and answering with it is appending it. SoupBin numbers its stream in twenty ascii digits, which is more than any integer in this language carries; held as bytes there is no number in it to overflow, and the guard on it is a count of the bytes that agree rather than a conversion the language could not do exactly. A datum the chart opens with no value is written as a venue pads an unset field, which is what the chart says it is.
 
@@ -92,63 +92,65 @@ What the day does with an arriving order is the venue's own chart and not a deci
 
 Each market is published with the runs it was proven on. A run is laid out from the model and walked into a trading phase through the chart's own changes, and it is held to two things before it is published. **The C# parser** must read the orders back as the messages they were built from, and must read what the market published back as the venue's own messages, accounting for every byte — which says the market framed each one, stated the length the venue's own rule reckons, put the right type byte in front of it, and laid every field at the width and byte order the model states.
 
-**And a second book over the same orders must agree with it on every trade** — whose order was resting, how much changed hands, and at what price. That check exists because the first one cannot make it: a wrong trade inside a well formed Trade message reads perfectly. The second book is kept deliberately unlike the market's, holding one list of resting orders where the market holds lists of levels, and reading the run's own steps rather than the bytes they were encoded to — so where the two agree, the encoding and the decoding agreed as well. A market failing any of it is published without a run, and the reason is reported instead.
+**And a second book over the same orders must agree with it on every trade** — whose order was resting, how much changed hands, and at what price. That check exists because the first one cannot make it: a wrong trade inside a well formed Trade message reads perfectly. The second book is kept deliberately unlike the market's, holding one list of resting orders where the market holds lists of levels, and reading the run's own steps rather than the bytes they were encoded to — so where the two agree, the encoding and the decoding agreed as well. Where the venue confirms a cancel by restating the order it took back - Nse's says its side, its price and what was left of it - that is held to the second book too, because a cancel names an order and nothing else, and a confirmation written from whatever the last order to arrive left behind reads perfectly. A run failing any of it is not published, and the reason is reported instead.
 
-The runs cover an order crossing one level and resting the remainder, **an order crossing two levels at once** — which a book taking only the best level once would get wrong while looking right — a sell aggressing into a resting bid, a cancel taking an order back out, orders collected in a phase that does not cross and then crossed when the day reaches one that does, and an order arriving where the day takes nothing at all. A trade names the resting order and the price of the level it rested at rather than the arriving order's limit, because that is where the trade happened: an order sweeping two levels trades at each of those rather than twice at its own price.
+**Every published run happens at the venue's open, on 2 January 2026.** A program here has no clock, and a client's request gives the gateway no time, so the time its engine's messages are stamped with is chosen when the program is written: the start of the day the venue's own declaration states, on its own clock - 09:15 in India for Nse, 09:30 in New York for Nasdaq and Iex. Each program says so in its own notes. Stamped with nought, as they once were, every run was said to happen in the first instant of 1970, which is where every venue here counts from.
+
+The runs cover an order crossing one level and resting the remainder, **an order crossing two levels at once** — which a book taking only the best level once would get wrong while looking right — a sell aggressing into a resting bid, a cancel taking a bid back out after an offer has arrived - so a confirmation stating the last order's side would state the wrong one - orders collected in a phase that does not cross and then crossed when the day reaches one that does, and an order arriving where the day takes nothing at all. A trade names the resting order and the price of the level it rested at rather than the arriving order's limit, because that is where the trade happened: an order sweeping two levels trades at each of those rather than twice at its own price.
 
 ## What the programs are made of
 
-Every emoji of the 36 programs here, 214,610 of them and 48 different, counted off the files as they are published, most used first. Where the generator writes one under a name of its own, the name is given; the rest are written only as part of something longer, or only in the header a program opens with.
+Every emoji of the 37 programs here, 216,199 of them and 48 different, counted off the files as they are published, most used first. Where the generator writes one under a name of its own, the name is given; the rest are written only as part of something longer, or only in the header a program opens with.
 
 | Emoji | The generator's name for it | Count | Share |
 | --- | --- | ---: | ---: |
-| ➡️ | Into | 54,050 | 25.2% |
-| 🖍 | Over | 53,775 | 25.1% |
-| ➕ | Joins | 30,077 | 14.0% |
-| ❗️ | Call | 19,845 | 9.2% |
-| 🔤 | Quote | 13,090 | 6.1% |
-| 🔪 | Slice | 8,823 | 4.1% |
-| 💭 | Note | 8,060 | 3.8% |
-| 📇 | Data, Reads | 6,602 | 3.1% |
-| ⭕ | And | 5,327 | 2.5% |
-| 👉 | Shifted | 2,290 | 1.1% |
-| 🐽 | At | 1,701 | 0.8% |
-| 🔢 | Integer | 1,496 | 0.7% |
-| ✖ | Scales | 1,481 | 0.7% |
-| 🍇 | Opens | 1,125 | 0.5% |
-| 🍉 | Closes | 1,125 | 0.5% |
+| ➡️ | Into | 54,316 | 25.1% |
+| 🖍 | Over | 54,035 | 25.0% |
+| ➕ | Joins | 30,324 | 14.0% |
+| ❗️ | Call | 20,080 | 9.3% |
+| 🔤 | Quote | 13,184 | 6.1% |
+| 🔪 | Slice | 8,970 | 4.1% |
+| 💭 | Note | 8,142 | 3.8% |
+| 📇 | Data, Reads | 6,651 | 3.1% |
+| ⭕ | And | 5,351 | 2.5% |
+| 👉 | Shifted | 2,295 | 1.1% |
+| 🐽 | At | 1,721 | 0.8% |
+| 🔢 | Integer | 1,510 | 0.7% |
+| ✖ | Scales | 1,495 | 0.7% |
+| 🍇 | Opens | 1,144 | 0.5% |
+| 🍉 | Closes | 1,144 | 0.5% |
 | 🐻 | Adds | 1,066 | 0.5% |
-| ↪️ | If | 898 | 0.4% |
-| 🆕 | Creates | 880 | 0.4% |
-| 🙌 | Same | 802 | 0.4% |
-| 🙅 | Else | 551 | 0.3% |
-| ➖ | Takes | 202 | 0.1% |
-| ▶️ | Above | 200 | 0.1% |
-| 🐇 | OfType | 108 | 0.1% |
-| 🔁 | Repeat | 87 | 0.0% |
-| 🍺 | Unwrap | 72 | 0.0% |
-| 📄 | File | 72 | 0.0% |
-| ❓ | Ask | 66 | 0.0% |
-| 📏 | Length | 66 | 0.0% |
-| 🍆 | Closing | 51 | 0.0% |
-| 🐚 | Opening | 51 | 0.0% |
-| ⏩ | Upto | 43 | 0.0% |
+| ↪️ | If | 913 | 0.4% |
+| 🆕 | Creates | 904 | 0.4% |
+| 🙌 | Same | 821 | 0.4% |
+| 🙅 | Else | 553 | 0.3% |
+| ➖ | Takes | 204 | 0.1% |
+| ▶️ | Above | 202 | 0.1% |
+| 🐇 | OfType | 111 | 0.1% |
+| 🔁 | Repeat | 88 | 0.0% |
+| 🍺 | Unwrap | 74 | 0.0% |
+| 📄 | File | 74 | 0.0% |
+| ❓ | Ask | 67 | 0.0% |
+| 📏 | Length | 67 | 0.0% |
+| 🍆 | Closing | 52 | 0.0% |
+| 🐚 | Opening | 52 | 0.0% |
+| ⏩ | Upto | 44 | 0.0% |
+| 💧 | Byte | 44 | 0.0% |
+| 🔂 | Counting | 44 | 0.0% |
 | ◀️ | Under | 43 | 0.0% |
-| 🔂 | Counting | 43 | 0.0% |
-| 💧 | Byte | 42 | 0.0% |
-| 🎞 | Arguments | 36 | 0.0% |
-| 🏁 | Start | 36 | 0.0% |
-| 🏠 | Namespace | 36 | 0.0% |
-| 💻 | System | 36 | 0.0% |
-| 📦 | Import | 36 | 0.0% |
-| 📻 | Writes | 36 | 0.0% |
-| 🔚 |  | 36 | 0.0% |
-| 🔜 |  | 36 | 0.0% |
+| 🎞 | Arguments | 37 | 0.0% |
+| 🏁 | Start | 37 | 0.0% |
+| 🏠 | Namespace | 37 | 0.0% |
+| 💻 | System | 37 | 0.0% |
+| 📦 | Import | 37 | 0.0% |
+| 📻 | Writes | 37 | 0.0% |
+| 🔚 |  | 37 | 0.0% |
+| 🔜 |  | 37 | 0.0% |
 | 🍨 | List | 30 | 0.0% |
 | ❌ | Escape | 23 | 0.0% |
-| ☣️ | Unsafe | 21 | 0.0% |
-| 🧠 | Memory | 21 | 0.0% |
-| 🤝 | Both | 10 | 0.0% |
+| ☣️ | Unsafe | 22 | 0.0% |
+| 🧠 | Memory | 22 | 0.0% |
+| 🤝 | Both | 14 | 0.0% |
 | 🚮 | Remainder | 7 | 0.0% |
 
 ## Testing
@@ -177,9 +179,19 @@ Please report any parsing errors as an [issue](https://github.com/Open-Markets-I
 
 Updates are greatly appreciated; however, this entire repository is source generated...including the words you are reading right now. If you wish to suggest updates, the recommended process is to create an issue with changes and explanation. Time permitting, we will update the models and regenerate.
 
-| Programs | Characters | Reading every field the model states | Frames | Recorded from the wire |
+| Kind | Programs | Runs |
+| --- | ---: | ---: |
+| decoder | 23 | 280 |
+| session | 2 | 10 |
+| gateway | 2 | 13 |
+| market | 3 | 26 |
+| responder | 2 | 11 |
+| feed | 5 | 36 |
+| All | 37 | 376 |
+
+| Protocol decoders | Characters in them | Reading every field the model states | Frames | Recorded from the wire |
 | --- | --- | --- | --- | --- |
-| 23 | 1,739,173 | 22 of 23 | 280 | 50 |
+| 23 | 1,741,438 | 22 of 23 | 280 | 50 |
 
 ## Open Markets Initiative
 

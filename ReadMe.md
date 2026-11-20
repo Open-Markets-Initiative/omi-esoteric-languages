@@ -41,6 +41,8 @@ Please report any parsing errors as an [issue](https://github.com/Open-Markets-I
 
 Updates are greatly appreciated; however, this entire repository is source generated...including the words you are reading right now. If you wish to suggest updates, the recommended process is to create an issue with changes and explanation. Time permitting, we will update the models and regenerate.
 
+What the generator said as it wrote this repository is kept beside the build, in `.github/logs/generate.log`: every program it could not publish and why, every run it could not prove, and every decision a program records about itself. Its history is the history of what could and could not be generated here.
+
 ## Open Markets Initiative
 
 [![Omi](https://github.com/Open-Markets-Initiative/Open-Markets-Initiative/raw/main/About/Images/Logo.png)](https://github.com/Open-Markets-Initiative/Directory)  The Open Markets Initiative (Omi) is a group of technologists dedicated to enhancing the stability of electronic financial markets using modern development methods.

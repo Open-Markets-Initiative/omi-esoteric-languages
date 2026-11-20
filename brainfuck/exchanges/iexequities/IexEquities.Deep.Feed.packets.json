@@ -139,6 +139,7 @@
           "named": "timestamp",
           "width": 8,
           "endian": "little",
+          "signed": true,
           "title": "Timestamp"
         },
         {
@@ -158,6 +159,7 @@
           "named": "price",
           "width": 8,
           "endian": "little",
+          "signed": true,
           "scale": "-4",
           "title": "Price"
         },
@@ -308,6 +310,7 @@
           "named": "timestamp",
           "width": 8,
           "endian": "little",
+          "signed": true,
           "title": "Timestamp"
         },
         {
@@ -327,6 +330,7 @@
           "named": "price",
           "width": 8,
           "endian": "little",
+          "signed": true,
           "scale": "-4",
           "title": "Price"
         }
@@ -470,6 +474,7 @@
           "named": "timestamp",
           "width": 8,
           "endian": "little",
+          "signed": true,
           "title": "Timestamp"
         },
         {
@@ -489,6 +494,7 @@
           "named": "price",
           "width": 8,
           "endian": "little",
+          "signed": true,
           "scale": "-4",
           "title": "Price"
         }

@@ -79,7 +79,8 @@
           "named": "token",
           "width": 4,
           "endian": "little",
-          "role": "Instrument"
+          "role": "Instrument",
+          "signed": true
         },
         {
           "named": "side",
@@ -97,6 +98,7 @@
           "width": 8,
           "endian": "little",
           "role": "Price",
+          "signed": true,
           "scale": "-2"
         },
         {
@@ -182,7 +184,8 @@
           "named": "token",
           "width": 4,
           "endian": "little",
-          "role": "Instrument"
+          "role": "Instrument",
+          "signed": true
         },
         {
           "named": "side",
@@ -200,6 +203,7 @@
           "width": 8,
           "endian": "little",
           "role": "Price",
+          "signed": true,
           "scale": "-2"
         },
         {
@@ -246,13 +250,15 @@
           "named": "token",
           "width": 4,
           "endian": "little",
-          "role": "Instrument"
+          "role": "Instrument",
+          "signed": true
         },
         {
           "named": "price",
           "width": 8,
           "endian": "little",
           "role": "Price",
+          "signed": true,
           "scale": "-2"
         },
         {
@@ -319,7 +325,8 @@
           "named": "token",
           "width": 4,
           "endian": "little",
-          "role": "Instrument"
+          "role": "Instrument",
+          "signed": true
         },
         {
           "named": "side",
@@ -337,6 +344,7 @@
           "width": 8,
           "endian": "little",
           "role": "Price",
+          "signed": true,
           "scale": "-2"
         },
         {
@@ -365,7 +373,8 @@
           "named": "token",
           "width": 4,
           "endian": "little",
-          "role": "Instrument"
+          "role": "Instrument",
+          "signed": true
         },
         {
           "named": "announcement",

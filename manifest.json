@@ -289,6 +289,11 @@
           "wrote": "brainfuck/exchanges/nsefo/runs/nnf/NotSignedOn.LoginRequest.wrote"
         },
         {
+          "name": "SignedOn.SessionLogout",
+          "frame": "brainfuck/exchanges/nsefo/runs/nnf/SignedOn.SessionLogout.frame",
+          "wrote": "brainfuck/exchanges/nsefo/runs/nnf/SignedOn.SessionLogout.wrote"
+        },
+        {
           "name": "SignedOn.SessionHeartbeat",
           "frame": "brainfuck/exchanges/nsefo/runs/nnf/SignedOn.SessionHeartbeat.frame",
           "wrote": "brainfuck/exchanges/nsefo/runs/nnf/SignedOn.SessionHeartbeat.wrote"
@@ -1054,6 +1059,11 @@
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.trademessage.wrote"
         },
         {
+          "name": "Sample.imbalanceindicatedmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalanceindicatedmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalanceindicatedmessage.wrote"
+        },
+        {
           "name": "Sample.orderrestedmessage",
           "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.orderrestedmessage.frame",
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.orderrestedmessage.wrote"
@@ -1072,11 +1082,6 @@
           "name": "Sample.orderreducedmessage",
           "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.orderreducedmessage.frame",
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.orderreducedmessage.wrote"
-        },
-        {
-          "name": "Sample.imbalanceindicatedmessage",
-          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalanceindicatedmessage.frame",
-          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalanceindicatedmessage.wrote"
         },
         {
           "name": "Sample.tradebrokenmessage",
@@ -1144,6 +1149,11 @@
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.bookendmessage.wrote"
         },
         {
+          "name": "Sample.imbalancerequestmessage",
+          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalancerequestmessage.frame",
+          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalancerequestmessage.wrote"
+        },
+        {
           "name": "Sample.bookrequestmessage",
           "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.bookrequestmessage.frame",
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.bookrequestmessage.wrote"
@@ -1152,11 +1162,6 @@
           "name": "Sample.clockmessage",
           "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.clockmessage.frame",
           "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.clockmessage.wrote"
-        },
-        {
-          "name": "Sample.imbalancerequestmessage",
-          "frame": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalancerequestmessage.frame",
-          "wrote": "brainfuck/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalancerequestmessage.wrote"
         },
         {
           "name": "Sample.heartbeatmessage",
@@ -2203,6 +2208,11 @@
           "wrote": "emojicode/exchanges/nsefo/runs/gateway/crossing.wrote"
         },
         {
+          "name": "unadmitted",
+          "frame": "emojicode/exchanges/nsefo/runs/gateway/unadmitted.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/gateway/unadmitted.wrote"
+        },
+        {
           "name": "sweeping",
           "frame": "emojicode/exchanges/nsefo/runs/gateway/sweeping.frame",
           "wrote": "emojicode/exchanges/nsefo/runs/gateway/sweeping.wrote"
@@ -2341,6 +2351,31 @@
           "name": "entered-day",
           "frame": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-day.frame",
           "wrote": "emojicode/exchanges/nsefo/runs/mtbt.feed/entered-day.wrote"
+        }
+      ]
+    },
+    {
+      "language": "emojicode",
+      "kind": "session",
+      "venue": "NseFo",
+      "path": "emojicode/exchanges/nsefo/NseFo.Nnf.emojic",
+      "reads": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+      "writes": "Nse.NseFo.OrderEntry.Nnf.v9.50",
+      "runs": [
+        {
+          "name": "NotSignedOn.LoginRequest",
+          "frame": "emojicode/exchanges/nsefo/runs/nnf/NotSignedOn.LoginRequest.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/nnf/NotSignedOn.LoginRequest.wrote"
+        },
+        {
+          "name": "SignedOn.SessionLogout",
+          "frame": "emojicode/exchanges/nsefo/runs/nnf/SignedOn.SessionLogout.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/nnf/SignedOn.SessionLogout.wrote"
+        },
+        {
+          "name": "SignedOn.SessionHeartbeat",
+          "frame": "emojicode/exchanges/nsefo/runs/nnf/SignedOn.SessionHeartbeat.frame",
+          "wrote": "emojicode/exchanges/nsefo/runs/nnf/SignedOn.SessionHeartbeat.wrote"
         }
       ]
     },
@@ -3188,6 +3223,11 @@
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.trademessage.wrote"
         },
         {
+          "name": "Sample.imbalanceindicatedmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalanceindicatedmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalanceindicatedmessage.wrote"
+        },
+        {
           "name": "Sample.orderrestedmessage",
           "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.orderrestedmessage.frame",
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.orderrestedmessage.wrote"
@@ -3206,11 +3246,6 @@
           "name": "Sample.orderreducedmessage",
           "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.orderreducedmessage.frame",
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.orderreducedmessage.wrote"
-        },
-        {
-          "name": "Sample.imbalanceindicatedmessage",
-          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalanceindicatedmessage.frame",
-          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalanceindicatedmessage.wrote"
         },
         {
           "name": "Sample.tradebrokenmessage",
@@ -3278,6 +3313,11 @@
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.bookendmessage.wrote"
         },
         {
+          "name": "Sample.imbalancerequestmessage",
+          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalancerequestmessage.frame",
+          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalancerequestmessage.wrote"
+        },
+        {
           "name": "Sample.bookrequestmessage",
           "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.bookrequestmessage.frame",
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.bookrequestmessage.wrote"
@@ -3286,11 +3326,6 @@
           "name": "Sample.clockmessage",
           "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.clockmessage.frame",
           "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.clockmessage.wrote"
-        },
-        {
-          "name": "Sample.imbalancerequestmessage",
-          "frame": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalancerequestmessage.frame",
-          "wrote": "emojicode/protocols/nasdaq/nsmequities/matchingengine/frames/matchingengine.v2026/Sample.imbalancerequestmessage.wrote"
         },
         {
           "name": "Sample.heartbeatmessage",

@@ -7,12 +7,14 @@
       "named": "messagelength",
       "width": 2,
       "endian": "big",
+      "signed": true,
       "at": 38
     },
     "type": {
       "named": "transactioncode",
       "width": 2,
       "endian": "big",
+      "signed": true,
       "values": {
         "Sign On Request In Message": 2300,
         "Sign On Request Out Message": 2301,
@@ -262,6 +264,7 @@
           "named": "transactioncode",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "values": {
             "Sign On Request In Message": 2300,
             "Sign On Request Out Message": 2301,
@@ -356,6 +359,7 @@
           "named": "competitorperiod",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "title": "Competitor Period",
           "at": 42
         },
@@ -363,6 +367,7 @@
           "named": "solicitorperiod",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "title": "Solicitor Period",
           "at": 44
         },
@@ -391,6 +396,7 @@
           "named": "reasoncode",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "values": {
             "Exercise": 2,
             "Position Liquidation": 3,
@@ -423,6 +429,7 @@
           "named": "tokenno",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Token No",
           "role": "Instrument",
           "at": 54
@@ -447,6 +454,7 @@
           "named": "expirydate",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Expiry Date",
           "at": 74
         },
@@ -454,6 +462,7 @@
           "named": "strikeprice",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "scale": "-2",
           "title": "Strike Price",
           "at": 78
@@ -470,6 +479,7 @@
           "named": "calevel",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "title": "Ca Level",
           "at": 84
         },
@@ -514,6 +524,7 @@
           "named": "ordertype",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "title": "Order Type",
           "at": 96
         },
@@ -538,6 +549,7 @@
           "named": "booktype",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "values": {
             "Regular Lot Order": 1,
             "Special Terms Order": 2,
@@ -554,6 +566,7 @@
           "named": "buysellindicator",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "values": {
             "Buy Order": 1,
             "Sell Order": 2
@@ -566,6 +579,7 @@
           "named": "disclosedvolume",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Disclosed Volume",
           "at": 120
         },
@@ -573,6 +587,7 @@
           "named": "disclosedvolumeremaining",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Disclosed Volume Remaining",
           "at": 124
         },
@@ -580,6 +595,7 @@
           "named": "totalvolumeremaining",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Total Volume Remaining",
           "at": 128
         },
@@ -587,6 +603,7 @@
           "named": "volume",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Volume",
           "role": "Quantity",
           "at": 132
@@ -595,6 +612,7 @@
           "named": "volumefilledtoday",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Volume Filled Today",
           "at": 136
         },
@@ -602,6 +620,7 @@
           "named": "price",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "scale": "-2",
           "title": "Price",
           "role": "Price",
@@ -611,6 +630,7 @@
           "named": "triggerprice",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "scale": "-2",
           "title": "Trigger Price",
           "at": 144
@@ -619,6 +639,7 @@
           "named": "goodtilldate",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Good Till Date",
           "at": 148
         },
@@ -626,6 +647,7 @@
           "named": "entrydatetime",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Entry Date Time",
           "at": 152
         },
@@ -633,6 +655,7 @@
           "named": "minimumfillaonvolume",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Minimum Fill Aon Volume",
           "at": 156
         },
@@ -640,6 +663,7 @@
           "named": "lastmodified",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Last Modified",
           "at": 160
         },
@@ -647,6 +671,7 @@
           "named": "branchid",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "title": "Branch Id",
           "at": 166
         },
@@ -654,6 +679,7 @@
           "named": "traderid",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Trader Id",
           "at": 168
         },
@@ -693,6 +719,7 @@
           "named": "proclientindicator",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "title": "Pro Client Indicator",
           "at": 214
         },
@@ -700,6 +727,7 @@
           "named": "settlementperiod",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "title": "Settlement Period",
           "at": 216
         },
@@ -743,6 +771,7 @@
           "named": "mktreplay",
           "width": 8,
           "endian": "big",
+          "signed": true,
           "title": "Mkt Replay",
           "at": 232
         },
@@ -758,6 +787,7 @@
           "named": "algoid",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Algo Id",
           "at": 250
         },
@@ -772,6 +802,7 @@
           "named": "lastactivityreference",
           "width": 8,
           "endian": "big",
+          "signed": true,
           "title": "Last Activity Reference",
           "at": 256
         },
@@ -794,6 +825,7 @@
           "named": "transactioncode",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "values": {
             "Sign On Request In Message": 2300,
             "Sign On Request Out Message": 2301,
@@ -888,6 +920,7 @@
           "named": "competitorperiod",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "title": "Competitor Period",
           "at": 42
         },
@@ -895,6 +928,7 @@
           "named": "solicitorperiod",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "title": "Solicitor Period",
           "at": 44
         },
@@ -923,6 +957,7 @@
           "named": "reasoncode",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "values": {
             "Exercise": 2,
             "Position Liquidation": 3,
@@ -955,6 +990,7 @@
           "named": "tokenno",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Token No",
           "at": 54
         },
@@ -978,6 +1014,7 @@
           "named": "expirydate",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Expiry Date",
           "at": 74
         },
@@ -985,6 +1022,7 @@
           "named": "strikeprice",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "scale": "-2",
           "title": "Strike Price",
           "at": 78
@@ -1001,6 +1039,7 @@
           "named": "calevel",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "title": "Ca Level",
           "at": 84
         },
@@ -1045,6 +1084,7 @@
           "named": "ordertype",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "title": "Order Type",
           "at": 96
         },
@@ -1069,6 +1109,7 @@
           "named": "booktype",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "values": {
             "Regular Lot Order": 1,
             "Special Terms Order": 2,
@@ -1085,6 +1126,7 @@
           "named": "buysellindicator",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "values": {
             "Buy Order": 1,
             "Sell Order": 2
@@ -1096,6 +1138,7 @@
           "named": "disclosedvolume",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Disclosed Volume",
           "at": 120
         },
@@ -1103,6 +1146,7 @@
           "named": "disclosedvolumeremaining",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Disclosed Volume Remaining",
           "at": 124
         },
@@ -1110,6 +1154,7 @@
           "named": "totalvolumeremaining",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Total Volume Remaining",
           "at": 128
         },
@@ -1117,6 +1162,7 @@
           "named": "volume",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Volume",
           "at": 132
         },
@@ -1124,6 +1170,7 @@
           "named": "volumefilledtoday",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Volume Filled Today",
           "at": 136
         },
@@ -1131,6 +1178,7 @@
           "named": "price",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "scale": "-2",
           "title": "Price",
           "at": 140
@@ -1139,6 +1187,7 @@
           "named": "triggerprice",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "scale": "-2",
           "title": "Trigger Price",
           "at": 144
@@ -1147,6 +1196,7 @@
           "named": "goodtilldate",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Good Till Date",
           "at": 148
         },
@@ -1154,6 +1204,7 @@
           "named": "entrydatetime",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Entry Date Time",
           "at": 152
         },
@@ -1161,6 +1212,7 @@
           "named": "minimumfillaonvolume",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Minimum Fill Aon Volume",
           "at": 156
         },
@@ -1168,6 +1220,7 @@
           "named": "lastmodified",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Last Modified",
           "at": 160
         },
@@ -1175,6 +1228,7 @@
           "named": "branchid",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "title": "Branch Id",
           "at": 166
         },
@@ -1182,6 +1236,7 @@
           "named": "traderid",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Trader Id",
           "at": 168
         },
@@ -1221,6 +1276,7 @@
           "named": "proclientindicator",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "title": "Pro Client Indicator",
           "at": 214
         },
@@ -1228,6 +1284,7 @@
           "named": "settlementperiod",
           "width": 2,
           "endian": "big",
+          "signed": true,
           "title": "Settlement Period",
           "at": 216
         },
@@ -1271,6 +1328,7 @@
           "named": "mktreplay",
           "width": 8,
           "endian": "big",
+          "signed": true,
           "title": "Mkt Replay",
           "at": 232
         },
@@ -1286,6 +1344,7 @@
           "named": "algoid",
           "width": 4,
           "endian": "big",
+          "signed": true,
           "title": "Algo Id",
           "at": 250
         },
@@ -1300,6 +1359,7 @@
           "named": "lastactivityreference",
           "width": 8,
           "endian": "big",
+          "signed": true,
           "title": "Last Activity Reference",
           "at": 256
         },

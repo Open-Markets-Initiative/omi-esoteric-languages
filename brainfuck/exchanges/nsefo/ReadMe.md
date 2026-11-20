@@ -46,7 +46,7 @@ What the venue says it speaks, read from its own declaration and not kept as a l
 
 What was settled when the program was written rather than asked while it ran:
 
-- timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as nought
+- timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as 09:15 on 2 January 2026, 5:30 ahead of UTC, the venue's open on a day chosen for its published runs rather than read from anything
 - the session is Nse Nnf: a connection opens in NotSignedOn, and a request is admitted only while it rests in SignedOn, which is where the chart receives the other end's own data. A login moves the connection as the chart says an accepted one does; whether to accept it is the session program's to say and was settled there
 - it remembers the first 16 orders of a connection by the reference each came with, because a tape cannot grow; an order admitted after those is still admitted and numbered, and a later cancel naming it finds nothing
 
@@ -91,7 +91,7 @@ Each run below is published as a `.frame` of the orders put to it and a `.wrote`
 
 ## Responder
 
-`NseFo.Responder.bf` writes what a client is answered with, in `Nse.NseFo.OrderEntry.Nnf.v9.50`: each event of the engine's the venue's transforms declare an answer for, as that answer. An answer is written from two things at once - the engine's event, and what the client entered of the order it is about - and a program reads one input, so its input is the two joined: the client's packets exactly as the gateway read them, a packet stating no length, and then the venue's own events exactly as the market wrote them. It writes nothing for the requests; it reads them to remember each order entered, numbered as the gateway numbers them, which is how an event naming an order by its number finds what the client called it.
+`NseFo.Responder.bf` writes what a client is answered with, in `Nse.NseFo.OrderEntry.Nnf.v9.50`: each event of the engine's the venue's transforms declare an answer for, as that answer. An answer is written from two things at once - the engine's event, and what the client entered of the order it is about - and a program reads one input, so its input is the two joined: the client's packets exactly as the gateway read them, a packet stating no length, and then the venue's own events exactly as the market wrote them. A request is answered as it is read only where the venue answers one as it arrives - a reject for an order the gateway turns away, or a confirmation where the venue confirms an order as the gateway takes it. Otherwise the requests are read to remember each order entered, numbered as the gateway numbers them, which is how an event naming an order by its number finds what the client called it and whatever else of what it entered the answer carries back.
 
 What was settled when the program was written rather than asked while it ran:
 
@@ -108,9 +108,9 @@ Each run is the gateway's run of the same name and what the market wrote for it,
 
 | Run | Bytes of requests | Bytes of events | Answers | Bytes written |
 | --- | ---: | ---: | ---: | ---: |
-| `crossing` | 3,810 | 159 | 5 | 1,540 |
-| `cancelling` | 3,810 | 108 | 3 | 948 |
-| `day` | 5,390 | 420 | 16 | 4,896 |
+| `crossing` | 3,770 | 159 | 5 | 1,540 |
+| `cancelling` | 3,770 | 108 | 3 | 948 |
+| `day` | 5,350 | 420 | 16 | 4,896 |
 
 From the root of the repository, the same join made by hand - the client's requests, the packet stating no length, and what the gateway and the market make of those requests:
 
@@ -154,22 +154,22 @@ Transitions of the chart no program with one input and one output can run, becau
 - Request.Message answers something that is not bytes, so no program with one input and one output can reach it
 - Request.Logout answers something that is not bytes, so no program with one input and one output can reach it
 - entering Authenticating: Send Ask.Login goes somewhere that is not the wire
-- Send.Login.Accepted names no single packet of the Server end, so nothing can be written for it
+- 'User Id' is written from Field, which is not a value a program answering in constants can know
 - nothing dispatches to 'Client Message', so Receive.Payload.Application arrives as a packet this state has no arm for, and is read and dropped like any other
-- Receive.Session.Logout names no single packet of the arriving end, so nothing can wait for it
 
 One run per transition of the chart, named for the state it rests in and the packet that arrives. A run the session answers nothing to is published too, with an empty answer, because half of what a session does is decline to answer:
 
 | Run | Packets answered |
 | --- | ---: |
-| `NotSignedOn.LoginRequest` | 0 |
-| `SignedOn.SessionHeartbeat` | 0 |
+| `NotSignedOn.LoginRequest` | 1 |
+| `SignedOn.SessionLogout` | 1 |
+| `SignedOn.SessionHeartbeat` | 1 |
 
 ## Files
 
 | Program | What it is | Runs published |
 | --- | --- | ---: |
-| `NseFo.Nnf.bf` | the venue's handshake | 2 |
+| `NseFo.Nnf.bf` | the venue's handshake | 3 |
 | `NseFo.Gateway.bf` | the venue's order entry, under its session chart | 4 |
 | `NseFo.Market.bf` | the venue's book and the matching over it | 7 |
 | `NseFo.Mtbt.Feed.bf` | the venue's Mtbt feed | 7 |
@@ -180,10 +180,10 @@ Under `runs/`, in a folder named for each program, is a `.frame` per run, holdin
 
 | Program | `+` | `-` | `<` | `>` | `[` | `]` | `.` | `,` | All |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| `NseFo.Nnf.bf` | 1,805 | 445 | 1,441 | 1,450 | 456 | 456 | 0 | 92 | 6,145 |
-| `NseFo.Gateway.bf` | 16,743 | 29,376 | 582,782 | 582,830 | 33,281 | 33,281 | 57 | 635 | 1,278,985 |
-| `NseFo.Market.bf` | 399,762 | 111,583 | 12,839,661 | 12,840,548 | 129,169 | 129,169 | 234 | 75 | 26,450,201 |
-| `NseFo.Responder.bf` | 19,159 | 25,087 | 1,541,213 | 1,541,291 | 27,463 | 27,463 | 1,224 | 454 | 3,183,354 |
+| `NseFo.Nnf.bf` | 2,641 | 1,033 | 1,620 | 1,629 | 513 | 513 | 283 | 95 | 8,327 |
+| `NseFo.Gateway.bf` | 17,625 | 30,223 | 583,319 | 583,367 | 33,355 | 33,355 | 57 | 635 | 1,281,936 |
+| `NseFo.Market.bf` | 400,027 | 111,651 | 12,858,640 | 12,859,527 | 129,241 | 129,241 | 234 | 75 | 26,488,636 |
+| `NseFo.Responder.bf` | 21,750 | 28,898 | 1,867,774 | 1,867,852 | 31,624 | 31,624 | 1,224 | 454 | 3,851,200 |
 | `NseFo.Mtbt.Feed.bf` | 21,964 | 17,931 | 250,072 | 250,502 | 14,229 | 14,229 | 121 | 131 | 569,179 |
 
 ## Running

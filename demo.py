@@ -64,8 +64,9 @@ class Refused(Exception):
 
 
 def integer(field, data):
-    """The number a field's bytes hold, read the way the field states them."""
-    return int.from_bytes(data, "big" if field["endian"] == "big" or field.get("text") else "little")
+    """The number a field's bytes hold, read the way the field states them, below nought where it may be."""
+    return int.from_bytes(data, "big" if field["endian"] == "big" or field.get("text") else "little",
+                          signed=bool(field.get("signed")))
 
 
 def stated(field, data):

@@ -40,7 +40,7 @@ bf brainfuck/dialect.bf < /dev/null
 ```
 That program takes no input and prints one line per claim, saying of each whether this interpreter kept it. All four should say `ok`. One that says `no`, or a line that stops partway through, names what your interpreter does differently — and the claims are listed in the order the programs here lean on them, which was measured rather than guessed.
 
-The one byte wrap is the one that matters most: of 339 frames published here, only 21 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 4,063, so classic Brainfuck's 30,000 would do 7 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
+The one byte wrap is the one that matters most: of 340 frames published here, only 21 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 4,063, so classic Brainfuck's 30,000 would do 7 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
 
 ## Layout
 
@@ -61,93 +61,9 @@ brainfuck/
 
 A protocol's decoder sits under `protocols` because it is the same program whoever speaks it; a session and a market sit under `exchanges` because they are the venue's own — a venue is what declares which chart runs over which protocol, which price its book is banded on, and which trading day its market runs. A market's program carries its day in its own notes, and that venue's own readme beside it states which day it ran and why — the days published here are not all the days the venues declare, because a venue declaring two of them for one protocol gets the simplest rather than a program picked between them. Where a chart asks for a cross of what a phase collected, the market crosses it at the change of phase and publishes the venue's own Cross Completed message for it — at each resting level's own price rather than at one clearing price struck for all of it, which each program says of itself.
 
-### Investors Exchange Equities Basic
-
-- OrderEntry `Iex.IexEquities.OrderEntry.Fix.v2.91`, session `Fix`
-- Feed `Iex.IexEquities.Tops.IexTp.v1.66`
-- Feed `Iex.IexEquities.Deep.IexTp.v1.08`
-- Feed `Iex.IexEquities.DeepPlus.IexTp.v1.05`
-- Snap `Iex.IexEquities.Deep.Snap.v1.6`
-- Snap `Iex.IexEquities.Tops.Snap.v1.6`
-- Snap `Iex.IexEquities.DeepPlus.Snap.v1.06`
-- Ipc `Iex.IexEquities.BasicMatchingEngine.Ipc.v2026`
-- Engine `Iex.IexEquities.Equities.Basic.TradingSession`
-
-### Investors Exchange Equities Open
-
-- OrderEntry `Iex.IexEquities.OrderEntry.Fix.v2.91`, session `Fix`
-- Feed `Iex.IexEquities.Tops.IexTp.v1.66`
-- Feed `Iex.IexEquities.Deep.IexTp.v1.08`
-- Feed `Iex.IexEquities.DeepPlus.IexTp.v1.05`
-- Snap `Iex.IexEquities.Deep.Snap.v1.6`
-- Snap `Iex.IexEquities.Tops.Snap.v1.6`
-- Snap `Iex.IexEquities.DeepPlus.Snap.v1.06`
-- Ipc `Iex.IexEquities.MatchingEngine.Ipc.v2026`
-- Engine `Iex.IexEquities.Equities.Open.TradingSession`
-
-### Investors Exchange Equities Session
-
-- OrderEntry `Iex.IexEquities.OrderEntry.Fix.v2.91`, session `Fix`
-- Feed `Iex.IexEquities.Tops.IexTp.v1.66`
-- Feed `Iex.IexEquities.Deep.IexTp.v1.08`
-- Feed `Iex.IexEquities.DeepPlus.IexTp.v1.05`
-- Snap `Iex.IexEquities.Deep.Snap.v1.6`
-- Snap `Iex.IexEquities.Tops.Snap.v1.6`
-- Snap `Iex.IexEquities.DeepPlus.Snap.v1.06`
-- Ipc `Iex.IexEquities.MatchingEngine.Ipc.v2026`
-- Engine `Iex.IexEquities.Equities.Session.TradingSession`
-
-### Nse Futures and Options Basic
-
-- Ipc `Nse.NseFo.BasicMatchingEngine.Ipc.v2026`
-- Engine `Nse.NseFo.FuturesAndOptions.Basic.TradingSession`
-- OrderEntry `Nse.NseFo.OrderEntry.Nnf.v9.50`, session `Nse.Nnf`
-- Feed `Nse.NseFo.Mtbt.Tbt.v7.1`
-
-### Nse Futures and Options
-
-- Ipc `Nse.NseFo.MatchingEngine.Ipc.v2026`
-- Engine `Nse.NseFo.FuturesAndOptions.Open.TradingSession`
-- OrderEntry `Nse.NseFo.OrderEntry.Nnf.v9.50`, session `Nse.Nnf`
-- Feed `Nse.NseFo.Mtbt.Tbt.v7.1`
-
-### Nasdaq Stock Market Basic
-
-- Ipc `Nasdaq.NsmEquities.BasicMatchingEngine.Ipc.v2026`
-- Engine `Nasdaq.NsmEquities.Equities.Basic.TradingSession`
-- OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
-- Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
-- Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0.2026`
-- Replay `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
-- Trader `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
-- Trader `Nasdaq.NsmEquities.Orders.Ouch.v5.0`
-
-### Nasdaq Stock Market Open
-
-- Ipc `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026`
-- Engine `Nasdaq.NsmEquities.Equities.Open.TradingSession`
-- OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
-- Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
-- Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0.2026`
-- Replay `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
-- Trader `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
-- Trader `Nasdaq.NsmEquities.Orders.Ouch.v5.0`
-
-### Nasdaq Stock Market Session
-
-- Ipc `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026`
-- Engine `Nasdaq.NsmEquities.Equities.Session.TradingSession`
-- OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
-- OrderEntry `Nasdaq.NsmEquities.OrderEntry.Fix.v4.2`
-- Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
-- Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0.2026`
-- Replay `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
-- Trader `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
-- Trader `Nasdaq.NsmEquities.Orders.Ouch.v5.0`
-
 ## Sessions
 
-A session reads the other end's packets from standard input, holds a state, and writes the answers its chart says to write. The chart is the venue's own, the same one the generated C++ session runs, and nothing in it names a packet: an event is a marking on one, so `Receive.Login.Request` means the packet marked Login Request arriving.
+A session reads the other end's packets from standard input, holds a state, and writes the answers its chart says to write. The chart is the venue's own, the same one the generated C++ session runs, and nothing in it names a packet: an event is a marking on one, so `Receive.Login.Request` means the packet marked Login Request arriving. A marking is read for the value it states rather than for what the venue called the packet, which is what lets one chart drive protocols that name their packets in their own words: Nse's Nnf calls its answer to a sign-on Sign On Request Out, and marks it Login Accepted.
 
 **A generated session accepts every login, and that is a property of it rather than a detail.** A chart names three kinds of thing. Receive and Send are bytes; a Request is a service asking the session to do something, a Handler is the endpoint answering a question the session cannot answer itself, and an Ask is the session putting that question. A program with one input and one output has nowhere to put a question and nobody to ask it of, so those transitions cannot run at all — seven of SoupBinTcp's twelve are of that kind. Rather than refuse the chart over it, the accepting answer is taken when the program is written, and only where the chart states it without a condition: a condition reads a field of the login that asked, and deciding a login on the login's own contents is not authentication. So these demonstrate a handshake and authenticate nothing.
 
@@ -161,9 +77,11 @@ Writing the protocol rather than a report about it is what makes the output wort
 
 **A book reaches a price level by index, and an index is one byte, so a book holds the prices that share the upper bytes of one price.** Which price is not chosen by the generator: the venue's declaration names it, as the reference its crosses are drawn towards and its own traders quote around. The band runs from there, and a price outside it is refused and reported as refused — never folded onto a level it does not belong to. That is a real limit of a book built out of eight instructions, so each program states its own band in its own notes, and the run published beside it puts one order outside that band on purpose, because a limit nothing exercises is a limit nobody knows is there.
 
-Each market is published with a run of orders and the messages it wrote, held to three things beforehand. The orders are laid out from the model and the C# parser must read the whole run back as the messages it was built from, which is what says the program was fed the venue's protocol rather than something invented for it. The parser must then read what the program wrote, as described above. And a plain book written in C# over the same orders must agree with the program on every trade — whose order was resting, and how much changed hands. The three agree only if the program dispatched to the right level, remembered the right order there, took the smaller of the two quantities and left the right remainder behind.
+Each market is published with a run of orders and the messages it wrote, held to three things beforehand. The orders are laid out from the model and the C# parser must read the whole run back as the messages it was built from, which is what says the program was fed the venue's protocol rather than something invented for it. The parser must then read what the program wrote, as described above. And a plain book written in C# over the same orders must agree with the program on every trade — whose order was resting, and how much changed hands. The three agree only if the program dispatched to the right level, remembered the right order there, took the smaller of the two quantities and left the right remainder behind. Where the venue confirms a cancel by restating the order it took back - Nse's says its side, its price and what was left of it - that is held to the plain book too, because a cancel names an order and nothing else, and a confirmation written from whatever the last order to arrive left behind reads perfectly.
 
-**What a market reads and writes is published beside it**, as a `.messages.json` file: each message under the code that selects it, its fields in the order the wire states them, each field's width, byte order and what it is to an engine, and the names its own values carry. That is what makes a market usable here rather than only checkable. The models are not in this repository, so without it the only orders anyone could put to a program were the frames that shipped with it, and the only way to change one was to edit hexadecimal and reckon a length by hand. It is a flattening of a model and not a model; `run.py` reads it and nothing that makes a claim does, so a mistake in it could put a wrong order and could not make a wrong program look right.
+**Every published run happens at the venue's open, on 2 January 2026.** A program here has no clock, and a client's request gives the gateway no time, so the time its engine's messages are stamped with is chosen when the program is written: the start of the day the venue's own declaration states, on its own clock - 09:15 in India for Nse, 09:30 in New York for Nasdaq and Iex. Each program says so in its own notes. Stamped with nought, as they once were, every run was said to happen in the first instant of 1970, which is where every venue here counts from.
+
+**What a market reads and writes is published beside it**, as a `.messages.json` file: each message under the code that selects it, its fields in the order the wire states them, each field's width, byte order and what it is to an engine, whether it may be below nought, and the names its own values carry. That is what makes a market usable here rather than only checkable. The models are not in this repository, so without it the only orders anyone could put to a program were the frames that shipped with it, and the only way to change one was to edit hexadecimal and reckon a length by hand. It is a flattening of a model and not a model; `run.py` reads it and nothing that makes a claim does, so a mistake in it could put a wrong order and could not make a wrong program look right.
 
 A trade names the resting order and the price of the level it rested at, not the arriving order's limit, because that is where the trade happened: an order sweeping two levels trades at each of those rather than twice at its own price. **A side remembers its resting orders one by one, oldest first, and 16 of them.** A trade is made with the oldest order at the best price and names it, so an order reaching three at one price trades three times in the order they arrived; a cancel takes back the one order it names and leaves the rest of its price where it was. The number is a stated limit like the band: an order arriving at a side already holding 16 is refused rather than rested where it could not be found again.
 
@@ -177,28 +95,39 @@ Every instruction of the 38 programs here, counted off the files as they are pub
 
 | Instruction | decoder | dialect | session | gateway | market | responder | feed | All | Share |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| `+` | 640,642 | 3,373 | 4,547 | 26,123 | 1,199,951 | 230,342 | 208,277 | 2,313,255 | 2.0% |
-| `-` | 337,314 | 2,941 | 982 | 40,260 | 335,897 | 94,695 | 52,555 | 864,644 | 0.7% |
-| `<` | 9,511,490 | 65,622 | 3,277 | 772,159 | 38,933,057 | 5,355,992 | 762,178 | 55,403,775 | 48.0% |
-| `>` | 9,512,095 | 65,628 | 3,294 | 772,254 | 38,935,742 | 5,356,163 | 763,062 | 55,408,238 | 48.0% |
-| `[` | 60,923 | 67 | 1,020 | 45,809 | 388,759 | 105,133 | 53,883 | 655,594 | 0.6% |
-| `]` | 60,923 | 67 | 1,020 | 45,809 | 388,759 | 105,133 | 53,883 | 655,594 | 0.6% |
-| `.` | 55,165 | 164 | 33 | 134 | 730 | 1,618 | 825 | 58,669 | 0.1% |
-| `,` | 15,372 | 1 | 121 | 709 | 281 | 636 | 507 | 17,627 | 0.0% |
-| All | 20,193,924 | 137,863 | 14,294 | 1,703,257 | 80,183,176 | 11,249,712 | 1,895,170 | 115,377,396 | 100.0% |
+| `+` | 642,222 | 3,373 | 5,383 | 27,735 | 1,200,216 | 232,933 | 208,277 | 2,320,139 | 2.0% |
+| `-` | 338,204 | 2,941 | 1,570 | 41,789 | 335,965 | 98,506 | 52,555 | 871,530 | 0.8% |
+| `<` | 9,511,750 | 65,622 | 3,456 | 772,696 | 38,952,036 | 5,682,553 | 762,178 | 55,750,291 | 48.0% |
+| `>` | 9,512,355 | 65,628 | 3,473 | 772,791 | 38,954,721 | 5,682,724 | 763,062 | 55,754,754 | 48.0% |
+| `[` | 60,943 | 67 | 1,077 | 45,883 | 388,831 | 109,294 | 53,883 | 659,978 | 0.6% |
+| `]` | 60,943 | 67 | 1,077 | 45,883 | 388,831 | 109,294 | 53,883 | 659,978 | 0.6% |
+| `.` | 55,315 | 164 | 316 | 134 | 730 | 1,618 | 825 | 59,102 | 0.1% |
+| `,` | 15,391 | 1 | 124 | 709 | 281 | 636 | 507 | 17,649 | 0.0% |
+| All | 20,197,123 | 137,863 | 16,476 | 1,707,620 | 80,221,611 | 11,917,558 | 1,895,170 | 116,093,421 | 100.0% |
 
 ## Development
 
 Updates are greatly appreciated; however, this entire repository is source generated...including the words you are reading right now. If you wish to suggest updates, the recommended process is to create an issue with changes and explanation. Time permitting, we will update the models and regenerate.
 
+| Kind | Programs | Runs |
+| --- | ---: | ---: |
+| decoder | 23 | 268 |
+| dialect | 1 | 1 |
+| session | 2 | 9 |
+| gateway | 2 | 9 |
+| market | 3 | 19 |
+| responder | 2 | 7 |
+| feed | 5 | 27 |
+| All | 38 | 340 |
 
-- Programs: 23
-- Instructions: 20,193,924
+
+- Protocol decoders: 23
+- Instructions in the decoders: 20,197,123
 - Reading every field the model states: 22 of 23
 - Published with a frame they are held to: 23 of 23
 - Frames, of which recorded from the wire: 268, 40
 - Sessions, of which proven on a run: 2, 2
-- Runs, and the packets they were answered with: 8, 5
+- Runs, and the packets they were answered with: 9, 8
 - Markets, of which proven on a run: 3, 3
 - Orders put to them, the trades those made and the orders refused: 84, 35, 6
 

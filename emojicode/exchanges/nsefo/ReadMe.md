@@ -1,6 +1,6 @@
 # Nse Futures and Options Basic
 
-The Emojicode programs generated from what Nse Futures and Options Basic declares, rather than from one protocol's model. A protocol's decoder is the same program whoever speaks it and sits under `emojicode/protocols`; what is here is this venue's own — the book over its own internal order stream.
+The Emojicode programs generated from what Nse Futures and Options Basic declares, rather than from one protocol's model. A protocol's decoder is the same program whoever speaks it and sits under `emojicode/protocols`; what is here is this venue's own — the handshake it declares, and the book over its own internal order stream.
 
 The same venue's programs in the repository's other language sit at the same path under that language's directory. They are not these with the emoji changed: each was generated from the models by its own backend, and the two do not come to the same program. Where they agree, what they agree on is the model.
 
@@ -47,18 +47,19 @@ Every such join is stated in `manifest.json` at the root, as two files that hold
 
 What was settled when the program was written rather than asked while it ran:
 
-- timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as nought
+- timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as 09:15 on 2 January 2026, 5:30 ahead of UTC, the venue's open on a day chosen for its published runs rather than read from anything
+- the session is Nse Nnf: a connection opens in NotSignedOn, and a request is admitted only while it rests in SignedOn, which is where the chart receives the other end's own data. A login moves the connection as the chart says an accepted one does; whether to accept it is the session program's to say and was settled there
 
 What the venue declares of its order entry that this program does not run, and why:
 
 - the 4 responses it declares: each answers a client from an event of the engine and what the gateway remembers of the order, and a program reading one stream and writing one has the client's requests to read and the engine to write to, and neither the engine's events nor the client the other way round
-- the venue declares no session chart this could bind for its order entry, so a request is admitted whatever came before it on the connection
 
 Each run is a client's packets and what the gateway should write for them. A run nobody logged in for is published with nothing to write, because declining is half of what a gate does:
 
 | Run | Requests | Bytes written |
 | --- | ---: | ---: |
 | `NseFo.Gateway.crossing` | 3 | 108 |
+| `NseFo.Gateway.unadmitted` | 3 | 0 |
 | `NseFo.Gateway.sweeping` | 3 | 108 |
 | `NseFo.Gateway.selling` | 2 | 72 |
 | `NseFo.Gateway.cancelling` | 3 | 91 |
@@ -92,7 +93,7 @@ Each run below is published as a `.frame` of the orders put to it and a `.wrote`
 
 ## Responder
 
-`NseFo.Responder.emojic` writes what a client is answered with, in `Nse.NseFo.OrderEntry.Nnf.v9.50`: each event of the engine's that the venue's transforms declare an answer for, as that answer. An answer is written from two things at once - the engine's event, and what the client entered of the order it is about - and a program reads one file, so its input is the two joined: the client's packets exactly as the gateway read them, a packet stating no length, and then the venue's own events exactly as the market wrote them. It writes nothing for the requests; it reads them to remember where each order was entered, numbered as the gateway numbers them, which is how an event naming an order by its number finds what the client called it.
+`NseFo.Responder.emojic` writes what a client is answered with, in `Nse.NseFo.OrderEntry.Nnf.v9.50`: each event of the engine's that the venue's transforms declare an answer for, as that answer. An answer is written from two things at once - the engine's event, and what the client entered of the order it is about - and a program reads one file, so its input is the two joined: the client's packets exactly as the gateway read them, a packet stating no length, and then the venue's own events exactly as the market wrote them. A request is answered as it is read only where the venue answers one as it arrives - a reject for an order the gateway turns away, or a confirmation where the venue confirms an order as the gateway takes it. Otherwise the requests are read to remember where each order was entered, numbered as the gateway numbers them, which is how an event naming an order by its number finds what the client called it and whatever else of what it entered the answer carries back.
 
 What was settled when the program was written rather than asked while it ran:
 
@@ -108,11 +109,11 @@ Each run is the gateway's run of the same name and what the market should write 
 
 | Run | Bytes of requests | Bytes of events | Answers | Bytes written |
 | --- | ---: | ---: | ---: | ---: |
-| `crossing` | 3,810 | 159 | 5 | 1,540 |
-| `sweeping` | 3,810 | 210 | 7 | 2,132 |
-| `selling` | 3,494 | 87 | 4 | 1,224 |
-| `cancelling` | 3,810 | 108 | 3 | 948 |
-| `day` | 5,390 | 420 | 16 | 4,896 |
+| `crossing` | 3,770 | 159 | 5 | 1,540 |
+| `sweeping` | 3,770 | 210 | 7 | 2,132 |
+| `selling` | 3,454 | 87 | 4 | 1,224 |
+| `cancelling` | 3,770 | 108 | 3 | 948 |
+| `day` | 5,350 | 420 | 16 | 4,896 |
 
 From the root of the repository, the same join made by hand - the client's requests, the packet stating no length, and what the gateway and the market make of those requests - and what the responder writes for it held to the run published beside it:
 
@@ -155,11 +156,38 @@ Each run is what the market should write for the run of the same name, and the p
 | `NseFo.Mtbt.Feed.entered-cancelling` | 3 |
 | `NseFo.Mtbt.Feed.entered-day` | 10 |
 
+## Session
+
+`NseFo.Nnf.emojic` runs the chart `Nse.Nnf` over `Nse.NseFo.OrderEntry.Nnf.v9.50`: it reads the other end's packets out of the file named by its first argument, holds the state the connection is in and the data the chart says it keeps, and writes the venue's own answers to the file named by its second.
+
+**It reads the packet that arrived.** A reply field can be filled from a field of the packet that asked for it, and a guard can be run on one — so where the chart tells two answers apart by what the other end asked for, the program runs that guard rather than having it settled before it started. The runs below are named for the way each one takes, so a chart that states more than one way of answering a packet publishes a run for each.
+
+What was settled when the program was written rather than asked while it ran:
+
+- Authenticating: Handler.Login.Accepted is taken as the chart writes it, so the program never asks
+
+Transitions of the chart no program reading one file and writing another can run, because a Request, an Ask, a Handler or a Timer has nowhere to put a question, nobody to ask it of and no clock to read:
+
+- Ask.Login is put to a handler, and a program reading one file and writing another has nobody to put it to
+- Receive.Payload.Application is the other end's own data rather than one packet this protocol names, so nothing in the frame tells it apart from the session's own packets
+- Handler.Logout is put to a handler, and a program reading one file and writing another has nobody to put it to
+- Request.Message answers something that is not bytes, so no program reading one file and writing another can reach it
+- Request.Logout answers something that is not bytes, so no program reading one file and writing another can reach it
+
+One run per way the chart states of answering a packet, named for the state it rests in, the packet that arrives and the way taken. A run the session answers nothing to is published too, with an empty `.wrote`, because half of what a session does is decline to answer:
+
+| Run | Packets answered |
+| --- | ---: |
+| `NseFo.Nnf.NotSignedOn.LoginRequest` | 1 |
+| `NseFo.Nnf.SignedOn.SessionLogout` | 1 |
+| `NseFo.Nnf.SignedOn.SessionHeartbeat` | 1 |
+
 ## Files
 
 | Program | What it is | Runs published |
 | --- | --- | ---: |
-| `NseFo.Gateway.emojic` | the venue's order entry, under its session chart | 5 |
+| `NseFo.Nnf.emojic` | the venue's handshake | 3 |
+| `NseFo.Gateway.emojic` | the venue's order entry, under its session chart | 6 |
 | `NseFo.Market.emojic` | the venue's book and the matching over it | 10 |
 | `NseFo.Responder.emojic` | the venue's answers to a client | 5 |
 | `NseFo.Mtbt.Feed.emojic` | the venue's Mtbt feed | 10 |
@@ -170,9 +198,10 @@ Under `runs/`, in a folder named for each program, is a `.frame` per run, holdin
 
 | Program | Emoji | Different | Most used |
 | --- | ---: | ---: | --- |
-| `NseFo.Gateway.emojic` | 1,488 | 43 | ➡️ 365 🖍 359 ❗️ 150 ➕ 145 ⭕ 69 |
-| `NseFo.Market.emojic` | 3,672 | 46 | ➡️ 963 🖍 953 ❗️ 350 ➕ 311 ⭕ 235 |
-| `NseFo.Responder.emojic` | 8,162 | 45 | ➕ 1,623 ❗️ 1,616 🔪 1,131 ➡️ 1,121 🖍 1,113 |
+| `NseFo.Nnf.emojic` | 1,003 | 42 | ❗️ 195 ➕ 187 🔪 137 ➡️ 104 🖍 98 |
+| `NseFo.Gateway.emojic` | 1,586 | 44 | ➡️ 389 🖍 383 ❗️ 154 ➕ 149 ⭕ 71 |
+| `NseFo.Market.emojic` | 3,676 | 46 | ➡️ 965 🖍 955 ❗️ 350 ➕ 311 ⭕ 235 |
+| `NseFo.Responder.emojic` | 8,416 | 46 | ➕ 1,639 ❗️ 1,632 ➡️ 1,197 🖍 1,189 🔪 1,131 |
 | `NseFo.Mtbt.Feed.emojic` | 3,698 | 43 | ➡️ 995 🖍 989 ➕ 373 ❗️ 357 ⭕ 215 |
 
 ## Running
@@ -186,10 +215,10 @@ Compile one of these, and run it on a frame published beside it. A published fra
 ```
 cd emojicode/exchanges/nsefo
 ln -s /path/to/Emojicode-1.0-beta.2-Linux-x86_64/packages packages
-emojicodec NseFo.Market.emojic
-xxd -r -p < runs/market/crossing.frame > frame.bin
-./NseFo.Market frame.bin wrote.bin
-xxd -r -p < runs/market/crossing.wrote > want.bin
+emojicodec NseFo.Nnf.emojic
+xxd -r -p < runs/nnf/NotSignedOn.LoginRequest.frame > frame.bin
+./NseFo.Nnf frame.bin wrote.bin
+xxd -r -p < runs/nnf/NotSignedOn.LoginRequest.wrote > want.bin
 cmp want.bin wrote.bin
 ```
 `replay.py` at the root does that for every program in this language and holds what each writes to the `.wrote` beside it, so a change here is caught without anybody running one by hand:

@@ -104,6 +104,7 @@
           "width": 8,
           "endian": "little",
           "role": "Price",
+          "signed": true,
           "scale": "-4"
         },
         {
@@ -242,6 +243,7 @@
           "width": 8,
           "endian": "little",
           "role": "Price",
+          "signed": true,
           "scale": "-4"
         },
         {
@@ -296,6 +298,7 @@
           "width": 8,
           "endian": "little",
           "role": "Price",
+          "signed": true,
           "scale": "-4"
         },
         {

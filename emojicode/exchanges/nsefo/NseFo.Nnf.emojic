@@ -1,0 +1,199 @@
+💭🔜
+  Exchange: NseFo
+  Session: Nnf
+  Protocol: Nse.NseFo.OrderEntry.Nnf.v9.50
+  Generated. It reads the other end's packets and writes the venue's own answers back out. The packets to read are this program's first argument and the file to write is its second, because Emojicode has no standard input. It admits every login: there is nobody for a program like this to ask, so that answer was decided when it was written, which makes it a demonstration of a handshake and never an authenticator.
+🔚💭
+
+📦 files 🏠
+
+🏁 🍇
+  💭 one connection of clientpacket: the handshake over it, and serverpacket back out
+
+  🎞 🐇💻❗️ ➡️ arguments
+  🐽 arguments 1❗️ ➡️ framePath
+  🐽 arguments 2❗️ ➡️ wrotePath
+
+  🍺 📇 🐇📄 framePath ❗️ ➡️ frame
+
+  💭 written over as the connection runs
+  0 ➡️ 🖍🆕 position
+  📇 🔤🔤❗️ ➡️ 🖍🆕 wrote
+  💭 every byte there is, built once. A field packed into a set of bits holds
+  💭 no bytes of its own, and nothing here makes a byte out of a number
+  📇 🔤🔤❗️ ➡️ 🖍🆕 table
+  0 ➡️ 🖍🆕 filled
+  ☣️ 🍇
+    🆕🧠 256❗️ ➡️ cells
+    🔂 at 🆕⏩ 0 256❗️ 🍇
+      at ➡️ 🖍 filled
+      💭 a byte here is signed, so the upper half goes in as what it is
+      ↪️ at ▶️ 127 🍇
+        at ➖ 256 ➡️ 🖍 filled
+      🍉
+      💧 filled❗️ ➡️ 🐽🐚💧🍆 cells at❗️
+    🍉
+    🆕📇 cells 256❗️ ➡️ 🖍 table
+  🍉
+
+  0 ➡️ 🖍🆕 began
+  0 ➡️ 🖍🆕 cursor
+  0 ➡️ 🖍🆕 raw
+  0 ➡️ 🖍🆕 digit
+  0 ➡️ 🖍🆕 taken
+  0 ➡️ 🖍🆕 code
+  0 ➡️ 🖍🆕 stated
+  0 ➡️ 🖍🆕 kind
+  0 ➡️ 🖍🆕 ending
+
+  💭 where the connection rests: 0 is NotSignedOn, 1 is SignedOn
+  0 ➡️ 🖍🆕 resting
+
+  💭 one packet at a time, as far as the frame reaches
+  🔁 📏 frame❓ ➖ position ▶️🙌 40 🍇
+    position ➕ 38 ➡️ 🖍 began
+    💭 its value, a byte at a time, each masked because a byte here is signed
+    0 ➡️ 🖍 stated
+    began ➕ 0 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    stated ✖ 256 ➡️ 🖍 stated
+    stated ➕ digit ➡️ 🖍 stated
+    began ➕ 1 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    stated ✖ 256 ➡️ 🖍 stated
+    stated ➕ digit ➡️ 🖍 stated
+
+    position ➡️ 🖍 began
+    💭 its value, a byte at a time, each masked because a byte here is signed
+    0 ➡️ 🖍 kind
+    began ➕ 0 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    kind ✖ 256 ➡️ 🖍 kind
+    kind ➕ digit ➡️ 🖍 kind
+    began ➕ 1 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    kind ✖ 256 ➡️ 🖍 kind
+    kind ➕ digit ➡️ 🖍 kind
+
+    💭 where the next one begins, as this one's own length states
+    position ➕ stated ➕ 0 ➡️ 🖍 ending
+
+    ↪️ resting 🙌 0 🍇
+      💭 resting in NotSignedOn
+      ↪️ kind 🙌 2300 🍇
+        💭 Sign On Request In Message
+        💭 it answers with Sign On Request Out Message, 283 as its own length states it
+        2301 ➡️ 🖍 taken
+        taken 👉 8 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤  🔤❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤        🔤❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤        🔤❗️ ➡️ 🖍 wrote
+        283 ➡️ 🖍 taken
+        taken 👉 8 ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        taken ➡️ 🖍 code
+        code ⭕ 255 ➡️ 🖍 code
+        wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+        💭 User Id, 4 bytes
+        wrote ➕ 🔪 frame position ➕ 40 4❗️ ➡️ 🖍 wrote
+        💭 Reserved 8, 8 bytes
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Password, 8 bytes
+        wrote ➕ 📇 🔤        🔤❗️ ➡️ 🖍 wrote
+        💭 Second Reserved 8, 8 bytes
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 New Password, 8 bytes
+        wrote ➕ 📇 🔤        🔤❗️ ➡️ 🖍 wrote
+        💭 Trader Name, 26 bytes
+        wrote ➕ 📇 🔤                          🔤❗️ ➡️ 🖍 wrote
+        💭 Last Password Change Date, 4 bytes
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Broker Id, 5 bytes
+        wrote ➕ 📇 🔤     🔤❗️ ➡️ 🖍 wrote
+        💭 Reserved 1, 1 byte
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Branch Id, 2 bytes
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Version Number, 4 bytes
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 End Time, 4 bytes
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Second Reserved 1, 1 byte
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Colour, 50 bytes
+        wrote ➕ 📇 🔤                                                  🔤❗️ ➡️ 🖍 wrote
+        💭 Third Reserved 1, 1 byte
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 User Type, 2 bytes
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Sequence Number, 8 bytes
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Reserved 14, 14 bytes
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Broker Status, 1 byte
+        wrote ➕ 📇 🔤 🔤❗️ ➡️ 🖍 wrote
+        💭 Show Index, 1 byte
+        wrote ➕ 📇 🔤 🔤❗️ ➡️ 🖍 wrote
+        💭 Pre Open, 1 byte
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Reserved 212, 2 bytes
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Auction Market, 1 byte
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Spot Market, 1 byte
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Oddlot Market, 1 byte
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Normal Market, 1 byte
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Member Type, 2 bytes
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Clearing Status, 1 byte
+        wrote ➕ 📇 🔤 🔤❗️ ➡️ 🖍 wrote
+        💭 Broker Name, 25 bytes
+        wrote ➕ 📇 🔤                         🔤❗️ ➡️ 🖍 wrote
+        💭 Reserved 16, 16 bytes
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Second Reserved 16, 16 bytes
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        💭 Third Reserved 16, 16 bytes
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+
+        1 ➡️ 🖍 resting
+        💭 and it rests in SignedOn
+      🍉
+    🍉
+    🙅↪️ resting 🙌 1 🍇
+      💭 resting in SignedOn
+      ↪️ kind 🙌 2320 🍇
+        💭 Sign Off Request In Message
+        0 ➡️ 🖍 resting
+        💭 and it rests in NotSignedOn
+      🍉
+      🙅↪️ kind 🙌 23506 🍇
+        💭 Heartbeat Message
+        💭 and it stays in SignedOn
+      🍉
+    🍉
+
+    💭 whatever it was, the connection has taken it
+    ending ➡️ 🖍 position
+  🍉
+
+  🍺 📻 🐇📄 wrotePath wrote ❗️
+🍉
+

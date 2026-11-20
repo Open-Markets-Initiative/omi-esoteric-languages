@@ -61,8 +61,8 @@ class Refused(Exception):
 
 
 def integer(field, data):
-    """The number a field's bytes hold, read the way the field states them."""
-    return int.from_bytes(data, "big" if field["endian"] == "big" else "little")
+    """The number a field's bytes hold, read the way the field states them, below nought where it may be."""
+    return int.from_bytes(data, "big" if field["endian"] == "big" else "little", signed=bool(field.get("signed")))
 
 
 def serialised(field, value):
@@ -79,7 +79,7 @@ def serialised(field, value):
     if not value and field.get("text"):
         return b" " * width
 
-    return int(value).to_bytes(width, "big" if field["endian"] == "big" else "little")
+    return int(value).to_bytes(width, "big" if field["endian"] == "big" else "little", signed=bool(field.get("signed")))
 
 
 def stated(field, data):

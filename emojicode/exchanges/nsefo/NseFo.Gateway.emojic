@@ -51,6 +51,9 @@
   0 ➡️ 🖍🆕 probe
   0 ➡️ 🖍🆕 reference
   0 ➡️ 🖍🆕 order
+  0 ➡️ 🖍🆕 kind
+  0 ➡️ 🖍🆕 open
+  0 ➡️ 🖍🆕 next
   0 ➡️ 🖍🆕 carried
   0 ➡️ 🖍🆕 restated
 
@@ -60,6 +63,8 @@
   💭 the last number given, and the place of the next message sent to the engine
   0 ➡️ 🖍🆕 admitted
   1 ➡️ 🖍🆕 sent
+  💭 where the connection rests, as Nse Nnf states it: 0 is NotSignedOn, 1 is SignedOn
+  0 ➡️ 🖍🆕 state
 
   💭 one packet at a time, as far as the stream reaches
   🔁 📏 frame❓ ➖ position ▶️🙌 40 🍇
@@ -83,6 +88,12 @@
     ending ➖ position ➡️ 🖍 reach
     ↪️ ending ▶️ 📏 frame❓ 🍇
       📏 frame❓ ➖ position ➡️ 🖍 reach
+    🍉
+
+    💭 whether a request is admitted where the connection rests now
+    0 ➡️ 🖍 open
+    ↪️ state 🙌 1 🍇
+      1 ➡️ 🖍 open
     🍉
 
     💭 nnf_order_entry: orderentryrequestmessage becomes newordermessage
@@ -110,6 +121,9 @@
       ↪️ hit 🙌 0 🍇
         0 ➡️ 🖍 met
       🍉
+    🍉
+    ↪️ open 🙌 0 🍇
+      0 ➡️ 🖍 met
     🍉
     ↪️ met 🙌 1 🍇
       position ➕ 98 ➡️ 🖍 began
@@ -164,7 +178,7 @@
       ↪️ order ▶️ 0 🍇
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 34 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤N🔤❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 88 1❗️ ➕ 🔪 table 253 1❗️ ➕ 🔪 table 181 1❗️ ➕ 🔪 table 45 1❗️ ➕ 🔪 table 205 1❗️ ➕ 🔪 table 134 1❗️ ➕ 🔪 table 24 1❗️ ➡️ 🖍 wrote
         order ➡️ 🖍 taken
         taken ➡️ 🖍 code
         code ⭕ 255 ➡️ 🖍 code
@@ -372,6 +386,9 @@
         0 ➡️ 🖍 met
       🍉
     🍉
+    ↪️ open 🙌 0 🍇
+      0 ➡️ 🖍 met
+    🍉
     ↪️ met 🙌 1 🍇
       position ➕ 98 ➡️ 🖍 began
       💭 its value, a byte at a time, each masked because a byte here is signed
@@ -427,7 +444,7 @@
       ↪️ order ▶️ 0 🍇
         wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 17 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
         wrote ➕ 📇 🔤C🔤❗️ ➡️ 🖍 wrote
-        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+        wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 88 1❗️ ➕ 🔪 table 253 1❗️ ➕ 🔪 table 181 1❗️ ➕ 🔪 table 45 1❗️ ➕ 🔪 table 205 1❗️ ➕ 🔪 table 134 1❗️ ➕ 🔪 table 24 1❗️ ➡️ 🖍 wrote
         order ➡️ 🖍 taken
         taken ➡️ 🖍 code
         code ⭕ 255 ➡️ 🖍 code
@@ -456,6 +473,32 @@
         sent ➕ 1 ➡️ 🖍 sent
       🍉
     🍉
+
+    💭 and where that packet leaves the connection, as the chart states it
+    position ➡️ 🖍 began
+    💭 its value, a byte at a time, each masked because a byte here is signed
+    0 ➡️ 🖍 kind
+    began ➕ 0 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    kind ✖ 256 ➡️ 🖍 kind
+    kind ➕ digit ➡️ 🖍 kind
+    began ➕ 1 ➡️ 🖍 cursor
+    🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+    raw ⭕ 255 ➡️ 🖍 digit
+    kind ✖ 256 ➡️ 🖍 kind
+    kind ➕ digit ➡️ 🖍 kind
+
+    state ➡️ 🖍 next
+    ↪️ state 🙌 0 🤝 kind 🙌 2300 🍇
+      💭 NotSignedOn becomes SignedOn
+      1 ➡️ 🖍 next
+    🍉
+    ↪️ state 🙌 1 🤝 kind 🙌 2320 🍇
+      💭 SignedOn becomes NotSignedOn
+      0 ➡️ 🖍 next
+    🍉
+    next ➡️ 🖍 state
 
     ending ➡️ 🖍 position
   🍉

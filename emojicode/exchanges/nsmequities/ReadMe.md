@@ -51,7 +51,7 @@ Every such join is stated in `manifest.json` at the root, as two files that hold
 
 What was settled when the program was written rather than asked while it ran:
 
-- timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as nought
+- timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as 09:30 on 2 January 2026, 5:00 behind UTC, the venue's open on a day chosen for its published runs rather than read from anything
 - sequence is a message's place in the order the engine is sent them, which the venue's sequencer states; with one gateway and nothing between it and the engine, this counts them itself, from one
 - the session is SoupBin Tcp: a connection opens in NotLoggedIn, and a request is admitted only while it rests in LoggedIn, which is where the chart receives the other end's own data. A login moves the connection as the chart says an accepted one does; whether to accept it is the session program's to say and was settled there
 - an order is held to 4 rules as it arrives, in the order the venue's transforms write them, and one failing any is not numbered and not sent to the engine: quantity from 1 to 999999; price from 0 to 1999999900; side one of 'B', 'S', 'T', 'E'; symbol one of 'ZVZZT'
@@ -101,7 +101,7 @@ Each run below is published as a `.frame` of the orders put to it and a `.wrote`
 
 ## Responder
 
-`NsmEquities.Responder.emojic` writes what a client is answered with, in `Nasdaq.NsmEquities.Orders.Ouch.v5.0`: each event of the engine's that the venue's transforms declare an answer for, as that answer. An answer is written from two things at once - the engine's event, and what the client entered of the order it is about - and a program reads one file, so its input is the two joined: the client's packets exactly as the gateway read them, a packet stating no length, and then the venue's own events exactly as the market wrote them. It writes nothing for the requests; it reads them to remember where each order was entered, numbered as the gateway numbers them, which is how an event naming an order by its number finds what the client called it.
+`NsmEquities.Responder.emojic` writes what a client is answered with, in `Nasdaq.NsmEquities.Orders.Ouch.v5.0`: each event of the engine's that the venue's transforms declare an answer for, as that answer. An answer is written from two things at once - the engine's event, and what the client entered of the order it is about - and a program reads one file, so its input is the two joined: the client's packets exactly as the gateway read them, a packet stating no length, and then the venue's own events exactly as the market wrote them. A request is answered as it is read only where the venue answers one as it arrives - a reject for an order the gateway turns away, or a confirmation where the venue confirms an order as the gateway takes it. Otherwise the requests are read to remember where each order was entered, numbered as the gateway numbers them, which is how an event naming an order by its number finds what the client called it and whatever else of what it entered the answer carries back.
 
 What was settled when the program was written rather than asked while it ran:
 

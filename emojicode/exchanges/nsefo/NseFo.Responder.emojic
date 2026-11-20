@@ -49,6 +49,8 @@
   0 ➡️ 🖍🆕 met
   0 ➡️ 🖍🆕 hit
   0 ➡️ 🖍🆕 probe
+  0 ➡️ 🖍🆕 open
+  0 ➡️ 🖍🆕 next
   0 ➡️ 🖍🆕 kind
   0 ➡️ 🖍🆕 going
   0 ➡️ 🖍🆕 number
@@ -62,6 +64,8 @@
   💭 each order admitted, numbered from one as the gateway numbers it: where its request began, and what of it is still open
   🆕🍨🐚🔢🍆❗️ ➡️ 🖍🆕 starts
   🆕🍨🐚🔢🍆❗️ ➡️ 🖍🆕 remaining
+  💭 where the connection rests, as Nse Nnf states it: 0 is NotSignedOn, 1 is SignedOn
+  0 ➡️ 🖍🆕 state
 
   💭 the client's packets, as far as one stating no length
   1 ➡️ 🖍 going
@@ -89,6 +93,12 @@
         ↪️ ending ▶️ 📏 frame❓ 🍇
           📏 frame❓ ➖ position ➡️ 🖍 reach
         🍉
+        💭 whether a request is admitted where the connection rests now
+        0 ➡️ 🖍 open
+        ↪️ state 🙌 1 🍇
+          1 ➡️ 🖍 open
+        🍉
+
         💭 nnf_order_entry: an order entered, and remembered
         0 ➡️ 🖍 met
         ↪️ reach ▶️🙌 144 🍇
@@ -114,6 +124,9 @@
           ↪️ hit 🙌 0 🍇
             0 ➡️ 🖍 met
           🍉
+        🍉
+        ↪️ open 🙌 0 🍇
+          0 ➡️ 🖍 met
         🍉
         ↪️ met 🙌 1 🍇
           🐻 starts position❗️
@@ -379,6 +392,32 @@
 
           🐻 remaining entered❗️
         🍉
+        💭 and where that packet leaves the connection, as the chart states it
+        position ➡️ 🖍 began
+        💭 its value, a byte at a time, each masked because a byte here is signed
+        0 ➡️ 🖍 kind
+        began ➕ 0 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        kind ✖ 256 ➡️ 🖍 kind
+        kind ➕ digit ➡️ 🖍 kind
+        began ➕ 1 ➡️ 🖍 cursor
+        🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+        raw ⭕ 255 ➡️ 🖍 digit
+        kind ✖ 256 ➡️ 🖍 kind
+        kind ➕ digit ➡️ 🖍 kind
+
+        state ➡️ 🖍 next
+        ↪️ state 🙌 0 🤝 kind 🙌 2300 🍇
+          💭 NotSignedOn becomes SignedOn
+          1 ➡️ 🖍 next
+        🍉
+        ↪️ state 🙌 1 🤝 kind 🙌 2320 🍇
+          💭 SignedOn becomes NotSignedOn
+          0 ➡️ 🖍 next
+        🍉
+        next ➡️ 🖍 state
+
         ending ➡️ 🖍 position
       🍉
       🙅 🍇
@@ -635,7 +674,28 @@
           wrote ➕ 🔪 frame 🐽 starts slot❗️ ➕ 98 8❗️ ➡️ 🖍 wrote
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
-          wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+          💭 buysellindicator, from buysellindicator
+          🐽 starts slot❗️ ➕ 118 ➡️ 🖍 began
+          💭 its value, a byte at a time, each masked because a byte here is signed
+          0 ➡️ 🖍 carried
+          began ➕ 0 ➡️ 🖍 cursor
+          🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+          raw ⭕ 255 ➡️ 🖍 digit
+          carried ✖ 256 ➡️ 🖍 carried
+          carried ➕ digit ➡️ 🖍 carried
+          began ➕ 1 ➡️ 🖍 cursor
+          🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+          raw ⭕ 255 ➡️ 🖍 digit
+          carried ✖ 256 ➡️ 🖍 carried
+          carried ➕ digit ➡️ 🖍 carried
+
+          carried ➡️ 🖍 taken
+          taken 👉 8 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
           🐽 remaining slot❗️ ➡️ 🖍 taken
@@ -752,7 +812,28 @@
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
-          wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+          💭 buysellindicator, from buysellindicator
+          🐽 starts slot❗️ ➕ 118 ➡️ 🖍 began
+          💭 its value, a byte at a time, each masked because a byte here is signed
+          0 ➡️ 🖍 carried
+          began ➕ 0 ➡️ 🖍 cursor
+          🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+          raw ⭕ 255 ➡️ 🖍 digit
+          carried ✖ 256 ➡️ 🖍 carried
+          carried ➕ digit ➡️ 🖍 carried
+          began ➕ 1 ➡️ 🖍 cursor
+          🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+          raw ⭕ 255 ➡️ 🖍 digit
+          carried ✖ 256 ➡️ 🖍 carried
+          carried ➕ digit ➡️ 🖍 carried
+
+          carried ➡️ 🖍 taken
+          taken 👉 8 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
@@ -1047,7 +1128,28 @@
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
-          wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
+          💭 buysellindicator, from buysellindicator
+          🐽 starts slot❗️ ➕ 118 ➡️ 🖍 began
+          💭 its value, a byte at a time, each masked because a byte here is signed
+          0 ➡️ 🖍 carried
+          began ➕ 0 ➡️ 🖍 cursor
+          🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+          raw ⭕ 255 ➡️ 🖍 digit
+          carried ✖ 256 ➡️ 🖍 carried
+          carried ➕ digit ➡️ 🖍 carried
+          began ➕ 1 ➡️ 🖍 cursor
+          🔢 🐽 frame cursor❗️❗️ ➡️ 🖍 raw
+          raw ⭕ 255 ➡️ 🖍 digit
+          carried ✖ 256 ➡️ 🖍 carried
+          carried ➕ digit ➡️ 🖍 carried
+
+          carried ➡️ 🖍 taken
+          taken 👉 8 ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
+          taken ➡️ 🖍 code
+          code ⭕ 255 ➡️ 🖍 code
+          wrote ➕ 🔪 table code 1❗️ ➡️ 🖍 wrote
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
           wrote ➕ 📇 🔤🔤❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➕ 🔪 table 0 1❗️ ➡️ 🖍 wrote
