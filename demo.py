@@ -563,13 +563,20 @@ def played(manifest, venue, programs, named):
             step += 1
             print(f"{step:>3}   client      {request(requests, gateway.given, at, end)}")
 
+            taken = False
+
             for order, (start_of, _) in enumerate(orders):
                 if low <= start_of < high:
                     print(f"      gateway     {event(messages, market.given, start_of)[2]}")
+
+                    # an order is answered as the gateway takes it, ahead of anything the market does with it
+                    replied("request", at)
+                    taken = True
                     answered(order)
 
             # an order the gateway turned away is answered here, and went no further
-            replied("request", at)
+            if not taken:
+                replied("request", at)
 
             print()
     else:

@@ -107,7 +107,7 @@ What was settled when the program was written rather than asked while it ran:
 
 - timestamp is when an answer is sent where the engine's event does not say, and a program reading one file and writing another has no clock, so it is written as nought
 - it reads the client's requests first and the engine's events after them, in one file: the requests end at a packet stating no length, and everything after that is the engine's
-- an answer is written as what it answers is read: a reject, or the answer to an order as the gateway takes it, as its request is, and so ahead of every answer to an event, and an answer to an event after the last request; answers to one event are written in the order the venue's transforms declare them
+- an answer is written as what it answers is read: a reject as its request is, and so ahead of every answer to an event, and an answer to an event after the last request; answers to one event are written in the order the venue's transforms declare them
 
 Each run is the gateway's run of the same name and what the market should write for it, joined, and the answers this should write. Each was held to the C# parser reading the answers back through the order entry's own model before it was published:
 

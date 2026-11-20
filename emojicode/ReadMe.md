@@ -24,9 +24,9 @@ So the working directory is load-bearing here in a way it is not for a language 
 cd emojicode/protocols/iex/iexequities/basicmatchingengine
 ln -s /path/to/Emojicode-1.0-beta.2-Linux-x86_64/packages packages
 emojicodec IexEquities.BasicMatchingEngine.v2026.emojic
-xxd -r -p < frames/basicmatchingengine.v2026/Laid.trademessage.frame > frame.bin
+xxd -r -p < frames/basicmatchingengine.v2026/Sample.trademessage.frame > frame.bin
 ./IexEquities.BasicMatchingEngine.v2026 frame.bin wrote.bin
-xxd -r -p < frames/basicmatchingengine.v2026/Laid.trademessage.wrote > want.bin
+xxd -r -p < frames/basicmatchingengine.v2026/Sample.trademessage.wrote > want.bin
 cmp want.bin wrote.bin
 ```
 A silent `cmp` is the whole of the result: what the compiled program wrote is what this repository published for that frame. Six files are left in that directory and none of them is published here — the link, the program and its `.o`, and the three `.bin` files — so they are safe to delete.

@@ -40,7 +40,7 @@ bf brainfuck/dialect.bf < /dev/null
 ```
 That program takes no input and prints one line per claim, saying of each whether this interpreter kept it. All four should say `ok`. One that says `no`, or a line that stops partway through, names what your interpreter does differently — and the claims are listed in the order the programs here lean on them, which was measured rather than guessed.
 
-The one byte wrap is the one that matters most: of 336 frames published here, only 21 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 4,063, so classic Brainfuck's 30,000 would do 7 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
+The one byte wrap is the one that matters most: of 339 frames published here, only 21 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 4,063, so classic Brainfuck's 30,000 would do 7 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
 
 ## Layout
 
@@ -138,6 +138,7 @@ A protocol's decoder sits under `protocols` because it is the same program whoev
 - Ipc `Nasdaq.NsmEquities.MatchingEngine.Ipc.v2026`
 - Engine `Nasdaq.NsmEquities.Equities.Session.TradingSession`
 - OrderEntry `Nasdaq.NsmEquities.Orders.Ouch.v5.0`, session `SoupBin.Tcp`
+- OrderEntry `Nasdaq.NsmEquities.OrderEntry.Fix.v4.2`
 - Feed `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
 - Replay `Nasdaq.NsmEquities.TotalView.Glimpse.v5.0.2026`
 - Replay `Nasdaq.NsmEquities.TotalView.Itch.v5.0.2026`
