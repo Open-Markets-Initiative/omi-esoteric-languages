@@ -40,7 +40,7 @@ bf brainfuck/dialect.bf < /dev/null
 ```
 That program takes no input and prints one line per claim, saying of each whether this interpreter kept it. All four should say `ok`. One that says `no`, or a line that stops partway through, names what your interpreter does differently — and the claims are listed in the order the programs here lean on them, which was measured rather than guessed.
 
-The one byte wrap is the one that matters most: of 340 frames published here, only 21 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 4,063, so classic Brainfuck's 30,000 would do 7 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
+The one byte wrap is the one that matters most: of 342 frames published here, only 21 still read the same under cells of 32 bits. The spent read matters to the markets alone and matters absolutely — a market reads to the end of its input and stops on a length of nothing, so under either of the other two conventions every market run never stops at all. The tape's length matters least: leaving aside the dialect's own program, which walks to the last cell to ask whether it is there, the highest cell anything here touches is 4,073, so classic Brainfuck's 30,000 would do 7 times over, and the room is asked for because a book over a real price band would want it rather than because anything here does.
 
 ## Layout
 
@@ -95,15 +95,15 @@ Every instruction of the 38 programs here, counted off the files as they are pub
 
 | Instruction | decoder | dialect | session | gateway | market | responder | feed | All | Share |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| `+` | 642,946 | 3,373 | 5,383 | 27,735 | 1,200,216 | 232,933 | 208,277 | 2,320,863 | 2.0% |
-| `-` | 338,652 | 2,941 | 1,570 | 41,789 | 335,965 | 98,506 | 52,555 | 871,978 | 0.8% |
-| `<` | 9,512,120 | 65,622 | 3,456 | 772,696 | 38,952,036 | 5,682,553 | 762,178 | 55,750,661 | 48.0% |
-| `>` | 9,512,725 | 65,628 | 3,473 | 772,791 | 38,954,721 | 5,682,724 | 763,062 | 55,755,124 | 48.0% |
-| `[` | 60,951 | 67 | 1,077 | 45,883 | 388,831 | 109,294 | 53,883 | 659,986 | 0.6% |
-| `]` | 60,951 | 67 | 1,077 | 45,883 | 388,831 | 109,294 | 53,883 | 659,986 | 0.6% |
-| `.` | 55,413 | 164 | 316 | 134 | 730 | 1,618 | 825 | 59,200 | 0.1% |
-| `,` | 15,415 | 1 | 124 | 709 | 281 | 636 | 507 | 17,673 | 0.0% |
-| All | 20,199,173 | 137,863 | 16,476 | 1,707,620 | 80,221,611 | 11,917,558 | 1,895,170 | 116,095,471 | 100.0% |
+| `+` | 645,629 | 3,373 | 5,383 | 27,735 | 1,200,216 | 232,933 | 208,277 | 2,323,546 | 2.0% |
+| `-` | 339,139 | 2,941 | 1,570 | 41,789 | 335,965 | 98,506 | 52,555 | 872,465 | 0.8% |
+| `<` | 8,710,737 | 65,622 | 3,456 | 772,696 | 38,952,036 | 5,682,553 | 762,178 | 54,949,278 | 48.0% |
+| `>` | 8,711,342 | 65,628 | 3,473 | 772,791 | 38,954,721 | 5,682,724 | 763,062 | 54,953,741 | 48.0% |
+| `[` | 61,269 | 67 | 1,077 | 45,883 | 388,831 | 109,294 | 53,883 | 660,304 | 0.6% |
+| `]` | 61,269 | 67 | 1,077 | 45,883 | 388,831 | 109,294 | 53,883 | 660,304 | 0.6% |
+| `.` | 55,445 | 164 | 316 | 134 | 730 | 1,618 | 825 | 59,232 | 0.1% |
+| `,` | 15,417 | 1 | 124 | 709 | 281 | 636 | 507 | 17,675 | 0.0% |
+| All | 18,600,247 | 137,863 | 16,476 | 1,707,620 | 80,221,611 | 11,917,558 | 1,895,170 | 114,496,545 | 100.0% |
 
 ## Development
 
@@ -111,21 +111,21 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 | Kind | Programs | Runs |
 | --- | ---: | ---: |
-| decoder | 23 | 268 |
+| decoder | 23 | 270 |
 | dialect | 1 | 1 |
 | session | 2 | 9 |
 | gateway | 2 | 9 |
 | market | 3 | 19 |
 | responder | 2 | 7 |
 | feed | 5 | 27 |
-| All | 38 | 340 |
+| All | 38 | 342 |
 
 
 - Protocol decoders: 23
-- Instructions in the decoders: 20,199,173
-- Reading every field the model states: 22 of 23
+- Instructions in the decoders: 18,600,247
+- Reading every field the model states: 23 of 23
 - Published with a frame they are held to: 23 of 23
-- Frames, of which recorded from the wire: 268, 40
+- Frames, of which recorded from the wire: 270, 40
 - Sessions, of which proven on a run: 2, 2
 - Runs, and the packets they were answered with: 9, 8
 - Markets, of which proven on a run: 3, 3

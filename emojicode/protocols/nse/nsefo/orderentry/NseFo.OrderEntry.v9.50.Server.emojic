@@ -41,6 +41,8 @@
   0 ➡️ 🖍🆕 cursor
   0 ➡️ 🖍🆕 raw
   0 ➡️ 🖍🆕 digit
+  0 ➡️ 🖍🆕 wide
+  0 ➡️ 🖍🆕 left
   0 ➡️ 🖍🆕 carrier
   0 ➡️ 🖍🆕 taken
   0 ➡️ 🖍🆕 code
@@ -834,6 +836,20 @@
     wrote ➕ newline ➡️ 🖍 wrote
     position ➕ 2 ➡️ 🖍 position
 
+    💭 datapayload, as many bytes as another field states
+    value1 ➖ 80 ➡️ 🖍 wide
+    📏 frame❓ ➖ position ➡️ 🖍 left
+    ↪️ wide ▶️ left 🍇
+      💭 a stated length longer than the frame is read as the rest of it
+      left ➡️ 🖍 wide
+    🍉
+    📇 🔤datapayload=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position wide❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ wide ➡️ 🖍 position
+
   🍉
   🙅↪️ value0 🙌 7011 🍇
   🍉
@@ -909,6 +925,20 @@
     wrote ➕ held ➡️ 🖍 wrote
     wrote ➕ newline ➡️ 🖍 wrote
     position ➕ 2 ➡️ 🖍 position
+
+    💭 downloadpayload, as many bytes as another field states
+    value1 ➖ 80 ➡️ 🖍 wide
+    📏 frame❓ ➖ position ➡️ 🖍 left
+    ↪️ wide ▶️ left 🍇
+      💭 a stated length longer than the frame is read as the rest of it
+      left ➡️ 🖍 wide
+    🍉
+    📇 🔤downloadpayload=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position wide❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ wide ➡️ 🖍 position
 
   🍉
   🙅↪️ value0 🙌 7031 🍇

@@ -100,38 +100,38 @@ The runs cover an order crossing one level and resting the remainder, **an order
 
 ## What the programs are made of
 
-Every emoji of the 37 programs here, 216,291 of them and 48 different, counted off the files as they are published, most used first. Where the generator writes one under a name of its own, the name is given; the rest are written only as part of something longer, or only in the header a program opens with.
+Every emoji of the 37 programs here, 216,373 of them and 48 different, counted off the files as they are published, most used first. Where the generator writes one under a name of its own, the name is given; the rest are written only as part of something longer, or only in the header a program opens with.
 
 | Emoji | The generator's name for it | Count | Share |
 | --- | --- | ---: | ---: |
-| ➡️ | Into | 54,340 | 25.1% |
-| 🖍 | Over | 54,059 | 25.0% |
-| ➕ | Joins | 30,340 | 14.0% |
-| ❗️ | Call | 20,088 | 9.3% |
-| 🔤 | Quote | 13,192 | 6.1% |
-| 🔪 | Slice | 8,974 | 4.1% |
-| 💭 | Note | 8,146 | 3.8% |
-| 📇 | Data, Reads | 6,655 | 3.1% |
+| ➡️ | Into | 54,360 | 25.1% |
+| 🖍 | Over | 54,079 | 25.0% |
+| ➕ | Joins | 30,348 | 14.0% |
+| ❗️ | Call | 20,092 | 9.3% |
+| 🔤 | Quote | 13,196 | 6.1% |
+| 🔪 | Slice | 8,976 | 4.1% |
+| 💭 | Note | 8,150 | 3.8% |
+| 📇 | Data, Reads | 6,657 | 3.1% |
 | ⭕ | And | 5,351 | 2.5% |
 | 👉 | Shifted | 2,295 | 1.1% |
 | 🐽 | At | 1,721 | 0.8% |
 | 🔢 | Integer | 1,510 | 0.7% |
 | ✖ | Scales | 1,495 | 0.7% |
-| 🍇 | Opens | 1,144 | 0.5% |
-| 🍉 | Closes | 1,144 | 0.5% |
+| 🍇 | Opens | 1,146 | 0.5% |
+| 🍉 | Closes | 1,146 | 0.5% |
 | 🐻 | Adds | 1,066 | 0.5% |
-| ↪️ | If | 913 | 0.4% |
-| 🆕 | Creates | 904 | 0.4% |
+| ↪️ | If | 915 | 0.4% |
+| 🆕 | Creates | 906 | 0.4% |
 | 🙌 | Same | 821 | 0.4% |
 | 🙅 | Else | 553 | 0.3% |
-| ➖ | Takes | 204 | 0.1% |
-| ▶️ | Above | 202 | 0.1% |
+| ➖ | Takes | 208 | 0.1% |
+| ▶️ | Above | 204 | 0.1% |
 | 🐇 | OfType | 111 | 0.1% |
 | 🔁 | Repeat | 88 | 0.0% |
 | 🍺 | Unwrap | 74 | 0.0% |
 | 📄 | File | 74 | 0.0% |
-| ❓ | Ask | 67 | 0.0% |
-| 📏 | Length | 67 | 0.0% |
+| ❓ | Ask | 69 | 0.0% |
+| 📏 | Length | 69 | 0.0% |
 | 🍆 | Closing | 52 | 0.0% |
 | 🐚 | Opening | 52 | 0.0% |
 | ⏩ | Upto | 44 | 0.0% |
@@ -191,7 +191,7 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 | Protocol decoders | Characters in them | Reading every field the model states | Frames | Recorded from the wire |
 | --- | --- | --- | --- | --- |
-| 23 | 1,742,390 | 22 of 23 | 280 | 50 |
+| 23 | 1,743,334 | 23 of 23 | 280 | 50 |
 
 ## Open Markets Initiative
 

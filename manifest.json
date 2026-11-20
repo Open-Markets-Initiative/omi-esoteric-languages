@@ -1978,6 +1978,16 @@
           "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Sample.systeminformationoutmessage.wrote"
         },
         {
+          "name": "Sample.updatelocaldatabasedatamessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Sample.updatelocaldatabasedatamessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Sample.updatelocaldatabasedatamessage.wrote"
+        },
+        {
+          "name": "Sample.messagerecordmessage",
+          "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Sample.messagerecordmessage.frame",
+          "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Sample.messagerecordmessage.wrote"
+        },
+        {
           "name": "Sample.useraddressunlockconfirmmessage",
           "frame": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Sample.useraddressunlockconfirmmessage.frame",
           "wrote": "brainfuck/protocols/nse/nsefo/orderentry/frames/orderentry.v9.50.server/Sample.useraddressunlockconfirmmessage.wrote"

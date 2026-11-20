@@ -4,8 +4,6 @@ Generate Omi Esoteric Languages GitHub Repository
   skipping venue: OdxEquities (not a venue this repository publishes)
   skipping venue: OdxSecurityToken (not a venue this repository publishes)
   skipping venue: SaudiExchange (not a venue this repository publishes)
-  unread: serverpacket.servermessage.servermessagepayload.updatelocaldatabasedatamessage.localdatabasedata.datapayload: its width is stated by a rule rather than by the field, and the rule names no field to read it from
-  unread: serverpacket.servermessage.servermessagepayload.messagerecordmessage.messagedownloaddata.downloadpayload: its width is stated by a rule rather than by the field, and the rule names no field to read it from
   skipping session: IexEquities Iex.IexEquities.Fix (over no binary model)
   decided: NseFo.Nnf.bf: Authenticating: Handler.Login.Accepted is taken as the chart writes it, so the program never asks
   unrun: NseFo.Nnf.bf: Request.Message answers something that is not bytes, so no program with one input and one output can reach it
@@ -85,8 +83,6 @@ Generate Omi Esoteric Languages GitHub Repository
   decided: NseFo.Mtbt.Feed.bf: packet.message.payload.ordercancellationmessage.timestamp counts from Dos in Asia/Kolkata, which has kept one offset from 1970 to the end of 2099, so a time is moved there by adding -315513000000000000 nanoseconds
   decided: NseFo.Mtbt.Feed.bf: packet.message.payload.trademessage.timestamp counts from Dos in Asia/Kolkata, which has kept one offset from 1970 to the end of 2099, so a time is moved there by adding -315513000000000000 nanoseconds
   decided: NsmEquities.TotalView.Feed.bf: its times count from midnight in America/New_York, and a program with no clock library cannot ask when that zone changes, so the 260 changes from 1970 to the end of 2099 were read when it was written and are carried in it; a time past the last keeps the last offset
-  unread: serverpacket.servermessage.servermessagepayload.updatelocaldatabasedatamessage.localdatabasedata.datapayload: its width is stated by a rule rather than by the field, and the rule names no field to read it from
-  unread: serverpacket.servermessage.servermessagepayload.messagerecordmessage.messagedownloaddata.downloadpayload: its width is stated by a rule rather than by the field, and the rule names no field to read it from
   skipping emoji gateway: IexEquities: its order entry Iex.IexEquities.OrderEntry.Fix.v2.91 is FIX, which is text and has no binary model to read it by
   decided: NseFo.Gateway.emojic: timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as 09:15 on 2 January 2026, 5:30 ahead of UTC, the venue's open on a day chosen for its published runs rather than read from anything
   decided: NseFo.Gateway.emojic: the session is Nse Nnf: a connection opens in NotSignedOn, and a request is admitted only while it rests in SignedOn, which is where the chart receives the other end's own data. A login moves the connection as the chart says an accepted one does; whether to accept it is the session program's to say and was settled there
@@ -143,11 +139,9 @@ Generate Omi Esoteric Languages GitHub Repository
   unrun: NsmEquities.SoupBin.emojic: Request.EndOfSession answers something that is not bytes, so no program reading one file and writing another can reach it
   unrun: NsmEquities.SoupBin.emojic: Timer.Heartbeat answers something that is not bytes, so no program reading one file and writing another can reach it
   unrun: NsmEquities.SoupBin.emojic: Timer.Silence answers something that is not bytes, so no program reading one file and writing another can reach it
-  Brainfuck: 23 programs, 20,199,173 instructions, 268 frames (40 from the wire); 2 sessions, 9 runs; 3 markets, 84 orders, 35 trades, 6 refused
+  Brainfuck: 23 programs, 18,600,247 instructions, 270 frames (40 from the wire); 2 sessions, 9 runs; 3 markets, 84 orders, 35 trades, 6 refused
   Dialect claims: 4, reported in 137,863 instructions
-  partial: 1 of 23 Brainfuck programs do not read every field
-  Emojicode: 23 programs, 1,742,390 characters, 280 frames (50 from the wire); 2 sessions, 10 runs; 3 markets, 87 orders, 41 trades, 0 refused
-  partial: 1 of 23 Emojicode programs do not read every field
-  Manifest: 75 programs, 716 runs, 99 joins
-  Lost: 4 unread, 2 skipping session, 1 skipping gateway, 1 skipping emoji gateway, 2 partial
+  Emojicode: 23 programs, 1,743,334 characters, 280 frames (50 from the wire); 2 sessions, 10 runs; 3 markets, 87 orders, 41 trades, 0 refused
+  Manifest: 75 programs, 718 runs, 99 joins
+  Lost: 2 skipping session, 1 skipping gateway, 1 skipping emoji gateway
   Notes: 89 decided, 39 unrun, 3 charted
