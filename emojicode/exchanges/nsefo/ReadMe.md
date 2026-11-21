@@ -109,11 +109,11 @@ Each run is the gateway's run of the same name and what the market should write 
 
 | Run | Bytes of requests | Bytes of events | Answers | Bytes written |
 | --- | ---: | ---: | ---: | ---: |
-| `crossing` | 3,770 | 159 | 5 | 1,540 |
-| `sweeping` | 3,770 | 210 | 7 | 2,132 |
-| `selling` | 3,454 | 87 | 4 | 1,224 |
-| `cancelling` | 3,770 | 108 | 3 | 948 |
-| `day` | 5,350 | 420 | 16 | 4,896 |
+| `crossing` | 3,662 | 159 | 5 | 1,540 |
+| `sweeping` | 3,662 | 210 | 7 | 2,132 |
+| `selling` | 3,346 | 87 | 4 | 1,224 |
+| `cancelling` | 3,662 | 108 | 3 | 948 |
+| `day` | 5,242 | 420 | 16 | 4,896 |
 
 From the root of the repository, the same join made by hand - the client's requests, the packet stating no length, and what the gateway and the market make of those requests - and what the responder writes for it held to the run published beside it:
 

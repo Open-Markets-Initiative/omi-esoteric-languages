@@ -21,8 +21,6 @@
         "Sign Off Request Out Message": 2321,
         "System Information In Message": 1600,
         "System Information Out Message": 1601,
-        "Gateway Router Request Message": 2400,
-        "Gateway Router Response Message": 2401,
         "Sign Off Request In Message": 2320,
         "Update Local Database In Message": 7300,
         "Update Local Database Header Message": 7307,
@@ -57,8 +55,6 @@
         "Global Contracts Message": 7733,
         "Secure Box Registration Request In Message": 23008,
         "Secure Box Registration Response Out Message": 23009,
-        "Box Sign On Request In Message": 23000,
-        "Box Sign On Request Out Message": 23001,
         "Heartbeat Message": 23506,
         "Box Sign Off Message": 20322,
         "Contingency Broadcast Message": 5294,
@@ -92,12 +88,6 @@
       "named": "System Information In Message",
       "codes": [
         1600
-      ]
-    },
-    {
-      "named": "Gateway Router Request Message",
-      "codes": [
-        2400
       ]
     },
     {
@@ -193,12 +183,6 @@
       ]
     },
     {
-      "named": "Box Sign On Request In Message",
-      "codes": [
-        23000
-      ]
-    },
-    {
       "named": "Heartbeat Message",
       "codes": [
         23506
@@ -271,8 +255,6 @@
             "Sign Off Request Out Message": 2321,
             "System Information In Message": 1600,
             "System Information Out Message": 1601,
-            "Gateway Router Request Message": 2400,
-            "Gateway Router Response Message": 2401,
             "Sign Off Request In Message": 2320,
             "Update Local Database In Message": 7300,
             "Update Local Database Header Message": 7307,
@@ -307,8 +289,6 @@
             "Global Contracts Message": 7733,
             "Secure Box Registration Request In Message": 23008,
             "Secure Box Registration Response Out Message": 23009,
-            "Box Sign On Request In Message": 23000,
-            "Box Sign On Request Out Message": 23001,
             "Heartbeat Message": 23506,
             "Box Sign Off Message": 20322,
             "Contingency Broadcast Message": 5294,
@@ -832,8 +812,6 @@
             "Sign Off Request Out Message": 2321,
             "System Information In Message": 1600,
             "System Information Out Message": 1601,
-            "Gateway Router Request Message": 2400,
-            "Gateway Router Response Message": 2401,
             "Sign Off Request In Message": 2320,
             "Update Local Database In Message": 7300,
             "Update Local Database Header Message": 7307,
@@ -868,8 +846,6 @@
             "Global Contracts Message": 7733,
             "Secure Box Registration Request In Message": 23008,
             "Secure Box Registration Response Out Message": 23009,
-            "Box Sign On Request In Message": 23000,
-            "Box Sign On Request Out Message": 23001,
             "Heartbeat Message": 23506,
             "Box Sign Off Message": 20322,
             "Contingency Broadcast Message": 5294,

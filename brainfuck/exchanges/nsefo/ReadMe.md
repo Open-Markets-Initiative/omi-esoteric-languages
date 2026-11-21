@@ -108,9 +108,9 @@ Each run is the gateway's run of the same name and what the market wrote for it,
 
 | Run | Bytes of requests | Bytes of events | Answers | Bytes written |
 | --- | ---: | ---: | ---: | ---: |
-| `crossing` | 3,770 | 159 | 5 | 1,540 |
-| `cancelling` | 3,770 | 108 | 3 | 948 |
-| `day` | 5,350 | 420 | 16 | 4,896 |
+| `crossing` | 3,662 | 159 | 5 | 1,540 |
+| `cancelling` | 3,662 | 108 | 3 | 948 |
+| `day` | 5,242 | 420 | 16 | 4,896 |
 
 From the root of the repository, the same join made by hand - the client's requests, the packet stating no length, and what the gateway and the market make of those requests:
 
@@ -153,9 +153,8 @@ Transitions of the chart no program with one input and one output can run, becau
 
 - Request.Message answers something that is not bytes, so no program with one input and one output can reach it
 - Request.Logout answers something that is not bytes, so no program with one input and one output can reach it
-- entering Authenticating: Send Ask.Login goes somewhere that is not the wire
-- 'User Id' is written from Field, which is not a value a program answering in constants can know
 - nothing dispatches to 'Client Message', so Receive.Payload.Application arrives as a packet this state has no arm for, and is read and dropped like any other
+- entering Authenticating: Send Ask.Login goes somewhere that is not the wire
 
 One run per transition of the chart, named for the state it rests in and the packet that arrives. A run the session answers nothing to is published too, with an empty answer, because half of what a session does is decline to answer:
 
@@ -180,7 +179,7 @@ Under `runs/`, in a folder named for each program, is a `.frame` per run, holdin
 
 | Program | `+` | `-` | `<` | `>` | `[` | `]` | `.` | `,` | All |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| `NseFo.Nnf.bf` | 2,641 | 1,033 | 1,620 | 1,629 | 513 | 513 | 283 | 95 | 8,327 |
+| `NseFo.Nnf.bf` | 2,727 | 1,189 | 2,933 | 2,946 | 718 | 718 | 283 | 99 | 11,613 |
 | `NseFo.Gateway.bf` | 17,625 | 30,223 | 583,319 | 583,367 | 33,355 | 33,355 | 57 | 635 | 1,281,936 |
 | `NseFo.Market.bf` | 400,027 | 111,651 | 12,858,640 | 12,859,527 | 129,241 | 129,241 | 234 | 75 | 26,488,636 |
 | `NseFo.Responder.bf` | 21,750 | 28,898 | 1,867,774 | 1,867,852 | 31,624 | 31,624 | 1,224 | 454 | 3,851,200 |

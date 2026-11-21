@@ -518,6 +518,22 @@
     wrote ➕ newline ➡️ 🖍 wrote
     position ➕ 8 ➡️ 🖍 position
 
+    💭 extendedclose, 1 byte
+    📇 🔤extendedclose=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
+    💭 extendedlifebook, 1 byte
+    📇 🔤extendedlifebook=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
   🍉
   🙅↪️ value1 🙌 67 🍇
     💭 timestamp, 8 bytes
@@ -1549,6 +1565,22 @@
     wrote ➕ held ➡️ 🖍 wrote
     wrote ➕ newline ➡️ 🖍 wrote
     position ➕ 8 ➡️ 🖍 position
+
+    💭 extendedclose, 1 byte
+    📇 🔤extendedclose=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
+
+    💭 extendedlifebook, 1 byte
+    📇 🔤extendedlifebook=🔤❗️ ➡️ 🖍 named
+    wrote ➕ named ➡️ 🖍 wrote
+    🔪 frame position 1❗️ ➡️ 🖍 held
+    wrote ➕ held ➡️ 🖍 wrote
+    wrote ➕ newline ➡️ 🖍 wrote
+    position ➕ 1 ➡️ 🖍 position
 
   🍉
   🙅↪️ value1 🙌 87 🍇

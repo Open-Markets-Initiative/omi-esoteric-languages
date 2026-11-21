@@ -4,6 +4,7 @@ Protocol: Nasdaq NsmEquities Orders Ouch v5 0
 Nasdaq SoupBinTcp over Nasdaq NsmEquities Orders Ouch v5 0 server side: reads clientpacket clientsoupbintcppacket writes serverpacket serversoupbintcppacket
 rests in 0=NotLoggedIn 1=LoggedIn
 Authenticating: Handler Login Accepted is taken as the chart writes it so the program never asks
+'Accepted Session' answers the opening SessionId which the chart states no value for so it is written as a venue pads an unset field
 [-]>,>,>>>>>>[-][-]>[-]>[-]<<<<<<<<[->>>>>>>+>+<<<<<<<<]>>>>>>>>
 [-<<<<<<<<+>>>>>>>>]<[<[-]+>[-]]<<<<<<<<[->>>>>>>>+>+<<<<<<<<<]>
 >>>>>>>>[-<<<<<<<<<+>>>>>>>>>]<[<[-]+>[-]]<[<<<<<,>[-]>[-]>>>>>[

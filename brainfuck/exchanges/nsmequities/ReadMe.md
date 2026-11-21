@@ -163,11 +163,11 @@ Transitions of the chart no program with one input and one output can run, becau
 - Request.EndOfSession answers something that is not bytes, so no program with one input and one output can reach it
 - Timer.Heartbeat answers something that is not bytes, so no program with one input and one output can reach it
 - Timer.Silence answers something that is not bytes, so no program with one input and one output can reach it
+- nothing dispatches to 'Client Soup Bin Tcp Packet', so Receive.Payload.Application arrives as a packet this state has no arm for, and is read and dropped like any other
 - entering NotLoggedIn: Send Timer.Login after State:LoginInterval goes somewhere that is not the wire
 - entering Authenticating: Send Ask.Login goes somewhere that is not the wire
 - entering LoggedIn: Send Timer.Heartbeat after State:HeartbeatInterval goes somewhere that is not the wire
 - entering LoggedIn: Send Timer.Silence after State:SilenceInterval goes somewhere that is not the wire
-- nothing dispatches to 'Client Soup Bin Tcp Packet', so Receive.Payload.Application arrives as a packet this state has no arm for, and is read and dropped like any other
 
 One run per transition of the chart, named for the state it rests in and the packet that arrives. A run the session answers nothing to is published too, with an empty answer, because half of what a session does is decline to answer:
 

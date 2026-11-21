@@ -92,10 +92,7 @@
             "Enter Order Message": 79,
             "Replace Order Message": 85,
             "Cancel Order Message": 88,
-            "Modify Order Message": 77,
-            "Account Query Message": 81,
             "Mass Cancel Request Message": 67,
-            "Disable Order Entry Request Message": 68,
             "Enable Order Entry Request Message": 69
           },
           "at": 3,
@@ -278,10 +275,7 @@
             "Enter Order Message": 79,
             "Replace Order Message": 85,
             "Cancel Order Message": 88,
-            "Modify Order Message": 77,
-            "Account Query Message": 81,
             "Mass Cancel Request Message": 67,
-            "Disable Order Entry Request Message": 68,
             "Enable Order Entry Request Message": 69
           },
           "at": 3,

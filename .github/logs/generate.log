@@ -5,12 +5,13 @@ Generate Omi Esoteric Languages GitHub Repository
   skipping venue: OdxSecurityToken (not a venue this repository publishes)
   skipping venue: SaudiExchange (not a venue this repository publishes)
   skipping session: IexEquities Iex.IexEquities.Fix (over no binary model)
+  resolving: NseFo: order entry: Nse.NseFo.OrderEntry.Nnf.v9.50 without Gateway Router Request Message, Gateway Router Response Message, Box Sign On Request In Message, Box Sign On Request Out Message
   decided: NseFo.Nnf.bf: Authenticating: Handler.Login.Accepted is taken as the chart writes it, so the program never asks
   unrun: NseFo.Nnf.bf: Request.Message answers something that is not bytes, so no program with one input and one output can reach it
   unrun: NseFo.Nnf.bf: Request.Logout answers something that is not bytes, so no program with one input and one output can reach it
-  unrun: NseFo.Nnf.bf: entering Authenticating: Send Ask.Login goes somewhere that is not the wire
-  unrun: NseFo.Nnf.bf: 'User Id' is written from Field, which is not a value a program answering in constants can know
   unrun: NseFo.Nnf.bf: nothing dispatches to 'Client Message', so Receive.Payload.Application arrives as a packet this state has no arm for, and is read and dropped like any other
+  unrun: NseFo.Nnf.bf: entering Authenticating: Send Ask.Login goes somewhere that is not the wire
+  resolving: NsmEquities: order entry: Nasdaq.NsmEquities.Orders.Ouch.v5.0 without Replace Order Message, Modify Order Message, Account Query Message, Mass Cancel Request Message, Disable Order Entry Request Message, Enable Order Entry Request Message, Replaced Message, Aiq Canceled Message, Broken Trade Message, Cancel Pending Message, Cancel Reject Message, Order Priority Update Message, Order Modified Message, Order Restated Message, Account Query Response Message, Mass Cancel Response Message, Disable Order Entry Response Message, Enable Order Entry Response Message
   decided: NsmEquities.SoupBin.bf: Authenticating: Handler.Login.Accepted is taken as the chart writes it, so the program never asks
   decided: NsmEquities.SoupBin.bf: 'Accepted Session' answers the opening SessionId, which the chart states no value for, so it is written as a venue pads an unset field
   unrun: NsmEquities.SoupBin.bf: Timer.Login answers something that is not bytes, so no program with one input and one output can reach it
@@ -20,11 +21,11 @@ Generate Omi Esoteric Languages GitHub Repository
   unrun: NsmEquities.SoupBin.bf: Request.EndOfSession answers something that is not bytes, so no program with one input and one output can reach it
   unrun: NsmEquities.SoupBin.bf: Timer.Heartbeat answers something that is not bytes, so no program with one input and one output can reach it
   unrun: NsmEquities.SoupBin.bf: Timer.Silence answers something that is not bytes, so no program with one input and one output can reach it
+  unrun: NsmEquities.SoupBin.bf: nothing dispatches to 'Client Soup Bin Tcp Packet', so Receive.Payload.Application arrives as a packet this state has no arm for, and is read and dropped like any other
   unrun: NsmEquities.SoupBin.bf: entering NotLoggedIn: Send Timer.Login after State:LoginInterval goes somewhere that is not the wire
   unrun: NsmEquities.SoupBin.bf: entering Authenticating: Send Ask.Login goes somewhere that is not the wire
   unrun: NsmEquities.SoupBin.bf: entering LoggedIn: Send Timer.Heartbeat after State:HeartbeatInterval goes somewhere that is not the wire
   unrun: NsmEquities.SoupBin.bf: entering LoggedIn: Send Timer.Silence after State:SilenceInterval goes somewhere that is not the wire
-  unrun: NsmEquities.SoupBin.bf: nothing dispatches to 'Client Soup Bin Tcp Packet', so Receive.Payload.Application arrives as a packet this state has no arm for, and is read and dropped like any other
   skipping session: NsmEquities Nasdaq.NsmEquities.Fix (over no binary model)
   skipping gateway: IexEquities: its order entry Iex.IexEquities.OrderEntry.Fix.v2.91 is FIX, which is text and has no binary model to read it by
   decided: NseFo.Gateway.bf: timestamp is when the sequencer took the message, and a program reading one file and writing another has no clock and is given no time by the request, so it is written as 09:15 on 2 January 2026, 5:30 ahead of UTC, the venue's open on a day chosen for its published runs rather than read from anything
@@ -139,9 +140,9 @@ Generate Omi Esoteric Languages GitHub Repository
   unrun: NsmEquities.SoupBin.emojic: Request.EndOfSession answers something that is not bytes, so no program reading one file and writing another can reach it
   unrun: NsmEquities.SoupBin.emojic: Timer.Heartbeat answers something that is not bytes, so no program reading one file and writing another can reach it
   unrun: NsmEquities.SoupBin.emojic: Timer.Silence answers something that is not bytes, so no program reading one file and writing another can reach it
-  Brainfuck: 23 programs, 18,600,247 instructions, 270 frames (40 from the wire); 2 sessions, 9 runs; 3 markets, 84 orders, 35 trades, 6 refused
+  Brainfuck: 23 programs, 18,526,957 instructions, 270 frames (40 from the wire); 2 sessions, 9 runs; 3 markets, 84 orders, 35 trades, 6 refused
   Dialect claims: 4, reported in 137,863 instructions
-  Emojicode: 23 programs, 1,743,334 characters, 280 frames (50 from the wire); 2 sessions, 10 runs; 3 markets, 87 orders, 41 trades, 0 refused
+  Emojicode: 23 programs, 1,744,266 characters, 280 frames (50 from the wire); 2 sessions, 10 runs; 3 markets, 87 orders, 41 trades, 0 refused
   Manifest: 75 programs, 718 runs, 99 joins
   Lost: 2 skipping session, 1 skipping gateway, 1 skipping emoji gateway
-  Notes: 89 decided, 39 unrun, 3 charted
+  Notes: 2 resolving, 89 decided, 38 unrun, 3 charted

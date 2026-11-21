@@ -67,7 +67,9 @@ A session reads the other end's packets from standard input, holds a state, and 
 
 **A generated session accepts every login, and that is a property of it rather than a detail.** A chart names three kinds of thing. Receive and Send are bytes; a Request is a service asking the session to do something, a Handler is the endpoint answering a question the session cannot answer itself, and an Ask is the session putting that question. A program with one input and one output has nowhere to put a question and nobody to ask it of, so those transitions cannot run at all — seven of SoupBinTcp's twelve are of that kind. Rather than refuse the chart over it, the accepting answer is taken when the program is written, and only where the chart states it without a condition: a condition reads a field of the login that asked, and deciding a login on the login's own contents is not authentication. So these demonstrate a handshake and authenticate nothing.
 
-Each session is published with one run per transition of its chart, named for the state it rests in and the packet that arrives. A run is the shortest way into that state and then the packet itself, so the login stands at the head of every one, which is what a connection really looks like. A run the session answers nothing to is published too, with an empty answer: half of what a session does is decline to answer — a heartbeat is received and answered by doing nothing — and a check that skipped those would pass a program that replied to every one.
+**An answer is written as constants, but for what it copies.** Nearly every byte a session answers with is known when the program is written — the values a connection opens with, the padding a venue leaves in a field it does not set — so it is written as text, and costs one instruction per byte. The exception is a field the chart fills from the packet that arrived: Nse's Nnf answers a sign-on with the user that signed on. That field is read into a cell as the sign-on goes past and written back where the answer states it, which is still no arithmetic. What a session cannot do is decide on a field: where a chart answers one way or another by a guard on one, the program takes the answer stated without a guard, as above.
+
+Each session is published with one run per transition of its chart, named for the state it rests in and the packet that arrives. A run is the shortest way into that state and then the packet itself, so the login stands at the head of every one, which is what a connection really looks like. A run the session answers nothing to is published too, with an empty answer: half of what a session does is decline to answer — a heartbeat is received and answered by doing nothing — and a check that skipped those would pass a program that replied to every one. A field an answer copies is put to the session as 42 rather than filler, and the answer must hold 42 there as the C# parser reads it: a user of nought copied reads exactly like a field padded, so only a value the run chose can show it was copied.
 
 ## Markets
 
@@ -95,15 +97,15 @@ Every instruction of the 38 programs here, counted off the files as they are pub
 
 | Instruction | decoder | dialect | session | gateway | market | responder | feed | All | Share |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| `+` | 645,629 | 3,373 | 5,383 | 27,735 | 1,200,216 | 232,933 | 208,277 | 2,323,546 | 2.0% |
-| `-` | 339,139 | 2,941 | 1,570 | 41,789 | 335,965 | 98,506 | 52,555 | 872,465 | 0.8% |
-| `<` | 8,710,737 | 65,622 | 3,456 | 772,696 | 38,952,036 | 5,682,553 | 762,178 | 54,949,278 | 48.0% |
-| `>` | 8,711,342 | 65,628 | 3,473 | 772,791 | 38,954,721 | 5,682,724 | 763,062 | 54,953,741 | 48.0% |
-| `[` | 61,269 | 67 | 1,077 | 45,883 | 388,831 | 109,294 | 53,883 | 660,304 | 0.6% |
-| `]` | 61,269 | 67 | 1,077 | 45,883 | 388,831 | 109,294 | 53,883 | 660,304 | 0.6% |
-| `.` | 55,445 | 164 | 316 | 134 | 730 | 1,618 | 825 | 59,232 | 0.1% |
-| `,` | 15,417 | 1 | 124 | 709 | 281 | 636 | 507 | 17,675 | 0.0% |
-| All | 18,600,247 | 137,863 | 16,476 | 1,707,620 | 80,221,611 | 11,917,558 | 1,895,170 | 114,496,545 | 100.0% |
+| `+` | 643,363 | 3,373 | 5,469 | 27,735 | 1,200,216 | 232,933 | 208,277 | 2,321,366 | 2.0% |
+| `-` | 338,837 | 2,941 | 1,726 | 41,789 | 335,965 | 98,506 | 52,555 | 872,319 | 0.8% |
+| `<` | 8,676,101 | 65,622 | 4,769 | 772,696 | 38,952,036 | 5,682,553 | 762,178 | 54,915,955 | 48.0% |
+| `>` | 8,676,706 | 65,628 | 4,790 | 772,791 | 38,954,721 | 5,682,724 | 763,062 | 54,920,422 | 48.0% |
+| `[` | 60,487 | 67 | 1,282 | 45,883 | 388,831 | 109,294 | 53,883 | 659,727 | 0.6% |
+| `]` | 60,487 | 67 | 1,282 | 45,883 | 388,831 | 109,294 | 53,883 | 659,727 | 0.6% |
+| `.` | 55,535 | 164 | 316 | 134 | 730 | 1,618 | 825 | 59,322 | 0.1% |
+| `,` | 15,441 | 1 | 128 | 709 | 281 | 636 | 507 | 17,703 | 0.0% |
+| All | 18,526,957 | 137,863 | 19,762 | 1,707,620 | 80,221,611 | 11,917,558 | 1,895,170 | 114,426,541 | 100.0% |
 
 ## Development
 
@@ -122,7 +124,7 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 
 - Protocol decoders: 23
-- Instructions in the decoders: 18,600,247
+- Instructions in the decoders: 18,526,957
 - Reading every field the model states: 23 of 23
 - Published with a frame they are held to: 23 of 23
 - Frames, of which recorded from the wire: 270, 40

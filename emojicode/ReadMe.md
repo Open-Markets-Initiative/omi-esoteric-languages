@@ -74,7 +74,7 @@ A session is a venue's handshake: it reads the other end's packets off one file,
 
 **It admits every login, and that is not a detail.** A chart names six kinds of event. Receive and Send are bytes; Request is a service asking the session to do something, Ask and Handler are the endpoint putting a question it cannot answer itself and hearing the answer, and Timer is a clock. A program reading one file and writing another has no service, nobody to ask and no clock, so of a handshake's transitions only the ones answering bytes can run at all. Rather than refuse the chart over it, the handler's answer is decided when the program is written and the accepting one is taken. So this is a demonstration of a handshake and never an authenticator, and every transition that cannot run is reported by the generator rather than passed over.
 
-**What it does run, a session written in constants cannot.** A program whose answers are all known before it starts cannot fill a reply field from a field of the packet that arrived, and cannot run a guard on one. SoupBin states two accepting answers told apart by exactly that: a guard on the arriving login's requested sequence number, deciding whether the connection resumes where the client asked or where the session already was. Both are published as runs, and their answers differ in the twenty bytes that say where the stream is numbered from — one carries the sequence the client asked for, the other the value the chart opens with. A session that could not read the arriving packet would answer both the same way, and both answers would parse. A field the chart names is read off the packet that arrived, rather than looked for across every packet the other end sends: Nse's Nnf marks thirteen of its client's fields as a user, and its answer to a sign-on restates the user of the sign-on that arrived.
+**What it does run, a session written in constants cannot.** A program whose answers are all known before it starts cannot run a guard on a field of the packet that arrived — Brainfuck's session copies such a field into its answer, and goes no further. SoupBin states two accepting answers told apart by exactly that: a guard on the arriving login's requested sequence number, deciding whether the connection resumes where the client asked or where the session already was. Both are published as runs, and their answers differ in the twenty bytes that say where the stream is numbered from — one carries the sequence the client asked for, the other the value the chart opens with. A session that could not read the arriving packet would answer both the same way, and both answers would parse. A field the chart names is read off the packet that arrived, rather than looked for across every packet the other end sends: Nse's Nnf marks thirteen of its client's fields as a user, and its answer to a sign-on restates the user of the sign-on that arrived.
 
 **What it keeps, it keeps as bytes.** A session's data is answered in a field, and the field is what says how wide that is and how a value sits in it, so the program holds it already laid out and answering with it is appending it. SoupBin numbers its stream in twenty ascii digits, which is more than any integer in this language carries; held as bytes there is no number in it to overflow, and the guard on it is a count of the bytes that agree rather than a conversion the language could not do exactly. A datum the chart opens with no value is written as a venue pads an unset field, which is what the chart says it is.
 
@@ -100,18 +100,18 @@ The runs cover an order crossing one level and resting the remainder, **an order
 
 ## What the programs are made of
 
-Every emoji of the 37 programs here, 216,373 of them and 48 different, counted off the files as they are published, most used first. Where the generator writes one under a name of its own, the name is given; the rest are written only as part of something longer, or only in the header a program opens with.
+Every emoji of the 37 programs here, 216,465 of them and 48 different, counted off the files as they are published, most used first. Where the generator writes one under a name of its own, the name is given; the rest are written only as part of something longer, or only in the header a program opens with.
 
 | Emoji | The generator's name for it | Count | Share |
 | --- | --- | ---: | ---: |
-| ➡️ | Into | 54,360 | 25.1% |
-| 🖍 | Over | 54,079 | 25.0% |
-| ➕ | Joins | 30,348 | 14.0% |
-| ❗️ | Call | 20,092 | 9.3% |
-| 🔤 | Quote | 13,196 | 6.1% |
-| 🔪 | Slice | 8,976 | 4.1% |
-| 💭 | Note | 8,150 | 3.8% |
-| 📇 | Data, Reads | 6,657 | 3.1% |
+| ➡️ | Into | 54,384 | 25.1% |
+| 🖍 | Over | 54,103 | 25.0% |
+| ➕ | Joins | 30,364 | 14.0% |
+| ❗️ | Call | 20,100 | 9.3% |
+| 🔤 | Quote | 13,204 | 6.1% |
+| 🔪 | Slice | 8,980 | 4.1% |
+| 💭 | Note | 8,154 | 3.8% |
+| 📇 | Data, Reads | 6,661 | 3.1% |
 | ⭕ | And | 5,351 | 2.5% |
 | 👉 | Shifted | 2,295 | 1.1% |
 | 🐽 | At | 1,721 | 0.8% |
@@ -191,7 +191,7 @@ Updates are greatly appreciated; however, this entire repository is source gener
 
 | Protocol decoders | Characters in them | Reading every field the model states | Frames | Recorded from the wire |
 | --- | --- | --- | --- | --- |
-| 23 | 1,743,334 | 23 of 23 | 280 | 50 |
+| 23 | 1,744,266 | 23 of 23 | 280 | 50 |
 
 ## Open Markets Initiative
 
